@@ -21,8 +21,11 @@ namespace SistemaComercio
         {
             if (TxtUsuario.Text == "Luquinhas" & TxtSenha.Text == "Lindo")
             {
-                Application.Exit();
+                MessageBox.Show("Bem vindo " + TxtUsuario.Text);
+                Frm_Cadastro cadastro = new Frm_Cadastro();
+                cadastro.Show();
             }
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -41,29 +44,24 @@ namespace SistemaComercio
         }
 
 
-        private object SetPlaceholder(TextBox txtUsuario, string v)
-        {
-            throw new NotImplementedException();
-        }
-
         private void SetPlaceholder(TextBox txtUsuario)
         {
             throw new NotImplementedException();
         }
 
-        private void TxtUsuario_TextChanged_1(object sender, EventArgs e)
+        private void RbCliente_CheckedChanged(object sender, EventArgs e)
         {
-            SetPlaceholder(TxtUsuario, "Insira o e-mail"); //nao funciona
+            LblMudar.Text = "Olá Cliente!";
         }
 
-        private void TxtSenha_TextChanged(object sender, EventArgs e)
+        private void RbFornecedor_CheckedChanged(object sender, EventArgs e)
         {
-            SetPlaceholder(TxtSenha, "Insira a senha"); //nao funciona
+            LblMudar.Text = "Olá Fornecedor!";
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void BtnCancelar_Click_1(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }

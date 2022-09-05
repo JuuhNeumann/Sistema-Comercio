@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Cadastro.Designer.cs">
+      <DependentUpon>Frm_Cadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm_Cadastro.resx">
+      <DependentUpon>Frm_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ImgFundo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImgNovoUsuario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

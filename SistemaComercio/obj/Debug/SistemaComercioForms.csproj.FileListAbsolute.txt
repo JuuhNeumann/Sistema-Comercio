@@ -12,3 +12,4 @@ E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\Sistema
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercioForms.csproj.CopyComplete
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.exe
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.pdb
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Frm_Cadastro.resources
