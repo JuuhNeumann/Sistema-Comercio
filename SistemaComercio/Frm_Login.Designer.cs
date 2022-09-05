@@ -53,17 +53,17 @@
             // 
             // TxtUsuario
             // 
-            this.TxtUsuario.Location = new System.Drawing.Point(248, 243);
+            this.TxtUsuario.Location = new System.Drawing.Point(259, 243);
             this.TxtUsuario.Name = "TxtUsuario";
-            this.TxtUsuario.Size = new System.Drawing.Size(241, 20);
+            this.TxtUsuario.Size = new System.Drawing.Size(224, 20);
             this.TxtUsuario.TabIndex = 0;
             this.TxtUsuario.TextChanged += new System.EventHandler(this.TxtUsuario_TextChanged_1);
             // 
             // TxtSenha
             // 
-            this.TxtSenha.Location = new System.Drawing.Point(248, 269);
+            this.TxtSenha.Location = new System.Drawing.Point(259, 269);
             this.TxtSenha.Name = "TxtSenha";
-            this.TxtSenha.Size = new System.Drawing.Size(241, 20);
+            this.TxtSenha.Size = new System.Drawing.Size(224, 20);
             this.TxtSenha.TabIndex = 1;
             this.TxtSenha.TextChanged += new System.EventHandler(this.TxtSenha_TextChanged);
             // 
@@ -93,7 +93,8 @@
             // 
             // ImgCliente
             // 
-            this.ImgCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ImgCliente.BackColor = System.Drawing.Color.Thistle;
+            this.ImgCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ImgCliente.Image = global::SistemaComercio.Properties.Resources.ImgCliente;
             this.ImgCliente.Location = new System.Drawing.Point(250, 75);
             this.ImgCliente.Name = "ImgCliente";
@@ -104,7 +105,8 @@
             // 
             // ImgFornecedor
             // 
-            this.ImgFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ImgFornecedor.BackColor = System.Drawing.Color.Thistle;
+            this.ImgFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ImgFornecedor.Image = global::SistemaComercio.Properties.Resources.ImgFornecedor;
             this.ImgFornecedor.Location = new System.Drawing.Point(359, 75);
             this.ImgFornecedor.Name = "ImgFornecedor";
@@ -116,7 +118,7 @@
             // ChkCliente
             // 
             this.ChkCliente.AutoSize = true;
-            this.ChkCliente.BackColor = System.Drawing.Color.Plum;
+            this.ChkCliente.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ChkCliente.Location = new System.Drawing.Point(241, 168);
             this.ChkCliente.Name = "ChkCliente";
             this.ChkCliente.Size = new System.Drawing.Size(15, 14);
@@ -126,7 +128,7 @@
             // ChkFornecedor
             // 
             this.ChkFornecedor.AutoSize = true;
-            this.ChkFornecedor.BackColor = System.Drawing.Color.Plum;
+            this.ChkFornecedor.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ChkFornecedor.Location = new System.Drawing.Point(447, 168);
             this.ChkFornecedor.Name = "ChkFornecedor";
             this.ChkFornecedor.Size = new System.Drawing.Size(15, 14);
@@ -215,7 +217,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Thistle;
             this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(203, 247);
+            this.label4.Location = new System.Drawing.Point(212, 247);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 17;
@@ -227,7 +229,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Thistle;
             this.label5.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(203, 273);
+            this.label5.Location = new System.Drawing.Point(212, 273);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 18;
