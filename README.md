@@ -40,7 +40,7 @@
   - Ambiente Virtual com Windows Form
   - Banco de Dados: MySQL
   - IDE: Visual Studio 2022
- - *Armazenamento dos dados feito com banco de dados MySQL*
+ - *Armazenamento dos dados feito com banco de dados MySQL e hospedado no Heroku*
 
 ## 
 
