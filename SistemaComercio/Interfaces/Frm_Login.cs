@@ -47,19 +47,10 @@ namespace SistemaComercio
             throw new NotImplementedException();
         }
 
-        private void RbCliente_CheckedChanged(object sender, EventArgs e)
-        {
-            LblMudar.Text = "Olá Cliente!";
-        }
-
-        private void RbFornecedor_CheckedChanged(object sender, EventArgs e)
-        {
-            LblMudar.Text = "Olá Fornecedor!";
-        }
-
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
     }
 }

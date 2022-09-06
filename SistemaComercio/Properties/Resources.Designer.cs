@@ -63,6 +63,16 @@ namespace SistemaComercio.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImgAdm {
+            get {
+                object obj = ResourceManager.GetObject("ImgAdm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ImgCliente {
             get {
                 object obj = ResourceManager.GetObject("ImgCliente", resourceCulture);

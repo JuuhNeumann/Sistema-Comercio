@@ -12,9 +12,24 @@ namespace SistemaComercio
 {
     public partial class Frm_Cadastro : Form
     {
+        Frm_Login login;
+
         public Frm_Cadastro()
         {
             InitializeComponent();
+        }
+
+        private void BtnSalvar_Click(object sender, EventArgs e)
+        {
+            var login = new Frm_Login();
+            this.Hide();
+            //salvar no banco tb
+        }
+
+        private void BnCancelarCad_Click(object sender, EventArgs e)
+        {
+            var login = new Frm_Login();
+            this.Hide();
         }
     }
 }
