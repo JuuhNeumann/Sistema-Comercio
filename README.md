@@ -34,6 +34,7 @@
 - Desenvolvedores: [**Júlia Neumann Bastos**] - [(*Linkedin*)](https://www.linkedin.com/in/júlia-neumann/)
                    [**Thiago Kronemberger Honorato**] - [(*Linkedin*)](https://github.com/Kronemberg)
                    [**Luan de Oliveira A. Wendling**] - [(*Linkedin*)](https://github.com/luanwend)
+                   [**Pedro Soares de Azevedo Corrêa**] - [(*Linkedin*)](https://github.com/Pedrox774)
   <br>
   - Sistema desenvolvido em C# 
   - Ambiente Virtual com Windows Form
