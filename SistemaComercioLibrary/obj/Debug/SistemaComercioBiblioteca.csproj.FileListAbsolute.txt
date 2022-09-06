@@ -4,3 +4,6 @@ E:\microsoft visual code\repos\SistemaComercio\SistemaComercioLibrary\obj\Debug\
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercioLibrary\obj\Debug\SistemaComercioBiblioteca.csproj.CoreCompileInputs.cache
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercioLibrary\obj\Debug\SistemaComercioLibrary.dll
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercioLibrary\obj\Debug\SistemaComercioLibrary.pdb
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercioLibrary\bin\Debug\DataBase\BdSistemaComercio.mdf
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercioLibrary\bin\Debug\DataBase\BdSistemaComercio_log.ldf
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercioLibrary\bin\Debug\SistemaComercioLibrary.dll.config

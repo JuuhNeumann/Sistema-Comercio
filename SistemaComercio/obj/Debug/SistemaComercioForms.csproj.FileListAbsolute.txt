@@ -13,3 +13,6 @@ E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\Sistema
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.exe
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.pdb
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Frm_Cadastro.resources
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\DataBase\BdSistemaComercio.mdf
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\DataBase\BdSistemaComercio_log.ldf
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\SistemaComercioLibrary.dll.config

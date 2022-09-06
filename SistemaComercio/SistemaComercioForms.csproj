@@ -46,24 +46,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Frm_Cadastro.cs">
+    <Compile Include="BdSistemaComercioDataSet1.Designer.cs">
+      <DependentUpon>BdSistemaComercioDataSet1.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Formularios\Frm_Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Cadastro.Designer.cs">
+    <Compile Include="Formularios\Frm_Cadastro.Designer.cs">
       <DependentUpon>Frm_Cadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Login.cs">
+    <Compile Include="Formularios\Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Login.Designer.cs">
+    <Compile Include="Formularios\Frm_Login.Designer.cs">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Frm_Cadastro.resx">
+    <Compile Include="SistemaComercioDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SistemaComercioDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Formularios\Frm_Cadastro.resx">
       <DependentUpon>Frm_Cadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Login.resx">
+    <EmbeddedResource Include="Formularios\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -71,6 +81,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="BdSistemaComercioDataSet1.xsc">
+      <DependentUpon>BdSistemaComercioDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BdSistemaComercioDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BdSistemaComercioDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BdSistemaComercioDataSet1.xss">
+      <DependentUpon>BdSistemaComercioDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -85,6 +106,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SistemaComercioDataSet.xsc">
+      <DependentUpon>SistemaComercioDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SistemaComercioDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SistemaComercioDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SistemaComercioDataSet.xss">
+      <DependentUpon>SistemaComercioDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -106,6 +138,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ImgNovoUsuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
