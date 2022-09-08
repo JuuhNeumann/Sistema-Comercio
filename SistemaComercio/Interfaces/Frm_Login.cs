@@ -33,13 +33,13 @@ namespace SistemaComercio
 
             if(auth)
             {
-                MessageBox.Show("Bem vindo " + TxtUsuario.Text);
+                MessageBox.Show("Bem vindo " + TxtUsuario.Text + "!");
                 Frm_Cadastro cadastro = new Frm_Cadastro();
                 cadastro.Show();
             }
             else
             {
-                MessageBox.Show("Usuario " + TxtUsuario.Text + " invalido");
+                MessageBox.Show("Usuário " + TxtUsuario.Text + " inválido!");
             }
         }
         private void SetPlaceholder(TextBox txtUsuario)
