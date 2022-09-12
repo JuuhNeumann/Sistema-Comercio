@@ -1,4 +1,5 @@
-﻿using SistemaComercioLibrary.Classes;
+﻿using SistemaComercioBiblioteca.Classes;
+using SistemaComercioLibrary.Classes;
 using SistemaComercioLibrary.Persistence.Context;
 using SistemaComercioLibrary.Port;
 using System;
@@ -9,32 +10,43 @@ using System.Threading.Tasks;
 
 namespace SistemaComercioLibrary.Service
 {
-    public class FornecedorService : IFornecedorPort
+    public class VendaService : IVendaPort
     {
+
         private DataBaseContext _db = new DataBaseContext();
 
-        public void AddFornecedor(Fornecedor fornecedor)
+        public void AddVenda(Venda venda)
         {
-            _db.Fornecedor.Add(fornecedor);
+            _db.Add(venda);
             _db.SaveChanges();
         }
 
-        public void DelFornecedor(string id)
+        public void ConsultVenda(Cliente cliente)
         {
             throw new NotImplementedException();
         }
 
-        public Fornecedor GetFornecedor()
+        public void DelVenda(string id)
         {
             throw new NotImplementedException();
         }
 
-        public void ReadFornecedor(List<Fornecedor> fornecedor)
+        public Compra GetCompra()
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateFornecedor(string id)
+        public void IssueReportVenda(List<Venda> situacaoVenda)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ReadVenda(List<Venda> venda)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateVenda(string id)
         {
             throw new NotImplementedException();
         }

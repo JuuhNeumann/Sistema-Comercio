@@ -9,32 +9,43 @@ using System.Threading.Tasks;
 
 namespace SistemaComercioLibrary.Service
 {
-    public class FornecedorService : IFornecedorPort
+    public class CompraService : ICompraPort
     {
+
         private DataBaseContext _db = new DataBaseContext();
 
-        public void AddFornecedor(Fornecedor fornecedor)
+        public void AddCompra(Compra compra)
         {
-            _db.Fornecedor.Add(fornecedor);
+            _db.Add(compra);
             _db.SaveChanges();
         }
 
-        public void DelFornecedor(string id)
+        public void ConsultCompra(Fornecedor fornecedor)
         {
             throw new NotImplementedException();
         }
 
-        public Fornecedor GetFornecedor()
+        public void DelCompra(string id)
         {
             throw new NotImplementedException();
         }
 
-        public void ReadFornecedor(List<Fornecedor> fornecedor)
+        public Compra GetCompra()
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateFornecedor(string id)
+        public void IssueReportCompra(List<Compra> situacaoCompra)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ReadCompra(List<Compra> compra)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateCompra(string id)
         {
             throw new NotImplementedException();
         }

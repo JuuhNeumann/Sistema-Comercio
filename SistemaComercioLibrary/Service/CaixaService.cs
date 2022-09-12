@@ -9,32 +9,33 @@ using System.Threading.Tasks;
 
 namespace SistemaComercioLibrary.Service
 {
-    public class FornecedorService : IFornecedorPort
+    public class CaixaService : ICaixaPort
     {
+
         private DataBaseContext _db = new DataBaseContext();
 
-        public void AddFornecedor(Fornecedor fornecedor)
+        public void AddCaixa(Caixa caixa)
         {
-            _db.Fornecedor.Add(fornecedor);
+            _db.Add(caixa);
             _db.SaveChanges();
         }
 
-        public void DelFornecedor(string id)
+        public Caixa GetCaixa()
         {
             throw new NotImplementedException();
         }
 
-        public Fornecedor GetFornecedor()
+        public void UpdateCaixaPagamento(ContaPagar contaPagar)
         {
             throw new NotImplementedException();
         }
 
-        public void ReadFornecedor(List<Fornecedor> fornecedor)
+        public void UpdateCaixaRecebimento(ContaReceber contaReceber)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateFornecedor(string id)
+        public void UpdateCaixaVenda(Venda venda)
         {
             throw new NotImplementedException();
         }

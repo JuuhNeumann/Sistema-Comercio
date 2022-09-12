@@ -20,14 +20,18 @@ namespace SistemaComercioLibrary.Classes
         public double Total_Compra { get; set; }
         [Required]
         public string Situacao_Compra { get; set; }
+        [Required]
+        public Fornecedor Id_Fornecedor { get; set; }
 
-        public Compra(int id, DateTime data, DateTime hora, double total_Compra, string situacao_Compra)
+
+        public Compra(int id, DateTime data, DateTime hora, double total_Compra, string situacao_Compra, Fornecedor id_Fornecedor)
         {
             Id = id;
             Data = data;
             Hora = hora;
             Total_Compra = total_Compra;
             Situacao_Compra = situacao_Compra;
+            Id_Fornecedor = id_Fornecedor;
         }
     }
 }

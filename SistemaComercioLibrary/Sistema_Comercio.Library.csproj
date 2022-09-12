@@ -250,7 +250,16 @@
     <Compile Include="Migrations\DataBaseContextModelSnapshot.cs" />
     <Compile Include="Persistence\Context\DataBaseContext.cs" />
     <Compile Include="Port\IAdmPort.cs" />
+    <Compile Include="Port\ICompraPort.cs" />
+    <Compile Include="Port\IContaPagarPort.cs" />
+    <Compile Include="Port\IContaReceberPort.cs" />
+    <Compile Include="Port\IFormaPagamentoPort.cs" />
     <Compile Include="Port\IFornecedorPort.cs" />
+    <Compile Include="Port\ICaixaPort.cs" />
+    <Compile Include="Port\IClientePort.cs" />
+    <Compile Include="Port\IMovimentoCaixaPort.cs" />
+    <Compile Include="Port\IProdutoPort.cs" />
+    <Compile Include="Port\IVendaPort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -258,7 +267,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Service\AdmService.cs" />
+    <Compile Include="Service\CaixaService.cs" />
+    <Compile Include="Service\ClienteService.cs" />
+    <Compile Include="Service\CompraService.cs" />
+    <Compile Include="Service\ContaPagarService.cs" />
+    <Compile Include="Service\ContaReceberService.cs" />
+    <Compile Include="Service\FormaPagamentoService.cs" />
     <Compile Include="Service\FornecedorService.cs" />
+    <Compile Include="Service\MovimentoCaixaService.cs" />
+    <Compile Include="Service\ProdutoService.cs" />
+    <Compile Include="Service\VendaService.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

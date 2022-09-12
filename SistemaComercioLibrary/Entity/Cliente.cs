@@ -36,6 +36,7 @@ namespace SistemaComercioLibrary.Classes
         public string Email { get; set; }
 
 
+
         public Cliente(int id, string nome, string cpf_Cnpj, string logradouro, int numero, string complemento, string bairro, string cidade, string estado, string cep, string telefone, string email)
         {
             Id = id;
