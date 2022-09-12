@@ -178,9 +178,9 @@
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = global::SistemaComercio.Properties.Resources.ImgFundo;
-            this.pictureBox2.Location = new System.Drawing.Point(-3, -3);
+            this.pictureBox2.Location = new System.Drawing.Point(-5, -3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(610, 411);
+            this.pictureBox2.Size = new System.Drawing.Size(612, 411);
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
