@@ -111,3 +111,4 @@ E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\zh-Hans
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\Sistema_Comercio.Forms.csproj.CopyComplete
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\appsettings.json
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_Principal.resources

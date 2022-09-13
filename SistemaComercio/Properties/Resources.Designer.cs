@@ -83,6 +83,16 @@ namespace SistemaComercio.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImgCamMaior {
+            get {
+                object obj = ResourceManager.GetObject("ImgCamMaior", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ImgCarrinho {
             get {
                 object obj = ResourceManager.GetObject("ImgCarrinho", resourceCulture);
@@ -123,6 +133,16 @@ namespace SistemaComercio.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImgCliMaior {
+            get {
+                object obj = ResourceManager.GetObject("ImgCliMaior", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ImgEstoque {
             get {
                 object obj = ResourceManager.GetObject("ImgEstoque", resourceCulture);
@@ -156,6 +176,36 @@ namespace SistemaComercio.Properties {
         internal static System.Drawing.Bitmap ImgFundo {
             get {
                 object obj = ResourceManager.GetObject("ImgFundo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImgFundo1 {
+            get {
+                object obj = ResourceManager.GetObject("ImgFundo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImgGame {
+            get {
+                object obj = ResourceManager.GetObject("ImgGame", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImgGameMaior {
+            get {
+                object obj = ResourceManager.GetObject("ImgGameMaior", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

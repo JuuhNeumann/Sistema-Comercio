@@ -31,14 +31,7 @@
             this.PnlBarraTarefas = new System.Windows.Forms.Panel();
             this.LblNomeAdm = new System.Windows.Forms.Label();
             this.LblAdmBaixo = new System.Windows.Forms.Label();
-            this.ImgAdmin = new System.Windows.Forms.PictureBox();
-            this.BtnEstoque = new System.Windows.Forms.Button();
-            this.BtnProduto = new System.Windows.Forms.Button();
-            this.BtnVenda = new System.Windows.Forms.Button();
-            this.BtnCompra = new System.Windows.Forms.Button();
-            this.BtnCadFor = new System.Windows.Forms.Button();
             this.LblSub = new System.Windows.Forms.Label();
-            this.BtnCadCli = new System.Windows.Forms.Button();
             this.LblPrin = new System.Windows.Forms.Label();
             this.PnlCli = new System.Windows.Forms.Panel();
             this.LblCliente = new System.Windows.Forms.Label();
@@ -52,18 +45,25 @@
             this.LblCom = new System.Windows.Forms.Label();
             this.CldFixo = new System.Windows.Forms.MonthCalendar();
             this.LblQuantCli = new System.Windows.Forms.Label();
-            this.ImgComCentro = new System.Windows.Forms.PictureBox();
-            this.ImgVendCentro = new System.Windows.Forms.PictureBox();
-            this.ImgProCentro = new System.Windows.Forms.PictureBox();
-            this.ImgForCentro = new System.Windows.Forms.PictureBox();
-            this.ImgCliCentro = new System.Windows.Forms.PictureBox();
             this.LblQuantForne = new System.Windows.Forms.Label();
             this.LblQuantProd = new System.Windows.Forms.Label();
             this.LblVend = new System.Windows.Forms.Label();
             this.LblCmpr = new System.Windows.Forms.Label();
             this.LblSumario = new System.Windows.Forms.Label();
+            this.ImgComCentro = new System.Windows.Forms.PictureBox();
+            this.ImgVendCentro = new System.Windows.Forms.PictureBox();
+            this.ImgProCentro = new System.Windows.Forms.PictureBox();
+            this.ImgForCentro = new System.Windows.Forms.PictureBox();
+            this.ImgCliCentro = new System.Windows.Forms.PictureBox();
+            this.ImgAdmin = new System.Windows.Forms.PictureBox();
+            this.BtnEstoque = new System.Windows.Forms.Button();
+            this.BtnProduto = new System.Windows.Forms.Button();
+            this.BtnVenda = new System.Windows.Forms.Button();
+            this.BtnCompra = new System.Windows.Forms.Button();
+            this.BtnCadFor = new System.Windows.Forms.Button();
+            this.BtnCadCli = new System.Windows.Forms.Button();
+            this.ImgPrin = new System.Windows.Forms.PictureBox();
             this.PnlBarraTarefas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ImgAdmin)).BeginInit();
             this.PnlCli.SuspendLayout();
             this.PnlFor.SuspendLayout();
             this.PnlPro.SuspendLayout();
@@ -74,6 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ImgProCentro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgForCentro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgCliCentro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgAdmin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgPrin)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlBarraTarefas
@@ -116,80 +118,6 @@
             this.LblAdmBaixo.TabIndex = 13;
             this.LblAdmBaixo.Text = "ADM:";
             // 
-            // ImgAdmin
-            // 
-            this.ImgAdmin.Image = global::SistemaComercio.Properties.Resources.ImgAdmin;
-            this.ImgAdmin.Location = new System.Drawing.Point(3, 354);
-            this.ImgAdmin.Name = "ImgAdmin";
-            this.ImgAdmin.Size = new System.Drawing.Size(66, 66);
-            this.ImgAdmin.TabIndex = 12;
-            this.ImgAdmin.TabStop = false;
-            // 
-            // BtnEstoque
-            // 
-            this.BtnEstoque.BackColor = System.Drawing.Color.Thistle;
-            this.BtnEstoque.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEstoque.Image = global::SistemaComercio.Properties.Resources.ImgEstoque;
-            this.BtnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEstoque.Location = new System.Drawing.Point(-2, 264);
-            this.BtnEstoque.Name = "BtnEstoque";
-            this.BtnEstoque.Size = new System.Drawing.Size(170, 40);
-            this.BtnEstoque.TabIndex = 10;
-            this.BtnEstoque.Text = "Estoque";
-            this.BtnEstoque.UseVisualStyleBackColor = false;
-            // 
-            // BtnProduto
-            // 
-            this.BtnProduto.BackColor = System.Drawing.Color.Thistle;
-            this.BtnProduto.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnProduto.Image = global::SistemaComercio.Properties.Resources.ImgPc;
-            this.BtnProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnProduto.Location = new System.Drawing.Point(-2, 227);
-            this.BtnProduto.Name = "BtnProduto";
-            this.BtnProduto.Size = new System.Drawing.Size(170, 40);
-            this.BtnProduto.TabIndex = 7;
-            this.BtnProduto.Text = "Produtos";
-            this.BtnProduto.UseVisualStyleBackColor = false;
-            // 
-            // BtnVenda
-            // 
-            this.BtnVenda.BackColor = System.Drawing.Color.Thistle;
-            this.BtnVenda.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnVenda.Image = global::SistemaComercio.Properties.Resources.ImgCarrinho;
-            this.BtnVenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnVenda.Location = new System.Drawing.Point(-2, 153);
-            this.BtnVenda.Name = "BtnVenda";
-            this.BtnVenda.Size = new System.Drawing.Size(170, 40);
-            this.BtnVenda.TabIndex = 9;
-            this.BtnVenda.Text = "Vendas";
-            this.BtnVenda.UseVisualStyleBackColor = false;
-            // 
-            // BtnCompra
-            // 
-            this.BtnCompra.BackColor = System.Drawing.Color.Thistle;
-            this.BtnCompra.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCompra.Image = global::SistemaComercio.Properties.Resources.ImgCash;
-            this.BtnCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCompra.Location = new System.Drawing.Point(-2, 190);
-            this.BtnCompra.Name = "BtnCompra";
-            this.BtnCompra.Size = new System.Drawing.Size(170, 40);
-            this.BtnCompra.TabIndex = 8;
-            this.BtnCompra.Text = "Compras";
-            this.BtnCompra.UseVisualStyleBackColor = false;
-            // 
-            // BtnCadFor
-            // 
-            this.BtnCadFor.BackColor = System.Drawing.Color.Thistle;
-            this.BtnCadFor.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCadFor.Image = global::SistemaComercio.Properties.Resources.ImgForne;
-            this.BtnCadFor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCadFor.Location = new System.Drawing.Point(-2, 113);
-            this.BtnCadFor.Name = "BtnCadFor";
-            this.BtnCadFor.Size = new System.Drawing.Size(170, 42);
-            this.BtnCadFor.TabIndex = 7;
-            this.BtnCadFor.Text = "        Cadastro Fornecedor";
-            this.BtnCadFor.UseVisualStyleBackColor = false;
-            // 
             // LblSub
             // 
             this.LblSub.AutoSize = true;
@@ -200,19 +128,6 @@
             this.LblSub.Size = new System.Drawing.Size(105, 17);
             this.LblSub.TabIndex = 1;
             this.LblSub.Text = "de Videogames";
-            // 
-            // BtnCadCli
-            // 
-            this.BtnCadCli.BackColor = System.Drawing.Color.Thistle;
-            this.BtnCadCli.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCadCli.Image = global::SistemaComercio.Properties.Resources.ImgCli;
-            this.BtnCadCli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCadCli.Location = new System.Drawing.Point(-2, 74);
-            this.BtnCadCli.Name = "BtnCadCli";
-            this.BtnCadCli.Size = new System.Drawing.Size(170, 41);
-            this.BtnCadCli.TabIndex = 6;
-            this.BtnCadCli.Text = "Cadastro Cliente";
-            this.BtnCadCli.UseVisualStyleBackColor = false;
             // 
             // LblPrin
             // 
@@ -332,19 +247,74 @@
             // 
             // CldFixo
             // 
-            this.CldFixo.Location = new System.Drawing.Point(462, 220);
+            this.CldFixo.Location = new System.Drawing.Point(444, 210);
             this.CldFixo.Name = "CldFixo";
             this.CldFixo.TabIndex = 9;
             // 
             // LblQuantCli
             // 
             this.LblQuantCli.AutoSize = true;
+            this.LblQuantCli.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblQuantCli.ForeColor = System.Drawing.Color.DodgerBlue;
             this.LblQuantCli.Location = new System.Drawing.Point(227, 142);
             this.LblQuantCli.Name = "LblQuantCli";
-            this.LblQuantCli.Size = new System.Drawing.Size(19, 13);
+            this.LblQuantCli.Size = new System.Drawing.Size(23, 14);
             this.LblQuantCli.TabIndex = 10;
             this.LblQuantCli.Text = "13";
+            // 
+            // LblQuantForne
+            // 
+            this.LblQuantForne.AutoSize = true;
+            this.LblQuantForne.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblQuantForne.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.LblQuantForne.Location = new System.Drawing.Point(331, 142);
+            this.LblQuantForne.Name = "LblQuantForne";
+            this.LblQuantForne.Size = new System.Drawing.Size(23, 14);
+            this.LblQuantForne.TabIndex = 11;
+            this.LblQuantForne.Text = "13";
+            // 
+            // LblQuantProd
+            // 
+            this.LblQuantProd.AutoSize = true;
+            this.LblQuantProd.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblQuantProd.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.LblQuantProd.Location = new System.Drawing.Point(429, 141);
+            this.LblQuantProd.Name = "LblQuantProd";
+            this.LblQuantProd.Size = new System.Drawing.Size(23, 14);
+            this.LblQuantProd.TabIndex = 12;
+            this.LblQuantProd.Text = "13";
+            // 
+            // LblVend
+            // 
+            this.LblVend.AutoSize = true;
+            this.LblVend.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblVend.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.LblVend.Location = new System.Drawing.Point(532, 141);
+            this.LblVend.Name = "LblVend";
+            this.LblVend.Size = new System.Drawing.Size(23, 14);
+            this.LblVend.TabIndex = 13;
+            this.LblVend.Text = "13";
+            // 
+            // LblCmpr
+            // 
+            this.LblCmpr.AutoSize = true;
+            this.LblCmpr.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCmpr.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.LblCmpr.Location = new System.Drawing.Point(636, 141);
+            this.LblCmpr.Name = "LblCmpr";
+            this.LblCmpr.Size = new System.Drawing.Size(23, 14);
+            this.LblCmpr.TabIndex = 14;
+            this.LblCmpr.Text = "13";
+            // 
+            // LblSumario
+            // 
+            this.LblSumario.AutoSize = true;
+            this.LblSumario.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSumario.Location = new System.Drawing.Point(196, 24);
+            this.LblSumario.Name = "LblSumario";
+            this.LblSumario.Size = new System.Drawing.Size(137, 16);
+            this.LblSumario.TabIndex = 15;
+            this.LblSumario.Text = "Sumário do Sistema:";
             // 
             // ImgComCentro
             // 
@@ -370,6 +340,7 @@
             this.ImgProCentro.Location = new System.Drawing.Point(402, 75);
             this.ImgProCentro.Name = "ImgProCentro";
             this.ImgProCentro.Size = new System.Drawing.Size(79, 84);
+            this.ImgProCentro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ImgProCentro.TabIndex = 4;
             this.ImgProCentro.TabStop = false;
             // 
@@ -379,6 +350,7 @@
             this.ImgForCentro.Location = new System.Drawing.Point(303, 74);
             this.ImgForCentro.Name = "ImgForCentro";
             this.ImgForCentro.Size = new System.Drawing.Size(79, 85);
+            this.ImgForCentro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ImgForCentro.TabIndex = 3;
             this.ImgForCentro.TabStop = false;
             // 
@@ -386,61 +358,108 @@
             // 
             this.ImgCliCentro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ImgCliCentro.InitialImage = null;
-            this.ImgCliCentro.Location = new System.Drawing.Point(199, 74);
+            this.ImgCliCentro.Location = new System.Drawing.Point(199, 75);
             this.ImgCliCentro.Name = "ImgCliCentro";
-            this.ImgCliCentro.Size = new System.Drawing.Size(79, 85);
+            this.ImgCliCentro.Size = new System.Drawing.Size(79, 84);
+            this.ImgCliCentro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ImgCliCentro.TabIndex = 2;
             this.ImgCliCentro.TabStop = false;
             // 
-            // LblQuantForne
+            // ImgAdmin
             // 
-            this.LblQuantForne.AutoSize = true;
-            this.LblQuantForne.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LblQuantForne.Location = new System.Drawing.Point(335, 142);
-            this.LblQuantForne.Name = "LblQuantForne";
-            this.LblQuantForne.Size = new System.Drawing.Size(19, 13);
-            this.LblQuantForne.TabIndex = 11;
-            this.LblQuantForne.Text = "13";
+            this.ImgAdmin.Image = global::SistemaComercio.Properties.Resources.ImgAdmin;
+            this.ImgAdmin.Location = new System.Drawing.Point(3, 354);
+            this.ImgAdmin.Name = "ImgAdmin";
+            this.ImgAdmin.Size = new System.Drawing.Size(66, 66);
+            this.ImgAdmin.TabIndex = 12;
+            this.ImgAdmin.TabStop = false;
             // 
-            // LblQuantProd
+            // BtnEstoque
             // 
-            this.LblQuantProd.AutoSize = true;
-            this.LblQuantProd.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LblQuantProd.Location = new System.Drawing.Point(434, 142);
-            this.LblQuantProd.Name = "LblQuantProd";
-            this.LblQuantProd.Size = new System.Drawing.Size(19, 13);
-            this.LblQuantProd.TabIndex = 12;
-            this.LblQuantProd.Text = "13";
+            this.BtnEstoque.BackColor = System.Drawing.Color.Thistle;
+            this.BtnEstoque.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEstoque.Image = global::SistemaComercio.Properties.Resources.ImgEstoque;
+            this.BtnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnEstoque.Location = new System.Drawing.Point(-2, 264);
+            this.BtnEstoque.Name = "BtnEstoque";
+            this.BtnEstoque.Size = new System.Drawing.Size(170, 40);
+            this.BtnEstoque.TabIndex = 10;
+            this.BtnEstoque.Text = "Estoque";
+            this.BtnEstoque.UseVisualStyleBackColor = false;
             // 
-            // LblVend
+            // BtnProduto
             // 
-            this.LblVend.AutoSize = true;
-            this.LblVend.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LblVend.Location = new System.Drawing.Point(536, 142);
-            this.LblVend.Name = "LblVend";
-            this.LblVend.Size = new System.Drawing.Size(19, 13);
-            this.LblVend.TabIndex = 13;
-            this.LblVend.Text = "13";
+            this.BtnProduto.BackColor = System.Drawing.Color.Thistle;
+            this.BtnProduto.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProduto.Image = global::SistemaComercio.Properties.Resources.ImgPc;
+            this.BtnProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnProduto.Location = new System.Drawing.Point(-2, 227);
+            this.BtnProduto.Name = "BtnProduto";
+            this.BtnProduto.Size = new System.Drawing.Size(170, 40);
+            this.BtnProduto.TabIndex = 7;
+            this.BtnProduto.Text = "Produtos";
+            this.BtnProduto.UseVisualStyleBackColor = false;
             // 
-            // LblCmpr
+            // BtnVenda
             // 
-            this.LblCmpr.AutoSize = true;
-            this.LblCmpr.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LblCmpr.Location = new System.Drawing.Point(637, 142);
-            this.LblCmpr.Name = "LblCmpr";
-            this.LblCmpr.Size = new System.Drawing.Size(19, 13);
-            this.LblCmpr.TabIndex = 14;
-            this.LblCmpr.Text = "13";
+            this.BtnVenda.BackColor = System.Drawing.Color.Thistle;
+            this.BtnVenda.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVenda.Image = global::SistemaComercio.Properties.Resources.ImgCarrinho;
+            this.BtnVenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnVenda.Location = new System.Drawing.Point(-2, 153);
+            this.BtnVenda.Name = "BtnVenda";
+            this.BtnVenda.Size = new System.Drawing.Size(170, 40);
+            this.BtnVenda.TabIndex = 9;
+            this.BtnVenda.Text = "Vendas";
+            this.BtnVenda.UseVisualStyleBackColor = false;
             // 
-            // LblSumario
+            // BtnCompra
             // 
-            this.LblSumario.AutoSize = true;
-            this.LblSumario.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSumario.Location = new System.Drawing.Point(196, 24);
-            this.LblSumario.Name = "LblSumario";
-            this.LblSumario.Size = new System.Drawing.Size(137, 16);
-            this.LblSumario.TabIndex = 15;
-            this.LblSumario.Text = "Sumário do Sistema:";
+            this.BtnCompra.BackColor = System.Drawing.Color.Thistle;
+            this.BtnCompra.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCompra.Image = global::SistemaComercio.Properties.Resources.ImgCash;
+            this.BtnCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCompra.Location = new System.Drawing.Point(-2, 190);
+            this.BtnCompra.Name = "BtnCompra";
+            this.BtnCompra.Size = new System.Drawing.Size(170, 40);
+            this.BtnCompra.TabIndex = 8;
+            this.BtnCompra.Text = "Compras";
+            this.BtnCompra.UseVisualStyleBackColor = false;
+            // 
+            // BtnCadFor
+            // 
+            this.BtnCadFor.BackColor = System.Drawing.Color.Thistle;
+            this.BtnCadFor.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCadFor.Image = global::SistemaComercio.Properties.Resources.ImgForne;
+            this.BtnCadFor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCadFor.Location = new System.Drawing.Point(-2, 113);
+            this.BtnCadFor.Name = "BtnCadFor";
+            this.BtnCadFor.Size = new System.Drawing.Size(170, 42);
+            this.BtnCadFor.TabIndex = 7;
+            this.BtnCadFor.Text = "        Cadastro Fornecedor";
+            this.BtnCadFor.UseVisualStyleBackColor = false;
+            // 
+            // BtnCadCli
+            // 
+            this.BtnCadCli.BackColor = System.Drawing.Color.Thistle;
+            this.BtnCadCli.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCadCli.Image = global::SistemaComercio.Properties.Resources.ImgCli;
+            this.BtnCadCli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCadCli.Location = new System.Drawing.Point(-2, 74);
+            this.BtnCadCli.Name = "BtnCadCli";
+            this.BtnCadCli.Size = new System.Drawing.Size(170, 41);
+            this.BtnCadCli.TabIndex = 6;
+            this.BtnCadCli.Text = "Cadastro Cliente";
+            this.BtnCadCli.UseVisualStyleBackColor = false;
+            // 
+            // ImgPrin
+            // 
+            this.ImgPrin.Image = global::SistemaComercio.Properties.Resources.ImgGame;
+            this.ImgPrin.Location = new System.Drawing.Point(15, -32);
+            this.ImgPrin.Name = "ImgPrin";
+            this.ImgPrin.Size = new System.Drawing.Size(757, 457);
+            this.ImgPrin.TabIndex = 16;
+            this.ImgPrin.TabStop = false;
             // 
             // Frm_Principal
             // 
@@ -465,11 +484,11 @@
             this.Controls.Add(this.ImgForCentro);
             this.Controls.Add(this.ImgCliCentro);
             this.Controls.Add(this.PnlBarraTarefas);
+            this.Controls.Add(this.ImgPrin);
             this.Name = "Frm_Principal";
             this.Text = "Form1";
             this.PnlBarraTarefas.ResumeLayout(false);
             this.PnlBarraTarefas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ImgAdmin)).EndInit();
             this.PnlCli.ResumeLayout(false);
             this.PnlCli.PerformLayout();
             this.PnlFor.ResumeLayout(false);
@@ -485,6 +504,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ImgProCentro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgForCentro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgCliCentro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgAdmin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgPrin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,5 +546,6 @@
         private System.Windows.Forms.Label LblVend;
         private System.Windows.Forms.Label LblCmpr;
         private System.Windows.Forms.Label LblSumario;
+        private System.Windows.Forms.PictureBox ImgPrin;
     }
 }
