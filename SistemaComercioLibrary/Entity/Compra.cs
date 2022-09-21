@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaComercioLibrary.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -21,17 +22,10 @@ namespace SistemaComercioLibrary.Classes
         [Required]
         public string Situacao_Compra { get; set; }
         [Required]
-        public Fornecedor Id_Fornecedor { get; set; }
+        public Fornecedor Fornecedor { get; set; }
 
+        public int Id_Fornecedor { get; set; }
+        public List<ItemCompra> ItemCompra { get; set; }
 
-        public Compra(int id, DateTime data, DateTime hora, double total_Compra, string situacao_Compra, Fornecedor id_Fornecedor)
-        {
-            Id = id;
-            Data = data;
-            Hora = hora;
-            Total_Compra = total_Compra;
-            Situacao_Compra = situacao_Compra;
-            Id_Fornecedor = id_Fornecedor;
-        }
     }
 }

@@ -23,18 +23,9 @@ namespace SistemaComercioLibrary.Classes
         [Required]
         public double Valor { get; set; }
         [Required]
-        public Caixa Id_Caixa { get; set; }
+        public Caixa Caixa { get; set; }
 
+        public int Id_Caixa { get; set; }
 
-        public MovimentoCaixa(int id, DateTime data_Movimento, DateTime hora_Movimento, string descricao, string tipo_Movimento, double valor, Caixa id_Caixa)
-        {
-            Id = id;
-            Data_Movimento = data_Movimento;
-            Hora_Movimento = hora_Movimento;
-            Descricao = descricao;
-            Tipo_Movimento = tipo_Movimento;
-            Valor = valor;
-            Id_Caixa = id_Caixa;
-        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaComercioBiblioteca.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -35,21 +36,8 @@ namespace SistemaComercioLibrary.Classes
         public string Email { get; set; }
 
 
-
-        public Fornecedor(int id, string nome, string cpf_Cnpj, string logradouro, int numero, string complemento, string bairro, string cidade, string estado, string cep, string telefone, string email)
-        {
-            Id = id;
-            Nome = nome;
-            Cpf_Cnpj = cpf_Cnpj;
-            Logradouro = logradouro;
-            Numero = numero;
-            Complemento = complemento;
-            Bairro = bairro;
-            Cidade = cidade;
-            Estado = estado;
-            Cep = cep;
-            Telefone = telefone;
-            Email = email;
-        }
+        public List<Produto> Produto { get; set; }
+        public List<ContaPagar> ContaPagar { get; set; }
+        public List<Compra> Compra { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaComercioLibrary.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,12 +15,6 @@ namespace SistemaComercioLibrary.Classes
         public int Id { get; set; }
         [Required]
         public string Nome { get; set; }
-
-
-        public FormaPagamento(int id, string nome)
-        {
-            Id = id;
-            Nome = nome;
-        }
+        public List<FormaPagamentoVenda> FormaPagamentoVenda { get; set; }
     }
 }

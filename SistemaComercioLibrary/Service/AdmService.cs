@@ -16,7 +16,7 @@ namespace SistemaComercioLibrary.Service
 
         public void AddAdm(Adm adm)
         {
-            _db.Add(adm);
+            _db.Adm.Add(adm);
             _db.SaveChanges();
         }
 

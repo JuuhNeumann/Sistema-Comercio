@@ -18,11 +18,6 @@ namespace SistemaComercioLibrary.Classes
         public double Saldo { get; set; }
 
 
-        public Caixa(int id, string nome, double saldo)
-        {
-            Id = id;
-            Nome = nome;
-            Saldo = saldo;
-        }
+        public List<MovimentoCaixa> MovimentoCaixa { get; set; }
     }
 }

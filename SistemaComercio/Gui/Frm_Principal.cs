@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemaComercioLibrary.Port;
+using SistemaComercioLibrary.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +14,12 @@ namespace SistemaComercio.Gui
 {
     public partial class Frm_Principal : Form
     {
-        public Frm_Principal()
+        public Frm_Principal(string usuario)
         {
             InitializeComponent();
-        }
+            LblNomeAdm.Text = usuario;
 
+
+        }
     }
 }

@@ -27,20 +27,9 @@ namespace SistemaComercioLibrary.Classes
         [Required]
         public double Valor_Pagamento { get; set; }
         [Required]
-        public Fornecedor Id_Fornecedor { get; set; }
+        public Fornecedor Fornecedor { get; set; }
 
 
-        public ContaPagar(int id, string descricao, DateTime data_Lancamento, DateTime data_Vencimento, double valor, double pago, DateTime data_Pagamento, double valor_Pagamento, Fornecedor id_Fornecedor)
-        {
-            Id = id;
-            Descricao = descricao;
-            Data_Lancamento = data_Lancamento;
-            Data_Vencimento = data_Vencimento;
-            Valor = valor;
-            Pago = pago;
-            Data_Pagamento = data_Pagamento;
-            Valor_Pagamento = valor_Pagamento;
-            Id_Fornecedor = id_Fornecedor;
-        }
+        public int Id_Fornecedor { get; set; }
     }
 }

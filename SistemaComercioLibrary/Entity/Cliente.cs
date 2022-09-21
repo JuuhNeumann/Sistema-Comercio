@@ -35,22 +35,7 @@ namespace SistemaComercioLibrary.Classes
         [Required]
         public string Email { get; set; }
 
-
-
-        public Cliente(int id, string nome, string cpf_Cnpj, string logradouro, int numero, string complemento, string bairro, string cidade, string estado, string cep, string telefone, string email)
-        {
-            Id = id;
-            Nome = nome;
-            Cpf_Cnpj = cpf_Cnpj;
-            Logradouro = logradouro;
-            Numero = numero;
-            Complemento = complemento;
-            Bairro = bairro;
-            Cidade = cidade;
-            Estado = estado;
-            Cep = cep;
-            Telefone = telefone;
-            Email = email;
-        }
+        public List<ContaReceber> ContaReceber  { get; set; }
+        public List<Venda> Venda { get; set; }
     }
 }

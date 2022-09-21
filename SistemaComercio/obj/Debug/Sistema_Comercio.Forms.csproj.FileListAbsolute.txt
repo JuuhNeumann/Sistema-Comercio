@@ -112,3 +112,7 @@ E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\zh-Hant
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\Sistema_Comercio.Forms.csproj.CopyComplete
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\appsettings.json
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_Principal.resources
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\Castle.Core.dll
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\Microsoft.EntityFrameworkCore.Proxies.dll
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\Castle.Core.xml
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\Microsoft.EntityFrameworkCore.Proxies.xml

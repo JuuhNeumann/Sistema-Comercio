@@ -27,20 +27,8 @@ namespace SistemaComercioLibrary.Classes
         [Required]
         public double Valor_Recebimento { get; set; }
         [Required]
-        public Cliente Id_Cliente { get; set; }
+        public Cliente Cliente { get; set; }
 
-
-        public ContaReceber(int id, string descricao, DateTime data_Lancamento, DateTime data_Vencimento, double valor, double recebido, DateTime data_Recebimento, double valor_Recebimento, Cliente id_Cliente)
-        {
-            Id = id;
-            Descricao = descricao;
-            Data_Lancamento = data_Lancamento;
-            Data_Vencimento = data_Vencimento;
-            Valor = valor;
-            Recebido = recebido;
-            Data_Recebimento = data_Recebimento;
-            Valor_Recebimento = valor_Recebimento;
-            Id_Cliente = id_Cliente;
-        }
+        public int Id_Cliente { get; set; }
     }
 }
