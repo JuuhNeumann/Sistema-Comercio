@@ -15,6 +15,11 @@ namespace SistemaComercioLibrary.Service
 
         private DataBaseContext _db = new DataBaseContext();
 
+        public int Count()
+        {
+            return _db.Venda.Count();
+        }
+
         public void AddVenda(Venda venda)
         {
             _db.Add(venda);

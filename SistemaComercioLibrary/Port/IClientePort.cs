@@ -9,6 +9,7 @@ namespace SistemaComercioLibrary.Port
 {
     public interface IClientePort
     {
+        int Count();
         void AddCliente(Cliente cliente);
         void UpdateCliente(string id);
         void DelCliente(string id);

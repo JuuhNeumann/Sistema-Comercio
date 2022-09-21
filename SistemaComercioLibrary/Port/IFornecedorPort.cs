@@ -5,6 +5,7 @@ namespace SistemaComercioLibrary.Port
 {
     public interface IFornecedorPort
     {
+        int Count();
         void AddFornecedor(Fornecedor fornecedor);
         void UpdateFornecedor(string id);
         void DelFornecedor(string id);

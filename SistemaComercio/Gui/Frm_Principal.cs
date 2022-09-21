@@ -14,11 +14,21 @@ namespace SistemaComercio.Gui
 {
     public partial class Frm_Principal : Form
     {
+        IFornecedorPort serviceForne = new FornecedorService();
+        IClientePort serviceCli = new ClienteService();
+        IVendaPort serviceVenda = new VendaService();
+        ICompraPort serviceCompra = new CompraService();
+        IProdutoPort serviceProduto = new ProdutoService();
+
         public Frm_Principal(string usuario)
         {
             InitializeComponent();
             LblNomeAdm.Text = usuario;
-
+            LblQuantForne.Text = serviceForne.Count().ToString();
+            LblQuantCli.Text = serviceCli.Count().ToString();
+            LblVend.Text = serviceVenda.Count().ToString();
+            LblCmpr.Text = serviceCompra.Count().ToString();
+            LblQuantProd.Text = serviceProduto.Count().ToString();
 
         }
     }

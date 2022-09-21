@@ -91,7 +91,7 @@ namespace SistemaComercioLibrary.Persistence.Context
 
         //Atributo referente a tabela no banco
         public DbSet<Adm> Adm { get; set; }
-        public DbSet<Fornecedor> Fornecedor { get; set; }
+        public DbSet<Fornecedor> Compra { get; set; }
         public DbSet<Produto> Produto { get; set; }
         public DbSet<FormaPagamentoVenda> FormaPagamentoVenda { get; set; }
         public DbSet<Caixa> Caixa { get; set; }

@@ -9,6 +9,7 @@ namespace SistemaComercioLibrary.Port
 {
     public interface IVendaPort
     {
+        int Count();
         void AddVenda(Venda venda);
         void DelVenda(string id);
         void UpdateVenda(string id);

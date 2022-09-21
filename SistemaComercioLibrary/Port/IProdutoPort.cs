@@ -10,6 +10,7 @@ namespace SistemaComercioLibrary.Port
 {
     public interface IProdutoPort
     {
+        int Count();
         void AddProduto(Produto produto);
         void UpdateProduto(string id);
         void DelProduto(string id);

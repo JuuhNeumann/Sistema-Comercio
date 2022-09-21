@@ -9,6 +9,7 @@ namespace SistemaComercioLibrary.Port
 {
     public interface ICompraPort
     {
+        int Count();
         void AddCompra(Compra compra);
         void DelCompra(string id);
         void UpdateCompra(string id);
