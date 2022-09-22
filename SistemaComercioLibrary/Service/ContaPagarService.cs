@@ -16,7 +16,7 @@ namespace SistemaComercioLibrary.Service
 
         public void AddContaPagar(ContaPagar contaPagar)
         {
-            _db.Add(contaPagar);
+            _db.ContaPagar.Add(contaPagar);
             _db.SaveChanges();
         }
 

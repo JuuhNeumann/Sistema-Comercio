@@ -20,7 +20,7 @@ namespace SistemaComercioLibrary.Service
         }
         public void AddCompra(Compra compra)
         {
-            _db.Add(compra);
+            _db.Compra.Add(compra);
             _db.SaveChanges();
         }
 

@@ -16,7 +16,7 @@ namespace SistemaComercioLibrary.Service
 
         public void AddContaReceber(ContaReceber contaReceber)
         {
-            _db.Add(contaReceber);
+            _db.ContaReceber.Add(contaReceber);
             _db.SaveChanges();
         }
 

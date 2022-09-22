@@ -21,7 +21,7 @@ namespace SistemaComercioLibrary.Service
         }
         public void AddProduto(Produto produto)
         {
-            _db.Add(produto);
+            _db.Produto.Add(produto);
             _db.SaveChanges();
         }
 

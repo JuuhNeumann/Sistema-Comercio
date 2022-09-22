@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace SistemaComercioLibrary.Service
 {
-    public class IFornecedor : IFornecedorPort
+    public class FornecedorService : IFornecedorPort
     {
         private DataBaseContext _db = new DataBaseContext();
 
         public int Count()
         {
-            return _db.Compra.Count();
+            return _db.Fornecedor.Count();
         }
 
         public void AddFornecedor(Fornecedor fornecedor)
         {
-            _db.Compra.Add(fornecedor);
+            _db.Fornecedor.Add(fornecedor);
             _db.SaveChanges();
         }
 

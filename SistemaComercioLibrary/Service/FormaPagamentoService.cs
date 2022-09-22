@@ -16,7 +16,7 @@ namespace SistemaComercioLibrary.Service
 
         public void AddFormaPagamento(FormaPagamento formaPagamento)
         {
-            _db.Add(formaPagamento);
+            _db.FormaPagamento.Add(formaPagamento);
             _db.SaveChanges();
         }
 

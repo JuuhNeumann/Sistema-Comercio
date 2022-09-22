@@ -22,7 +22,7 @@ namespace SistemaComercioLibrary.Service
 
         public void AddVenda(Venda venda)
         {
-            _db.Add(venda);
+            _db.Venda.Add(venda);
             _db.SaveChanges();
         }
 

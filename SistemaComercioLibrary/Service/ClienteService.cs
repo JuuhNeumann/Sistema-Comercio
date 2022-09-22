@@ -21,7 +21,7 @@ namespace SistemaComercioLibrary.Service
 
         public void AddCliente(Cliente cliente)
         {
-            _db.Add(cliente);
+            _db.Cliente.Add(cliente);
             _db.SaveChanges();
         }
 

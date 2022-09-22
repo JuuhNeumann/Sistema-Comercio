@@ -16,7 +16,7 @@ namespace SistemaComercioLibrary.Service
 
         public void AddMovimentoCaixa(MovimentoCaixa movimentoCaixa)
         {
-            _db.Add(movimentoCaixa);
+            _db.MovimentoCaixa.Add(movimentoCaixa);
             _db.SaveChanges();
         }
 

@@ -273,6 +273,10 @@
     <Compile Include="Migrations\20220921231054_item compra liga.designer.cs">
       <DependentUpon>20220921231054_item compra liga.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20220922000812_string unidade.cs" />
+    <Compile Include="Migrations\20220922000812_string unidade.designer.cs">
+      <DependentUpon>20220922000812_string unidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\DataBaseContextModelSnapshot.cs" />
     <Compile Include="Persistence\Context\DataBaseContext.cs" />
     <Compile Include="Port\IAdmPort.cs" />

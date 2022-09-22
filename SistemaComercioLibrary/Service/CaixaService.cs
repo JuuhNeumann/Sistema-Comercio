@@ -16,7 +16,7 @@ namespace SistemaComercioLibrary.Service
 
         public void AddCaixa(Caixa caixa)
         {
-            _db.Add(caixa);
+            _db.Caixa.Add(caixa);
             _db.SaveChanges();
         }
 
