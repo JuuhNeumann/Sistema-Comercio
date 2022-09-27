@@ -21,7 +21,7 @@ namespace SistemaComercioLibrary.Classes
         [Required]
         public double Valor { get; set; }
         [Required]
-        public double Recebido { get; set; }
+        public String Recebido { get; set; }
         [Required]
         public DateTime Data_Recebimento { get; set; }
         [Required]

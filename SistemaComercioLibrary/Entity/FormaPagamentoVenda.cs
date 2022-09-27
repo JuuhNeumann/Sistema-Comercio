@@ -16,5 +16,8 @@ namespace SistemaComercioLibrary.Entity
         public int Id_Venda { get; set; }
         public FormaPagamento FormaPagamento { get; set; }
         public int Id_FormaPagamento { get; set; }
+        public Double valor { get; set; }
     }
 }
+
+
