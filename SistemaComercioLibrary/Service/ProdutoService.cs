@@ -44,5 +44,9 @@ namespace SistemaComercioLibrary.Service
         {
             throw new NotImplementedException();
         }
+        public void GetProdutoCodigo(int id)
+        {
+
+        }
     }
 }
