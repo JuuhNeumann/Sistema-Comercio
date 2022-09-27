@@ -23,10 +23,12 @@ namespace SistemaComercioLibrary.Classes
         public string Situacao_Venda { get; set; }
         [Required]
         public Cliente Cliente { get; set; }
-
+       
         public int Id_Cliente { get; set; }
         public List<FormaPagamentoVenda> FormaPagamentoVenda { get; set; }
+       
         public List<ItemVenda> ItemVenda { get; set; }
 
+        public ContaReceber ContaReceber { get; set; }
     }
 }
