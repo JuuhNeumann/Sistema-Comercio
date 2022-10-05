@@ -189,7 +189,7 @@
             this.BtnCadFor.Name = "BtnCadFor";
             this.BtnCadFor.Size = new System.Drawing.Size(170, 42);
             this.BtnCadFor.TabIndex = 7;
-            this.BtnCadFor.Text = "        Cadastro Fornecedor";
+            this.BtnCadFor.Text = "Fornecedor";
             this.BtnCadFor.UseVisualStyleBackColor = false;
             // 
             // LblSub
@@ -213,7 +213,7 @@
             this.BtnCadCli.Name = "BtnCadCli";
             this.BtnCadCli.Size = new System.Drawing.Size(170, 41);
             this.BtnCadCli.TabIndex = 6;
-            this.BtnCadCli.Text = "Cadastro Cliente";
+            this.BtnCadCli.Text = "Cliente";
             this.BtnCadCli.UseVisualStyleBackColor = false;
             // 
             // LblPrin
