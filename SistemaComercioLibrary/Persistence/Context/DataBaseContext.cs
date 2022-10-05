@@ -5,6 +5,7 @@ using SistemaComercioLibrary.Classes;
 using SistemaComercioLibrary.Entity;
 using System.IO;
 using System.Reflection;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 
 namespace SistemaComercioLibrary.Persistence.Context
 {
@@ -16,14 +17,16 @@ namespace SistemaComercioLibrary.Persistence.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var BancoPav = "Data Source=DESKTOP-FSJV9IP;Initial Catalog=SistemaComercio;Persist Security Info=True;User ID=sa;Password=julia@2002";
+            var BancoPav = "Server=ec2-34-235-198-25.compute-1.amazonaws.com;Database=d3cnf1jkmj9dk2;User Id=bdgwjotucdayon;Password=6eaa98508e6c97e25ff1b7afe3a2283a5ca85138ba9d4f0faa5de439614b797c; SSL Mode=Require;Trust Server Certificate=true";
+
+
 
             /*var configuration = new ConfigurationBuilder()
                 .SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location))
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();*/
 
-            optionsBuilder.UseSqlServer(BancoPav);
+            optionsBuilder.UseNpgsql(BancoPav);
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
