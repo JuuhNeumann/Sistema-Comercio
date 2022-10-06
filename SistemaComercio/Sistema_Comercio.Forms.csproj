@@ -226,11 +226,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gui\Cliente.cs">
+    <Compile Include="Gui\Frm_Fornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gui\Cliente.Designer.cs">
-      <DependentUpon>Cliente.cs</DependentUpon>
+    <Compile Include="Gui\Frm_Fornecedor.Designer.cs">
+      <DependentUpon>Frm_Fornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Frm_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Frm_Cliente.Designer.cs">
+      <DependentUpon>Frm_Cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Gui\Frm_Principal.cs">
       <SubType>Form</SubType>
@@ -252,11 +258,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Gui\Cliente.resx">
-      <DependentUpon>Cliente.cs</DependentUpon>
+    <EmbeddedResource Include="Gui\Frm_Cliente.resx">
+      <DependentUpon>Frm_Cliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_Cadastro.resx">
       <DependentUpon>Frm_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Frm_Fornecedor.resx">
+      <DependentUpon>Frm_Fornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>

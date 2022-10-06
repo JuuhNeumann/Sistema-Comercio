@@ -16,7 +16,7 @@ namespace SistemaComercio
 {
     public partial class Frm_Login : Form
     {
-        IAdmPort service = new AdmService();
+        private IAdmPort service = new AdmService();
 
 
         public Frm_Login()
