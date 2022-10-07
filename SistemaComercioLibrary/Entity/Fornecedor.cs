@@ -19,7 +19,7 @@ namespace SistemaComercioLibrary.Classes
         [Required]
         public string Logradouro { get; set; }
         [Required]
-        public int Numero { get; set; }
+        public string Numero { get; set; }
         [Required]
         public string Complemento { get; set; }
         [Required]

@@ -291,8 +291,9 @@ namespace SistemaComercioLibrary.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Numero")
-                        .HasColumnType("integer");
+                    b.Property<string>("Numero")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Telefone")
                         .IsRequired()

@@ -337,3 +337,7 @@ C:\Users\julia\Desktop\xxxxxxxx-main\SistemaComercioLibrary\obj\Debug\SistemaCom
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercioLibrary\bin\Debug\Npgsql.dll
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercioLibrary\bin\Debug\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercioLibrary\bin\Debug\Npgsql.xml
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercioLibrary\bin\Debug\EntityFramework.dll
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercioLibrary\bin\Debug\EntityFramework.SqlServer.dll
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercioLibrary\bin\Debug\EntityFramework.xml
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercioLibrary\bin\Debug\EntityFramework.SqlServer.xml

@@ -390,6 +390,7 @@
             this.btnCad.TabIndex = 23;
             this.btnCad.Text = "Cadastrar";
             this.btnCad.UseVisualStyleBackColor = false;
+            this.btnCad.Click += new System.EventHandler(this.CadastrarFornecedor);
             // 
             // txtSenha
             // 
@@ -481,7 +482,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 449);
             this.Controls.Add(this.pnlFundoForne);
+            this.MaximizeBox = false;
             this.Name = "Frm_Fornecedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Fornecedor";
             this.pnlFundoForne.ResumeLayout(false);
             this.pnlFundoForne.PerformLayout();

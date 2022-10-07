@@ -31,5 +31,11 @@ namespace SistemaComercio.Gui
             LblQuantProd.Text = serviceProduto.Count().ToString();
 
         }
+
+        private void BtnCadFor_Click(object sender, EventArgs e)
+        {
+            Frm_Fornecedor fornecedor = new Frm_Fornecedor();
+            fornecedor.Show();
+        }
     }
 }

@@ -13,8 +13,10 @@ namespace SistemaComercioLibrary.Classes
         [Key]
         public int Id { get; set; }
         [Required]
+        [MaxLength(255)]
         public string Nome { get; set; }
         [Required]
+        [MaxLength(255)]
         public double Saldo { get; set; }
 
 

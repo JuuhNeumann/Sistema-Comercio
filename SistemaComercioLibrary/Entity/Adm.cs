@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,10 @@ namespace SistemaComercioLibrary.Entity
         [Key]
         public int Id { get; set; }
         [Required]
+        [Index(IsUnique = true)]
         public string Usuario { get; set; }
         [Required]
+        [MaxLength(255)]
         public string Senha { get; set; }
     }
 }

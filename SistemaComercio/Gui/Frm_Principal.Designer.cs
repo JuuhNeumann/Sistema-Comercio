@@ -191,6 +191,7 @@
             this.BtnCadFor.TabIndex = 7;
             this.BtnCadFor.Text = "Fornecedor";
             this.BtnCadFor.UseVisualStyleBackColor = false;
+            this.BtnCadFor.Click += new System.EventHandler(this.BtnCadFor_Click);
             // 
             // LblSub
             // 
