@@ -487,6 +487,7 @@
             this.Controls.Add(this.PnlBarraTarefas);
             this.Controls.Add(this.ImgPrin);
             this.Name = "Frm_Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.PnlBarraTarefas.ResumeLayout(false);
             this.PnlBarraTarefas.PerformLayout();
