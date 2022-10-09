@@ -29,9 +29,9 @@ namespace SistemaComercioLibrary.Service
             throw new NotImplementedException();
         }
 
-        public Fornecedor GetFornecedor()
+        public List<Fornecedor> GetAllFornecedor()
         {
-            throw new NotImplementedException();
+            return  _db.Fornecedor.ToList();
         }
 
         public void ReadFornecedor(List<Fornecedor> fornecedor)

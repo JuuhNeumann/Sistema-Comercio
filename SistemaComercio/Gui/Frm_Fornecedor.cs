@@ -2,6 +2,8 @@
 using SistemaComercioLibrary.Port;
 using SistemaComercioLibrary.Service;
 using System;
+using System.Data;
+using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace SistemaComercio.Gui
@@ -13,6 +15,7 @@ namespace SistemaComercio.Gui
         public Frm_Fornecedor()
         {
             InitializeComponent();
+                     
         }
 
         private void CadastrarFornecedor(object sender, EventArgs e)
@@ -32,26 +35,44 @@ namespace SistemaComercio.Gui
                 Bairro = txtBairro.Text,
             };
 
-
             try
             {
                 //FAZER COM TODOS OS CAMPOS
-                if (!String.IsNullOrEmpty(txtNome.Text) || String.IsNullOrEmpty(txtNome.Text))
-                {
+                if (ValidarCampos()) { 
                     service.AddFornecedor(fornecedor);
                     MessageBox.Show("Fornecedor cadastrado!");
                 }
-                else
-                {
+                else {
                     MessageBox.Show("Você deve preencher todos os campos!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            catch
-            {
+            catch { 
                 MessageBox.Show("Erro ao cadastrar fornecedor!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        bool ValidarCampos()
+        {
+            //FAZER COM TODOS OS CAMPOS
+            if (String.IsNullOrEmpty(txtNome.Text) || String.IsNullOrEmpty(txtNome.Text) ||
+                String.IsNullOrEmpty(txtTel.Text) || String.IsNullOrEmpty(txtCEP.Text) ||
+                String.IsNullOrEmpty(txtCidade.Text) || String.IsNullOrEmpty(txtComple.Text) ||
+                String.IsNullOrEmpty(txtEmail.Text) || String.IsNullOrEmpty(txtEstado.Text) ||
+                String.IsNullOrEmpty(txtLogra.Text) || String.IsNullOrEmpty(txtNum.Text) || String.IsNullOrEmpty(txtBairro.Text))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
 
         }
 
+        private void Frm_Fornecedor_Load(object sender, EventArgs e)
+        {
+          dataGridViewForne.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+          dataGridViewForne.DataSource = service.GetAllFornecedor();
+        }
     }
 }

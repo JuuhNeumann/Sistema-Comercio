@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblCPF = new System.Windows.Forms.Label();
             this.lblTel = new System.Windows.Forms.Label();
@@ -49,16 +50,9 @@
             this.txtProcurar = new System.Windows.Forms.TextBox();
             this.lblProcurarNome = new System.Windows.Forms.Label();
             this.dataGridViewForne = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Logradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Número = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaComercioDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaComercioDataSet = new SistemaComercio.SistemaComercioDataSet();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCad = new System.Windows.Forms.Button();
             this.txtSenha = new System.Windows.Forms.TextBox();
@@ -73,8 +67,12 @@
             this.txtLogra = new System.Windows.Forms.TextBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
+            this.fornecedorTableAdapter = new SistemaComercio.SistemaComercioDataSetTableAdapters.FornecedorTableAdapter();
             this.pnlFundoForne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaComercioDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaComercioDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNome
@@ -294,82 +292,26 @@
             this.dataGridViewForne.AllowUserToAddRows = false;
             this.dataGridViewForne.AllowUserToDeleteRows = false;
             this.dataGridViewForne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewForne.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome,
-            this.CPF,
-            this.Logradouro,
-            this.Complemento,
-            this.Bairro,
-            this.Número,
-            this.CEP,
-            this.Telefone,
-            this.Cidade,
-            this.Email});
             this.dataGridViewForne.Location = new System.Drawing.Point(16, 229);
             this.dataGridViewForne.Name = "dataGridViewForne";
             this.dataGridViewForne.ReadOnly = true;
             this.dataGridViewForne.Size = new System.Drawing.Size(640, 170);
             this.dataGridViewForne.TabIndex = 25;
             // 
-            // Nome
+            // fornecedorBindingSource
             // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
+            this.fornecedorBindingSource.DataMember = "Fornecedor";
+            this.fornecedorBindingSource.DataSource = this.sistemaComercioDataSetBindingSource;
             // 
-            // CPF
+            // sistemaComercioDataSetBindingSource
             // 
-            this.CPF.HeaderText = "CPF";
-            this.CPF.Name = "CPF";
-            this.CPF.ReadOnly = true;
+            this.sistemaComercioDataSetBindingSource.DataSource = this.sistemaComercioDataSet;
+            this.sistemaComercioDataSetBindingSource.Position = 0;
             // 
-            // Logradouro
+            // sistemaComercioDataSet
             // 
-            this.Logradouro.HeaderText = "Logradouro";
-            this.Logradouro.Name = "Logradouro";
-            this.Logradouro.ReadOnly = true;
-            // 
-            // Complemento
-            // 
-            this.Complemento.HeaderText = "Complemento";
-            this.Complemento.Name = "Complemento";
-            this.Complemento.ReadOnly = true;
-            // 
-            // Bairro
-            // 
-            this.Bairro.HeaderText = "Bairro";
-            this.Bairro.Name = "Bairro";
-            this.Bairro.ReadOnly = true;
-            // 
-            // Número
-            // 
-            this.Número.HeaderText = "Número";
-            this.Número.Name = "Número";
-            this.Número.ReadOnly = true;
-            // 
-            // CEP
-            // 
-            this.CEP.HeaderText = "CEP";
-            this.CEP.Name = "CEP";
-            this.CEP.ReadOnly = true;
-            // 
-            // Telefone
-            // 
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
-            this.Telefone.ReadOnly = true;
-            // 
-            // Cidade
-            // 
-            this.Cidade.HeaderText = "Estado";
-            this.Cidade.Name = "Cidade";
-            this.Cidade.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
+            this.sistemaComercioDataSet.DataSetName = "SistemaComercioDataSet";
+            this.sistemaComercioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnLimpar
             // 
@@ -476,6 +418,10 @@
             this.txtNome.Size = new System.Drawing.Size(320, 20);
             this.txtNome.TabIndex = 11;
             // 
+            // fornecedorTableAdapter
+            // 
+            this.fornecedorTableAdapter.ClearBeforeFill = true;
+            // 
             // Frm_Fornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,9 +432,13 @@
             this.Name = "Frm_Fornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Fornecedor";
+            this.Load += new System.EventHandler(this.Frm_Fornecedor_Load);
             this.pnlFundoForne.ResumeLayout(false);
             this.pnlFundoForne.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForne)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaComercioDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaComercioDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -526,19 +476,13 @@
         private System.Windows.Forms.Button btnProcurar;
         private System.Windows.Forms.TextBox txtProcurar;
         private System.Windows.Forms.Label lblProcurarNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Logradouro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Complemento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bairro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Número;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CEP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.BindingSource sistemaComercioDataSetBindingSource;
+        private SistemaComercioDataSet sistemaComercioDataSet;
+        private System.Windows.Forms.BindingSource fornecedorBindingSource;
+        private SistemaComercioDataSetTableAdapters.FornecedorTableAdapter fornecedorTableAdapter;
     }
 }
