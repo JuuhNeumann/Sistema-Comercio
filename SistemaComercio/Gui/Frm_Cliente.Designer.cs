@@ -81,6 +81,7 @@
             // 
             // btnAtualizar
             // 
+            this.btnAtualizar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtualizar.Location = new System.Drawing.Point(109, 416);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(85, 27);
@@ -90,6 +91,7 @@
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.Location = new System.Drawing.Point(18, 416);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(85, 27);
@@ -101,9 +103,10 @@
             // 
             this.lblCpff.AutoSize = true;
             this.lblCpff.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblCpff.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCpff.Location = new System.Drawing.Point(12, 35);
             this.lblCpff.Name = "lblCpff";
-            this.lblCpff.Size = new System.Drawing.Size(62, 13);
+            this.lblCpff.Size = new System.Drawing.Size(64, 13);
             this.lblCpff.TabIndex = 4;
             this.lblCpff.Text = "CPF/CNPJ:";
             // 
@@ -111,9 +114,10 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblNome.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.Location = new System.Drawing.Point(12, 9);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(38, 13);
+            this.lblNome.Size = new System.Drawing.Size(39, 13);
             this.lblNome.TabIndex = 5;
             this.lblNome.Text = "Nome:";
             // 
@@ -135,9 +139,10 @@
             // 
             this.lblTel.AutoSize = true;
             this.lblTel.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblTel.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTel.Location = new System.Drawing.Point(384, 9);
             this.lblTel.Name = "lblTel";
-            this.lblTel.Size = new System.Drawing.Size(52, 13);
+            this.lblTel.Size = new System.Drawing.Size(51, 13);
             this.lblTel.TabIndex = 23;
             this.lblTel.Text = "Telefone:";
             // 
@@ -151,6 +156,7 @@
             // lblPesquisar
             // 
             this.lblPesquisar.AutoSize = true;
+            this.lblPesquisar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPesquisar.Location = new System.Drawing.Point(15, 173);
             this.lblPesquisar.Name = "lblPesquisar";
             this.lblPesquisar.Size = new System.Drawing.Size(100, 13);
@@ -166,6 +172,7 @@
             // 
             // btnPesquisar
             // 
+            this.btnPesquisar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisar.Location = new System.Drawing.Point(283, 170);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(85, 20);
@@ -186,9 +193,10 @@
             // 
             this.lblCEP.AutoSize = true;
             this.lblCEP.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblCEP.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCEP.Location = new System.Drawing.Point(384, 89);
             this.lblCEP.Name = "lblCEP";
-            this.lblCEP.Size = new System.Drawing.Size(31, 13);
+            this.lblCEP.Size = new System.Drawing.Size(32, 13);
             this.lblCEP.TabIndex = 21;
             this.lblCEP.Text = "CEP:";
             // 
@@ -203,9 +211,10 @@
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblEstado.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.Location = new System.Drawing.Point(384, 63);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(43, 13);
+            this.lblEstado.Size = new System.Drawing.Size(42, 13);
             this.lblEstado.TabIndex = 19;
             this.lblEstado.Text = "Estado:";
             // 
@@ -213,9 +222,10 @@
             // 
             this.lblNumero.AutoSize = true;
             this.lblNumero.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblNumero.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumero.Location = new System.Drawing.Point(204, 117);
             this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(47, 13);
+            this.lblNumero.Size = new System.Drawing.Size(49, 13);
             this.lblNumero.TabIndex = 10;
             this.lblNumero.Text = "Número:";
             // 
@@ -230,9 +240,10 @@
             // 
             this.lblBairro.AutoSize = true;
             this.lblBairro.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblBairro.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBairro.Location = new System.Drawing.Point(12, 115);
             this.lblBairro.Name = "lblBairro";
-            this.lblBairro.Size = new System.Drawing.Size(37, 13);
+            this.lblBairro.Size = new System.Drawing.Size(40, 13);
             this.lblBairro.TabIndex = 14;
             this.lblBairro.Text = "Bairro:";
             // 
@@ -254,6 +265,7 @@
             // 
             this.lblCidade.AutoSize = true;
             this.lblCidade.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblCidade.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCidade.Location = new System.Drawing.Point(384, 35);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(43, 13);
@@ -264,9 +276,10 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblEmail.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(384, 115);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.Size = new System.Drawing.Size(37, 13);
             this.lblEmail.TabIndex = 25;
             this.lblEmail.Text = "Email:";
             // 
@@ -281,9 +294,10 @@
             // 
             this.lblComple.AutoSize = true;
             this.lblComple.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblComple.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblComple.Location = new System.Drawing.Point(12, 89);
             this.lblComple.Name = "lblComple";
-            this.lblComple.Size = new System.Drawing.Size(74, 13);
+            this.lblComple.Size = new System.Drawing.Size(76, 13);
             this.lblComple.TabIndex = 12;
             this.lblComple.Text = "Complemento:";
             // 
@@ -298,9 +312,10 @@
             // 
             this.lblLogra.AutoSize = true;
             this.lblLogra.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblLogra.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogra.Location = new System.Drawing.Point(12, 63);
             this.lblLogra.Name = "lblLogra";
-            this.lblLogra.Size = new System.Drawing.Size(64, 13);
+            this.lblLogra.Size = new System.Drawing.Size(66, 13);
             this.lblLogra.TabIndex = 8;
             this.lblLogra.Text = "Logradouro:";
             // 
@@ -340,6 +355,7 @@
             // 
             // btnSairr
             // 
+            this.btnSairr.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSairr.Location = new System.Drawing.Point(584, 416);
             this.btnSairr.Name = "btnSairr";
             this.btnSairr.Size = new System.Drawing.Size(85, 26);
@@ -349,6 +365,7 @@
             // 
             // btnExcluir
             // 
+            this.btnExcluir.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.Location = new System.Drawing.Point(291, 416);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(85, 26);
@@ -358,6 +375,7 @@
             // 
             // btnLimpar
             // 
+            this.btnLimpar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.Location = new System.Drawing.Point(200, 416);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(85, 27);

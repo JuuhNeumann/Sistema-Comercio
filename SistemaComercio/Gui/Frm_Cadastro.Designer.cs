@@ -100,6 +100,7 @@
             // BtnSalvar
             // 
             this.BtnSalvar.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnSalvar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSalvar.Location = new System.Drawing.Point(54, 119);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(105, 23);
@@ -110,6 +111,7 @@
             // BtnCancelarCad
             // 
             this.BtnCancelarCad.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnCancelarCad.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelarCad.Location = new System.Drawing.Point(181, 119);
             this.BtnCancelarCad.Name = "BtnCancelarCad";
             this.BtnCancelarCad.Size = new System.Drawing.Size(106, 23);
@@ -132,9 +134,10 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.MaximizeBox = false;
             this.Name = "Frm_Cadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tela de Cadastro";
+            this.Text = "Cadastro de Adm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

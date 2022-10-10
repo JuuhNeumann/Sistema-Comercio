@@ -76,61 +76,75 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(13, 9);
+            this.lblNome.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(15, 9);
+            this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(38, 13);
+            this.lblNome.Size = new System.Drawing.Size(39, 13);
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
             // lblCPF
             // 
             this.lblCPF.AutoSize = true;
-            this.lblCPF.Location = new System.Drawing.Point(13, 35);
+            this.lblCPF.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPF.Location = new System.Drawing.Point(15, 35);
+            this.lblCPF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCPF.Name = "lblCPF";
-            this.lblCPF.Size = new System.Drawing.Size(62, 13);
+            this.lblCPF.Size = new System.Drawing.Size(64, 13);
             this.lblCPF.TabIndex = 1;
             this.lblCPF.Text = "CPF/CNPJ:";
             // 
             // lblTel
             // 
             this.lblTel.AutoSize = true;
-            this.lblTel.Location = new System.Drawing.Point(381, 9);
+            this.lblTel.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTel.Location = new System.Drawing.Point(444, 9);
+            this.lblTel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTel.Name = "lblTel";
-            this.lblTel.Size = new System.Drawing.Size(52, 13);
+            this.lblTel.Size = new System.Drawing.Size(51, 13);
             this.lblTel.TabIndex = 2;
             this.lblTel.Text = "Telefone:";
             // 
             // lblComple
             // 
             this.lblComple.AutoSize = true;
-            this.lblComple.Location = new System.Drawing.Point(13, 90);
+            this.lblComple.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComple.Location = new System.Drawing.Point(15, 90);
+            this.lblComple.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblComple.Name = "lblComple";
-            this.lblComple.Size = new System.Drawing.Size(74, 13);
+            this.lblComple.Size = new System.Drawing.Size(76, 13);
             this.lblComple.TabIndex = 3;
             this.lblComple.Text = "Complemento:";
             // 
             // lblLogra
             // 
             this.lblLogra.AutoSize = true;
-            this.lblLogra.Location = new System.Drawing.Point(13, 61);
+            this.lblLogra.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogra.Location = new System.Drawing.Point(15, 61);
+            this.lblLogra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLogra.Name = "lblLogra";
-            this.lblLogra.Size = new System.Drawing.Size(64, 13);
+            this.lblLogra.Size = new System.Drawing.Size(66, 13);
             this.lblLogra.TabIndex = 4;
             this.lblLogra.Text = "Logradouro:";
             // 
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
-            this.lblBairro.Location = new System.Drawing.Point(13, 119);
+            this.lblBairro.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBairro.Location = new System.Drawing.Point(15, 119);
+            this.lblBairro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBairro.Name = "lblBairro";
-            this.lblBairro.Size = new System.Drawing.Size(37, 13);
+            this.lblBairro.Size = new System.Drawing.Size(40, 13);
             this.lblBairro.TabIndex = 5;
             this.lblBairro.Text = "Bairro:";
             // 
             // lblCid
             // 
             this.lblCid.AutoSize = true;
-            this.lblCid.Location = new System.Drawing.Point(381, 35);
+            this.lblCid.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCid.Location = new System.Drawing.Point(444, 35);
+            this.lblCid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCid.Name = "lblCid";
             this.lblCid.Size = new System.Drawing.Size(43, 13);
             this.lblCid.TabIndex = 6;
@@ -139,36 +153,44 @@
             // lblEst
             // 
             this.lblEst.AutoSize = true;
-            this.lblEst.Location = new System.Drawing.Point(381, 61);
+            this.lblEst.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEst.Location = new System.Drawing.Point(444, 61);
+            this.lblEst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEst.Name = "lblEst";
-            this.lblEst.Size = new System.Drawing.Size(43, 13);
+            this.lblEst.Size = new System.Drawing.Size(42, 13);
             this.lblEst.TabIndex = 7;
             this.lblEst.Text = "Estado:";
             // 
             // lblCEP
             // 
             this.lblCEP.AutoSize = true;
-            this.lblCEP.Location = new System.Drawing.Point(381, 90);
+            this.lblCEP.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCEP.Location = new System.Drawing.Point(444, 90);
+            this.lblCEP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCEP.Name = "lblCEP";
-            this.lblCEP.Size = new System.Drawing.Size(31, 13);
+            this.lblCEP.Size = new System.Drawing.Size(32, 13);
             this.lblCEP.TabIndex = 8;
             this.lblCEP.Text = "CEP:";
             // 
             // lblNum
             // 
             this.lblNum.AutoSize = true;
-            this.lblNum.Location = new System.Drawing.Point(205, 119);
+            this.lblNum.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNum.Location = new System.Drawing.Point(250, 119);
+            this.lblNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(47, 13);
+            this.lblNum.Size = new System.Drawing.Size(49, 13);
             this.lblNum.TabIndex = 9;
             this.lblNum.Text = "Número:";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(381, 119);
+            this.lblEmail.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(444, 119);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.Size = new System.Drawing.Size(37, 13);
             this.lblEmail.TabIndex = 10;
             this.lblEmail.Text = "Email:";
             // 
@@ -209,68 +231,81 @@
             this.pnlFundoForne.Controls.Add(this.lblComple);
             this.pnlFundoForne.Controls.Add(this.lblBairro);
             this.pnlFundoForne.Location = new System.Drawing.Point(-1, -1);
+            this.pnlFundoForne.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlFundoForne.Name = "pnlFundoForne";
-            this.pnlFundoForne.Size = new System.Drawing.Size(679, 452);
+            this.pnlFundoForne.Size = new System.Drawing.Size(792, 452);
             this.pnlFundoForne.TabIndex = 12;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumOrchid;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(-8, 151);
+            this.panel1.Location = new System.Drawing.Point(-9, 151);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(686, 10);
+            this.panel1.Size = new System.Drawing.Size(800, 10);
             this.panel1.TabIndex = 32;
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(571, 411);
+            this.btnSair.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(666, 411);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(85, 27);
+            this.btnSair.Size = new System.Drawing.Size(99, 27);
             this.btnSair.TabIndex = 31;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(199, 411);
+            this.btnExcluir.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Location = new System.Drawing.Point(232, 411);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(85, 27);
+            this.btnExcluir.Size = new System.Drawing.Size(99, 27);
             this.btnExcluir.TabIndex = 30;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(108, 411);
+            this.btnAtualizar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizar.Location = new System.Drawing.Point(126, 411);
+            this.btnAtualizar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(85, 27);
+            this.btnAtualizar.Size = new System.Drawing.Size(99, 27);
             this.btnAtualizar.TabIndex = 29;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
             // 
             // btnProcurar
             // 
-            this.btnProcurar.Location = new System.Drawing.Point(282, 175);
+            this.btnProcurar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcurar.Location = new System.Drawing.Point(329, 175);
+            this.btnProcurar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(85, 20);
+            this.btnProcurar.Size = new System.Drawing.Size(99, 20);
             this.btnProcurar.TabIndex = 28;
             this.btnProcurar.Text = "Procurar";
             this.btnProcurar.UseVisualStyleBackColor = true;
             // 
             // txtProcurar
             // 
-            this.txtProcurar.Location = new System.Drawing.Point(108, 175);
+            this.txtProcurar.Location = new System.Drawing.Point(126, 175);
+            this.txtProcurar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtProcurar.Name = "txtProcurar";
-            this.txtProcurar.Size = new System.Drawing.Size(168, 20);
+            this.txtProcurar.Size = new System.Drawing.Size(195, 21);
             this.txtProcurar.TabIndex = 27;
             // 
             // lblProcurarNome
             // 
             this.lblProcurarNome.AutoSize = true;
-            this.lblProcurarNome.Location = new System.Drawing.Point(12, 178);
+            this.lblProcurarNome.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProcurarNome.Location = new System.Drawing.Point(14, 178);
+            this.lblProcurarNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProcurarNome.Name = "lblProcurarNome";
-            this.lblProcurarNome.Size = new System.Drawing.Size(97, 13);
+            this.lblProcurarNome.Size = new System.Drawing.Size(99, 13);
             this.lblProcurarNome.TabIndex = 26;
             this.lblProcurarNome.Text = "Procurar por nome:";
             // 
@@ -279,18 +314,21 @@
             this.dataGridViewForne.AllowUserToAddRows = false;
             this.dataGridViewForne.AllowUserToDeleteRows = false;
             this.dataGridViewForne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewForne.Location = new System.Drawing.Point(16, 201);
+            this.dataGridViewForne.Location = new System.Drawing.Point(19, 201);
+            this.dataGridViewForne.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridViewForne.Name = "dataGridViewForne";
             this.dataGridViewForne.ReadOnly = true;
-            this.dataGridViewForne.Size = new System.Drawing.Size(640, 198);
+            this.dataGridViewForne.Size = new System.Drawing.Size(747, 198);
             this.dataGridViewForne.TabIndex = 25;
             // 
             // btnLimpar
             // 
             this.btnLimpar.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnLimpar.Location = new System.Drawing.Point(290, 411);
+            this.btnLimpar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Location = new System.Drawing.Point(338, 411);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(85, 27);
+            this.btnLimpar.Size = new System.Drawing.Size(99, 27);
             this.btnLimpar.TabIndex = 24;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
@@ -298,9 +336,11 @@
             // btnCad
             // 
             this.btnCad.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCad.Location = new System.Drawing.Point(16, 411);
+            this.btnCad.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCad.Location = new System.Drawing.Point(19, 411);
+            this.btnCad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCad.Name = "btnCad";
-            this.btnCad.Size = new System.Drawing.Size(85, 27);
+            this.btnCad.Size = new System.Drawing.Size(99, 27);
             this.btnCad.TabIndex = 23;
             this.btnCad.Text = "Cadastrar";
             this.btnCad.UseVisualStyleBackColor = false;
@@ -308,79 +348,90 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(415, 116);
+            this.txtEmail.Location = new System.Drawing.Point(484, 116);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(245, 20);
+            this.txtEmail.Size = new System.Drawing.Size(285, 21);
             this.txtEmail.TabIndex = 21;
             // 
             // txtEstado
             // 
-            this.txtEstado.Location = new System.Drawing.Point(423, 58);
+            this.txtEstado.Location = new System.Drawing.Point(493, 58);
+            this.txtEstado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(237, 20);
+            this.txtEstado.Size = new System.Drawing.Size(276, 21);
             this.txtEstado.TabIndex = 20;
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(423, 32);
+            this.txtCidade.Location = new System.Drawing.Point(493, 32);
+            this.txtCidade.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(237, 20);
+            this.txtCidade.Size = new System.Drawing.Size(276, 21);
             this.txtCidade.TabIndex = 19;
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(430, 6);
+            this.txtTel.Location = new System.Drawing.Point(502, 6);
+            this.txtTel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(230, 20);
+            this.txtTel.Size = new System.Drawing.Size(268, 21);
             this.txtTel.TabIndex = 18;
             // 
             // txtCEP
             // 
-            this.txtCEP.Location = new System.Drawing.Point(415, 87);
+            this.txtCEP.Location = new System.Drawing.Point(484, 87);
+            this.txtCEP.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(245, 20);
+            this.txtCEP.Size = new System.Drawing.Size(285, 21);
             this.txtCEP.TabIndex = 17;
             // 
             // txtNum
             // 
-            this.txtNum.Location = new System.Drawing.Point(249, 116);
+            this.txtNum.Location = new System.Drawing.Point(303, 116);
+            this.txtNum.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNum.Name = "txtNum";
-            this.txtNum.Size = new System.Drawing.Size(118, 20);
+            this.txtNum.Size = new System.Drawing.Size(124, 21);
             this.txtNum.TabIndex = 16;
             // 
             // txtBairro
             // 
-            this.txtBairro.Location = new System.Drawing.Point(47, 116);
+            this.txtBairro.Location = new System.Drawing.Point(69, 116);
+            this.txtBairro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(152, 20);
+            this.txtBairro.Size = new System.Drawing.Size(173, 21);
             this.txtBairro.TabIndex = 15;
             // 
             // txtComple
             // 
-            this.txtComple.Location = new System.Drawing.Point(85, 87);
+            this.txtComple.Location = new System.Drawing.Point(99, 87);
+            this.txtComple.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtComple.Name = "txtComple";
-            this.txtComple.Size = new System.Drawing.Size(282, 20);
+            this.txtComple.Size = new System.Drawing.Size(328, 21);
             this.txtComple.TabIndex = 14;
             // 
             // txtLogra
             // 
-            this.txtLogra.Location = new System.Drawing.Point(75, 58);
+            this.txtLogra.Location = new System.Drawing.Point(88, 58);
+            this.txtLogra.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtLogra.Name = "txtLogra";
-            this.txtLogra.Size = new System.Drawing.Size(292, 20);
+            this.txtLogra.Size = new System.Drawing.Size(340, 21);
             this.txtLogra.TabIndex = 13;
             // 
             // txtCPF
             // 
-            this.txtCPF.Location = new System.Drawing.Point(75, 32);
+            this.txtCPF.Location = new System.Drawing.Point(88, 32);
+            this.txtCPF.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(292, 20);
+            this.txtCPF.Size = new System.Drawing.Size(340, 21);
             this.txtCPF.TabIndex = 12;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(47, 6);
+            this.txtNome.Location = new System.Drawing.Point(55, 6);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(320, 20);
+            this.txtNome.Size = new System.Drawing.Size(373, 21);
             this.txtNome.TabIndex = 11;
             // 
             // fornecedorBindingSource
@@ -404,14 +455,16 @@
             // 
             // Frm_Fornecedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 449);
+            this.ClientSize = new System.Drawing.Size(784, 449);
             this.Controls.Add(this.pnlFundoForne);
+            this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Frm_Fornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro Fornecedor";
+            this.Text = "Fornecedor";
             this.Load += new System.EventHandler(this.Frm_Fornecedor_Load);
             this.pnlFundoForne.ResumeLayout(false);
             this.pnlFundoForne.PerformLayout();
