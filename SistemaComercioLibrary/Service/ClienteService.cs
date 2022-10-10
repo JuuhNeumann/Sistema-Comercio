@@ -42,7 +42,7 @@ namespace SistemaComercioLibrary.Service
 
         public List<Cliente> GetAllCliente()
         {
-            throw new NotImplementedException();
+            return _db.Cliente.ToList();
         }
     }
 }

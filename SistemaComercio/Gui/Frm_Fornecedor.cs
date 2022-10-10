@@ -74,5 +74,11 @@ namespace SistemaComercio.Gui
           dataGridViewForne.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
           dataGridViewForne.DataSource = service.GetAllFornecedor();
         }
+
+        private void ClickSair(object sender, EventArgs e)
+        {
+            var principal = new Frm_Principal();
+            this.Hide();
+        }
     }
 }

@@ -54,6 +54,9 @@
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtCEP = new System.Windows.Forms.TextBox();
             this.pnlFundo = new System.Windows.Forms.Panel();
+            this.btnSairr = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.dataGridViewCli = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,12 +71,9 @@
             this.eMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSairr = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.pnlFundo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCli)).BeginInit();
@@ -333,6 +333,43 @@
             this.pnlFundo.Size = new System.Drawing.Size(791, 456);
             this.pnlFundo.TabIndex = 35;
             // 
+            // btnSairr
+            // 
+            this.btnSairr.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSairr.Image = global::SistemaComercio.Properties.Resources.sair;
+            this.btnSairr.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSairr.Location = new System.Drawing.Point(679, 416);
+            this.btnSairr.Name = "btnSairr";
+            this.btnSairr.Size = new System.Drawing.Size(96, 26);
+            this.btnSairr.TabIndex = 36;
+            this.btnSairr.Text = "    Sair";
+            this.btnSairr.UseVisualStyleBackColor = true;
+            this.btnSairr.Click += new System.EventHandler(this.ClickSair);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Image = global::SistemaComercio.Properties.Resources.lixo;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcluir.Location = new System.Drawing.Point(326, 417);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(96, 26);
+            this.btnExcluir.TabIndex = 35;
+            this.btnExcluir.Text = "    Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Image = global::SistemaComercio.Properties.Resources.limpar;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpar.Location = new System.Drawing.Point(224, 416);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(96, 27);
+            this.btnLimpar.TabIndex = 34;
+            this.btnLimpar.Text = "    Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            // 
             // dataGridViewCli
             // 
             this.dataGridViewCli.AllowUserToAddRows = false;
@@ -436,51 +473,6 @@
             this.Senha.Name = "Senha";
             this.Senha.ReadOnly = true;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Navy;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Location = new System.Drawing.Point(3, 150);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(788, 10);
-            this.panel2.TabIndex = 0;
-            // 
-            // btnSairr
-            // 
-            this.btnSairr.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSairr.Image = global::SistemaComercio.Properties.Resources.sair;
-            this.btnSairr.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSairr.Location = new System.Drawing.Point(679, 416);
-            this.btnSairr.Name = "btnSairr";
-            this.btnSairr.Size = new System.Drawing.Size(96, 26);
-            this.btnSairr.TabIndex = 36;
-            this.btnSairr.Text = "    Sair";
-            this.btnSairr.UseVisualStyleBackColor = true;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Image = global::SistemaComercio.Properties.Resources.lixo;
-            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(326, 417);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(96, 26);
-            this.btnExcluir.TabIndex = 35;
-            this.btnExcluir.Text = "    Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Image = global::SistemaComercio.Properties.Resources.limpar;
-            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpar.Location = new System.Drawing.Point(224, 416);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(96, 27);
-            this.btnLimpar.TabIndex = 34;
-            this.btnLimpar.Text = "    Limpar";
-            this.btnLimpar.UseVisualStyleBackColor = true;
-            // 
             // btnAtualizar
             // 
             this.btnAtualizar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -504,6 +496,16 @@
             this.btnCadastrar.TabIndex = 0;
             this.btnCadastrar.Text = "    Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.CadastrarCliente);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Navy;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Location = new System.Drawing.Point(3, 150);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(788, 10);
+            this.panel2.TabIndex = 0;
             // 
             // btnPesquisar
             // 

@@ -30,11 +30,6 @@ namespace SistemaComercioLibrary.Service
             throw new NotImplementedException();
         }
 
-        public Produto GetProduto()
-        {
-            throw new NotImplementedException();
-        }
-
         public void ReadProduto(List<Produto> produto)
         {
             throw new NotImplementedException();
@@ -43,6 +38,11 @@ namespace SistemaComercioLibrary.Service
         public void UpdateProduto(string id)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Produto> GetAllProduto()
+        {
+            return _db.Produto.ToList();
         }
     }
 }

@@ -32,10 +32,26 @@ namespace SistemaComercio.Gui
 
         }
 
-        private void BtnCadFor_Click(object sender, EventArgs e)
+        public Frm_Principal()
+        {
+        }
+
+        private void ClickFornecedor(object sender, EventArgs e)
         {
             Frm_Fornecedor fornecedor = new Frm_Fornecedor();
             fornecedor.Show();
+        }
+
+        private void ClickCliente(object sender, EventArgs e)
+        {
+            Frm_Cliente cliente = new Frm_Cliente();
+            cliente.Show();
+        }
+
+        private void ClickProduto(object sender, EventArgs e)
+        {
+            Frm_Produto produto = new Frm_Produto();
+            produto.Show();
         }
     }
 }

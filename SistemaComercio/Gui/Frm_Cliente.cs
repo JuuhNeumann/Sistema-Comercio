@@ -24,7 +24,6 @@ namespace SistemaComercio.Gui
 
         private void CadastrarCliente(object sender, EventArgs e)
         {
-
             var cliente = new Cliente()
             {
                 Nome = txtNome.Text,
@@ -77,11 +76,19 @@ namespace SistemaComercio.Gui
 
         }
 
-        private void Frm_Fornecedor_Load(object sender, EventArgs e)
+        private void Frm_Cliente_Load(object sender, EventArgs e)
         {
             dataGridViewCli.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCli.DataSource = service.GetAllCliente();
         }
+
+        private void ClickSair(object sender, EventArgs e)
+        {
+            var principal = new Frm_Principal();
+            this.Hide();
+        }
+
+        
     }
 }
 

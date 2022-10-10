@@ -16,6 +16,6 @@ namespace SistemaComercioLibrary.Port
         void DelProduto(string id);
         //mostra uma LISTA de fornecedores
         void ReadProduto(List<Produto> produto);
-        Produto GetProduto();
+        List<Produto> GetAllProduto();
     }
 }
