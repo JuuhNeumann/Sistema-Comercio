@@ -262,7 +262,9 @@
             this.Controls.Add(this.txtPreco);
             this.Controls.Add(this.lblPreco);
             this.Controls.Add(this.pnlFundo);
+            this.MaximizeBox = false;
             this.Name = "Frm_Produto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produto";
             this.pnlFundo.ResumeLayout(false);
             this.pnlFundo.PerformLayout();
