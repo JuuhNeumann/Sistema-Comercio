@@ -30,17 +30,17 @@ namespace SistemaComercioLibrary.Service
             throw new NotImplementedException();
         }
 
-        public Cliente GetCliente()
-        {
-            throw new NotImplementedException();
-        }
-
         public void ReadCliente(List<Cliente> ciente)
         {
             throw new NotImplementedException();
         }
 
         public void UpdateCliente(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Cliente> GetAllCliente()
         {
             throw new NotImplementedException();
         }

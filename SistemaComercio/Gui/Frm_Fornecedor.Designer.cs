@@ -40,7 +40,6 @@
             this.lblCEP = new System.Windows.Forms.Label();
             this.lblNum = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.lblSenha = new System.Windows.Forms.Label();
             this.pnlFundoForne = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
@@ -50,12 +49,8 @@
             this.txtProcurar = new System.Windows.Forms.TextBox();
             this.lblProcurarNome = new System.Windows.Forms.Label();
             this.dataGridViewForne = new System.Windows.Forms.DataGridView();
-            this.fornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemaComercioDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemaComercioDataSet = new SistemaComercio.SistemaComercioDataSet();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCad = new System.Windows.Forms.Button();
-            this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
@@ -67,6 +62,9 @@
             this.txtLogra = new System.Windows.Forms.TextBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
+            this.fornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaComercioDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaComercioDataSet = new SistemaComercio.SistemaComercioDataSet();
             this.fornecedorTableAdapter = new SistemaComercio.SistemaComercioDataSetTableAdapters.FornecedorTableAdapter();
             this.pnlFundoForne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForne)).BeginInit();
@@ -159,7 +157,7 @@
             // lblNum
             // 
             this.lblNum.AutoSize = true;
-            this.lblNum.Location = new System.Drawing.Point(13, 152);
+            this.lblNum.Location = new System.Drawing.Point(205, 119);
             this.lblNum.Name = "lblNum";
             this.lblNum.Size = new System.Drawing.Size(47, 13);
             this.lblNum.TabIndex = 9;
@@ -173,15 +171,6 @@
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 10;
             this.lblEmail.Text = "Email:";
-            // 
-            // lblSenha
-            // 
-            this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(381, 148);
-            this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(41, 13);
-            this.lblSenha.TabIndex = 11;
-            this.lblSenha.Text = "Senha:";
             // 
             // pnlFundoForne
             // 
@@ -197,7 +186,6 @@
             this.pnlFundoForne.Controls.Add(this.dataGridViewForne);
             this.pnlFundoForne.Controls.Add(this.btnLimpar);
             this.pnlFundoForne.Controls.Add(this.btnCad);
-            this.pnlFundoForne.Controls.Add(this.txtSenha);
             this.pnlFundoForne.Controls.Add(this.txtEmail);
             this.pnlFundoForne.Controls.Add(this.txtEstado);
             this.pnlFundoForne.Controls.Add(this.txtCidade);
@@ -208,7 +196,6 @@
             this.pnlFundoForne.Controls.Add(this.txtComple);
             this.pnlFundoForne.Controls.Add(this.txtLogra);
             this.pnlFundoForne.Controls.Add(this.txtCPF);
-            this.pnlFundoForne.Controls.Add(this.lblSenha);
             this.pnlFundoForne.Controls.Add(this.txtNome);
             this.pnlFundoForne.Controls.Add(this.lblNome);
             this.pnlFundoForne.Controls.Add(this.lblEmail);
@@ -230,9 +217,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumOrchid;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(-1, 182);
+            this.panel1.Location = new System.Drawing.Point(-8, 151);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(675, 10);
+            this.panel1.Size = new System.Drawing.Size(686, 10);
             this.panel1.TabIndex = 32;
             // 
             // btnSair
@@ -264,7 +251,7 @@
             // 
             // btnProcurar
             // 
-            this.btnProcurar.Location = new System.Drawing.Point(282, 203);
+            this.btnProcurar.Location = new System.Drawing.Point(282, 175);
             this.btnProcurar.Name = "btnProcurar";
             this.btnProcurar.Size = new System.Drawing.Size(85, 20);
             this.btnProcurar.TabIndex = 28;
@@ -273,7 +260,7 @@
             // 
             // txtProcurar
             // 
-            this.txtProcurar.Location = new System.Drawing.Point(108, 203);
+            this.txtProcurar.Location = new System.Drawing.Point(108, 175);
             this.txtProcurar.Name = "txtProcurar";
             this.txtProcurar.Size = new System.Drawing.Size(168, 20);
             this.txtProcurar.TabIndex = 27;
@@ -281,7 +268,7 @@
             // lblProcurarNome
             // 
             this.lblProcurarNome.AutoSize = true;
-            this.lblProcurarNome.Location = new System.Drawing.Point(13, 206);
+            this.lblProcurarNome.Location = new System.Drawing.Point(12, 178);
             this.lblProcurarNome.Name = "lblProcurarNome";
             this.lblProcurarNome.Size = new System.Drawing.Size(97, 13);
             this.lblProcurarNome.TabIndex = 26;
@@ -292,26 +279,11 @@
             this.dataGridViewForne.AllowUserToAddRows = false;
             this.dataGridViewForne.AllowUserToDeleteRows = false;
             this.dataGridViewForne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewForne.Location = new System.Drawing.Point(16, 229);
+            this.dataGridViewForne.Location = new System.Drawing.Point(16, 201);
             this.dataGridViewForne.Name = "dataGridViewForne";
             this.dataGridViewForne.ReadOnly = true;
-            this.dataGridViewForne.Size = new System.Drawing.Size(640, 170);
+            this.dataGridViewForne.Size = new System.Drawing.Size(640, 198);
             this.dataGridViewForne.TabIndex = 25;
-            // 
-            // fornecedorBindingSource
-            // 
-            this.fornecedorBindingSource.DataMember = "Fornecedor";
-            this.fornecedorBindingSource.DataSource = this.sistemaComercioDataSetBindingSource;
-            // 
-            // sistemaComercioDataSetBindingSource
-            // 
-            this.sistemaComercioDataSetBindingSource.DataSource = this.sistemaComercioDataSet;
-            this.sistemaComercioDataSetBindingSource.Position = 0;
-            // 
-            // sistemaComercioDataSet
-            // 
-            this.sistemaComercioDataSet.DataSetName = "SistemaComercioDataSet";
-            this.sistemaComercioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnLimpar
             // 
@@ -333,13 +305,6 @@
             this.btnCad.Text = "Cadastrar";
             this.btnCad.UseVisualStyleBackColor = false;
             this.btnCad.Click += new System.EventHandler(this.CadastrarFornecedor);
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Location = new System.Drawing.Point(423, 145);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(237, 20);
-            this.txtSenha.TabIndex = 22;
             // 
             // txtEmail
             // 
@@ -378,16 +343,16 @@
             // 
             // txtNum
             // 
-            this.txtNum.Location = new System.Drawing.Point(55, 148);
+            this.txtNum.Location = new System.Drawing.Point(249, 116);
             this.txtNum.Name = "txtNum";
-            this.txtNum.Size = new System.Drawing.Size(312, 20);
+            this.txtNum.Size = new System.Drawing.Size(118, 20);
             this.txtNum.TabIndex = 16;
             // 
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(47, 116);
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(320, 20);
+            this.txtBairro.Size = new System.Drawing.Size(152, 20);
             this.txtBairro.TabIndex = 15;
             // 
             // txtComple
@@ -417,6 +382,21 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(320, 20);
             this.txtNome.TabIndex = 11;
+            // 
+            // fornecedorBindingSource
+            // 
+            this.fornecedorBindingSource.DataMember = "Fornecedor";
+            this.fornecedorBindingSource.DataSource = this.sistemaComercioDataSetBindingSource;
+            // 
+            // sistemaComercioDataSetBindingSource
+            // 
+            this.sistemaComercioDataSetBindingSource.DataSource = this.sistemaComercioDataSet;
+            this.sistemaComercioDataSetBindingSource.Position = 0;
+            // 
+            // sistemaComercioDataSet
+            // 
+            this.sistemaComercioDataSet.DataSetName = "SistemaComercioDataSet";
+            this.sistemaComercioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // fornecedorTableAdapter
             // 
@@ -456,7 +436,6 @@
         private System.Windows.Forms.Label lblCEP;
         private System.Windows.Forms.Label lblNum;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Panel pnlFundoForne;
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.TextBox txtComple;
@@ -466,7 +445,6 @@
         private System.Windows.Forms.DataGridView dataGridViewForne;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnCad;
-        private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.TextBox txtCidade;

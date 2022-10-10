@@ -106,7 +106,6 @@
             this.BtnSalvar.TabIndex = 28;
             this.BtnSalvar.Text = "Salvar";
             this.BtnSalvar.UseVisualStyleBackColor = false;
-            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // BtnCancelarCad
             // 
@@ -117,7 +116,6 @@
             this.BtnCancelarCad.TabIndex = 29;
             this.BtnCancelarCad.Text = "Cancelar";
             this.BtnCancelarCad.UseVisualStyleBackColor = false;
-            this.BtnCancelarCad.Click += new System.EventHandler(this.BnCancelarCad_Click);
             // 
             // Frm_Cadastro
             // 

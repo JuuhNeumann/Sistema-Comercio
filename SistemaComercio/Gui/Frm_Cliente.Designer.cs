@@ -51,8 +51,6 @@
             this.lblCidade = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblSenha = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
             this.lblComple = new System.Windows.Forms.Label();
             this.txtLogra = new System.Windows.Forms.TextBox();
             this.lblLogra = new System.Windows.Forms.Label();
@@ -153,7 +151,7 @@
             // lblPesquisar
             // 
             this.lblPesquisar.AutoSize = true;
-            this.lblPesquisar.Location = new System.Drawing.Point(15, 211);
+            this.lblPesquisar.Location = new System.Drawing.Point(15, 173);
             this.lblPesquisar.Name = "lblPesquisar";
             this.lblPesquisar.Size = new System.Drawing.Size(100, 13);
             this.lblPesquisar.TabIndex = 30;
@@ -161,14 +159,14 @@
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Location = new System.Drawing.Point(112, 208);
+            this.txtPesquisa.Location = new System.Drawing.Point(121, 170);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(168, 20);
+            this.txtPesquisa.Size = new System.Drawing.Size(156, 20);
             this.txtPesquisa.TabIndex = 31;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(286, 208);
+            this.btnPesquisar.Location = new System.Drawing.Point(283, 170);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(85, 20);
             this.btnPesquisar.TabIndex = 32;
@@ -196,9 +194,9 @@
             // 
             // txtNum
             // 
-            this.txtNum.Location = new System.Drawing.Point(56, 141);
+            this.txtNum.Location = new System.Drawing.Point(248, 114);
             this.txtNum.Name = "txtNum";
-            this.txtNum.Size = new System.Drawing.Size(312, 20);
+            this.txtNum.Size = new System.Drawing.Size(123, 20);
             this.txtNum.TabIndex = 11;
             // 
             // lblEstado
@@ -215,7 +213,7 @@
             // 
             this.lblNumero.AutoSize = true;
             this.lblNumero.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.lblNumero.Location = new System.Drawing.Point(12, 144);
+            this.lblNumero.Location = new System.Drawing.Point(204, 117);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(47, 13);
             this.lblNumero.TabIndex = 10;
@@ -225,7 +223,7 @@
             // 
             this.txtBairro.Location = new System.Drawing.Point(48, 112);
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(320, 20);
+            this.txtBairro.Size = new System.Drawing.Size(143, 20);
             this.txtBairro.TabIndex = 15;
             // 
             // lblBairro
@@ -279,23 +277,6 @@
             this.txtEmail.Size = new System.Drawing.Size(247, 20);
             this.txtEmail.TabIndex = 26;
             // 
-            // lblSenha
-            // 
-            this.lblSenha.AutoSize = true;
-            this.lblSenha.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.lblSenha.Location = new System.Drawing.Point(384, 144);
-            this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(41, 13);
-            this.lblSenha.TabIndex = 27;
-            this.lblSenha.Text = "Senha:";
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Location = new System.Drawing.Point(425, 141);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(241, 20);
-            this.txtSenha.TabIndex = 28;
-            // 
             // lblComple
             // 
             this.lblComple.AutoSize = true;
@@ -340,6 +321,7 @@
             // pnlFundo
             // 
             this.pnlFundo.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.pnlFundo.Controls.Add(this.txtNum);
             this.pnlFundo.Controls.Add(this.btnSairr);
             this.pnlFundo.Controls.Add(this.btnExcluir);
             this.pnlFundo.Controls.Add(this.btnLimpar);
@@ -350,6 +332,7 @@
             this.pnlFundo.Controls.Add(this.panel2);
             this.pnlFundo.Controls.Add(this.lblPesquisar);
             this.pnlFundo.Controls.Add(this.btnPesquisar);
+            this.pnlFundo.Controls.Add(this.lblNumero);
             this.pnlFundo.Location = new System.Drawing.Point(-3, -2);
             this.pnlFundo.Name = "pnlFundo";
             this.pnlFundo.Size = new System.Drawing.Size(688, 456);
@@ -401,10 +384,10 @@
             this.eMA,
             this.Email,
             this.Senha});
-            this.dataGridViewCli.Location = new System.Drawing.Point(18, 234);
+            this.dataGridViewCli.Location = new System.Drawing.Point(18, 196);
             this.dataGridViewCli.Name = "dataGridViewCli";
             this.dataGridViewCli.ReadOnly = true;
-            this.dataGridViewCli.Size = new System.Drawing.Size(651, 176);
+            this.dataGridViewCli.Size = new System.Drawing.Size(651, 214);
             this.dataGridViewCli.TabIndex = 33;
             // 
             // Nome
@@ -489,7 +472,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Navy;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Location = new System.Drawing.Point(0, 182);
+            this.panel2.Location = new System.Drawing.Point(3, 150);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(685, 10);
             this.panel2.TabIndex = 0;
@@ -519,10 +502,6 @@
             this.Controls.Add(this.lblBairro);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.lblSenha);
-            this.Controls.Add(this.txtNum);
-            this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.pnlFundo);
             this.Controls.Add(this.btnSair);
             this.Name = "Frm_Cliente";
@@ -560,8 +539,6 @@
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label lblSenha;
-        private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label lblComple;
         private System.Windows.Forms.TextBox txtLogra;
         private System.Windows.Forms.Label lblLogra;
