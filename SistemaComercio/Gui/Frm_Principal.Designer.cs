@@ -112,7 +112,7 @@
             // 
             this.LblAdmBaixo.AutoSize = true;
             this.LblAdmBaixo.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblAdmBaixo.Location = new System.Drawing.Point(70, 378);
+            this.LblAdmBaixo.Location = new System.Drawing.Point(70, 387);
             this.LblAdmBaixo.Name = "LblAdmBaixo";
             this.LblAdmBaixo.Size = new System.Drawing.Size(43, 13);
             this.LblAdmBaixo.TabIndex = 13;
@@ -319,27 +319,32 @@
             // ImgComCentro
             // 
             this.ImgComCentro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ImgComCentro.Location = new System.Drawing.Point(606, 73);
+            this.ImgComCentro.Image = global::SistemaComercio.Properties.Resources.cashMaior;
+            this.ImgComCentro.Location = new System.Drawing.Point(606, 58);
             this.ImgComCentro.Name = "ImgComCentro";
-            this.ImgComCentro.Size = new System.Drawing.Size(82, 86);
+            this.ImgComCentro.Size = new System.Drawing.Size(82, 101);
+            this.ImgComCentro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ImgComCentro.TabIndex = 6;
             this.ImgComCentro.TabStop = false;
             // 
             // ImgVendCentro
             // 
             this.ImgVendCentro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ImgVendCentro.Location = new System.Drawing.Point(504, 73);
+            this.ImgVendCentro.Image = global::SistemaComercio.Properties.Resources.carrinhoMaior;
+            this.ImgVendCentro.Location = new System.Drawing.Point(504, 58);
             this.ImgVendCentro.Name = "ImgVendCentro";
-            this.ImgVendCentro.Size = new System.Drawing.Size(79, 86);
+            this.ImgVendCentro.Size = new System.Drawing.Size(79, 101);
+            this.ImgVendCentro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ImgVendCentro.TabIndex = 5;
             this.ImgVendCentro.TabStop = false;
             // 
             // ImgProCentro
             // 
             this.ImgProCentro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ImgProCentro.Location = new System.Drawing.Point(402, 75);
+            this.ImgProCentro.Image = global::SistemaComercio.Properties.Resources.ImgGameMaior;
+            this.ImgProCentro.Location = new System.Drawing.Point(402, 58);
             this.ImgProCentro.Name = "ImgProCentro";
-            this.ImgProCentro.Size = new System.Drawing.Size(79, 84);
+            this.ImgProCentro.Size = new System.Drawing.Size(79, 101);
             this.ImgProCentro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ImgProCentro.TabIndex = 4;
             this.ImgProCentro.TabStop = false;
@@ -347,6 +352,7 @@
             // ImgForCentro
             // 
             this.ImgForCentro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ImgForCentro.Image = global::SistemaComercio.Properties.Resources.ImgCamMaior;
             this.ImgForCentro.Location = new System.Drawing.Point(303, 74);
             this.ImgForCentro.Name = "ImgForCentro";
             this.ImgForCentro.Size = new System.Drawing.Size(79, 85);
@@ -357,10 +363,11 @@
             // ImgCliCentro
             // 
             this.ImgCliCentro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ImgCliCentro.Image = global::SistemaComercio.Properties.Resources.ImgCliMaior;
             this.ImgCliCentro.InitialImage = null;
-            this.ImgCliCentro.Location = new System.Drawing.Point(199, 75);
+            this.ImgCliCentro.Location = new System.Drawing.Point(199, 58);
             this.ImgCliCentro.Name = "ImgCliCentro";
-            this.ImgCliCentro.Size = new System.Drawing.Size(79, 84);
+            this.ImgCliCentro.Size = new System.Drawing.Size(79, 101);
             this.ImgCliCentro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ImgCliCentro.TabIndex = 2;
             this.ImgCliCentro.TabStop = false;
@@ -391,7 +398,7 @@
             // 
             this.BtnProduto.BackColor = System.Drawing.Color.Thistle;
             this.BtnProduto.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnProduto.Image = global::SistemaComercio.Properties.Resources.ImgPc;
+            this.BtnProduto.Image = global::SistemaComercio.Properties.Resources.games;
             this.BtnProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnProduto.Location = new System.Drawing.Point(-2, 227);
             this.BtnProduto.Name = "BtnProduto";
@@ -458,7 +465,7 @@
             this.ImgPrin.Image = global::SistemaComercio.Properties.Resources.ImgGame;
             this.ImgPrin.Location = new System.Drawing.Point(15, -32);
             this.ImgPrin.Name = "ImgPrin";
-            this.ImgPrin.Size = new System.Drawing.Size(757, 457);
+            this.ImgPrin.Size = new System.Drawing.Size(722, 457);
             this.ImgPrin.TabIndex = 16;
             this.ImgPrin.TabStop = false;
             // 

@@ -126,13 +126,13 @@
             // pnlFundo
             // 
             this.pnlFundo.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.pnlFundo.Controls.Add(this.txtUnidade);
             this.pnlFundo.Controls.Add(this.btnSair);
             this.pnlFundo.Controls.Add(this.btnExcluir);
             this.pnlFundo.Controls.Add(this.btnLimpar);
             this.pnlFundo.Controls.Add(this.btnAtualizar);
             this.pnlFundo.Controls.Add(this.btnCadastrar);
             this.pnlFundo.Controls.Add(this.lblUnidade);
-            this.pnlFundo.Controls.Add(this.txtUnidade);
             this.pnlFundo.Controls.Add(this.btnPesquisar);
             this.pnlFundo.Controls.Add(this.txtPesquisar);
             this.pnlFundo.Controls.Add(this.lblPesquisar);
@@ -175,67 +175,79 @@
             // 
             this.txtPesquisar.Location = new System.Drawing.Point(115, 127);
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(245, 20);
+            this.txtPesquisar.Size = new System.Drawing.Size(251, 20);
             this.txtPesquisar.TabIndex = 9;
             // 
             // btnPesquisar
             // 
             this.btnPesquisar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.Location = new System.Drawing.Point(372, 127);
+            this.btnPesquisar.Image = global::SistemaComercio.Properties.Resources.lupa;
+            this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPesquisar.Location = new System.Drawing.Point(372, 123);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(86, 20);
+            this.btnPesquisar.Size = new System.Drawing.Size(86, 28);
             this.btnPesquisar.TabIndex = 10;
-            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.Text = "    Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
             // btnCadastrar
             // 
             this.btnCadastrar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Image = global::SistemaComercio.Properties.Resources.adicionar;
+            this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadastrar.Location = new System.Drawing.Point(15, 344);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(72, 26);
+            this.btnCadastrar.Size = new System.Drawing.Size(81, 26);
             this.btnCadastrar.TabIndex = 11;
-            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.Text = "    Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             // 
             // btnAtualizar
             // 
             this.btnAtualizar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizar.Location = new System.Drawing.Point(93, 344);
+            this.btnAtualizar.Image = global::SistemaComercio.Properties.Resources.atualizar;
+            this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAtualizar.Location = new System.Drawing.Point(102, 344);
             this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(72, 26);
+            this.btnAtualizar.Size = new System.Drawing.Size(81, 26);
             this.btnAtualizar.TabIndex = 12;
-            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.Text = "    Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
             // 
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(170, 344);
+            this.btnLimpar.Image = global::SistemaComercio.Properties.Resources.limpar;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpar.Location = new System.Drawing.Point(189, 344);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(72, 26);
+            this.btnLimpar.Size = new System.Drawing.Size(81, 26);
             this.btnLimpar.TabIndex = 13;
-            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.Text = "    Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             // 
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(248, 344);
+            this.btnExcluir.Image = global::SistemaComercio.Properties.Resources.lixo;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcluir.Location = new System.Drawing.Point(276, 344);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(72, 26);
+            this.btnExcluir.Size = new System.Drawing.Size(81, 26);
             this.btnExcluir.TabIndex = 14;
-            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.Text = "     Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Image = global::SistemaComercio.Properties.Resources.sair;
+            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSair.Location = new System.Drawing.Point(386, 344);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(72, 26);
             this.btnSair.TabIndex = 15;
-            this.btnSair.Text = "Sair";
+            this.btnSair.Text = "    Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             // 
             // Frm_Produto
