@@ -15,7 +15,7 @@ namespace SistemaComercio
             InitializeComponent();
         }
 
-        private void BtnSalvar_Click(object sender, EventArgs e)
+        private void SalvarAdm(object sender, EventArgs e)
         {
 
             var adm = new Adm()
@@ -25,12 +25,12 @@ namespace SistemaComercio
             };
 
             service.AddAdm(adm);
-            MessageBox.Show("Cadastro realizado com sucesso");
+            MessageBox.Show("Cadastro realizado com sucesso", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             var login = new Frm_Login();
             this.Hide();
         }
 
-        private void BnCancelarCad_Click(object sender, EventArgs e)
+        private void CancelarAdm(object sender, EventArgs e)
         {
             var login = new Frm_Login();
             this.Hide();

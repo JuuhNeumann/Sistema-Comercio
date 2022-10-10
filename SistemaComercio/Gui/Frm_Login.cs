@@ -34,7 +34,7 @@ namespace SistemaComercio
 
             if(auth)
             {
-                MessageBox.Show("Bem vindo " + TxtUsuario.Text + "!");
+                MessageBox.Show("Bem vindo " + TxtUsuario.Text + "!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 var principal = new Frm_Principal(TxtUsuario.Text);
                 this.Hide();
                 principal.ShowDialog();
@@ -42,7 +42,7 @@ namespace SistemaComercio
             }
             else
             {
-                MessageBox.Show("Usuário " + TxtUsuario.Text + " inválido!");
+                MessageBox.Show("Usuário " + TxtUsuario.Text + " inválido!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void SetPlaceholder(TextBox txtUsuario)

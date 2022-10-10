@@ -13,14 +13,19 @@ namespace SistemaComercioLibrary.Classes
         [Key]
         public int Id { get; set; }
         [Required]
+        [MaxLength(10)]
         public DateTime Data_Movimento { get; set; }
         [Required]
+        [MaxLength(5)]
         public DateTime Hora_Movimento { get; set; }
         [Required]
+        [MaxLength(255)]
         public string Descricao { get; set; }
         [Required]
+        [MaxLength(255)]
         public string Tipo_Movimento { get; set; }
         [Required]
+        [MaxLength(255)]
         public double Valor { get; set; }
         [Required]
         public Caixa Caixa { get; set; }

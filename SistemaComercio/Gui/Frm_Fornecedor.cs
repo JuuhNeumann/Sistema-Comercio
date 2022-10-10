@@ -40,7 +40,7 @@ namespace SistemaComercio.Gui
                 //FAZER COM TODOS OS CAMPOS
                 if (ValidarCampos()) { 
                     service.AddFornecedor(fornecedor);
-                    MessageBox.Show("Fornecedor cadastrado!");
+                    MessageBox.Show("Fornecedor cadastrado!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else {
                     MessageBox.Show("Você deve preencher todos os campos!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -54,7 +54,7 @@ namespace SistemaComercio.Gui
         bool ValidarCampos()
         {
             //FAZER COM TODOS OS CAMPOS
-            if (String.IsNullOrEmpty(txtNome.Text) || String.IsNullOrEmpty(txtNome.Text) ||
+            if (String.IsNullOrEmpty(txtNome.Text) || String.IsNullOrEmpty(txtCPF.Text) ||
                 String.IsNullOrEmpty(txtTel.Text) || String.IsNullOrEmpty(txtCEP.Text) ||
                 String.IsNullOrEmpty(txtCidade.Text) || String.IsNullOrEmpty(txtComple.Text) ||
                 String.IsNullOrEmpty(txtEmail.Text) || String.IsNullOrEmpty(txtEstado.Text) ||

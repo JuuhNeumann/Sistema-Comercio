@@ -14,6 +14,7 @@ namespace SistemaComercioLibrary.Entity
         public int Id { get; set; }
         [Required]
         [Index(IsUnique = true)]
+        [MaxLength(255)]
         public string Usuario { get; set; }
         [Required]
         [MaxLength(255)]

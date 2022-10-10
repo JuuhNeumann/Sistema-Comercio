@@ -1,6 +1,6 @@
 ﻿namespace SistemaComercio.Gui
 {
-    partial class lblCPF
+    partial class Frm_Cliente
     {
         /// <summary>
         /// Required designer variable.
@@ -46,7 +46,7 @@
             this.lblNumero = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.lblBairro = new System.Windows.Forms.Label();
-            this.textCid = new System.Windows.Forms.TextBox();
+            this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtComple = new System.Windows.Forms.TextBox();
             this.lblCidade = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -59,8 +59,10 @@
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtCEP = new System.Windows.Forms.TextBox();
             this.pnlFundo = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnSairr = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.dataGridViewCli = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Logradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,11 +76,9 @@
             this.eMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnSairr = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pnlFundo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCli)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAtualizar
@@ -238,12 +238,12 @@
             this.lblBairro.TabIndex = 14;
             this.lblBairro.Text = "Bairro:";
             // 
-            // textCid
+            // txtCidade
             // 
-            this.textCid.Location = new System.Drawing.Point(425, 32);
-            this.textCid.Name = "textCid";
-            this.textCid.Size = new System.Drawing.Size(241, 20);
-            this.textCid.TabIndex = 18;
+            this.txtCidade.Location = new System.Drawing.Point(425, 32);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(241, 20);
+            this.txtCidade.TabIndex = 18;
             // 
             // txtComple
             // 
@@ -343,7 +343,7 @@
             this.pnlFundo.Controls.Add(this.btnSairr);
             this.pnlFundo.Controls.Add(this.btnExcluir);
             this.pnlFundo.Controls.Add(this.btnLimpar);
-            this.pnlFundo.Controls.Add(this.dataGridView1);
+            this.pnlFundo.Controls.Add(this.dataGridViewCli);
             this.pnlFundo.Controls.Add(this.btnAtualizar);
             this.pnlFundo.Controls.Add(this.txtPesquisa);
             this.pnlFundo.Controls.Add(this.btnCadastrar);
@@ -355,21 +355,39 @@
             this.pnlFundo.Size = new System.Drawing.Size(688, 456);
             this.pnlFundo.TabIndex = 35;
             // 
-            // panel2
+            // btnSairr
             // 
-            this.panel2.BackColor = System.Drawing.Color.Navy;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Location = new System.Drawing.Point(0, 182);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(685, 10);
-            this.panel2.TabIndex = 0;
+            this.btnSairr.Location = new System.Drawing.Point(584, 416);
+            this.btnSairr.Name = "btnSairr";
+            this.btnSairr.Size = new System.Drawing.Size(85, 26);
+            this.btnSairr.TabIndex = 36;
+            this.btnSairr.Text = "Sair";
+            this.btnSairr.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // btnExcluir
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnExcluir.Location = new System.Drawing.Point(291, 416);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(85, 26);
+            this.btnExcluir.TabIndex = 35;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Location = new System.Drawing.Point(200, 416);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(85, 27);
+            this.btnLimpar.TabIndex = 34;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewCli
+            // 
+            this.dataGridViewCli.AllowUserToAddRows = false;
+            this.dataGridViewCli.AllowUserToDeleteRows = false;
+            this.dataGridViewCli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCli.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
             this.CPF,
             this.Logradouro,
@@ -383,11 +401,11 @@
             this.eMA,
             this.Email,
             this.Senha});
-            this.dataGridView1.Location = new System.Drawing.Point(18, 234);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(651, 176);
-            this.dataGridView1.TabIndex = 33;
+            this.dataGridViewCli.Location = new System.Drawing.Point(18, 234);
+            this.dataGridViewCli.Name = "dataGridViewCli";
+            this.dataGridViewCli.ReadOnly = true;
+            this.dataGridViewCli.Size = new System.Drawing.Size(651, 176);
+            this.dataGridViewCli.TabIndex = 33;
             // 
             // Nome
             // 
@@ -467,34 +485,16 @@
             this.Senha.Name = "Senha";
             this.Senha.ReadOnly = true;
             // 
-            // btnLimpar
+            // panel2
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(200, 416);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(85, 27);
-            this.btnLimpar.TabIndex = 34;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.panel2.BackColor = System.Drawing.Color.Navy;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Location = new System.Drawing.Point(0, 182);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(685, 10);
+            this.panel2.TabIndex = 0;
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(291, 416);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(85, 26);
-            this.btnExcluir.TabIndex = 35;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // btnSairr
-            // 
-            this.btnSairr.Location = new System.Drawing.Point(584, 416);
-            this.btnSairr.Name = "btnSairr";
-            this.btnSairr.Size = new System.Drawing.Size(85, 26);
-            this.btnSairr.TabIndex = 36;
-            this.btnSairr.Text = "Sair";
-            this.btnSairr.UseVisualStyleBackColor = true;
-            // 
-            // lblCPF
+            // Frm_Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -504,7 +504,7 @@
             this.Controls.Add(this.lblTel);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.textCid);
+            this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.lblCidade);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.lblCpff);
@@ -525,12 +525,12 @@
             this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.pnlFundo);
             this.Controls.Add(this.btnSair);
-            this.Name = "lblCPF";
+            this.Name = "Frm_Cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
             this.pnlFundo.ResumeLayout(false);
             this.pnlFundo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCli)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -555,7 +555,7 @@
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label lblBairro;
-        private System.Windows.Forms.TextBox textCid;
+        private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox txtComple;
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.Label lblEmail;
@@ -569,7 +569,7 @@
         private System.Windows.Forms.TextBox txtCEP;
         private System.Windows.Forms.Panel pnlFundo;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewCli;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn Logradouro;
