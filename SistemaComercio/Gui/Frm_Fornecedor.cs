@@ -101,7 +101,6 @@ namespace SistemaComercio.Gui
             txtEstado.Clear();
             txtNum.Clear();
             txtBairro.Clear();
-            txtBairro.Clear();
         }
 
         private void ClickPesquisar(object sender, EventArgs e)

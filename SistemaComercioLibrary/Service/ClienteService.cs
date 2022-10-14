@@ -44,5 +44,10 @@ namespace SistemaComercioLibrary.Service
         {
             return _db.Cliente.ToList();
         }
+
+        public Cliente GetByNomeCliente(string nome)
+        {
+            return _db.Cliente.OrderByDescending(x => x.Nome.Equals(nome)).FirstOrDefault(); //pega o primeiro nome
+        }
     }
 }

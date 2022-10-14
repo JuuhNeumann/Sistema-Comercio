@@ -20,7 +20,9 @@ namespace SistemaComercio.Gui
         public Frm_Cliente()
         {
             InitializeComponent();
+            dataGridViewCli.DataSource = service.GetAllCliente();
         }
+
 
         private void CadastrarCliente(object sender, EventArgs e)
         {
@@ -35,7 +37,7 @@ namespace SistemaComercio.Gui
                 Email = txtEmail.Text,
                 Estado = txtEstado.Text,
                 Logradouro = txtLogra.Text,
-                Numero = txtNum.Text,
+                Numero = Convert.ToInt32(txtNum.Text),
                 Bairro = txtBairro.Text,
             };
 
@@ -45,6 +47,8 @@ namespace SistemaComercio.Gui
                 if (ValidarCampos())
                 {
                     service.AddCliente(cliente);
+                    dataGridViewCli.DataSource = service.GetAllCliente();
+                    LimparCampos();
                     MessageBox.Show("Cliente cadastrado!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -76,6 +80,21 @@ namespace SistemaComercio.Gui
 
         }
 
+        private void LimparCampos()
+        {
+            txtNome.Clear();
+            txtTel.Clear();
+            txtCidade.Clear();
+            txtEmail.Clear();
+            txtLogra.Clear();
+            txtCPF.Clear();
+            txtCEP.Clear();
+            txtComple.Clear();
+            txtEstado.Clear();
+            txtNum.Clear();
+            txtBairro.Clear();
+        }
+
         private void Frm_Cliente_Load(object sender, EventArgs e)
         {
             dataGridViewCli.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -88,7 +107,11 @@ namespace SistemaComercio.Gui
             this.Hide();
         }
 
-        
+        private void ClickPesquisar(object sender, EventArgs e)
+        {
+            dataGridViewCli.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCli.DataSource = service.GetByNomeCliente(txtPesquisa.Text);
+        }
     }
 }
 

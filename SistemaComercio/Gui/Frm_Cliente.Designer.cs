@@ -58,19 +58,6 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.dataGridViewCli = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Logradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Número = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -375,103 +362,11 @@
             this.dataGridViewCli.AllowUserToAddRows = false;
             this.dataGridViewCli.AllowUserToDeleteRows = false;
             this.dataGridViewCli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCli.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome,
-            this.CPF,
-            this.Logradouro,
-            this.Complemento,
-            this.Bairro,
-            this.Número,
-            this.Telefone,
-            this.Cidade,
-            this.Estado,
-            this.CEP,
-            this.eMA,
-            this.Email,
-            this.Senha});
             this.dataGridViewCli.Location = new System.Drawing.Point(18, 196);
             this.dataGridViewCli.Name = "dataGridViewCli";
             this.dataGridViewCli.ReadOnly = true;
             this.dataGridViewCli.Size = new System.Drawing.Size(757, 214);
             this.dataGridViewCli.TabIndex = 33;
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // CPF
-            // 
-            this.CPF.HeaderText = "CPF";
-            this.CPF.Name = "CPF";
-            this.CPF.ReadOnly = true;
-            // 
-            // Logradouro
-            // 
-            this.Logradouro.HeaderText = "Logradouro";
-            this.Logradouro.Name = "Logradouro";
-            this.Logradouro.ReadOnly = true;
-            // 
-            // Complemento
-            // 
-            this.Complemento.HeaderText = "Complemento";
-            this.Complemento.Name = "Complemento";
-            this.Complemento.ReadOnly = true;
-            // 
-            // Bairro
-            // 
-            this.Bairro.HeaderText = "Bairro";
-            this.Bairro.Name = "Bairro";
-            this.Bairro.ReadOnly = true;
-            // 
-            // Número
-            // 
-            this.Número.HeaderText = "Número";
-            this.Número.Name = "Número";
-            this.Número.ReadOnly = true;
-            // 
-            // Telefone
-            // 
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
-            this.Telefone.ReadOnly = true;
-            // 
-            // Cidade
-            // 
-            this.Cidade.HeaderText = "Cidade";
-            this.Cidade.Name = "Cidade";
-            this.Cidade.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // CEP
-            // 
-            this.CEP.HeaderText = "CEP";
-            this.CEP.Name = "CEP";
-            this.CEP.ReadOnly = true;
-            // 
-            // eMA
-            // 
-            this.eMA.HeaderText = "Column1";
-            this.eMA.Name = "eMA";
-            this.eMA.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // Senha
-            // 
-            this.Senha.HeaderText = "Senha";
-            this.Senha.Name = "Senha";
-            this.Senha.ReadOnly = true;
             // 
             // btnAtualizar
             // 
@@ -482,7 +377,7 @@
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(97, 27);
             this.btnAtualizar.TabIndex = 1;
-            this.btnAtualizar.Text = "    Atualizar";
+            this.btnAtualizar.Text = "    Editar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
             // 
             // btnCadastrar
@@ -518,6 +413,7 @@
             this.btnPesquisar.TabIndex = 32;
             this.btnPesquisar.Text = "    Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.ClickPesquisar);
             // 
             // Frm_Cliente
             // 
@@ -579,19 +475,6 @@
         private System.Windows.Forms.Panel pnlFundo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridViewCli;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Logradouro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Complemento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bairro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Número;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CEP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eMA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Senha;
         private System.Windows.Forms.Button btnSairr;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnLimpar;

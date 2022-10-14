@@ -25,7 +25,7 @@ namespace SistemaComercioLibrary.Classes
         public string Logradouro { get; set; }
         [Required]
         [MaxLength(4)]
-        public string Numero { get; set; }
+        public int Numero { get; set; }
         [Required]
         [MaxLength(255)]
         public string Complemento { get; set; }

@@ -265,7 +265,7 @@
             this.btnExcluir.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.Image = global::SistemaComercio.Properties.Resources.lixo;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(232, 411);
+            this.btnExcluir.Location = new System.Drawing.Point(340, 411);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(99, 27);
@@ -283,7 +283,7 @@
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(99, 27);
             this.btnAtualizar.TabIndex = 29;
-            this.btnAtualizar.Text = "    Atualizar";
+            this.btnAtualizar.Text = "    Editar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
             // 
             // btnProcurar
@@ -337,7 +337,7 @@
             this.btnLimpar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.Image = global::SistemaComercio.Properties.Resources.limpar;
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpar.Location = new System.Drawing.Point(338, 411);
+            this.btnLimpar.Location = new System.Drawing.Point(233, 411);
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(99, 27);

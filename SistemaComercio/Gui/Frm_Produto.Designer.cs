@@ -227,7 +227,7 @@
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(81, 26);
             this.btnAtualizar.TabIndex = 12;
-            this.btnAtualizar.Text = "    Atualizar";
+            this.btnAtualizar.Text = "    Editar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
             // 
             // btnCadastrar
