@@ -356,6 +356,7 @@
             this.btnLimpar.TabIndex = 34;
             this.btnLimpar.Text = "    Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.ClickLimpar);
             // 
             // dataGridViewCli
             // 

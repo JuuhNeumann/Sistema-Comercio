@@ -101,16 +101,24 @@ namespace SistemaComercio.Gui
             dataGridViewCli.DataSource = service.GetAllCliente();
         }
 
-        private void ClickSair(object sender, EventArgs e)
-        {
-            var principal = new Frm_Principal();
-            this.Hide();
-        }
 
         private void ClickPesquisar(object sender, EventArgs e)
         {
             dataGridViewCli.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCli.DataSource = service.GetByNomeCliente(txtPesquisa.Text);
+        }
+
+
+        private void ClickLimpar(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+
+        private void ClickSair(object sender, EventArgs e)
+        {
+            var principal = new Frm_Principal();
+            this.Hide();
         }
     }
 }
