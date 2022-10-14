@@ -1,15 +1,7 @@
 ﻿using SistemaComercioBiblioteca.Classes;
-using SistemaComercioLibrary.Classes;
 using SistemaComercioLibrary.Port;
 using SistemaComercioLibrary.Service;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaComercio.Gui
@@ -17,21 +9,39 @@ namespace SistemaComercio.Gui
     public partial class Frm_Produto : Form
     {
         private IProdutoPort service = new ProdutoService();
+        private IFornecedorPort serviceForne = new FornecedorService();
 
         public Frm_Produto()
         {
             InitializeComponent();
+            AddComboBoxFornecedor();
+            dataGridViewProd.DataSource = service.GetAllProduto();
+
+        }
+
+        private void AddComboBoxFornecedor()
+        {
+            var fornecedores = serviceForne.GetAllFornecedor();
+            foreach (var fornecedor in fornecedores)
+            {
+                this.cmbNomeForne.Items.AddRange(new object[] {
+                fornecedor.Nome.ToString()
+                });
+            }
         }
 
         private void CadastrarProduto(object sender, EventArgs e)
         {
+            var nomeForne = cmbNomeForne.Text; //pego o nome marcado pelo usuario
+            var umForne = serviceForne.GetByNomeFornecedor(nomeForne); //pego no banco o fornecedor q tem esse nome
 
             var produto = new Produto()
             {
+                Id_Fornecedor = umForne.Id,
                 Nome = txtNome.Text,
-                //Quantidade_Estoque = txtEstoque.Text, INT
-                //Preco = txtPreco.Text, DOUBLE
-                Unidade = txtUnidade.Text,
+                Quantidade_Estoque = Convert.ToInt32(txtEstoque.Text), 
+                Preco = Convert.ToDouble(txtPreco.Text), 
+                Unidade = cmbUnidade.Text,
             };
 
             try
@@ -40,6 +50,8 @@ namespace SistemaComercio.Gui
                 if (ValidarCampos())
                 {
                     service.AddProduto(produto);
+                    dataGridViewProd.DataSource = service.GetAllProduto(); //trazer o fornecedor q acabamos de cadastrar no dataGrid
+                    LimparCampos();
                     MessageBox.Show("Produto cadastrado!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -56,8 +68,8 @@ namespace SistemaComercio.Gui
         bool ValidarCampos()
         {
             //FAZER COM TODOS OS CAMPOS
-            if (String.IsNullOrEmpty(txtNome.Text) || String.IsNullOrEmpty(txtUnidade.Text))
-                //|| String.IsNullOrEmpty(txtEstoque.Text) || String.IsNullOrEmpty(txtPreco.Text))
+            if (String.IsNullOrEmpty(txtNome.Text) || String.IsNullOrEmpty(cmbUnidade.Text)
+            || String.IsNullOrEmpty(txtEstoque.Text) || String.IsNullOrEmpty(txtPreco.Text))
             {
                 return false;
             }
@@ -73,6 +85,23 @@ namespace SistemaComercio.Gui
             dataGridViewProd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewProd.DataSource = service.GetAllProduto();
         }
+
+
+        private void LimparCampos()
+        {
+            txtNome.Clear();
+            txtEstoque.Clear();
+            txtPreco.Clear();
+            cmbUnidade.Text = "";
+            cmbNomeForne.Text = "";
+        }
+
+
+        private void ClickLimpar(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
 
         private void ClickSair(object sender, EventArgs e)
         {

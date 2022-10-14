@@ -15,7 +15,6 @@ namespace SistemaComercio.Gui
         public Frm_Fornecedor()
         {
             InitializeComponent();
-                     
         }
 
         private void CadastrarFornecedor(object sender, EventArgs e)
@@ -40,6 +39,8 @@ namespace SistemaComercio.Gui
                 //FAZER COM TODOS OS CAMPOS
                 if (ValidarCampos()) { 
                     service.AddFornecedor(fornecedor);
+                    dataGridViewForne.DataSource = service.GetAllFornecedor(); //trazer o fornecedor q acabamos de cadastrar no dataGrid
+                    LimparCampos();
                     MessageBox.Show("Fornecedor cadastrado!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else {
@@ -79,6 +80,34 @@ namespace SistemaComercio.Gui
         {
             var principal = new Frm_Principal();
             this.Hide();
+        }
+
+        private void ClickLimpar(object sender, EventArgs e)
+        {
+            LimparCampos();
+            MessageBox.Show("Campos resetados!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void LimparCampos()
+        {
+            txtNome.Clear();
+            txtTel.Clear();
+            txtCidade.Clear();
+            txtEmail.Clear();
+            txtLogra.Clear();
+            txtCPF.Clear();
+            txtCEP.Clear();
+            txtComple.Clear();
+            txtEstado.Clear();
+            txtNum.Clear();
+            txtBairro.Clear();
+            txtBairro.Clear();
+        }
+
+        private void ClickPesquisar(object sender, EventArgs e)
+        {
+            dataGridViewForne.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewForne.DataSource = service.GetByNomeFornecedor(txtProcurar.Text);
         }
     }
 }

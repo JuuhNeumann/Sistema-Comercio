@@ -43,5 +43,10 @@ namespace SistemaComercioLibrary.Service
         {
             throw new NotImplementedException();
         }
+
+        public Fornecedor GetByNomeFornecedor(string nome)
+        {
+            return _db.Fornecedor.OrderByDescending(x => x.Nome.Equals(nome)).FirstOrDefault(); //pega o primeiro nome
+        }
     }
 }

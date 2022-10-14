@@ -298,6 +298,7 @@
             this.btnProcurar.TabIndex = 28;
             this.btnProcurar.Text = "    Procurar";
             this.btnProcurar.UseVisualStyleBackColor = true;
+            this.btnProcurar.Click += new System.EventHandler(this.ClickPesquisar);
             // 
             // txtProcurar
             // 
@@ -343,6 +344,7 @@
             this.btnLimpar.TabIndex = 24;
             this.btnLimpar.Text = "     Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.ClickLimpar);
             // 
             // btnCad
             // 
