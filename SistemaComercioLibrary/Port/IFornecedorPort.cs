@@ -7,7 +7,7 @@ namespace SistemaComercioLibrary.Port
     {
         int Count();
         void AddFornecedor(Fornecedor fornecedor);
-        void UpdateFornecedor(string id);
+        void UpdateFornecedor(Fornecedor fornecedor);
         void DelFornecedor(string id);
         //mostra uma LISTA de fornecedores
         void ReadFornecedor(List<Fornecedor> fornecedor);

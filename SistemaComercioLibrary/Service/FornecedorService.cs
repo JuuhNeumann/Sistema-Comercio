@@ -1,4 +1,5 @@
-﻿using SistemaComercioLibrary.Classes;
+﻿using SistemaComercioBiblioteca.Classes;
+using SistemaComercioLibrary.Classes;
 using SistemaComercioLibrary.Persistence.Context;
 using SistemaComercioLibrary.Port;
 using System;
@@ -39,9 +40,11 @@ namespace SistemaComercioLibrary.Service
             throw new NotImplementedException();
         }
 
-        public void UpdateFornecedor(string id)
+        public void UpdateFornecedor(Fornecedor fornecedor)
         {
-            throw new NotImplementedException();
+            var forne = _db.Fornecedor.FirstOrDefault(x => x.Id == fornecedor.Id); //pega o id
+            forne.Nome = fornecedor.Nome;//precisa disso? DANDO ERRO AO CLICAR SALVAR
+            _db.SaveChanges();
         }
 
         public Fornecedor GetByNomeFornecedor(string nome)

@@ -43,8 +43,7 @@
             this.pnlFundoForne = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.btnProcurar = new System.Windows.Forms.Button();
             this.txtProcurar = new System.Windows.Forms.TextBox();
             this.lblProcurarNome = new System.Windows.Forms.Label();
@@ -66,6 +65,8 @@
             this.sistemaComercioDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemaComercioDataSet = new SistemaComercio.SistemaComercioDataSet();
             this.fornecedorTableAdapter = new SistemaComercio.SistemaComercioDataSetTableAdapters.FornecedorTableAdapter();
+            this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlFundoForne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).BeginInit();
@@ -200,8 +201,7 @@
             this.pnlFundoForne.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlFundoForne.Controls.Add(this.panel1);
             this.pnlFundoForne.Controls.Add(this.btnSair);
-            this.pnlFundoForne.Controls.Add(this.btnExcluir);
-            this.pnlFundoForne.Controls.Add(this.btnAtualizar);
+            this.pnlFundoForne.Controls.Add(this.btnSalvar);
             this.pnlFundoForne.Controls.Add(this.btnProcurar);
             this.pnlFundoForne.Controls.Add(this.txtProcurar);
             this.pnlFundoForne.Controls.Add(this.lblProcurarNome);
@@ -260,31 +260,19 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.ClickSair);
             // 
-            // btnExcluir
+            // btnSalvar
             // 
-            this.btnExcluir.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Image = global::SistemaComercio.Properties.Resources.lixo;
-            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(340, 411);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(99, 27);
-            this.btnExcluir.TabIndex = 30;
-            this.btnExcluir.Text = "    Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // btnAtualizar
-            // 
-            this.btnAtualizar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizar.Image = global::SistemaComercio.Properties.Resources.atualizar;
-            this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAtualizar.Location = new System.Drawing.Point(126, 411);
-            this.btnAtualizar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(99, 27);
-            this.btnAtualizar.TabIndex = 29;
-            this.btnAtualizar.Text = "    Editar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Image = global::SistemaComercio.Properties.Resources.atualizar;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.Location = new System.Drawing.Point(126, 411);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(99, 27);
+            this.btnSalvar.TabIndex = 29;
+            this.btnSalvar.Text = "    Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.ClickSalvar);
             // 
             // btnProcurar
             // 
@@ -324,12 +312,17 @@
             this.dataGridViewForne.AllowUserToAddRows = false;
             this.dataGridViewForne.AllowUserToDeleteRows = false;
             this.dataGridViewForne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewForne.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Excluir,
+            this.Editar});
             this.dataGridViewForne.Location = new System.Drawing.Point(19, 201);
             this.dataGridViewForne.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridViewForne.Name = "dataGridViewForne";
             this.dataGridViewForne.ReadOnly = true;
+            this.dataGridViewForne.RowHeadersVisible = false;
             this.dataGridViewForne.Size = new System.Drawing.Size(747, 198);
             this.dataGridViewForne.TabIndex = 25;
+            this.dataGridViewForne.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewForne_CellContentClick);
             // 
             // btnLimpar
             // 
@@ -359,7 +352,7 @@
             this.btnCad.TabIndex = 23;
             this.btnCad.Text = "    Cadastrar";
             this.btnCad.UseVisualStyleBackColor = false;
-            this.btnCad.Click += new System.EventHandler(this.CadastrarFornecedor);
+            this.btnCad.Click += new System.EventHandler(this.ClickCadastrar);
             // 
             // txtEmail
             // 
@@ -468,6 +461,20 @@
             // 
             this.fornecedorTableAdapter.ClearBeforeFill = true;
             // 
+            // Excluir
+            // 
+            this.Excluir.HeaderText = "";
+            this.Excluir.Image = global::SistemaComercio.Properties.Resources.lixo;
+            this.Excluir.Name = "Excluir";
+            this.Excluir.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::SistemaComercio.Properties.Resources.editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
             // Frm_Fornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -523,12 +530,13 @@
         private System.Windows.Forms.TextBox txtProcurar;
         private System.Windows.Forms.Label lblProcurarNome;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.BindingSource sistemaComercioDataSetBindingSource;
         private SistemaComercioDataSet sistemaComercioDataSet;
         private System.Windows.Forms.BindingSource fornecedorBindingSource;
         private SistemaComercioDataSetTableAdapters.FornecedorTableAdapter fornecedorTableAdapter;
+        private System.Windows.Forms.DataGridViewImageColumn Excluir;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
     }
 }
