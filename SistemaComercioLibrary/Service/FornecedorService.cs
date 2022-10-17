@@ -48,5 +48,10 @@ namespace SistemaComercioLibrary.Service
         {
             return _db.Fornecedor.OrderByDescending(x => x.Nome.Equals(nome)).FirstOrDefault(); //pega o primeiro nome
         }
+
+        public Fornecedor GetByIdFornecedor(int id)
+        {
+            return _db.Fornecedor.FirstOrDefault(x => x.Id.Equals(id)); //pega o id
+        }
     }
 }

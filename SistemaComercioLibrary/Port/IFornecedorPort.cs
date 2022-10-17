@@ -12,6 +12,7 @@ namespace SistemaComercioLibrary.Port
         //mostra uma LISTA de fornecedores
         void ReadFornecedor(List<Fornecedor> fornecedor);
         Fornecedor GetByNomeFornecedor(string nome);
+        Fornecedor GetByIdFornecedor(int id);
         List<Fornecedor> GetAllFornecedor();
     }
 }

@@ -2,6 +2,7 @@
 using SistemaComercioLibrary.Port;
 using SistemaComercioLibrary.Service;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace SistemaComercio.Gui
@@ -10,13 +11,14 @@ namespace SistemaComercio.Gui
     {
         private IProdutoPort service = new ProdutoService();
         private IFornecedorPort serviceForne = new FornecedorService();
+        DataTable dt = new DataTable();
+        Produto prod = null;
 
         public Frm_Produto()
         {
             InitializeComponent();
             AddComboBoxFornecedor();
-            dataGridViewProd.DataSource = service.GetAllProduto();
-
+            AddProductsInDataGrid();
         }
 
         private void AddComboBoxFornecedor()
@@ -30,7 +32,164 @@ namespace SistemaComercio.Gui
             }
         }
 
-        private void CadastrarProduto(object sender, EventArgs e)
+        private void Frm_Produto_Load(object sender, EventArgs e)
+        {
+            dataGridViewProd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewProd.DataSource = service.GetAllProduto();
+        }
+
+        private void AddProductsInDataGrid()
+        {
+            dt = new DataTable();
+            dt.Columns.Add("Id", typeof(string));
+            dt.Columns.Add("Nome", typeof(string));
+            dt.Columns.Add("Qtd Estoque", typeof(string));
+            dt.Columns.Add("Preço", typeof(string));
+            dt.Columns.Add("Unidade", typeof(string));
+            dt.Columns.Add("Id_Fornecedor", typeof(string));
+
+            var produtos = service.GetAllProduto();
+
+            foreach (var produto in produtos)
+            {
+                dt.Rows.Add(new object[]
+                {
+                    produto.Id,
+                    produto.Nome,
+                    produto.Quantidade_Estoque,
+                    produto.Preco,
+                    produto.Unidade,
+                    produto.Id_Fornecedor,
+                });
+
+            }
+
+            dataGridViewProd.DataSource = dt;
+        }
+
+        //responsavel por fazer as formataçoes
+        private void FormattingRows(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            //centraliza os dados da coluna
+            dataGridViewProd.Columns["Id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewProd.Columns["Qtd Estoque"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewProd.Columns["Preço"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewProd.Columns["Unidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            foreach (DataGridViewColumn coluna in dataGridViewProd.Columns)
+            {
+                switch (coluna.Name)
+                {
+                    case "Excluir":
+                        //coluna.DisplayIndex = 1; se quiser mudar a posição 
+                        coluna.Width = 30;
+                        break;
+                    case "Editar":
+                        coluna.Width = 30;
+                        break;
+                    case "Id":
+                        coluna.Width = 30;
+                        break;
+                    case "Nome":
+                        coluna.Width = 115;
+                        break;
+                    case "Qtd Estoque":
+                        coluna.Width = 60;
+                        break;
+                    case "Preço":
+                        coluna.DefaultCellStyle.Format = "C2";
+                        coluna.Width = 60;
+                        break;
+                    case "Unidade":
+                        coluna.Width = 50;
+                        break;
+                    case "Id_Fornecedor":
+                        coluna.Width = 115;
+                        break;
+                }
+            }
+        }
+
+        private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //e -> PEGA TODA A LINHA 
+            dataGridViewProd.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Produto";
+            dataGridViewProd.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Produto";
+        }
+
+        private void dataGridViewProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //quando clica em editar pega ele
+            if (dataGridViewProd.Columns[e.ColumnIndex] == dataGridViewProd.Columns["Editar"])
+            {
+                //preciso pegar o id dele pra saber qm é
+                var id = dataGridViewProd.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+                prod = service.GetByIdProduto(Convert.ToInt32(id));
+
+                txtNome.Text = prod.Nome;
+                txtEstoque.Text = prod.Quantidade_Estoque.ToString();
+                txtPreco.Text = prod.Preco.ToString();
+                cmbUnidade.Text = prod.Unidade;
+                cmbNomeForne.Text = prod.Fornecedor.Nome;
+            }
+        }
+
+        private void LimparCampos()
+        {
+            txtNome.Clear();
+            txtEstoque.Clear();
+            txtPreco.Clear();
+            cmbUnidade.Text = "";
+            cmbNomeForne.Text = "";
+        }
+
+        private void ClickLimpar(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void CLickPesquisar(object sender, EventArgs e)
+        {
+            dt.DefaultView.RowFilter = String.Format("[{0}] LIKE '%{1}%'", "Nome", txtPesquisar.Text);
+            dataGridViewProd.DataSource = dt;
+        }
+
+        private void ClickSalvar(object sender, EventArgs e)
+        {
+            var nomeForne = cmbNomeForne.Text; //pego o nome marcado pelo usuario
+            var umForne = serviceForne.GetByNomeFornecedor(nomeForne); //pego no banco o fornecedor q tem esse nome
+
+            var produto = new Produto()
+            {
+                Id_Fornecedor = umForne.Id,
+                Id = prod.Id,
+                Nome = txtNome.Text,
+                Quantidade_Estoque = Convert.ToInt32(txtEstoque.Text),
+                Preco = Convert.ToDouble(txtPreco.Text),
+                Unidade = cmbUnidade.Text,
+            };
+
+            try
+            {
+                if (ValidarCampos())
+                {
+                    service.UpdateProduto(produto);
+                    AddProductsInDataGrid(); //trazer o fornecedor q acabamos de cadastrar no dataGrid
+                    LimparCampos();
+                    MessageBox.Show("Produto editado!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Você deve preencher todos os campos!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao editar produto!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ClickCadastrar(object sender, EventArgs e)
         {
             var nomeForne = cmbNomeForne.Text; //pego o nome marcado pelo usuario
             var umForne = serviceForne.GetByNomeFornecedor(nomeForne); //pego no banco o fornecedor q tem esse nome
@@ -39,18 +198,17 @@ namespace SistemaComercio.Gui
             {
                 Id_Fornecedor = umForne.Id,
                 Nome = txtNome.Text,
-                Quantidade_Estoque = Convert.ToInt32(txtEstoque.Text), 
-                Preco = Convert.ToDouble(txtPreco.Text), 
+                Quantidade_Estoque = Convert.ToInt32(txtEstoque.Text),
+                Preco = Convert.ToDouble(txtPreco.Text),
                 Unidade = cmbUnidade.Text,
             };
 
             try
             {
-                //FAZER COM TODOS OS CAMPOS
                 if (ValidarCampos())
                 {
                     service.AddProduto(produto);
-                    dataGridViewProd.DataSource = service.GetAllProduto(); //trazer o fornecedor q acabamos de cadastrar no dataGrid
+                    AddProductsInDataGrid(); //trazer o fornecedor q acabamos de cadastrar no dataGrid
                     LimparCampos();
                     MessageBox.Show("Produto cadastrado!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -67,7 +225,6 @@ namespace SistemaComercio.Gui
 
         bool ValidarCampos()
         {
-            //FAZER COM TODOS OS CAMPOS
             if (String.IsNullOrEmpty(txtNome.Text) || String.IsNullOrEmpty(cmbUnidade.Text)
             || String.IsNullOrEmpty(txtEstoque.Text) || String.IsNullOrEmpty(txtPreco.Text))
             {
@@ -80,33 +237,11 @@ namespace SistemaComercio.Gui
 
         }
 
-        private void Frm_Produto_Load(object sender, EventArgs e)
-        {
-            dataGridViewProd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewProd.DataSource = service.GetAllProduto();
-        }
-
-
-        private void LimparCampos()
-        {
-            txtNome.Clear();
-            txtEstoque.Clear();
-            txtPreco.Clear();
-            cmbUnidade.Text = "";
-            cmbNomeForne.Text = "";
-        }
-
-
-        private void ClickLimpar(object sender, EventArgs e)
-        {
-            LimparCampos();
-        }
-
-
         private void ClickSair(object sender, EventArgs e)
         {
             var principal = new Frm_Principal();
             this.Hide();
         }
+
     }
 }

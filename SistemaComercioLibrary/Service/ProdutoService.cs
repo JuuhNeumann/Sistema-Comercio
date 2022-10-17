@@ -1,12 +1,9 @@
 ﻿using SistemaComercioBiblioteca.Classes;
-using SistemaComercioLibrary.Classes;
 using SistemaComercioLibrary.Persistence.Context;
 using SistemaComercioLibrary.Port;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SistemaComercioLibrary.Service
 {
@@ -35,14 +32,25 @@ namespace SistemaComercioLibrary.Service
             throw new NotImplementedException();
         }
 
-        public void UpdateProduto(string id)
+        public void UpdateProduto(Produto produto)
         {
-            throw new NotImplementedException();
+            var prod = _db.Produto.FirstOrDefault(x => x.Id == produto.Id); //pega o id
+            prod.Nome = produto.Nome;
+            _db.SaveChanges();
         }
 
         public List<Produto> GetAllProduto()
         {
             return _db.Produto.ToList();
+        }
+
+        public Produto GetByIdProduto(int id)
+        {
+            var produto = _db.Produto.FirstOrDefault(x => x.Id.Equals(id)); //pega o id
+            var fornecedor = _db.Fornecedor.FirstOrDefault(x => x.Id.Equals(produto.Id_Fornecedor)); //pega o id
+            produto.Fornecedor = fornecedor;
+
+            return produto;
         }
     }
 }

@@ -1,16 +1,15 @@
 ﻿using SistemaComercioLibrary.Classes;
 using SistemaComercioLibrary.Entity;
-using System;
+using SistemaComercioLibrary.Port;
+using SistemaComercioLibrary.Service;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
-namespace SistemaComercioBiblioteca.Classes {
+namespace SistemaComercioBiblioteca.Classes
+{
 
-    public class Produto{
+    public class Produto
+    {
 
         [Key]
         public int Id { get; set; }

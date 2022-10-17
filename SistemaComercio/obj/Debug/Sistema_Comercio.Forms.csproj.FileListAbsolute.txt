@@ -366,3 +366,4 @@ E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\EntityF
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\EntityFramework.xml
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_Cliente.resources
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_Produto.resources
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_Compra.resources

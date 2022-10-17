@@ -226,6 +226,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gui\Frm_Compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Frm_Compra.Designer.cs">
+      <DependentUpon>Frm_Compra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Frm_Produto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_Cadastro.resx">
       <DependentUpon>Frm_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Frm_Compra.resx">
+      <DependentUpon>Frm_Compra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_Fornecedor.resx">
       <DependentUpon>Frm_Fornecedor.cs</DependentUpon>
@@ -411,6 +420,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salve1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />

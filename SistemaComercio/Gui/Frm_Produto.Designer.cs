@@ -40,15 +40,18 @@
             this.lblNomeForne = new System.Windows.Forms.Label();
             this.cmbUnidade = new System.Windows.Forms.ComboBox();
             this.btnSair = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnAtualizar = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.dataGridViewProd = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlMeio = new System.Windows.Forms.Panel();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.pnlFundo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProd)).BeginInit();
             this.SuspendLayout();
@@ -128,11 +131,10 @@
             this.pnlFundo.Controls.Add(this.lblNome);
             this.pnlFundo.Controls.Add(this.btnSair);
             this.pnlFundo.Controls.Add(this.txtEstoque);
-            this.pnlFundo.Controls.Add(this.btnExcluir);
             this.pnlFundo.Controls.Add(this.lblEstoque);
             this.pnlFundo.Controls.Add(this.btnLimpar);
             this.pnlFundo.Controls.Add(this.txtPreco);
-            this.pnlFundo.Controls.Add(this.btnAtualizar);
+            this.pnlFundo.Controls.Add(this.btnSalvar);
             this.pnlFundo.Controls.Add(this.lblPreco);
             this.pnlFundo.Controls.Add(this.btnCadastrar);
             this.pnlFundo.Controls.Add(this.lblUnidade);
@@ -193,18 +195,6 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.ClickSair);
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Image = global::SistemaComercio.Properties.Resources.lixo;
-            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(276, 361);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(81, 26);
-            this.btnExcluir.TabIndex = 14;
-            this.btnExcluir.Text = "     Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -218,30 +208,18 @@
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.ClickLimpar);
             // 
-            // btnAtualizar
+            // btnSalvar
             // 
-            this.btnAtualizar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizar.Image = global::SistemaComercio.Properties.Resources.atualizar;
-            this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAtualizar.Location = new System.Drawing.Point(102, 361);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(81, 26);
-            this.btnAtualizar.TabIndex = 12;
-            this.btnAtualizar.Text = "    Editar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Image = global::SistemaComercio.Properties.Resources.adicionar;
-            this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastrar.Location = new System.Drawing.Point(15, 361);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(81, 26);
-            this.btnCadastrar.TabIndex = 11;
-            this.btnCadastrar.Text = "    Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.CadastrarProduto);
+            this.btnSalvar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Image = global::SistemaComercio.Properties.Resources.salve1;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.Location = new System.Drawing.Point(102, 361);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(81, 26);
+            this.btnSalvar.TabIndex = 12;
+            this.btnSalvar.Text = "    Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.ClickSalvar);
             // 
             // btnPesquisar
             // 
@@ -254,6 +232,7 @@
             this.btnPesquisar.TabIndex = 10;
             this.btnPesquisar.Text = "    Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.CLickPesquisar);
             // 
             // txtPesquisar
             // 
@@ -275,11 +254,31 @@
             // 
             // dataGridViewProd
             // 
+            this.dataGridViewProd.AllowUserToAddRows = false;
             this.dataGridViewProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar,
+            this.Excluir});
             this.dataGridViewProd.Location = new System.Drawing.Point(15, 184);
             this.dataGridViewProd.Name = "dataGridViewProd";
+            this.dataGridViewProd.RowHeadersVisible = false;
             this.dataGridViewProd.Size = new System.Drawing.Size(443, 171);
             this.dataGridViewProd.TabIndex = 1;
+            this.dataGridViewProd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProd_CellContentClick);
+            this.dataGridViewProd.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.FormatttingMensageRows);
+            this.dataGridViewProd.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.FormattingRows);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::SistemaComercio.Properties.Resources.editar;
+            this.Editar.Name = "Editar";
+            // 
+            // Excluir
+            // 
+            this.Excluir.HeaderText = "";
+            this.Excluir.Image = global::SistemaComercio.Properties.Resources.lixo;
+            this.Excluir.Name = "Excluir";
             // 
             // pnlMeio
             // 
@@ -289,6 +288,31 @@
             this.pnlMeio.Name = "pnlMeio";
             this.pnlMeio.Size = new System.Drawing.Size(472, 10);
             this.pnlMeio.TabIndex = 0;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::SistemaComercio.Properties.Resources.atualizar;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::SistemaComercio.Properties.Resources.lixo;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Image = global::SistemaComercio.Properties.Resources.adicionar;
+            this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCadastrar.Location = new System.Drawing.Point(15, 361);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(81, 26);
+            this.btnCadastrar.TabIndex = 11;
+            this.btnCadastrar.Text = "    Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.ClickCadastrar);
             // 
             // Frm_Produto
             // 
@@ -318,10 +342,8 @@
         private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.Panel pnlFundo;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.Button btnAtualizar;
-        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Label lblPesquisar;
@@ -330,5 +352,10 @@
         private System.Windows.Forms.ComboBox cmbUnidade;
         private System.Windows.Forms.ComboBox cmbNomeForne;
         private System.Windows.Forms.Label lblNomeForne;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Excluir;
+        private System.Windows.Forms.Button btnCadastrar;
     }
 }
