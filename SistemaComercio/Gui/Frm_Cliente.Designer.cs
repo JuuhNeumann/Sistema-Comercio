@@ -61,8 +61,8 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlFundo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCli)).BeginInit();
             this.SuspendLayout();
@@ -352,8 +352,8 @@
             this.dataGridViewCli.AllowUserToDeleteRows = false;
             this.dataGridViewCli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCli.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Editar,
-            this.Excluir});
+            this.Excluir,
+            this.Editar});
             this.dataGridViewCli.Location = new System.Drawing.Point(18, 196);
             this.dataGridViewCli.Name = "dataGridViewCli";
             this.dataGridViewCli.ReadOnly = true;
@@ -410,19 +410,19 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.ClickPesquisar);
             // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.Image = global::SistemaComercio.Properties.Resources.editar;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            // 
             // Excluir
             // 
             this.Excluir.HeaderText = "";
             this.Excluir.Image = global::SistemaComercio.Properties.Resources.lixo;
             this.Excluir.Name = "Excluir";
             this.Excluir.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::SistemaComercio.Properties.Resources.editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // Frm_Cliente
             // 
@@ -486,7 +486,7 @@
         private System.Windows.Forms.DataGridView dataGridViewCli;
         private System.Windows.Forms.Button btnSairr;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Excluir;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
     }
 }

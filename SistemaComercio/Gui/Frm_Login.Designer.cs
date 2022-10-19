@@ -71,7 +71,7 @@
             this.BtnLogin.TabIndex = 2;
             this.BtnLogin.Text = "Entrar";
             this.BtnLogin.UseVisualStyleBackColor = false;
-            this.BtnLogin.Click += new System.EventHandler(this.button1_Click);
+            this.BtnLogin.Click += new System.EventHandler(this.ClickEntrar);
             // 
             // BtnCancelar
             // 
@@ -83,7 +83,7 @@
             this.BtnCancelar.TabIndex = 12;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
-            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            this.BtnCancelar.Click += new System.EventHandler(this.ClickCancelar);
             // 
             // label1
             // 
@@ -129,7 +129,7 @@
             this.linkLabel1.TabIndex = 16;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Cadastre-se";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ClickCadastre);
             // 
             // label4
             // 

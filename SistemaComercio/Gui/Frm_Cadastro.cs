@@ -15,9 +15,9 @@ namespace SistemaComercio
             InitializeComponent();
         }
 
-        private void SalvarAdm(object sender, EventArgs e)
-        {
 
+        private void ClickSalvar(object sender, EventArgs e)
+        {
             var adm = new Adm()
             {
                 Senha = TxtSenhaCad.Text,
@@ -30,7 +30,7 @@ namespace SistemaComercio
             this.Hide();
         }
 
-        private void CancelarAdm(object sender, EventArgs e)
+        private void ClickCancelar(object sender, EventArgs e)
         {
             var login = new Frm_Login();
             this.Hide();

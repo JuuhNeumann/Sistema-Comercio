@@ -23,7 +23,8 @@ namespace SistemaComercio
         {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void ClickEntrar(object sender, EventArgs e)
         {
 
             var usuario = TxtUsuario.Text;
@@ -45,17 +46,13 @@ namespace SistemaComercio
                 MessageBox.Show("Usuário " + TxtUsuario.Text + " inválido!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void SetPlaceholder(TextBox txtUsuario)
-        {
-            throw new NotImplementedException();
-        }
 
-        private void BtnCancelar_Click(object sender, EventArgs e)
+        private void ClickCancelar(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void ClickCadastre(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Frm_Cadastro cadastro = new Frm_Cadastro();
             cadastro.Show();
