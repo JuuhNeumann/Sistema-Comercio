@@ -55,13 +55,14 @@
             this.txtCEP = new System.Windows.Forms.TextBox();
             this.pnlFundo = new System.Windows.Forms.Panel();
             this.btnSairr = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.dataGridViewCli = new System.Windows.Forms.DataGridView();
-            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlFundo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCli)).BeginInit();
             this.SuspendLayout();
@@ -305,10 +306,9 @@
             this.pnlFundo.Controls.Add(this.txtEstado);
             this.pnlFundo.Controls.Add(this.lblEmail);
             this.pnlFundo.Controls.Add(this.lblCEP);
-            this.pnlFundo.Controls.Add(this.btnExcluir);
             this.pnlFundo.Controls.Add(this.btnLimpar);
             this.pnlFundo.Controls.Add(this.dataGridViewCli);
-            this.pnlFundo.Controls.Add(this.btnAtualizar);
+            this.pnlFundo.Controls.Add(this.btnSalvar);
             this.pnlFundo.Controls.Add(this.txtPesquisa);
             this.pnlFundo.Controls.Add(this.btnCadastrar);
             this.pnlFundo.Controls.Add(this.panel2);
@@ -333,18 +333,6 @@
             this.btnSairr.UseVisualStyleBackColor = true;
             this.btnSairr.Click += new System.EventHandler(this.ClickSair);
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Image = global::SistemaComercio.Properties.Resources.lixo;
-            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(326, 417);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(96, 26);
-            this.btnExcluir.TabIndex = 35;
-            this.btnExcluir.Text = "    Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -363,23 +351,29 @@
             this.dataGridViewCli.AllowUserToAddRows = false;
             this.dataGridViewCli.AllowUserToDeleteRows = false;
             this.dataGridViewCli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCli.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar,
+            this.Excluir});
             this.dataGridViewCli.Location = new System.Drawing.Point(18, 196);
             this.dataGridViewCli.Name = "dataGridViewCli";
             this.dataGridViewCli.ReadOnly = true;
+            this.dataGridViewCli.RowHeadersVisible = false;
             this.dataGridViewCli.Size = new System.Drawing.Size(757, 214);
             this.dataGridViewCli.TabIndex = 33;
+            this.dataGridViewCli.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCli_CellContentClick);
             // 
-            // btnAtualizar
+            // btnSalvar
             // 
-            this.btnAtualizar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizar.Image = global::SistemaComercio.Properties.Resources.atualizar;
-            this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAtualizar.Location = new System.Drawing.Point(121, 416);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(97, 27);
-            this.btnAtualizar.TabIndex = 1;
-            this.btnAtualizar.Text = "    Editar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Image = global::SistemaComercio.Properties.Resources.atualizar;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.Location = new System.Drawing.Point(121, 416);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(97, 27);
+            this.btnSalvar.TabIndex = 1;
+            this.btnSalvar.Text = "    Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.ClickSalvar);
             // 
             // btnCadastrar
             // 
@@ -392,7 +386,7 @@
             this.btnCadastrar.TabIndex = 0;
             this.btnCadastrar.Text = "    Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.CadastrarCliente);
+            this.btnCadastrar.Click += new System.EventHandler(this.ClickCadastrar);
             // 
             // panel2
             // 
@@ -415,6 +409,20 @@
             this.btnPesquisar.Text = "    Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.ClickPesquisar);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::SistemaComercio.Properties.Resources.editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
+            // Excluir
+            // 
+            this.Excluir.HeaderText = "";
+            this.Excluir.Image = global::SistemaComercio.Properties.Resources.lixo;
+            this.Excluir.Name = "Excluir";
+            this.Excluir.ReadOnly = true;
             // 
             // Frm_Cliente
             // 
@@ -445,7 +453,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Label lblCpff;
         private System.Windows.Forms.Label lblNome;
@@ -477,7 +485,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridViewCli;
         private System.Windows.Forms.Button btnSairr;
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Excluir;
     }
 }

@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,15 +17,224 @@ namespace SistemaComercio.Gui
     public partial class Frm_Cliente : Form
     {
         private IClientePort service = new ClienteService();
+        DataTable dt = new DataTable();
+        Cliente cli = null;
 
         public Frm_Cliente()
         {
             InitializeComponent();
+            AddProviderInDataGrid();
+        }
+
+        private void AddProviderInDataGrid()
+        {
+            dt = new DataTable();
+            dt.Columns.Add("Id", typeof(string));
+            dt.Columns.Add("Nome", typeof(string));
+            dt.Columns.Add("CPF/CNPJ", typeof(string));
+            dt.Columns.Add("Logradouro", typeof(string));
+            dt.Columns.Add("Número", typeof(string));
+            dt.Columns.Add("Complemento", typeof(string));
+            dt.Columns.Add("Bairro", typeof(string));
+            dt.Columns.Add("Cidade", typeof(string));
+            dt.Columns.Add("Estado", typeof(string));
+            dt.Columns.Add("CEP", typeof(string));
+            dt.Columns.Add("Telefone", typeof(string));
+            dt.Columns.Add("Email", typeof(string));
+
+            var clientes = service.GetAllCliente();
+
+            foreach (var cliente in clientes)
+            {
+                dt.Rows.Add(new object[]
+                {
+                    cliente.Id,
+                    cliente.Nome,
+                    cliente.Cpf_Cnpj,
+                    cliente.Logradouro,
+                    cliente.Numero,
+                    cliente.Complemento,
+                    cliente.Bairro,
+                    cliente.Cidade,
+                    cliente.Estado,
+                    cliente.Cep,
+                    cliente.Telefone,
+                    cliente.Email,
+                });
+
+            }
+
+            dataGridViewCli.DataSource = dt;
+        }
+
+        private void FormattingRows(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            //centraliza os dados da coluna
+            dataGridViewCli.Columns["Id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCli.Columns["Nome"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCli.Columns["CPF/CNPJ"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCli.Columns["Logradouro"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCli.Columns["Complemento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCli.Columns["Número"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCli.Columns["Bairro"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCli.Columns["Cidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCli.Columns["Estado"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCli.Columns["CEP"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCli.Columns["Telefone"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCli.Columns["Email"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            foreach (DataGridViewColumn coluna in dataGridViewCli.Columns)
+            {
+                switch (coluna.Name)
+                {
+                    case "Excluir":
+                        //coluna.DisplayIndex = 1; se quiser mudar a posição 
+                        coluna.Width = 30;
+                        break;
+                    case "Editar":
+                        coluna.Width = 30;
+                        break;
+                    case "Id":
+                        coluna.Width = 30;
+                        break;
+                    case "Nome":
+                        coluna.Width = 115;
+                        break;
+                    case "CPF/CNPJ":
+                        coluna.Width = 100;
+                        break;
+                    case "Logradouro":
+                        coluna.Width = 115;
+                        break;
+                    case "Número":
+                        coluna.Width = 40;
+                        break;
+                    case "Complemento":
+                        coluna.Width = 115;
+                        break;
+                    case "Bairro":
+                        coluna.Width = 60;
+                        break;
+                    case "Cidade":
+                        coluna.Width = 60;
+                        break;
+                    case "Estado":
+                        coluna.Width = 60;
+                        break;
+                    case "CEP":
+                        coluna.Width = 60;
+                        break;
+                    case "Telefone":
+                        coluna.Width = 60;
+                        break;
+                    case "Email":
+                        coluna.Width = 115;
+                        break;
+                }
+            }
+        } //qual evento q é?
+
+        private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e) //qual evento q é?
+        {
+            //e -> PEGA TODA A LINHA 
+            dataGridViewCli.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Produto";
+            dataGridViewCli.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Produto";
+        }
+
+        private void dataGridViewCli_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //quando clica em editar pega ele
+            if (dataGridViewCli.Columns[e.ColumnIndex] == dataGridViewCli.Columns["Editar"])
+            {
+                //preciso pegar o id dele pra saber qm é
+                var id = dataGridViewCli.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+                cli = service.GetByIdCliente(Convert.ToInt32(id));
+
+                txtNome.Text = cli.Nome;
+                txtCPF.Text = cli.Cpf_Cnpj;
+                txtLogra.Text = cli.Logradouro;
+                txtNum.Text = cli.Numero.ToString();
+                txtComple.Text = cli.Complemento;
+                txtBairro.Text = cli.Bairro;
+                txtCidade.Text = cli.Cidade;
+                txtEstado.Text = cli.Estado;
+                txtCEP.Text = cli.Cep;
+                txtTel.Text = cli.Telefone;
+                txtEmail.Text = cli.Email;
+            }
+        }
+
+        private void LimparCampos()
+        {
+            txtNome.Clear();
+            txtTel.Clear();
+            txtCidade.Clear();
+            txtEmail.Clear();
+            txtLogra.Clear();
+            txtCPF.Clear();
+            txtCEP.Clear();
+            txtComple.Clear();
+            txtEstado.Clear();
+            txtNum.Clear();
+            txtBairro.Clear();
+        }
+
+        private void ClickLimpar(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void ClickPesquisar(object sender, EventArgs e)
+        {
+            dt.DefaultView.RowFilter = String.Format("[{0}] LIKE '%{1}%'", "Nome", txtPesquisa.Text);
+            dataGridViewCli.DataSource = dt;
+        }
+
+        private void Frm_Cliente_Load(object sender, EventArgs e)
+        {
+            dataGridViewCli.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCli.DataSource = service.GetAllCliente();
         }
 
+        private void ClickSalvar(object sender, EventArgs e)
+        {
+            var cliente = new Cliente()
+            {
+                Nome = txtNome.Text,
+                Cpf_Cnpj = txtCPF.Text,
+                Telefone = txtTel.Text,
+                Cep = txtCEP.Text,
+                Cidade = txtCidade.Text,
+                Complemento = txtComple.Text,
+                Email = txtEmail.Text,
+                Estado = txtEstado.Text,
+                Logradouro = txtLogra.Text,
+                Numero = Convert.ToInt32(txtNum.Text),
+                Bairro = txtBairro.Text,
+            };
 
-        private void CadastrarCliente(object sender, EventArgs e)
+            try
+            {
+                //FAZER COM TODOS OS CAMPOS
+                if (ValidarCampos())
+                {
+                    service.UpdateCliente(cliente);
+                    AddProviderInDataGrid(); //trazer o fornecedor q acabamos de cadastrar no dataGrid
+                    LimparCampos();
+                    MessageBox.Show("Cliente editado!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Você deve preencher todos os campos!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao editar cliente!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ClickCadastrar(object sender, EventArgs e)
         {
             var cliente = new Cliente()
             {
@@ -80,46 +290,12 @@ namespace SistemaComercio.Gui
 
         }
 
-        private void LimparCampos()
-        {
-            txtNome.Clear();
-            txtTel.Clear();
-            txtCidade.Clear();
-            txtEmail.Clear();
-            txtLogra.Clear();
-            txtCPF.Clear();
-            txtCEP.Clear();
-            txtComple.Clear();
-            txtEstado.Clear();
-            txtNum.Clear();
-            txtBairro.Clear();
-        }
-
-        private void Frm_Cliente_Load(object sender, EventArgs e)
-        {
-            dataGridViewCli.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCli.DataSource = service.GetAllCliente();
-        }
-
-
-        private void ClickPesquisar(object sender, EventArgs e)
-        {
-            dataGridViewCli.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCli.DataSource = service.GetByNomeCliente(txtPesquisa.Text);
-        }
-
-
-        private void ClickLimpar(object sender, EventArgs e)
-        {
-            LimparCampos();
-        }
-
-
         private void ClickSair(object sender, EventArgs e)
         {
             var principal = new Frm_Principal();
             this.Hide();
         }
+
     }
 }
 

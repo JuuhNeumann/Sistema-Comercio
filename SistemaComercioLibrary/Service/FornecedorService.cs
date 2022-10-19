@@ -43,7 +43,6 @@ namespace SistemaComercioLibrary.Service
         public void UpdateFornecedor(Fornecedor fornecedor)
         {
             var forne = _db.Fornecedor.FirstOrDefault(x => x.Id == fornecedor.Id); //pega o id
-            forne.Nome = fornecedor.Nome;//precisa disso? DANDO ERRO AO CLICAR SALVAR
             _db.SaveChanges();
         }
 

@@ -1,4 +1,5 @@
-﻿using SistemaComercioLibrary.Classes;
+﻿using SistemaComercioBiblioteca.Classes;
+using SistemaComercioLibrary.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,12 @@ namespace SistemaComercioLibrary.Port
     {
         int Count();
         void AddCliente(Cliente cliente);
-        void UpdateCliente(string id);
+        void UpdateCliente(Cliente cliente);
         void DelCliente(string id);
         //mostra uma LISTA de fornecedores
         void ReadCliente(List<Cliente> ciente);
         List<Cliente> GetAllCliente();
         Cliente GetByNomeCliente(string nome);
+        Cliente GetByIdCliente(int id);
     }
 }

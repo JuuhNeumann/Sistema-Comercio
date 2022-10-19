@@ -35,11 +35,6 @@ namespace SistemaComercioLibrary.Service
             throw new NotImplementedException();
         }
 
-        public void UpdateCliente(string id)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Cliente> GetAllCliente()
         {
             return _db.Cliente.ToList();
@@ -48,6 +43,17 @@ namespace SistemaComercioLibrary.Service
         public Cliente GetByNomeCliente(string nome)
         {
             return _db.Cliente.OrderByDescending(x => x.Nome.Equals(nome)).FirstOrDefault(); //pega o primeiro nome
+        }
+
+        public Cliente GetByIdCliente(int id)
+        {
+            return _db.Cliente.FirstOrDefault(x => x.Id.Equals(id)); //pega o id
+        }
+
+        public void UpdateCliente(Cliente cliente)
+        {
+            var cli = _db.Cliente.FirstOrDefault(x => x.Id == cliente.Id); //pega o id
+            _db.SaveChanges();
         }
     }
 }
