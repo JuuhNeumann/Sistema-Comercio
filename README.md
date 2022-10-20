@@ -38,9 +38,9 @@
   <br>
   - Sistema desenvolvido em C# 
   - Ambiente Virtual com Windows Form
-  - Banco de Dados: MySQL
+  - Banco de Dados: PostgreSql
   - IDE: Visual Studio 2022
- - *Armazenamento dos dados feito com banco de dados MySQL e hospedado no Heroku*
+ - *Armazenamento dos dados feito com banco de dados PostgreSql e hospedado no Heroku*
 
 ## 
 
