@@ -108,16 +108,9 @@ namespace SistemaComercio.Gui
                         break;
                 }
             }
-        }
+        } //DataBindingComplete
 
-        private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            //e -> PEGA TODA A LINHA 
-            dataGridViewProd.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Produto";
-            dataGridViewProd.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Produto";
-        }
-
-        private void dataGridViewProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void FormattingCollunms(object sender, DataGridViewCellEventArgs e)
         {
             //quando clica em editar pega ele
             if (dataGridViewProd.Columns[e.ColumnIndex] == dataGridViewProd.Columns["Editar"])
@@ -132,7 +125,14 @@ namespace SistemaComercio.Gui
                 cmbUnidade.Text = prod.Unidade;
                 cmbNomeForne.Text = prod.Fornecedor.Nome;
             }
-        }
+        } //CellContentClick
+
+        private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //e -> PEGA TODA A LINHA 
+            dataGridViewProd.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Produto";
+            dataGridViewProd.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Produto";
+        } //CellFormatting
 
         private void LimparCampos()
         {

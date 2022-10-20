@@ -264,7 +264,7 @@
             this.dataGridViewProd.RowHeadersVisible = false;
             this.dataGridViewProd.Size = new System.Drawing.Size(443, 171);
             this.dataGridViewProd.TabIndex = 1;
-            this.dataGridViewProd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProd_CellContentClick);
+            this.dataGridViewProd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FormattingCollunms);
             this.dataGridViewProd.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.FormatttingMensageRows);
             this.dataGridViewProd.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.FormattingRows);
             // 

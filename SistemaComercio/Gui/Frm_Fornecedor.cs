@@ -62,15 +62,15 @@ namespace SistemaComercio.Gui
             dataGridViewForne.DataSource = dt;
         }
 
-        private void FormattingRows(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void FormattingRows(object sender, DataGridViewBindingCompleteEventArgs e) 
         {
             //centraliza os dados da coluna
             dataGridViewForne.Columns["Id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewForne.Columns["Nome"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewForne.Columns["CPF/CNPJ"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewForne.Columns["Logradouro"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewForne.Columns["Complemento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewForne.Columns["Número"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewForne.Columns["Complemento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewForne.Columns["Bairro"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewForne.Columns["Cidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewForne.Columns["Estado"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -127,16 +127,9 @@ namespace SistemaComercio.Gui
                         break;
                 }
             }
-        }
+        } //DataBindingComplete
 
-        private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            //e -> PEGA TODA A LINHA 
-            dataGridViewForne.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Produto";
-            dataGridViewForne.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Produto";
-        }
-
-        private void dataGridViewForne_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void FormattingCollumns(object sender, DataGridViewCellEventArgs e)
         {
             //quando clica em editar pega ele
             if (dataGridViewForne.Columns[e.ColumnIndex] == dataGridViewForne.Columns["Editar"])
@@ -157,7 +150,14 @@ namespace SistemaComercio.Gui
                 txtTel.Text = forne.Telefone;
                 txtEmail.Text = forne.Email;
             }
-        }
+        } //CellContentClick
+
+        private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e) 
+        {
+            //e -> PEGA TODA A LINHA 
+            dataGridViewForne.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Produto";
+            dataGridViewForne.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Produto";
+        } //CellFormatting
 
         private void LimparCampos()
         {
@@ -291,5 +291,7 @@ namespace SistemaComercio.Gui
             var principal = new Frm_Principal();
             this.Hide();
         }
+
+        
     }
 }

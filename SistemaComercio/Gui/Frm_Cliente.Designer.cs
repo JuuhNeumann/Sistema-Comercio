@@ -57,12 +57,12 @@
             this.btnSairr = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.dataGridViewCli = new System.Windows.Forms.DataGridView();
+            this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlFundo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCli)).BeginInit();
             this.SuspendLayout();
@@ -360,7 +360,23 @@
             this.dataGridViewCli.RowHeadersVisible = false;
             this.dataGridViewCli.Size = new System.Drawing.Size(757, 214);
             this.dataGridViewCli.TabIndex = 33;
-            this.dataGridViewCli.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCli_CellContentClick);
+            this.dataGridViewCli.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FormattingCollunms);
+            this.dataGridViewCli.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.FormatttingMensageRows);
+            this.dataGridViewCli.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.FormattingRows);
+            // 
+            // Excluir
+            // 
+            this.Excluir.HeaderText = "";
+            this.Excluir.Image = global::SistemaComercio.Properties.Resources.lixo;
+            this.Excluir.Name = "Excluir";
+            this.Excluir.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::SistemaComercio.Properties.Resources.editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // btnSalvar
             // 
@@ -409,20 +425,6 @@
             this.btnPesquisar.Text = "    Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.ClickPesquisar);
-            // 
-            // Excluir
-            // 
-            this.Excluir.HeaderText = "";
-            this.Excluir.Image = global::SistemaComercio.Properties.Resources.lixo;
-            this.Excluir.Name = "Excluir";
-            this.Excluir.ReadOnly = true;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.Image = global::SistemaComercio.Properties.Resources.editar;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
             // 
             // Frm_Cliente
             // 

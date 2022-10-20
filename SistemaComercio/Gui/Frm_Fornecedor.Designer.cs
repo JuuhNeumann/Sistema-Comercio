@@ -48,6 +48,8 @@
             this.txtProcurar = new System.Windows.Forms.TextBox();
             this.lblProcurarNome = new System.Windows.Forms.Label();
             this.dataGridViewForne = new System.Windows.Forms.DataGridView();
+            this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCad = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -65,8 +67,6 @@
             this.sistemaComercioDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemaComercioDataSet = new SistemaComercio.SistemaComercioDataSet();
             this.fornecedorTableAdapter = new SistemaComercio.SistemaComercioDataSetTableAdapters.FornecedorTableAdapter();
-            this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlFundoForne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).BeginInit();
@@ -322,7 +322,23 @@
             this.dataGridViewForne.RowHeadersVisible = false;
             this.dataGridViewForne.Size = new System.Drawing.Size(747, 198);
             this.dataGridViewForne.TabIndex = 25;
-            this.dataGridViewForne.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewForne_CellContentClick);
+            this.dataGridViewForne.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FormattingCollumns);
+            this.dataGridViewForne.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.FormatttingMensageRows);
+            this.dataGridViewForne.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.FormattingRows);
+            // 
+            // Excluir
+            // 
+            this.Excluir.HeaderText = "";
+            this.Excluir.Image = global::SistemaComercio.Properties.Resources.lixo;
+            this.Excluir.Name = "Excluir";
+            this.Excluir.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::SistemaComercio.Properties.Resources.editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // btnLimpar
             // 
@@ -460,20 +476,6 @@
             // fornecedorTableAdapter
             // 
             this.fornecedorTableAdapter.ClearBeforeFill = true;
-            // 
-            // Excluir
-            // 
-            this.Excluir.HeaderText = "";
-            this.Excluir.Image = global::SistemaComercio.Properties.Resources.lixo;
-            this.Excluir.Name = "Excluir";
-            this.Excluir.ReadOnly = true;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.Image = global::SistemaComercio.Properties.Resources.editar;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
             // 
             // Frm_Fornecedor
             // 

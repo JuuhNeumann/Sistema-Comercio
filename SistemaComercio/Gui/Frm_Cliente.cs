@@ -67,7 +67,7 @@ namespace SistemaComercio.Gui
             dataGridViewCli.DataSource = dt;
         }
 
-        private void FormattingRows(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void FormattingRows(object sender, DataGridViewBindingCompleteEventArgs e) //DataBindingComplete
         {
             //centraliza os dados da coluna
             dataGridViewCli.Columns["Id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -132,16 +132,9 @@ namespace SistemaComercio.Gui
                         break;
                 }
             }
-        } //qual evento q é?
-
-        private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e) //qual evento q é?
-        {
-            //e -> PEGA TODA A LINHA 
-            dataGridViewCli.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Produto";
-            dataGridViewCli.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Produto";
         }
 
-        private void dataGridViewCli_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void FormattingCollunms(object sender, DataGridViewCellEventArgs e)
         {
             //quando clica em editar pega ele
             if (dataGridViewCli.Columns[e.ColumnIndex] == dataGridViewCli.Columns["Editar"])
@@ -162,7 +155,14 @@ namespace SistemaComercio.Gui
                 txtTel.Text = cli.Telefone;
                 txtEmail.Text = cli.Email;
             }
-        }
+        } //CellContentClick
+
+        private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //e -> PEGA TODA A LINHA 
+            dataGridViewCli.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Produto";
+            dataGridViewCli.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Produto";
+        } //CellFormatting
 
         private void LimparCampos()
         {
