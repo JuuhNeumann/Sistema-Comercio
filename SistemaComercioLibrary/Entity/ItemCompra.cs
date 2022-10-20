@@ -14,7 +14,9 @@ namespace SistemaComercioLibrary.Entity
     {
         [Key]
         public int Id { get; set; }
-        
+        public int Quantidade { get; set; }
+        public double Valor_Unitario { get; set; }
+        public double Total_Item { get; set; }
         public virtual Produto Produto { get; set; }
         public int Id_Produto { get; set; }
         public virtual Compra Compra { get; set; }

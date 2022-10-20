@@ -232,6 +232,12 @@
     <Compile Include="Gui\Frm_Compra.Designer.cs">
       <DependentUpon>Frm_Compra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Frm_ContaPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Frm_ContaPagar.Designer.cs">
+      <DependentUpon>Frm_ContaPagar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Frm_Produto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_Compra.resx">
       <DependentUpon>Frm_Compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Frm_ContaPagar.resx">
+      <DependentUpon>Frm_ContaPagar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_Fornecedor.resx">
       <DependentUpon>Frm_Fornecedor.cs</DependentUpon>

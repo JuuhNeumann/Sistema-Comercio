@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.gpbDadosOperacionais = new System.Windows.Forms.GroupBox();
-            this.lblData = new System.Windows.Forms.Label();
-            this.lblHora = new System.Windows.Forms.Label();
-            this.txtData = new System.Windows.Forms.TextBox();
-            this.txtHora = new System.Windows.Forms.TextBox();
-            this.lblTotal = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.lblSituacao = new System.Windows.Forms.Label();
             this.cmbSituacao = new System.Windows.Forms.ComboBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.txtHora = new System.Windows.Forms.TextBox();
+            this.lblSituacao = new System.Windows.Forms.Label();
+            this.txtData = new System.Windows.Forms.TextBox();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
             this.btnRelatorio = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.lblSelecionarProduto = new System.Windows.Forms.Label();
@@ -53,8 +53,8 @@
             this.gpbDadosGerais = new System.Windows.Forms.GroupBox();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.gpbConsulta = new System.Windows.Forms.GroupBox();
-            this.rdbPeriodo = new System.Windows.Forms.RadioButton();
             this.rdbForne = new System.Windows.Forms.RadioButton();
+            this.rdbPeriodo = new System.Windows.Forms.RadioButton();
             this.lblConsulta = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.cmbConsulta = new System.Windows.Forms.ComboBox();
@@ -85,43 +85,27 @@
             this.gpbDadosOperacionais.TabStop = false;
             this.gpbDadosOperacionais.Text = "Dados Operacionais";
             // 
-            // lblData
+            // txtTotal
             // 
-            this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(7, 27);
-            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(32, 13);
-            this.lblData.TabIndex = 0;
-            this.lblData.Text = "Data:";
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(310, 53);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(174, 21);
+            this.txtTotal.TabIndex = 4;
             // 
-            // lblHora
+            // cmbSituacao
             // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Location = new System.Drawing.Point(273, 27);
-            this.lblHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(34, 13);
-            this.lblHora.TabIndex = 1;
-            this.lblHora.Text = "Hora:";
-            // 
-            // txtData
-            // 
-            this.txtData.Enabled = false;
-            this.txtData.Location = new System.Drawing.Point(42, 24);
-            this.txtData.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(212, 21);
-            this.txtData.TabIndex = 2;
-            // 
-            // txtHora
-            // 
-            this.txtHora.Enabled = false;
-            this.txtHora.Location = new System.Drawing.Point(310, 24);
-            this.txtHora.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtHora.Name = "txtHora";
-            this.txtHora.Size = new System.Drawing.Size(174, 21);
-            this.txtHora.TabIndex = 3;
+            this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSituacao.FormattingEnabled = true;
+            this.cmbSituacao.Items.AddRange(new object[] {
+            "Finalizado",
+            "Cancelado"});
+            this.cmbSituacao.Location = new System.Drawing.Point(64, 53);
+            this.cmbSituacao.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cmbSituacao.Name = "cmbSituacao";
+            this.cmbSituacao.Size = new System.Drawing.Size(190, 21);
+            this.cmbSituacao.TabIndex = 6;
             // 
             // lblTotal
             // 
@@ -133,14 +117,14 @@
             this.lblTotal.TabIndex = 4;
             this.lblTotal.Text = "Total:";
             // 
-            // txtTotal
+            // txtHora
             // 
-            this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(310, 53);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(174, 21);
-            this.txtTotal.TabIndex = 4;
+            this.txtHora.Enabled = false;
+            this.txtHora.Location = new System.Drawing.Point(310, 24);
+            this.txtHora.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtHora.Name = "txtHora";
+            this.txtHora.Size = new System.Drawing.Size(174, 21);
+            this.txtHora.TabIndex = 3;
             // 
             // lblSituacao
             // 
@@ -152,19 +136,34 @@
             this.lblSituacao.TabIndex = 5;
             this.lblSituacao.Text = "Situação:";
             // 
-            // cmbSituacao
+            // txtData
             // 
-            this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSituacao.FormattingEnabled = true;
-            this.cmbSituacao.Items.AddRange(new object[] {
-            "Finalizado",
-            "Cancelado",
-            "Em andamento"});
-            this.cmbSituacao.Location = new System.Drawing.Point(64, 53);
-            this.cmbSituacao.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cmbSituacao.Name = "cmbSituacao";
-            this.cmbSituacao.Size = new System.Drawing.Size(190, 21);
-            this.cmbSituacao.TabIndex = 6;
+            this.txtData.Enabled = false;
+            this.txtData.Location = new System.Drawing.Point(42, 24);
+            this.txtData.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(212, 21);
+            this.txtData.TabIndex = 2;
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Location = new System.Drawing.Point(273, 27);
+            this.lblHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(34, 13);
+            this.lblHora.TabIndex = 1;
+            this.lblHora.Text = "Hora:";
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Location = new System.Drawing.Point(7, 27);
+            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(32, 13);
+            this.lblData.TabIndex = 0;
+            this.lblData.Text = "Data:";
             // 
             // btnRelatorio
             // 
@@ -192,9 +191,9 @@
             this.lblSelecionarProduto.Location = new System.Drawing.Point(7, 26);
             this.lblSelecionarProduto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSelecionarProduto.Name = "lblSelecionarProduto";
-            this.lblSelecionarProduto.Size = new System.Drawing.Size(182, 13);
+            this.lblSelecionarProduto.Size = new System.Drawing.Size(198, 13);
             this.lblSelecionarProduto.TabIndex = 3;
-            this.lblSelecionarProduto.Text = "Digite o produto que deseja comprar:";
+            this.lblSelecionarProduto.Text = "Selecione o produto que deseja comprar:";
             // 
             // txtProdutoPesquisar
             // 
@@ -350,18 +349,6 @@
             this.gpbConsulta.TabStop = false;
             this.gpbConsulta.Text = "Tipo de Consulta:";
             // 
-            // rdbPeriodo
-            // 
-            this.rdbPeriodo.AutoSize = true;
-            this.rdbPeriodo.Location = new System.Drawing.Point(10, 19);
-            this.rdbPeriodo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.rdbPeriodo.Name = "rdbPeriodo";
-            this.rdbPeriodo.Size = new System.Drawing.Size(62, 17);
-            this.rdbPeriodo.TabIndex = 14;
-            this.rdbPeriodo.TabStop = true;
-            this.rdbPeriodo.Text = "Período";
-            this.rdbPeriodo.UseVisualStyleBackColor = true;
-            // 
             // rdbForne
             // 
             this.rdbForne.AutoSize = true;
@@ -373,6 +360,18 @@
             this.rdbForne.TabStop = true;
             this.rdbForne.Text = "Fornecedor";
             this.rdbForne.UseVisualStyleBackColor = true;
+            // 
+            // rdbPeriodo
+            // 
+            this.rdbPeriodo.AutoSize = true;
+            this.rdbPeriodo.Location = new System.Drawing.Point(10, 19);
+            this.rdbPeriodo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.rdbPeriodo.Name = "rdbPeriodo";
+            this.rdbPeriodo.Size = new System.Drawing.Size(62, 17);
+            this.rdbPeriodo.TabIndex = 14;
+            this.rdbPeriodo.TabStop = true;
+            this.rdbPeriodo.Text = "Período";
+            this.rdbPeriodo.UseVisualStyleBackColor = true;
             // 
             // lblConsulta
             // 
