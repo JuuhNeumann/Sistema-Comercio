@@ -80,11 +80,11 @@ namespace SistemaComercio.Gui
             {
                 switch (coluna.Name)
                 {
-                    case "Excluir":
-                        //coluna.DisplayIndex = 1; se quiser mudar a posição 
+                    case "Editar":
                         coluna.Width = 30;
                         break;
-                    case "Editar":
+                    case "Excluir":
+                        //coluna.DisplayIndex = 1; se quiser mudar a posição 
                         coluna.Width = 30;
                         break;
                     case "Id":
@@ -130,8 +130,9 @@ namespace SistemaComercio.Gui
         private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e)
         {
             //e -> PEGA TODA A LINHA 
-            dataGridViewProd.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Produto";
             dataGridViewProd.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Produto";
+            dataGridViewProd.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Produto";
+            
         } //CellFormatting
 
         private void LimparCampos()
