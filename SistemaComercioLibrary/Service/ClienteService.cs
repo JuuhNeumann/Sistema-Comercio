@@ -25,9 +25,10 @@ namespace SistemaComercioLibrary.Service
             _db.SaveChanges();
         }
 
-        public void DelCliente(string id)
+        public void DelCliente(Cliente cliente)
         {
-            throw new NotImplementedException();
+            _db.Cliente.Remove(cliente);
+            _db.SaveChanges();
         }
 
         public void ReadCliente(List<Cliente> ciente)
@@ -53,6 +54,17 @@ namespace SistemaComercioLibrary.Service
         public void UpdateCliente(Cliente cliente)
         {
             var cli = _db.Cliente.FirstOrDefault(x => x.Id == cliente.Id); //pega o id
+            cli.Nome = cliente.Nome;
+            cli.Cpf_Cnpj = cliente.Cpf_Cnpj;
+            cli.Logradouro = cliente.Logradouro;
+            cli.Numero = cliente.Numero;
+            cli.Complemento = cliente.Complemento;
+            cli.Bairro = cliente.Bairro;
+            cli.Cidade = cliente.Cidade;
+            cli.Estado = cliente.Estado;
+            cli.Cep = cliente.Cep;
+            cli.Telefone = cliente.Telefone;
+            cli.Email = cliente.Email;
             _db.SaveChanges();
         }
     }

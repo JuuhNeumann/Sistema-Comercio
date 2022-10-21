@@ -18,7 +18,7 @@ namespace SistemaComercio.Gui
         {
             InitializeComponent();
             AddComboBoxFornecedor();
-            AddProductsInDataGrid();
+            UpdateProductsInDataGrid();
         }
 
         private void AddComboBoxFornecedor()
@@ -38,7 +38,7 @@ namespace SistemaComercio.Gui
             dataGridViewProd.DataSource = service.GetAllProduto();
         }
 
-        private void AddProductsInDataGrid()
+        private void UpdateProductsInDataGrid()
         {
             dt = new DataTable();
             dt.Columns.Add("Id", typeof(string));
@@ -124,15 +124,45 @@ namespace SistemaComercio.Gui
                 txtPreco.Text = prod.Preco.ToString();
                 cmbUnidade.Text = prod.Unidade;
                 cmbNomeForne.Text = prod.Fornecedor.Nome;
+
+                btnSalvar.Enabled = true;
+                btnCadastrar.Enabled = false;
+            }
+
+            //quando clica em excluir pega ele
+            if (dataGridViewProd.Columns[e.ColumnIndex] == dataGridViewProd.Columns["Excluir"])
+            {
+                if (MessageBox.Show("Deseja mesmo remover este produto?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //preciso pegar o id dele pra saber qm é
+                    var id = Convert.ToInt32(dataGridViewProd.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                    RemoveProduct(id);
+                }
             }
         } //CellContentClick
+
+        private void RemoveProduct(int id)
+        {
+            prod = service.GetByIdProduto(id);
+            try
+            {
+                service.DelProduto(prod);
+                UpdateProductsInDataGrid();
+                MessageBox.Show("Produto excluido!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao excluir produto!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
 
         private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e)
         {
             //e -> PEGA TODA A LINHA 
             dataGridViewProd.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Produto";
             dataGridViewProd.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Produto";
-            
+
         } //CellFormatting
 
         private void LimparCampos()
@@ -140,13 +170,16 @@ namespace SistemaComercio.Gui
             txtNome.Clear();
             txtEstoque.Clear();
             txtPreco.Clear();
-            cmbUnidade.Text = "";
-            cmbNomeForne.Text = "";
+            cmbUnidade.SelectedIndex = -1;
+            cmbNomeForne.SelectedIndex = -1;
+            btnSalvar.Enabled = false;
+            btnCadastrar.Enabled = true;
         }
 
         private void ClickLimpar(object sender, EventArgs e)
         {
             LimparCampos();
+            MessageBox.Show("Campos resetados!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void CLickPesquisar(object sender, EventArgs e)
@@ -157,6 +190,7 @@ namespace SistemaComercio.Gui
 
         private void ClickSalvar(object sender, EventArgs e)
         {
+
             var nomeForne = cmbNomeForne.Text; //pego o nome marcado pelo usuario
             var umForne = serviceForne.GetByNomeFornecedor(nomeForne); //pego no banco o fornecedor q tem esse nome
 
@@ -175,7 +209,7 @@ namespace SistemaComercio.Gui
                 if (ValidarCampos())
                 {
                     service.UpdateProduto(produto);
-                    AddProductsInDataGrid(); //trazer o fornecedor q acabamos de cadastrar no dataGrid
+                    UpdateProductsInDataGrid(); //trazer o fornecedor q acabamos de cadastrar no dataGrid
                     LimparCampos();
                     MessageBox.Show("Produto editado!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -209,7 +243,7 @@ namespace SistemaComercio.Gui
                 if (ValidarCampos())
                 {
                     service.AddProduto(produto);
-                    AddProductsInDataGrid(); //trazer o fornecedor q acabamos de cadastrar no dataGrid
+                    UpdateProductsInDataGrid(); //trazer o fornecedor q acabamos de cadastrar no dataGrid
                     LimparCampos();
                     MessageBox.Show("Produto cadastrado!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

@@ -18,17 +18,17 @@ namespace SistemaComercio.Gui
         public Frm_Fornecedor()
         {
             InitializeComponent();
-            AddProviderInDataGrid();
+            UpdateProviderInDataGrid();
         }
 
-        private void AddProviderInDataGrid()
+        private void UpdateProviderInDataGrid()
         {
             dt = new DataTable();
             dt.Columns.Add("Id", typeof(string));
             dt.Columns.Add("Nome", typeof(string));
-            dt.Columns.Add("CPF/CNPJ", typeof(string));
+            dt.Columns.Add("Cpf_Cnpj", typeof(string));
             dt.Columns.Add("Logradouro", typeof(string));
-            dt.Columns.Add("Número", typeof(string));
+            dt.Columns.Add("Numero", typeof(string));
             dt.Columns.Add("Complemento", typeof(string));
             dt.Columns.Add("Bairro", typeof(string));
             dt.Columns.Add("Cidade", typeof(string));
@@ -67,9 +67,9 @@ namespace SistemaComercio.Gui
             //centraliza os dados da coluna
             dataGridViewForne.Columns["Id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewForne.Columns["Nome"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewForne.Columns["CPF/CNPJ"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewForne.Columns["Cpf_Cnpj"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewForne.Columns["Logradouro"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewForne.Columns["Número"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewForne.Columns["Numero"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewForne.Columns["Complemento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewForne.Columns["Bairro"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewForne.Columns["Cidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -95,13 +95,13 @@ namespace SistemaComercio.Gui
                     case "Nome":
                         coluna.Width = 115;
                         break;
-                    case "CPF/CNPJ":
+                    case "Cpf_Cnpj":
                         coluna.Width = 100;
                         break;
                     case "Logradouro":
                         coluna.Width = 115;
                         break;
-                    case "Número":
+                    case "Numero":
                         coluna.Width = 40;
                         break;
                     case "Complemento":
@@ -149,8 +149,38 @@ namespace SistemaComercio.Gui
                 txtCEP.Text = forne.Cep;
                 txtTel.Text = forne.Telefone;
                 txtEmail.Text = forne.Email;
+
+                btnSalvar.Enabled = true;
+                btnCad.Enabled = false;
+            }
+
+            //quando clica em excluir pega ele
+            if (dataGridViewForne.Columns[e.ColumnIndex] == dataGridViewForne.Columns["Excluir"])
+            {
+                if (MessageBox.Show("Deseja mesmo remover este produto?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //preciso pegar o id dele pra saber qm é
+                    var id = Convert.ToInt32(dataGridViewForne.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                    RemoveProvider(id);
+                }
             }
         } //CellContentClick
+
+        private void RemoveProvider(int id)
+        {
+            forne = service.GetByIdFornecedor(id);
+            try
+            {
+                service.DelFornecedor(forne);
+                UpdateProviderInDataGrid();
+                MessageBox.Show("Fornecedor excluido!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao excluir fornecedor!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
 
         private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e) 
         {
@@ -172,12 +202,14 @@ namespace SistemaComercio.Gui
             txtEstado.Clear();
             txtNum.Clear();
             txtBairro.Clear();
+            btnCad.Enabled = true;
+            btnSalvar.Enabled = false;
         }
 
         private void ClickLimpar(object sender, EventArgs e)
         {
             LimparCampos();
-            MessageBox.Show("Campos resetados!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Campos resetados!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ClickPesquisar(object sender, EventArgs e)
@@ -215,7 +247,7 @@ namespace SistemaComercio.Gui
                 if (ValidarCampos())
                 {
                     service.UpdateFornecedor(fornecedor);
-                    AddProviderInDataGrid(); //trazer o fornecedor q acabamos de cadastrar no dataGrid
+                    UpdateProviderInDataGrid(); //trazer o fornecedor q acabamos de cadastrar no dataGrid
                     LimparCampos();
                     MessageBox.Show("Fornecedor editado!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

@@ -23,17 +23,17 @@ namespace SistemaComercio.Gui
         public Frm_Cliente()
         {
             InitializeComponent();
-            AddProviderInDataGrid();
+            UpdateClientInDataGrid();
         }
 
-        private void AddProviderInDataGrid()
+        private void UpdateClientInDataGrid()
         {
             dt = new DataTable();
             dt.Columns.Add("Id", typeof(string));
             dt.Columns.Add("Nome", typeof(string));
-            dt.Columns.Add("CPF/CNPJ", typeof(string));
+            dt.Columns.Add("Cpf_Cnpj", typeof(string));
             dt.Columns.Add("Logradouro", typeof(string));
-            dt.Columns.Add("Número", typeof(string));
+            dt.Columns.Add("Numero", typeof(string));
             dt.Columns.Add("Complemento", typeof(string));
             dt.Columns.Add("Bairro", typeof(string));
             dt.Columns.Add("Cidade", typeof(string));
@@ -72,10 +72,10 @@ namespace SistemaComercio.Gui
             //centraliza os dados da coluna
             dataGridViewCli.Columns["Id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCli.Columns["Nome"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCli.Columns["CPF/CNPJ"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCli.Columns["Cpf_Cnpj"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCli.Columns["Logradouro"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCli.Columns["Numero"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCli.Columns["Complemento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCli.Columns["Número"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCli.Columns["Bairro"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCli.Columns["Cidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCli.Columns["Estado"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -100,13 +100,13 @@ namespace SistemaComercio.Gui
                     case "Nome":
                         coluna.Width = 115;
                         break;
-                    case "CPF/CNPJ":
+                    case "Cpf_Cnpj":
                         coluna.Width = 100;
                         break;
                     case "Logradouro":
                         coluna.Width = 115;
                         break;
-                    case "Número":
+                    case "Numero":
                         coluna.Width = 40;
                         break;
                     case "Complemento":
@@ -154,8 +154,38 @@ namespace SistemaComercio.Gui
                 txtCEP.Text = cli.Cep;
                 txtTel.Text = cli.Telefone;
                 txtEmail.Text = cli.Email;
+
+                btnSalvar.Enabled = true;
+                btnCadastrar.Enabled = false;
+            }
+
+            //quando clica em excluir pega ele
+            if (dataGridViewCli.Columns[e.ColumnIndex] == dataGridViewCli.Columns["Excluir"])
+            {
+                if (MessageBox.Show("Deseja mesmo remover este produto?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //preciso pegar o id dele pra saber qm é
+                    var id = Convert.ToInt32(dataGridViewCli.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                    RemoveClient(id);
+                }
             }
         } //CellContentClick
+
+        private void RemoveClient(int id)
+        {
+            cli = service.GetByIdCliente(id);
+            try
+            {
+                service.DelCliente(cli);
+                UpdateClientInDataGrid();
+                MessageBox.Show("Cliente excluido!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao excluir cliente!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
 
         private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -177,11 +207,14 @@ namespace SistemaComercio.Gui
             txtEstado.Clear();
             txtNum.Clear();
             txtBairro.Clear();
+            btnCadastrar.Enabled = true;
+            btnSalvar.Enabled = false;
         }
 
         private void ClickLimpar(object sender, EventArgs e)
         {
             LimparCampos();
+            MessageBox.Show("Campos resetados!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ClickPesquisar(object sender, EventArgs e)
@@ -219,7 +252,7 @@ namespace SistemaComercio.Gui
                 if (ValidarCampos())
                 {
                     service.UpdateCliente(cliente);
-                    AddProviderInDataGrid(); //trazer o fornecedor q acabamos de cadastrar no dataGrid
+                    UpdateClientInDataGrid(); //trazer o fornecedor q acabamos de cadastrar no dataGrid
                     LimparCampos();
                     MessageBox.Show("Cliente editado!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

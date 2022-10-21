@@ -13,7 +13,7 @@ namespace SistemaComercioLibrary.Port
         int Count();
         void AddCliente(Cliente cliente);
         void UpdateCliente(Cliente cliente);
-        void DelCliente(string id);
+        void DelCliente(Cliente cliente);
         //mostra uma LISTA de fornecedores
         void ReadCliente(List<Cliente> ciente);
         List<Cliente> GetAllCliente();

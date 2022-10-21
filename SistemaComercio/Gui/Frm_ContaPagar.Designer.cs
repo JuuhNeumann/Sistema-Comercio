@@ -273,17 +273,17 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Tan;
             this.panel1.Controls.Add(this.btnSair);
-            this.panel1.Location = new System.Drawing.Point(-7, -9);
+            this.panel1.Location = new System.Drawing.Point(-7, -6);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(617, 251);
+            this.panel1.Size = new System.Drawing.Size(617, 248);
             this.panel1.TabIndex = 4;
             // 
             // Frm_ContaPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 239);
+            this.ClientSize = new System.Drawing.Size(602, 239);
             this.Controls.Add(this.btnBaixarConta);
             this.Controls.Add(this.btnEmitirRelatorio);
             this.Controls.Add(this.gpbContaPagar);

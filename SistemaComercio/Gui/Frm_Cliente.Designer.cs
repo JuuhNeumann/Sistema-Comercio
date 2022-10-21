@@ -380,8 +380,9 @@
             // 
             // btnSalvar
             // 
+            this.btnSalvar.Enabled = false;
             this.btnSalvar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Image = global::SistemaComercio.Properties.Resources.atualizar;
+            this.btnSalvar.Image = global::SistemaComercio.Properties.Resources.salve1;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalvar.Location = new System.Drawing.Point(121, 416);
             this.btnSalvar.Name = "btnSalvar";

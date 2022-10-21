@@ -13,7 +13,7 @@ namespace SistemaComercioLibrary.Port
         int Count();
         void AddProduto(Produto produto);
         void UpdateProduto(Produto produto);
-        void DelProduto(string id);
+        void DelProduto(Produto produto);
         //mostra uma LISTA de fornecedores
         void ReadProduto(List<Produto> produto);
         List<Produto> GetAllProduto();

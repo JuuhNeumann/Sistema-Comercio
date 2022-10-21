@@ -22,9 +22,10 @@ namespace SistemaComercioLibrary.Service
             _db.SaveChanges();
         }
 
-        public void DelProduto(string id)
+        public void DelProduto(Produto produto)
         {
-            throw new NotImplementedException();
+            _db.Produto.Remove(produto);
+            _db.SaveChanges();
         }
 
         public void ReadProduto(List<Produto> produto)
@@ -36,6 +37,10 @@ namespace SistemaComercioLibrary.Service
         {
             var prod = _db.Produto.FirstOrDefault(x => x.Id == produto.Id); //pega o id
             prod.Nome = produto.Nome;
+            prod.Preco = produto.Preco;
+            prod.Quantidade_Estoque = produto.Quantidade_Estoque;
+            prod.Unidade = produto.Unidade;
+            prod.Id_Fornecedor = produto.Id_Fornecedor;
             _db.SaveChanges();
         }
 

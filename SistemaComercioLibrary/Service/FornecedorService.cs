@@ -25,11 +25,6 @@ namespace SistemaComercioLibrary.Service
             _db.SaveChanges();
         }
 
-        public void DelFornecedor(string id)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Fornecedor> GetAllFornecedor()
         {
             return  _db.Fornecedor.ToList();
@@ -43,6 +38,17 @@ namespace SistemaComercioLibrary.Service
         public void UpdateFornecedor(Fornecedor fornecedor)
         {
             var forne = _db.Fornecedor.FirstOrDefault(x => x.Id == fornecedor.Id); //pega o id
+            forne.Nome = fornecedor.Nome;
+            forne.Cpf_Cnpj = fornecedor.Cpf_Cnpj;
+            forne.Logradouro = fornecedor.Logradouro;
+            forne.Numero = fornecedor.Numero;
+            forne.Complemento = fornecedor.Complemento;
+            forne.Bairro = fornecedor.Bairro;
+            forne.Cidade = fornecedor.Cidade;
+            forne.Estado = fornecedor.Estado;
+            forne.Cep = fornecedor.Cep;
+            forne.Telefone = fornecedor.Telefone;
+            forne.Email = fornecedor.Email;
             _db.SaveChanges();
         }
 
@@ -54,6 +60,12 @@ namespace SistemaComercioLibrary.Service
         public Fornecedor GetByIdFornecedor(int id)
         {
             return _db.Fornecedor.FirstOrDefault(x => x.Id.Equals(id)); //pega o id
+        }
+
+        public void DelFornecedor(Fornecedor fornecedor)
+        {
+            _db.Fornecedor.Remove(fornecedor);
+            _db.SaveChanges();
         }
     }
 }
