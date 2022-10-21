@@ -14,16 +14,16 @@ namespace SistemaComercioBiblioteca.Classes
         [Key]
         public int Id { get; set; }
         [Required]
-        [MaxLength(30, ErrorMessage = "O nome não pode ultrapassar 30 caracteres!")]
+        [MaxLength(255)]
         public string Nome { get; set; }
         [Required]
-        [MaxLength(10, ErrorMessage = "A quantidade em estoque não pode ultrapassar 10 caracteres!")]
+        [MaxLength(255)]
         public int Quantidade_Estoque { get; set; }
         [Required]
-        [MaxLength(30, ErrorMessage = "O preço não pode ultrapassar 30 caracteres!")]
+        [MaxLength(255)]
         public double Preco { get; set; }
         [Required]
-        [MaxLength(1, ErrorMessage = "A unidade não pode ultrapassar 1 caracteres!")]
+        [MaxLength(255)]
         public string Unidade { get; set; }
 
         public Fornecedor Fornecedor { get; set; }

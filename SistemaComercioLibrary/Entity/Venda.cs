@@ -14,16 +14,16 @@ namespace SistemaComercioLibrary.Classes
         [Key]
         public int Id { get; set; }
         [Required]
-        [MaxLength(10, ErrorMessage = "A data não pode ultrapassar 10 caracteres!")]
+        [MaxLength(10)]
         public DateTime Data { get; set; }
         [Required]
-        [MaxLength(5, ErrorMessage = "A hora não pode ultrapassar 5 caracteres!")]
+        [MaxLength(5)]
         public DateTime Hora { get; set; }
         [Required]
-        [MaxLength(30, ErrorMessage = "O total da venda não pode ultrapassar 30 caracteres!")]
+        [MaxLength(255)]
         public double Total_Venda { get; set; }
         [Required]
-        [MaxLength(30, ErrorMessage = "A situação da venda não pode ultrapassar 30 caracteres!")]
+        [MaxLength(255)]
         public string Situacao_Venda { get; set; }
         [Required]
         public Cliente Cliente { get; set; }

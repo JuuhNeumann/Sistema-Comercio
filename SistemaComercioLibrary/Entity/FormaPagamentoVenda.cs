@@ -12,7 +12,7 @@ namespace SistemaComercioLibrary.Entity
     {
         [Key]
         public int Id { get; set; }
-        [MaxLength(30, ErrorMessage = "O valor não pode ultrapassar 30 caracteres!")]
+        [MaxLength(255)]
         public double Valor { get; set; }
         public Venda Venda { get; set; }
         public int Id_Venda { get; set; }
