@@ -14,7 +14,7 @@ namespace SistemaComercioLibrary.Classes
         [Key]
         public int Id { get; set; }
         [Required]
-        [MaxLength(255)]
+        [MaxLength(30, ErrorMessage = "O nome não pode ultrapassar 30 caracteres!")]
         public string Nome { get; set; }
         public List<FormaPagamentoVenda> FormaPagamentoVenda { get; set; }
     }

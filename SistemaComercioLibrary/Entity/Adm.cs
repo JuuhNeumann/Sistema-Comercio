@@ -14,10 +14,10 @@ namespace SistemaComercioLibrary.Entity
         public int Id { get; set; }
         [Required]
         [Index(IsUnique = true)]
-        [MaxLength(255)]
+        [MaxLength(20, ErrorMessage = "O usuário não pode ultrapassar 20 caracteres!")]
         public string Usuario { get; set; }
         [Required]
-        [MaxLength(255)]
+        [MaxLength(10, ErrorMessage = "A senha não pode ultrapassar 10 caracteres!")]
         public string Senha { get; set; }
     }
 }
