@@ -40,7 +40,6 @@
             this.btnRelatorio = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.lblSelecionarProduto = new System.Windows.Forms.Label();
-            this.txtProdutoPesquisar = new System.Windows.Forms.TextBox();
             this.lblExemplo = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -59,6 +58,7 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.cmbConsulta = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbSelecioneProduto = new System.Windows.Forms.ComboBox();
             this.gpbDadosOperacionais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gpbDadosGerais.SuspendLayout();
@@ -195,14 +195,6 @@
             this.lblSelecionarProduto.TabIndex = 3;
             this.lblSelecionarProduto.Text = "Selecione o produto que deseja comprar:";
             // 
-            // txtProdutoPesquisar
-            // 
-            this.txtProdutoPesquisar.Location = new System.Drawing.Point(10, 42);
-            this.txtProdutoPesquisar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtProdutoPesquisar.Name = "txtProdutoPesquisar";
-            this.txtProdutoPesquisar.Size = new System.Drawing.Size(297, 21);
-            this.txtProdutoPesquisar.TabIndex = 4;
-            // 
             // lblExemplo
             // 
             this.lblExemplo.AutoSize = true;
@@ -305,12 +297,12 @@
             // gpbDadosGerais
             // 
             this.gpbDadosGerais.BackColor = System.Drawing.Color.LightYellow;
+            this.gpbDadosGerais.Controls.Add(this.cmbSelecioneProduto);
             this.gpbDadosGerais.Controls.Add(this.btnLimpar);
             this.gpbDadosGerais.Controls.Add(this.btnPesquisar);
             this.gpbDadosGerais.Controls.Add(this.btnCancelarCompra);
             this.gpbDadosGerais.Controls.Add(this.lblSelecionarProduto);
             this.gpbDadosGerais.Controls.Add(this.btnComprar);
-            this.gpbDadosGerais.Controls.Add(this.txtProdutoPesquisar);
             this.gpbDadosGerais.Controls.Add(this.lblExemplo);
             this.gpbDadosGerais.Controls.Add(this.txtPreco);
             this.gpbDadosGerais.Controls.Add(this.lblPreco);
@@ -423,6 +415,19 @@
             this.panel1.Size = new System.Drawing.Size(526, 543);
             this.panel1.TabIndex = 15;
             // 
+            // cmbSelecioneProduto
+            // 
+            this.cmbSelecioneProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSelecioneProduto.FormattingEnabled = true;
+            this.cmbSelecioneProduto.Items.AddRange(new object[] {
+            "Finalizado",
+            "Cancelado"});
+            this.cmbSelecioneProduto.Location = new System.Drawing.Point(8, 42);
+            this.cmbSelecioneProduto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cmbSelecioneProduto.Name = "cmbSelecioneProduto";
+            this.cmbSelecioneProduto.Size = new System.Drawing.Size(300, 21);
+            this.cmbSelecioneProduto.TabIndex = 13;
+            // 
             // Frm_Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -469,7 +474,6 @@
         private System.Windows.Forms.Button btnRelatorio;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Label lblSelecionarProduto;
-        private System.Windows.Forms.TextBox txtProdutoPesquisar;
         private System.Windows.Forms.Label lblExemplo;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -488,5 +492,6 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.ComboBox cmbConsulta;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox cmbSelecioneProduto;
     }
 }
