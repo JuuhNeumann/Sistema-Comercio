@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSelecioneProduto = new System.Windows.Forms.TextBox();
             this.lblExemplo = new System.Windows.Forms.Label();
@@ -43,7 +42,7 @@
             this.btnLimparCampos = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdbPeriodo = new System.Windows.Forms.RadioButton();
-            this.rdbFornecedor = new System.Windows.Forms.RadioButton();
+            this.rdbCliente = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -59,16 +58,22 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.btnEmitirRelatorio = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
+            this.tbcVenda = new System.Windows.Forms.TabControl();
+            this.tbpLancarVenda = new System.Windows.Forms.TabPage();
+            this.tbpCancelarVenda = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.tbcVenda.SuspendLayout();
+            this.tbpLancarVenda.SuspendLayout();
+            this.tbpCancelarVenda.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MistyRose;
+            this.panel1.Controls.Add(this.tbcVenda);
             this.panel1.Controls.Add(this.btnSair);
             this.panel1.Controls.Add(this.btnEmitirRelatorio);
             this.panel1.Controls.Add(this.groupBox3);
@@ -77,39 +82,16 @@
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(-7, -7);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(531, 545);
             this.panel1.TabIndex = 0;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnLimparCampos);
-            this.groupBox1.Controls.Add(this.btnLancarVenda);
-            this.groupBox1.Controls.Add(this.txtSelecioneProduto);
-            this.groupBox1.Controls.Add(this.btnCancelarVenda);
-            this.groupBox1.Controls.Add(this.lblPrecoUnitario);
-            this.groupBox1.Controls.Add(this.cmbQuantidade);
-            this.groupBox1.Controls.Add(this.lblQuantidade);
-            this.groupBox1.Controls.Add(this.cmbSelecioneProduto);
-            this.groupBox1.Controls.Add(this.btnPesquisar);
-            this.groupBox1.Controls.Add(this.lblExemplo);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(21, 19);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(491, 130);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Dados Gerais";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 27);
+            this.label1.Location = new System.Drawing.Point(7, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 13);
@@ -118,16 +100,17 @@
             // 
             // txtSelecioneProduto
             // 
-            this.txtSelecioneProduto.Location = new System.Drawing.Point(306, 69);
+            this.txtSelecioneProduto.Enabled = false;
+            this.txtSelecioneProduto.Location = new System.Drawing.Point(302, 55);
             this.txtSelecioneProduto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtSelecioneProduto.Name = "txtSelecioneProduto";
-            this.txtSelecioneProduto.Size = new System.Drawing.Size(177, 21);
+            this.txtSelecioneProduto.Size = new System.Drawing.Size(172, 21);
             this.txtSelecioneProduto.TabIndex = 1;
             // 
             // lblExemplo
             // 
             this.lblExemplo.AutoSize = true;
-            this.lblExemplo.Location = new System.Drawing.Point(313, 45);
+            this.lblExemplo.Location = new System.Drawing.Point(306, 31);
             this.lblExemplo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExemplo.Name = "lblExemplo";
             this.lblExemplo.Size = new System.Drawing.Size(74, 13);
@@ -136,7 +119,7 @@
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(389, 40);
+            this.btnPesquisar.Location = new System.Drawing.Point(380, 26);
             this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(94, 23);
@@ -148,16 +131,16 @@
             // 
             this.cmbSelecioneProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSelecioneProduto.FormattingEnabled = true;
-            this.cmbSelecioneProduto.Location = new System.Drawing.Point(10, 42);
+            this.cmbSelecioneProduto.Location = new System.Drawing.Point(10, 28);
             this.cmbSelecioneProduto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbSelecioneProduto.Name = "cmbSelecioneProduto";
-            this.cmbSelecioneProduto.Size = new System.Drawing.Size(300, 21);
+            this.cmbSelecioneProduto.Size = new System.Drawing.Size(294, 21);
             this.cmbSelecioneProduto.TabIndex = 3;
             // 
             // lblQuantidade
             // 
             this.lblQuantidade.AutoSize = true;
-            this.lblQuantidade.Location = new System.Drawing.Point(7, 70);
+            this.lblQuantidade.Location = new System.Drawing.Point(7, 58);
             this.lblQuantidade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuantidade.Name = "lblQuantidade";
             this.lblQuantidade.Size = new System.Drawing.Size(64, 13);
@@ -168,7 +151,7 @@
             // 
             this.cmbQuantidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbQuantidade.FormattingEnabled = true;
-            this.cmbQuantidade.Location = new System.Drawing.Point(69, 67);
+            this.cmbQuantidade.Location = new System.Drawing.Point(70, 55);
             this.cmbQuantidade.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbQuantidade.Name = "cmbQuantidade";
             this.cmbQuantidade.Size = new System.Drawing.Size(152, 21);
@@ -177,7 +160,7 @@
             // lblPrecoUnitario
             // 
             this.lblPrecoUnitario.AutoSize = true;
-            this.lblPrecoUnitario.Location = new System.Drawing.Point(229, 72);
+            this.lblPrecoUnitario.Location = new System.Drawing.Point(225, 58);
             this.lblPrecoUnitario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrecoUnitario.Name = "lblPrecoUnitario";
             this.lblPrecoUnitario.Size = new System.Drawing.Size(79, 13);
@@ -186,7 +169,7 @@
             // 
             // btnLancarVenda
             // 
-            this.btnLancarVenda.Location = new System.Drawing.Point(69, 102);
+            this.btnLancarVenda.Location = new System.Drawing.Point(104, 90);
             this.btnLancarVenda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLancarVenda.Name = "btnLancarVenda";
             this.btnLancarVenda.Size = new System.Drawing.Size(118, 23);
@@ -196,7 +179,7 @@
             // 
             // btnCancelarVenda
             // 
-            this.btnCancelarVenda.Location = new System.Drawing.Point(195, 102);
+            this.btnCancelarVenda.Location = new System.Drawing.Point(202, 48);
             this.btnCancelarVenda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelarVenda.Name = "btnCancelarVenda";
             this.btnCancelarVenda.Size = new System.Drawing.Size(118, 23);
@@ -206,7 +189,7 @@
             // 
             // btnLimparCampos
             // 
-            this.btnLimparCampos.Location = new System.Drawing.Point(321, 102);
+            this.btnLimparCampos.Location = new System.Drawing.Point(238, 90);
             this.btnLimparCampos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLimparCampos.Name = "btnLimparCampos";
             this.btnLimparCampos.Size = new System.Drawing.Size(118, 23);
@@ -216,9 +199,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.rdbFornecedor);
+            this.groupBox2.Controls.Add(this.rdbCliente);
             this.groupBox2.Controls.Add(this.rdbPeriodo);
-            this.groupBox2.Location = new System.Drawing.Point(23, 156);
+            this.groupBox2.Location = new System.Drawing.Point(21, 179);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -230,6 +213,7 @@
             // rdbPeriodo
             // 
             this.rdbPeriodo.AutoSize = true;
+            this.rdbPeriodo.Checked = true;
             this.rdbPeriodo.Location = new System.Drawing.Point(8, 18);
             this.rdbPeriodo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rdbPeriodo.Name = "rdbPeriodo";
@@ -239,22 +223,21 @@
             this.rdbPeriodo.Text = "Período";
             this.rdbPeriodo.UseVisualStyleBackColor = true;
             // 
-            // rdbFornecedor
+            // rdbCliente
             // 
-            this.rdbFornecedor.AutoSize = true;
-            this.rdbFornecedor.Location = new System.Drawing.Point(8, 41);
-            this.rdbFornecedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.rdbFornecedor.Name = "rdbFornecedor";
-            this.rdbFornecedor.Size = new System.Drawing.Size(79, 17);
-            this.rdbFornecedor.TabIndex = 3;
-            this.rdbFornecedor.TabStop = true;
-            this.rdbFornecedor.Text = "Fornecedor";
-            this.rdbFornecedor.UseVisualStyleBackColor = true;
+            this.rdbCliente.AutoSize = true;
+            this.rdbCliente.Location = new System.Drawing.Point(8, 41);
+            this.rdbCliente.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.rdbCliente.Name = "rdbCliente";
+            this.rdbCliente.Size = new System.Drawing.Size(58, 17);
+            this.rdbCliente.TabIndex = 3;
+            this.rdbCliente.Text = "Cliente";
+            this.rdbCliente.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(159, 174);
+            this.label2.Location = new System.Drawing.Point(159, 197);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(353, 13);
@@ -265,7 +248,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(162, 190);
+            this.comboBox1.Location = new System.Drawing.Point(162, 216);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(272, 21);
@@ -273,7 +256,7 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(437, 188);
+            this.btnConsultar.Location = new System.Drawing.Point(437, 216);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(75, 23);
@@ -284,10 +267,10 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 226);
+            this.dataGridView1.Location = new System.Drawing.Point(21, 249);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(491, 180);
+            this.dataGridView1.Size = new System.Drawing.Size(491, 157);
             this.dataGridView1.TabIndex = 11;
             // 
             // groupBox3
@@ -403,6 +386,49 @@
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             // 
+            // tbcVenda
+            // 
+            this.tbcVenda.Controls.Add(this.tbpLancarVenda);
+            this.tbcVenda.Controls.Add(this.tbpCancelarVenda);
+            this.tbcVenda.Location = new System.Drawing.Point(19, 19);
+            this.tbcVenda.Name = "tbcVenda";
+            this.tbcVenda.SelectedIndex = 0;
+            this.tbcVenda.Size = new System.Drawing.Size(493, 149);
+            this.tbcVenda.TabIndex = 14;
+            // 
+            // tbpLancarVenda
+            // 
+            this.tbpLancarVenda.BackColor = System.Drawing.Color.MistyRose;
+            this.tbpLancarVenda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tbpLancarVenda.Controls.Add(this.btnLimparCampos);
+            this.tbpLancarVenda.Controls.Add(this.cmbQuantidade);
+            this.tbpLancarVenda.Controls.Add(this.btnLancarVenda);
+            this.tbpLancarVenda.Controls.Add(this.label1);
+            this.tbpLancarVenda.Controls.Add(this.txtSelecioneProduto);
+            this.tbpLancarVenda.Controls.Add(this.btnPesquisar);
+            this.tbpLancarVenda.Controls.Add(this.cmbSelecioneProduto);
+            this.tbpLancarVenda.Controls.Add(this.lblExemplo);
+            this.tbpLancarVenda.Controls.Add(this.lblQuantidade);
+            this.tbpLancarVenda.Controls.Add(this.lblPrecoUnitario);
+            this.tbpLancarVenda.Location = new System.Drawing.Point(4, 22);
+            this.tbpLancarVenda.Name = "tbpLancarVenda";
+            this.tbpLancarVenda.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpLancarVenda.Size = new System.Drawing.Size(485, 123);
+            this.tbpLancarVenda.TabIndex = 0;
+            this.tbpLancarVenda.Text = "Lançar Venda";
+            // 
+            // tbpCancelarVenda
+            // 
+            this.tbpCancelarVenda.BackColor = System.Drawing.Color.MistyRose;
+            this.tbpCancelarVenda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tbpCancelarVenda.Controls.Add(this.btnCancelarVenda);
+            this.tbpCancelarVenda.Location = new System.Drawing.Point(4, 22);
+            this.tbpCancelarVenda.Name = "tbpCancelarVenda";
+            this.tbpCancelarVenda.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpCancelarVenda.Size = new System.Drawing.Size(485, 123);
+            this.tbpCancelarVenda.TabIndex = 1;
+            this.tbpCancelarVenda.Text = "Cancelar Venda";
+            // 
             // Frm_Venda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -416,13 +442,15 @@
             this.Text = "Venda";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.tbcVenda.ResumeLayout(false);
+            this.tbpLancarVenda.ResumeLayout(false);
+            this.tbpLancarVenda.PerformLayout();
+            this.tbpCancelarVenda.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -430,7 +458,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSelecioneProduto;
         private System.Windows.Forms.Button btnPesquisar;
@@ -443,7 +470,7 @@
         private System.Windows.Forms.Button btnLancarVenda;
         private System.Windows.Forms.Button btnLimparCampos;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rdbFornecedor;
+        private System.Windows.Forms.RadioButton rdbCliente;
         private System.Windows.Forms.RadioButton rdbPeriodo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -460,5 +487,8 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnEmitirRelatorio;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.TabControl tbcVenda;
+        private System.Windows.Forms.TabPage tbpLancarVenda;
+        private System.Windows.Forms.TabPage tbpCancelarVenda;
     }
 }
