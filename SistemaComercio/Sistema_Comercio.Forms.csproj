@@ -238,6 +238,12 @@
     <Compile Include="Gui\Frm_ContaPagar.Designer.cs">
       <DependentUpon>Frm_ContaPagar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Frm_ContaReceber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Frm_ContaReceber.Designer.cs">
+      <DependentUpon>Frm_ContaReceber.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Frm_Produto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_ContaPagar.resx">
       <DependentUpon>Frm_ContaPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Frm_ContaReceber.resx">
+      <DependentUpon>Frm_ContaReceber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_Fornecedor.resx">
       <DependentUpon>Frm_Fornecedor.cs</DependentUpon>

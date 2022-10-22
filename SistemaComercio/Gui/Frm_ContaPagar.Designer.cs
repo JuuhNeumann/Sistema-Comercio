@@ -32,7 +32,7 @@
             this.lblRespostaStatus = new System.Windows.Forms.Label();
             this.txtPago = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSelecioneCompra = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.txtValorPaga = new System.Windows.Forms.TextBox();
             this.txtDataPaga = new System.Windows.Forms.TextBox();
@@ -50,6 +50,8 @@
             this.btnEmitirRelatorio = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbSelecioneCompra = new System.Windows.Forms.ComboBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.gpbContaPagar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,10 +59,12 @@
             // gpbContaPagar
             // 
             this.gpbContaPagar.BackColor = System.Drawing.Color.Tan;
+            this.gpbContaPagar.Controls.Add(this.btnPesquisar);
+            this.gpbContaPagar.Controls.Add(this.cmbSelecioneCompra);
             this.gpbContaPagar.Controls.Add(this.lblRespostaStatus);
             this.gpbContaPagar.Controls.Add(this.txtPago);
             this.gpbContaPagar.Controls.Add(this.lblStatus);
-            this.gpbContaPagar.Controls.Add(this.label1);
+            this.gpbContaPagar.Controls.Add(this.lblSelecioneCompra);
             this.gpbContaPagar.Controls.Add(this.txtValor);
             this.gpbContaPagar.Controls.Add(this.txtValorPaga);
             this.gpbContaPagar.Controls.Add(this.txtDataPaga);
@@ -111,18 +115,19 @@
             this.lblStatus.TabIndex = 15;
             this.lblStatus.Text = "Status:";
             // 
-            // label1
+            // lblSelecioneCompra
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 29);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Selecione a compra???????";
+            this.lblSelecioneCompra.AutoSize = true;
+            this.lblSelecioneCompra.Location = new System.Drawing.Point(7, 29);
+            this.lblSelecioneCompra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSelecioneCompra.Name = "lblSelecioneCompra";
+            this.lblSelecioneCompra.Size = new System.Drawing.Size(182, 13);
+            this.lblSelecioneCompra.TabIndex = 14;
+            this.lblSelecioneCompra.Text = "Selecione a compra que deseja pagar:";
             // 
             // txtValor
             // 
+            this.txtValor.Enabled = false;
             this.txtValor.Location = new System.Drawing.Point(43, 146);
             this.txtValor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtValor.Name = "txtValor";
@@ -131,6 +136,7 @@
             // 
             // txtValorPaga
             // 
+            this.txtValorPaga.Enabled = false;
             this.txtValorPaga.Location = new System.Drawing.Point(397, 111);
             this.txtValorPaga.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtValorPaga.Name = "txtValorPaga";
@@ -139,6 +145,7 @@
             // 
             // txtDataPaga
             // 
+            this.txtDataPaga.Enabled = false;
             this.txtDataPaga.Location = new System.Drawing.Point(397, 84);
             this.txtDataPaga.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDataPaga.Name = "txtDataPaga";
@@ -147,6 +154,7 @@
             // 
             // txtDataFecha
             // 
+            this.txtDataFecha.Enabled = false;
             this.txtDataFecha.Location = new System.Drawing.Point(111, 111);
             this.txtDataFecha.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDataFecha.Name = "txtDataFecha";
@@ -155,6 +163,7 @@
             // 
             // txtDataLanca
             // 
+            this.txtDataLanca.Enabled = false;
             this.txtDataLanca.Location = new System.Drawing.Point(111, 84);
             this.txtDataLanca.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDataLanca.Name = "txtDataLanca";
@@ -279,6 +288,25 @@
             this.panel1.Size = new System.Drawing.Size(617, 248);
             this.panel1.TabIndex = 4;
             // 
+            // cmbSelecioneCompra
+            // 
+            this.cmbSelecioneCompra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSelecioneCompra.FormattingEnabled = true;
+            this.cmbSelecioneCompra.Location = new System.Drawing.Point(187, 26);
+            this.cmbSelecioneCompra.Name = "cmbSelecioneCompra";
+            this.cmbSelecioneCompra.Size = new System.Drawing.Size(272, 21);
+            this.cmbSelecioneCompra.TabIndex = 17;
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(466, 26);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(100, 22);
+            this.btnPesquisar.TabIndex = 5;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            // 
             // Frm_ContaPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -292,7 +320,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Frm_ContaPagar";
-            this.Text = "Frm_ContaPagar";
+            this.Text = "Contas a Pagar";
             this.gpbContaPagar.ResumeLayout(false);
             this.gpbContaPagar.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -317,12 +345,14 @@
         private System.Windows.Forms.Label lblDataPaga;
         private System.Windows.Forms.Label lblPago;
         private System.Windows.Forms.Label lblValor;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSelecioneCompra;
         private System.Windows.Forms.Button btnBaixarConta;
         private System.Windows.Forms.Label lblRespostaStatus;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Button btnEmitirRelatorio;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.ComboBox cmbSelecioneCompra;
     }
 }
