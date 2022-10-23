@@ -24,11 +24,7 @@ namespace SistemaComercio.Gui
         {
             InitializeComponent();
             LblNomeAdm.Text = usuario;
-            LblQuantForne.Text = serviceForne.Count().ToString();
-            LblQuantCli.Text = serviceCli.Count().ToString();
-            LblVend.Text = serviceVenda.Count().ToString();
-            LblCmpr.Text = serviceCompra.Count().ToString();
-            LblQuantProd.Text = serviceProduto.Count().ToString();
+            GetCount();
 
         }
 
@@ -36,22 +32,35 @@ namespace SistemaComercio.Gui
         {
         }
 
+        public void GetCount()
+        {
+            LblQuantForne.Text = serviceForne.Count().ToString();
+            LblQuantCli.Text = serviceCli.Count().ToString();
+            LblVend.Text = serviceVenda.Count().ToString();
+            LblCmpr.Text = serviceCompra.Count().ToString();
+            LblQuantProd.Text = serviceProduto.Count().ToString();
+        }
+
+        private void ClickCliente(object sender, EventArgs e)
+        {
+            Frm_Cliente cliente = new Frm_Cliente(this);
+            cliente.Show();
+        }
+
+
         private void ClickFornecedor(object sender, EventArgs e)
         {
             Frm_Fornecedor fornecedor = new Frm_Fornecedor();
             fornecedor.Show();
         }
-
-        private void ClickCliente(object sender, EventArgs e)
-        {
-            Frm_Cliente cliente = new Frm_Cliente();
-            cliente.Show();
-        }
+  
 
         private void ClickProduto(object sender, EventArgs e)
         {
             Frm_Produto produto = new Frm_Produto();
             produto.Show();
         }
+
+
     }
 }

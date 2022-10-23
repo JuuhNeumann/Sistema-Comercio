@@ -17,13 +17,15 @@ namespace SistemaComercio.Gui
     public partial class Frm_Cliente : Form
     {
         private IClientePort service = new ClienteService();
+        Frm_Principal telaPrincipal;
         DataTable dt = new DataTable();
         Cliente cli = null;
 
-        public Frm_Cliente()
+        public Frm_Cliente(Frm_Principal frm_Principal)
         {
             InitializeComponent();
             UpdateClientInDataGrid();
+            telaPrincipal = frm_Principal;
         }
 
         private void UpdateClientInDataGrid()
@@ -292,6 +294,7 @@ namespace SistemaComercio.Gui
                     service.AddCliente(cliente);
                     dataGridViewCli.DataSource = service.GetAllCliente();
                     LimparCampos();
+                    telaPrincipal.GetCount();
                     MessageBox.Show("Cliente cadastrado!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
