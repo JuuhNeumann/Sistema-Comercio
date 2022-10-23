@@ -382,7 +382,7 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(437, 216);
+            this.btnConsultar.Location = new System.Drawing.Point(437, 204);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(75, 23);
@@ -394,7 +394,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(162, 216);
+            this.comboBox1.Location = new System.Drawing.Point(162, 204);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(272, 21);
@@ -403,7 +403,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(159, 197);
+            this.label2.Location = new System.Drawing.Point(159, 188);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(353, 13);

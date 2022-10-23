@@ -368,3 +368,5 @@ E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\Sistema
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_Produto.resources
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_Compra.resources
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_ContaPagar.resources
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_ContaReceber.resources
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_Venda.resources
