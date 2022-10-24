@@ -164,7 +164,7 @@
             this.BtnVenda.Name = "BtnVenda";
             this.BtnVenda.Size = new System.Drawing.Size(170, 40);
             this.BtnVenda.TabIndex = 9;
-            this.BtnVenda.Text = "Vendas";
+            this.BtnVenda.Text = "Venda";
             this.BtnVenda.UseVisualStyleBackColor = false;
             // 
             // BtnCompra
@@ -177,8 +177,9 @@
             this.BtnCompra.Name = "BtnCompra";
             this.BtnCompra.Size = new System.Drawing.Size(170, 40);
             this.BtnCompra.TabIndex = 8;
-            this.BtnCompra.Text = "Compras";
+            this.BtnCompra.Text = "Compra";
             this.BtnCompra.UseVisualStyleBackColor = false;
+            this.BtnCompra.Click += new System.EventHandler(this.ClickCompra);
             // 
             // BtnCadFor
             // 

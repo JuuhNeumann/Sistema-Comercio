@@ -13,7 +13,7 @@ namespace SistemaComercioLibrary.Port
         void AddCompra(Compra compra);
         void DelCompra(string id);
         void UpdateCompra(string id);
-        void ReadCompra(List<Compra> compra);
+        List<Compra> GetAllCompra();
         //consulta por fornecedor (e periodo???)
         void ConsultCompra(Fornecedor fornecedor);
         //emitir relatorio de compras lançadas

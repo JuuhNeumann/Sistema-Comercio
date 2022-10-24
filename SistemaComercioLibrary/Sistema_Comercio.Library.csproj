@@ -322,6 +322,14 @@
     <Compile Include="Migrations\20221006233958_banco reset 2.designer.cs">
       <DependentUpon>20221006233958_banco reset 2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20221024220512_add.cs" />
+    <Compile Include="Migrations\20221024220512_add.designer.cs">
+      <DependentUpon>20221024220512_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20221024221839_novo add.cs" />
+    <Compile Include="Migrations\20221024221839_novo add.designer.cs">
+      <DependentUpon>20221024221839_novo add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\DataBaseContextModelSnapshot.cs" />
     <Compile Include="Persistence\Context\DataBaseContext.cs" />
     <Compile Include="Port\IAdmPort.cs" />

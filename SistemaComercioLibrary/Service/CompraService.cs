@@ -4,8 +4,6 @@ using SistemaComercioLibrary.Port;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SistemaComercioLibrary.Service
 {
@@ -44,9 +42,9 @@ namespace SistemaComercioLibrary.Service
             throw new NotImplementedException();
         }
 
-        public void ReadCompra(List<Compra> compra)
+        public List<Compra> GetAllCompra()
         {
-            throw new NotImplementedException();
+            return _db.Compra.ToList();
         }
 
         public void UpdateCompra(string id)

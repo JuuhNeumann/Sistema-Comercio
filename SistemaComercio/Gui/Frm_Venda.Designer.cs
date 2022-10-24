@@ -36,19 +36,25 @@
             this.btnLancarVenda = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSelecioneProduto = new System.Windows.Forms.TextBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.cmbSelecioneProduto = new System.Windows.Forms.ComboBox();
             this.lblExemplo = new System.Windows.Forms.Label();
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.lblPrecoUnitario = new System.Windows.Forms.Label();
             this.tbpCancelarVenda = new System.Windows.Forms.TabPage();
+            this.btnLimparCancelar = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblPrecoCancelar = new System.Windows.Forms.Label();
+            this.cmbQuantiCancelar = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbSelecioneCancelamento = new System.Windows.Forms.ComboBox();
+            this.lblExemploCancelar = new System.Windows.Forms.Label();
+            this.lblSlecioneCancelamento = new System.Windows.Forms.Label();
             this.btnCancelarVenda = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnEmitirRelatorio = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.cmbSituacao = new System.Windows.Forms.ComboBox();
             this.lblSituacao = new System.Windows.Forms.Label();
             this.txtHora = new System.Windows.Forms.TextBox();
             this.lblHora = new System.Windows.Forms.Label();
@@ -61,15 +67,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdbCliente = new System.Windows.Forms.RadioButton();
             this.rdbPeriodo = new System.Windows.Forms.RadioButton();
-            this.lblSlecioneCancelamento = new System.Windows.Forms.Label();
-            this.cmbSelecioneCancelamento = new System.Windows.Forms.ComboBox();
-            this.lblExemploCancelar = new System.Windows.Forms.Label();
-            this.btnPesquisarCancelar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbQuantiCancelar = new System.Windows.Forms.ComboBox();
-            this.lblPrecoCancelar = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnLimparCancelar = new System.Windows.Forms.Button();
+            this.lblRespostaSituacao = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tbcVenda.SuspendLayout();
             this.tbpLancarVenda.SuspendLayout();
@@ -116,7 +114,6 @@
             this.tbpLancarVenda.Controls.Add(this.btnLancarVenda);
             this.tbpLancarVenda.Controls.Add(this.label1);
             this.tbpLancarVenda.Controls.Add(this.txtSelecioneProduto);
-            this.tbpLancarVenda.Controls.Add(this.btnPesquisar);
             this.tbpLancarVenda.Controls.Add(this.cmbSelecioneProduto);
             this.tbpLancarVenda.Controls.Add(this.lblExemplo);
             this.tbpLancarVenda.Controls.Add(this.lblQuantidade);
@@ -177,16 +174,6 @@
             this.txtSelecioneProduto.Size = new System.Drawing.Size(172, 21);
             this.txtSelecioneProduto.TabIndex = 1;
             // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(380, 26);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(94, 23);
-            this.btnPesquisar.TabIndex = 1;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            // 
             // cmbSelecioneProduto
             // 
             this.cmbSelecioneProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -194,13 +181,13 @@
             this.cmbSelecioneProduto.Location = new System.Drawing.Point(10, 28);
             this.cmbSelecioneProduto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbSelecioneProduto.Name = "cmbSelecioneProduto";
-            this.cmbSelecioneProduto.Size = new System.Drawing.Size(294, 21);
+            this.cmbSelecioneProduto.Size = new System.Drawing.Size(382, 21);
             this.cmbSelecioneProduto.TabIndex = 3;
             // 
             // lblExemplo
             // 
             this.lblExemplo.AutoSize = true;
-            this.lblExemplo.Location = new System.Drawing.Point(306, 31);
+            this.lblExemplo.Location = new System.Drawing.Point(400, 31);
             this.lblExemplo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExemplo.Name = "lblExemplo";
             this.lblExemplo.Size = new System.Drawing.Size(74, 13);
@@ -237,7 +224,6 @@
             this.tbpCancelarVenda.Controls.Add(this.cmbQuantiCancelar);
             this.tbpCancelarVenda.Controls.Add(this.label3);
             this.tbpCancelarVenda.Controls.Add(this.cmbSelecioneCancelamento);
-            this.tbpCancelarVenda.Controls.Add(this.btnPesquisarCancelar);
             this.tbpCancelarVenda.Controls.Add(this.lblExemploCancelar);
             this.tbpCancelarVenda.Controls.Add(this.lblSlecioneCancelamento);
             this.tbpCancelarVenda.Controls.Add(this.btnCancelarVenda);
@@ -247,6 +233,79 @@
             this.tbpCancelarVenda.Size = new System.Drawing.Size(485, 123);
             this.tbpCancelarVenda.TabIndex = 1;
             this.tbpCancelarVenda.Text = "Cancelar Venda";
+            // 
+            // btnLimparCancelar
+            // 
+            this.btnLimparCancelar.Location = new System.Drawing.Point(228, 90);
+            this.btnLimparCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnLimparCancelar.Name = "btnLimparCancelar";
+            this.btnLimparCancelar.Size = new System.Drawing.Size(118, 23);
+            this.btnLimparCancelar.TabIndex = 17;
+            this.btnLimparCancelar.Text = "Limpar Campos";
+            this.btnLimparCancelar.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(305, 58);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(169, 21);
+            this.textBox1.TabIndex = 16;
+            // 
+            // lblPrecoCancelar
+            // 
+            this.lblPrecoCancelar.AutoSize = true;
+            this.lblPrecoCancelar.Location = new System.Drawing.Point(225, 61);
+            this.lblPrecoCancelar.Name = "lblPrecoCancelar";
+            this.lblPrecoCancelar.Size = new System.Drawing.Size(79, 13);
+            this.lblPrecoCancelar.TabIndex = 15;
+            this.lblPrecoCancelar.Text = "Preço Unitário:";
+            // 
+            // cmbQuantiCancelar
+            // 
+            this.cmbQuantiCancelar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbQuantiCancelar.FormattingEnabled = true;
+            this.cmbQuantiCancelar.Location = new System.Drawing.Point(66, 58);
+            this.cmbQuantiCancelar.Name = "cmbQuantiCancelar";
+            this.cmbQuantiCancelar.Size = new System.Drawing.Size(153, 21);
+            this.cmbQuantiCancelar.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Quantidade:";
+            // 
+            // cmbSelecioneCancelamento
+            // 
+            this.cmbSelecioneCancelamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSelecioneCancelamento.FormattingEnabled = true;
+            this.cmbSelecioneCancelamento.Location = new System.Drawing.Point(9, 32);
+            this.cmbSelecioneCancelamento.Name = "cmbSelecioneCancelamento";
+            this.cmbSelecioneCancelamento.Size = new System.Drawing.Size(385, 21);
+            this.cmbSelecioneCancelamento.TabIndex = 10;
+            // 
+            // lblExemploCancelar
+            // 
+            this.lblExemploCancelar.AutoSize = true;
+            this.lblExemploCancelar.Location = new System.Drawing.Point(400, 35);
+            this.lblExemploCancelar.Name = "lblExemploCancelar";
+            this.lblExemploCancelar.Size = new System.Drawing.Size(74, 13);
+            this.lblExemploCancelar.TabIndex = 11;
+            this.lblExemploCancelar.Text = "Ex: Xbox 360";
+            // 
+            // lblSlecioneCancelamento
+            // 
+            this.lblSlecioneCancelamento.AutoSize = true;
+            this.lblSlecioneCancelamento.Location = new System.Drawing.Point(6, 16);
+            this.lblSlecioneCancelamento.Name = "lblSlecioneCancelamento";
+            this.lblSlecioneCancelamento.Size = new System.Drawing.Size(236, 13);
+            this.lblSlecioneCancelamento.TabIndex = 9;
+            this.lblSlecioneCancelamento.Text = "Selecione o produto que deseja cancelar a venda:";
             // 
             // btnCancelarVenda
             // 
@@ -280,9 +339,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lblRespostaSituacao);
             this.groupBox3.Controls.Add(this.txtTotal);
             this.groupBox3.Controls.Add(this.lblTotal);
-            this.groupBox3.Controls.Add(this.cmbSituacao);
             this.groupBox3.Controls.Add(this.lblSituacao);
             this.groupBox3.Controls.Add(this.txtHora);
             this.groupBox3.Controls.Add(this.lblHora);
@@ -314,16 +373,6 @@
             this.lblTotal.Size = new System.Drawing.Size(34, 13);
             this.lblTotal.TabIndex = 14;
             this.lblTotal.Text = "Total:";
-            // 
-            // cmbSituacao
-            // 
-            this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSituacao.FormattingEnabled = true;
-            this.cmbSituacao.Location = new System.Drawing.Point(55, 55);
-            this.cmbSituacao.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cmbSituacao.Name = "cmbSituacao";
-            this.cmbSituacao.Size = new System.Drawing.Size(199, 21);
-            this.cmbSituacao.TabIndex = 13;
             // 
             // lblSituacao
             // 
@@ -447,87 +496,15 @@
             this.rdbPeriodo.Text = "Período";
             this.rdbPeriodo.UseVisualStyleBackColor = true;
             // 
-            // lblSlecioneCancelamento
+            // lblRespostaSituacao
             // 
-            this.lblSlecioneCancelamento.AutoSize = true;
-            this.lblSlecioneCancelamento.Location = new System.Drawing.Point(6, 16);
-            this.lblSlecioneCancelamento.Name = "lblSlecioneCancelamento";
-            this.lblSlecioneCancelamento.Size = new System.Drawing.Size(236, 13);
-            this.lblSlecioneCancelamento.TabIndex = 9;
-            this.lblSlecioneCancelamento.Text = "Selecione o produto que deseja cancelar a venda:";
-            // 
-            // cmbSelecioneCancelamento
-            // 
-            this.cmbSelecioneCancelamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSelecioneCancelamento.FormattingEnabled = true;
-            this.cmbSelecioneCancelamento.Location = new System.Drawing.Point(9, 32);
-            this.cmbSelecioneCancelamento.Name = "cmbSelecioneCancelamento";
-            this.cmbSelecioneCancelamento.Size = new System.Drawing.Size(295, 21);
-            this.cmbSelecioneCancelamento.TabIndex = 10;
-            // 
-            // lblExemploCancelar
-            // 
-            this.lblExemploCancelar.AutoSize = true;
-            this.lblExemploCancelar.Location = new System.Drawing.Point(302, 35);
-            this.lblExemploCancelar.Name = "lblExemploCancelar";
-            this.lblExemploCancelar.Size = new System.Drawing.Size(74, 13);
-            this.lblExemploCancelar.TabIndex = 11;
-            this.lblExemploCancelar.Text = "Ex: Xbox 360";
-            // 
-            // btnPesquisarCancelar
-            // 
-            this.btnPesquisarCancelar.Location = new System.Drawing.Point(381, 30);
-            this.btnPesquisarCancelar.Name = "btnPesquisarCancelar";
-            this.btnPesquisarCancelar.Size = new System.Drawing.Size(94, 22);
-            this.btnPesquisarCancelar.TabIndex = 12;
-            this.btnPesquisarCancelar.Text = "Pesquisar";
-            this.btnPesquisarCancelar.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Quantidade:";
-            // 
-            // cmbQuantiCancelar
-            // 
-            this.cmbQuantiCancelar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbQuantiCancelar.FormattingEnabled = true;
-            this.cmbQuantiCancelar.Location = new System.Drawing.Point(66, 58);
-            this.cmbQuantiCancelar.Name = "cmbQuantiCancelar";
-            this.cmbQuantiCancelar.Size = new System.Drawing.Size(153, 21);
-            this.cmbQuantiCancelar.TabIndex = 14;
-            // 
-            // lblPrecoCancelar
-            // 
-            this.lblPrecoCancelar.AutoSize = true;
-            this.lblPrecoCancelar.Location = new System.Drawing.Point(225, 61);
-            this.lblPrecoCancelar.Name = "lblPrecoCancelar";
-            this.lblPrecoCancelar.Size = new System.Drawing.Size(79, 13);
-            this.lblPrecoCancelar.TabIndex = 15;
-            this.lblPrecoCancelar.Text = "Preço Unitário:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(305, 58);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 21);
-            this.textBox1.TabIndex = 16;
-            // 
-            // btnLimparCancelar
-            // 
-            this.btnLimparCancelar.Location = new System.Drawing.Point(228, 90);
-            this.btnLimparCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnLimparCancelar.Name = "btnLimparCancelar";
-            this.btnLimparCancelar.Size = new System.Drawing.Size(118, 23);
-            this.btnLimparCancelar.TabIndex = 17;
-            this.btnLimparCancelar.Text = "Limpar Campos";
-            this.btnLimparCancelar.UseVisualStyleBackColor = true;
+            this.lblRespostaSituacao.AutoSize = true;
+            this.lblRespostaSituacao.Location = new System.Drawing.Point(65, 58);
+            this.lblRespostaSituacao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRespostaSituacao.Name = "lblRespostaSituacao";
+            this.lblRespostaSituacao.Size = new System.Drawing.Size(56, 13);
+            this.lblRespostaSituacao.TabIndex = 10;
+            this.lblRespostaSituacao.Text = "Finalizado";
             // 
             // Frm_Venda
             // 
@@ -561,7 +538,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSelecioneProduto;
-        private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Label lblExemplo;
         private System.Windows.Forms.ComboBox cmbSelecioneProduto;
         private System.Windows.Forms.Label lblQuantidade;
@@ -583,7 +559,6 @@
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.TextBox txtHora;
         private System.Windows.Forms.Label lblSituacao;
-        private System.Windows.Forms.ComboBox cmbSituacao;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnEmitirRelatorio;
@@ -597,8 +572,8 @@
         private System.Windows.Forms.ComboBox cmbQuantiCancelar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbSelecioneCancelamento;
-        private System.Windows.Forms.Button btnPesquisarCancelar;
         private System.Windows.Forms.Label lblExemploCancelar;
         private System.Windows.Forms.Label lblSlecioneCancelamento;
+        private System.Windows.Forms.Label lblRespostaSituacao;
     }
 }

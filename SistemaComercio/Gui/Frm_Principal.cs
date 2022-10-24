@@ -61,6 +61,10 @@ namespace SistemaComercio.Gui
             produto.Show();
         }
 
-
+        private void ClickCompra(object sender, EventArgs e)
+        {
+            Frm_Compra compra = new Frm_Compra();
+            compra.Show();
+        }
     }
 }

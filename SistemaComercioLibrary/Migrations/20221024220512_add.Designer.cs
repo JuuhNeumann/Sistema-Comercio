@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SistemaComercioLibrary.Persistence.Context;
@@ -9,9 +10,10 @@ using SistemaComercioLibrary.Persistence.Context;
 namespace SistemaComercioLibrary.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    partial class DataBaseContextModelSnapshot : ModelSnapshot
+    [Migration("20221024220512_add")]
+    partial class add
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -150,12 +152,12 @@ namespace SistemaComercioLibrary.Migrations
 
                     b.Property<DateTime>("Data")
                         .HasColumnType("timestamp without time zone")
-                        .HasMaxLength(255);
+                        .HasMaxLength(10);
 
                     b.Property<string>("Hora")
                         .IsRequired()
-                        .HasColumnType("character varying(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("character varying(5)")
+                        .HasMaxLength(5);
 
                     b.Property<int>("Id_Fornecedor")
                         .HasColumnType("integer");
