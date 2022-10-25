@@ -105,6 +105,7 @@ namespace SistemaComercioLibrary.Persistence.Context
         public DbSet<MovimentoCaixa> MovimentoCaixa { get; set; }
         public DbSet<Venda> Venda { get; set; }
         public DbSet<Compra> Compra { get; set; }
-
+        public DbSet<ItemCompra> ItemCompra { get; set; }
+        public DbSet<ItemVenda> ItemVenda { get; set; }
     }
 }

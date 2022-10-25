@@ -12,7 +12,7 @@ namespace SistemaComercioLibrary.Service
     public class MovimentoCaixaService : IMovimentoCaixaPort
     {
 
-        private DataBaseContext _db = new DataBaseContext();
+        private readonly DataBaseContext _db = new DataBaseContext(); //_db indica injeção de dependência
 
         public void AddMovimentoCaixa(MovimentoCaixa movimentoCaixa)
         {

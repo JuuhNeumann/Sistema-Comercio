@@ -12,7 +12,7 @@ namespace SistemaComercioLibrary.Service
     public class FormaPagamentoService : IFormaPagamentoPort
     {
 
-        private DataBaseContext _db = new DataBaseContext();
+        private readonly DataBaseContext _db = new DataBaseContext(); //_db indica injeção de dependência
 
         public void AddFormaPagamento(FormaPagamento formaPagamento)
         {

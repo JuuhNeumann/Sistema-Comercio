@@ -13,7 +13,7 @@ namespace SistemaComercioLibrary.Service
     public class VendaService : IVendaPort
     {
 
-        private DataBaseContext _db = new DataBaseContext();
+        private readonly DataBaseContext _db = new DataBaseContext(); //_db indica injeção de dependência
 
         public int Count()
         {

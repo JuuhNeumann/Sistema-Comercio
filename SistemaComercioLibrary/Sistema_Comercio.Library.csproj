@@ -340,6 +340,8 @@
     <Compile Include="Port\IFornecedorPort.cs" />
     <Compile Include="Port\ICaixaPort.cs" />
     <Compile Include="Port\IClientePort.cs" />
+    <Compile Include="Port\IItemCompraPort.cs" />
+    <Compile Include="Port\IItemVendaPort.cs" />
     <Compile Include="Port\IMovimentoCaixaPort.cs" />
     <Compile Include="Port\IProdutoPort.cs" />
     <Compile Include="Port\IVendaPort.cs" />
@@ -357,6 +359,8 @@
     <Compile Include="Service\ContaReceberService.cs" />
     <Compile Include="Service\FormaPagamentoService.cs" />
     <Compile Include="Service\FornecedorService.cs" />
+    <Compile Include="Service\ItemCompraService.cs" />
+    <Compile Include="Service\ItemVendaService.cs" />
     <Compile Include="Service\MovimentoCaixaService.cs" />
     <Compile Include="Service\ProdutoService.cs" />
     <Compile Include="Service\VendaService.cs" />

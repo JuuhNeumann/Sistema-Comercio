@@ -10,7 +10,7 @@ namespace SistemaComercioLibrary.Service
     public class CompraService : ICompraPort
     {
 
-        private DataBaseContext _db = new DataBaseContext();
+        private readonly DataBaseContext _db = new DataBaseContext(); //_db indica injeção de dependência
 
         public int Count()
         {

@@ -10,12 +10,13 @@ namespace SistemaComercioLibrary.Service
     public class ProdutoService : IProdutoPort
     {
 
-        private DataBaseContext _db = new DataBaseContext();
+        private readonly DataBaseContext _db = new DataBaseContext(); //_db indica injeção de dependência
 
         public int Count()
         {
             return _db.Produto.Count();
         }
+
         public void AddProduto(Produto produto)
         {
             _db.Produto.Add(produto);
