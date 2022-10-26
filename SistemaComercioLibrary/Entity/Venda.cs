@@ -26,11 +26,11 @@ namespace SistemaComercioLibrary.Classes
         [MaxLength(255)]
         public string Situacao_Venda { get; set; }
         [Required]
-        public Cliente Cliente { get; set; }
+        public virtual Cliente Cliente { get; set; }
 
         public int Id_Cliente { get; set; }
-        public List<FormaPagamentoVenda> FormaPagamentoVenda { get; set; }
-        public List<ItemVenda> ItemVenda { get; set; }
+        public virtual List<FormaPagamentoVenda> FormaPagamentoVenda { get; set; }
+        public virtual List<ItemVenda> ItemVenda { get; set; }
 
     }
 }

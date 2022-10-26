@@ -33,10 +33,10 @@ namespace SistemaComercioLibrary.Classes
         [Required]
         [MaxLength(255)]
         public double Valor_Pagamento { get; set; }
+
+
         [Required]
-        public Fornecedor Fornecedor { get; set; }
-
-
+        public virtual Fornecedor Fornecedor { get; set; }
         public int Id_Fornecedor { get; set; }
     }
 }

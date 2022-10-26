@@ -26,10 +26,10 @@ namespace SistemaComercioLibrary.Classes
         [MaxLength(255)]
         public string Situacao_Compra { get; set; }
         [Required]
-        public Fornecedor Fornecedor { get; set; }
+        public virtual Fornecedor Fornecedor { get; set; }
 
         public int Id_Fornecedor { get; set; }
-        public List<ItemCompra> ItemCompra { get; set; }
+        public virtual List<ItemCompra> ItemCompra { get; set; }
 
     }
 }

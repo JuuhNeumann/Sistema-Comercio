@@ -16,6 +16,6 @@ namespace SistemaComercioLibrary.Classes
         [Required]
         [MaxLength(255)]
         public string Nome { get; set; }
-        public List<FormaPagamentoVenda> FormaPagamentoVenda { get; set; }
+        public virtual List<FormaPagamentoVenda> FormaPagamentoVenda { get; set; }
     }
 }

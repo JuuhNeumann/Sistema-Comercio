@@ -49,8 +49,8 @@ namespace SistemaComercioLibrary.Classes
         public string Email { get; set; }
 
 
-        public List<Produto> Produto { get; set; }
-        public List<ContaPagar> ContaPagar { get; set; }
-        public List<Compra> Compra { get; set; }
+        public virtual List<Produto> Produto { get; set; }
+        public virtual List<ContaPagar> ContaPagar { get; set; }
+        public virtual List<Compra> Compra { get; set; }
     }
 }

@@ -53,6 +53,7 @@
             this.btnSair = new System.Windows.Forms.Button();
             this.btnEmitirRelatorio = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblRespostaSituacao = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblSituacao = new System.Windows.Forms.Label();
@@ -62,12 +63,11 @@
             this.lblData = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdbCliente = new System.Windows.Forms.RadioButton();
             this.rdbPeriodo = new System.Windows.Forms.RadioButton();
-            this.lblRespostaSituacao = new System.Windows.Forms.Label();
+            this.txtSelecioneVenda = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tbcVenda.SuspendLayout();
             this.tbpLancarVenda.SuspendLayout();
@@ -80,13 +80,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MistyRose;
+            this.panel1.Controls.Add(this.txtSelecioneVenda);
             this.panel1.Controls.Add(this.tbcVenda);
             this.panel1.Controls.Add(this.btnSair);
             this.panel1.Controls.Add(this.btnEmitirRelatorio);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.btnConsultar);
-            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Location = new System.Drawing.Point(-7, -7);
@@ -356,6 +356,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dados Operacionais";
             // 
+            // lblRespostaSituacao
+            // 
+            this.lblRespostaSituacao.AutoSize = true;
+            this.lblRespostaSituacao.Location = new System.Drawing.Point(65, 58);
+            this.lblRespostaSituacao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRespostaSituacao.Name = "lblRespostaSituacao";
+            this.lblRespostaSituacao.Size = new System.Drawing.Size(56, 13);
+            this.lblRespostaSituacao.TabIndex = 10;
+            this.lblRespostaSituacao.Text = "Finalizado";
+            // 
             // txtTotal
             // 
             this.txtTotal.Location = new System.Drawing.Point(309, 55);
@@ -439,16 +449,6 @@
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(162, 204);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(272, 21);
-            this.comboBox1.TabIndex = 10;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -496,15 +496,14 @@
             this.rdbPeriodo.Text = "Período";
             this.rdbPeriodo.UseVisualStyleBackColor = true;
             // 
-            // lblRespostaSituacao
+            // txtSelecioneVenda
             // 
-            this.lblRespostaSituacao.AutoSize = true;
-            this.lblRespostaSituacao.Location = new System.Drawing.Point(65, 58);
-            this.lblRespostaSituacao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblRespostaSituacao.Name = "lblRespostaSituacao";
-            this.lblRespostaSituacao.Size = new System.Drawing.Size(56, 13);
-            this.lblRespostaSituacao.TabIndex = 10;
-            this.lblRespostaSituacao.Text = "Finalizado";
+            this.txtSelecioneVenda.Enabled = false;
+            this.txtSelecioneVenda.Location = new System.Drawing.Point(162, 204);
+            this.txtSelecioneVenda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtSelecioneVenda.Name = "txtSelecioneVenda";
+            this.txtSelecioneVenda.Size = new System.Drawing.Size(267, 21);
+            this.txtSelecioneVenda.TabIndex = 10;
             // 
             // Frm_Venda
             // 
@@ -550,7 +549,6 @@
         private System.Windows.Forms.RadioButton rdbCliente;
         private System.Windows.Forms.RadioButton rdbPeriodo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -575,5 +573,6 @@
         private System.Windows.Forms.Label lblExemploCancelar;
         private System.Windows.Forms.Label lblSlecioneCancelamento;
         private System.Windows.Forms.Label lblRespostaSituacao;
+        private System.Windows.Forms.TextBox txtSelecioneVenda;
     }
 }

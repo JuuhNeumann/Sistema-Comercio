@@ -11,7 +11,7 @@ namespace SistemaComercioLibrary.Service
 {
     public class AdmService : IAdmPort
     {
-
+    
        private readonly DataBaseContext _db = new DataBaseContext(); //_db indica injeção de dependência
 
         public void AddAdm(Adm adm)

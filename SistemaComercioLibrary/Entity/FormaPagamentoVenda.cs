@@ -14,9 +14,9 @@ namespace SistemaComercioLibrary.Entity
         public int Id { get; set; }
         [MaxLength(255)]
         public double Valor { get; set; }
-        public Venda Venda { get; set; }
+        public virtual Venda Venda { get; set; }
         public int Id_Venda { get; set; }
-        public FormaPagamento FormaPagamento { get; set; }
+        public virtual FormaPagamento FormaPagamento { get; set; }
         public int Id_FormaPagamento { get; set; }
     }
 }

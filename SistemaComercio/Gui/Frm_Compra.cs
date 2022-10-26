@@ -5,6 +5,7 @@ using SistemaComercioLibrary.Port;
 using SistemaComercioLibrary.Service;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -14,17 +15,20 @@ namespace SistemaComercio.Gui
     {
         private IProdutoPort serviceProd;
         private ICompraPort service;
+        private IItemCompraPort serviceItemC;
         private List<Produto> produtos;
         private Produto produto;
+        private DataTable dt = new DataTable();
 
         public Frm_Compra()
         {
             serviceProd = new ProdutoService();
             service = new CompraService();
+            serviceItemC = new ItemCompraService();
             InitializeComponent();
             produtos = serviceProd.GetAllProduto();
-            dataGridViewCompra.DataSource = service.GetAllCompra();
             AddComboBoxProduto();
+            UpdateCompraInDataGrid();
 
         }
 
@@ -40,6 +44,8 @@ namespace SistemaComercio.Gui
 
         private void cmbSelecioneProduto_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cmbQuant.Items.Clear();
+
             produto = produtos.FirstOrDefault(produtos => produtos.Nome.Equals(cmbSelecioneProduto.Text));
             txtPreco.Text = "R$ " + produto.Preco.ToString();
 
@@ -51,32 +57,41 @@ namespace SistemaComercio.Gui
             }
         }
 
+
+        void SetDadosOperacionais(Compra compra)
+        {
+            txtData.Text = compra.Data.ToString();
+            txtHora.Text = compra.Hora.ToString();
+            txtTotal.Text = "R$" + compra.Total_Compra.ToString();
+            lblRespostaSituacao.Text = "Finalizado";
+        }
+
+
+        #region Click Botões
+
         private void ClickLançarCompra(object sender, EventArgs e)
         {
             var compra = new Compra()
             {
                 Situacao_Compra = lblRespostaSituacao.Text,
-                Total_Compra = produto.Preco*Convert.ToInt32(cmbQuant.Text),
+                Total_Compra = produto.Preco * Convert.ToInt32(cmbQuant.Text),
                 Data = DateTime.UtcNow.Date,
                 Hora = DateTime.Now.ToString("HH:mm:ss"),
                 Id_Fornecedor = produto.Id_Fornecedor,
             };
 
+
             var itemCompra = new ItemCompra()
             {
                 Compra = compra,
-                Id_Compra = 1,
                 Id_Produto = produto.Id,
+                Quantidade = Convert.ToInt32(cmbQuant.Text),
+                Total_Item = compra.Total_Compra,
+                Valor_Unitario = produto.Preco,
             };
 
-
-            txtData.Text = compra.Data.ToString();
-            txtHora.Text = compra.Hora.ToString();
-            txtTotal.Text = "R$" + compra.Total_Compra.ToString();
-
-            service.AddCompra(compra);
-            lblRespostaSituacao.Text = "Finalizado";
-            
+            serviceItemC.AddItemCompra(itemCompra);
+            SetDadosOperacionais(compra);
         }
 
         private void ClickCancelarCompra(object sender, EventArgs e)
@@ -84,6 +99,46 @@ namespace SistemaComercio.Gui
             lblRespostaSituacao.Text = "Cancelado";
         }
 
+        #endregion
+
+        #region DataGridView
+
+        private void UpdateCompraInDataGrid()
+        {
+            dt = new DataTable();
+            dt.Columns.Add("Id", typeof(string));
+            dt.Columns.Add("Quantidade", typeof(string));
+            dt.Columns.Add("Valor Unitario", typeof(string));
+            dt.Columns.Add("Total", typeof(string));
+            dt.Columns.Add("Id Produto", typeof(string));
+            dt.Columns.Add("Id Compra", typeof(string));
+            dt.Columns.Add("Data", typeof(string));
+            dt.Columns.Add("Hora", typeof(string));
+            dt.Columns.Add("Situacao", typeof(string));
+            dt.Columns.Add("Id Fornecedor", typeof(string));
+
+            var itemCompras = serviceItemC.GetAllItemCompra();
+
+            foreach (var itemCompra in itemCompras)
+            {
+                dt.Rows.Add(new object[]
+                {
+                    itemCompra.Id,
+                    itemCompra.Quantidade,
+                    itemCompra.Valor_Unitario,
+                    itemCompra.Total_Item,
+                    itemCompra.Id_Produto,
+                    itemCompra.Id_Compra,
+                    itemCompra.Compra.Data,
+                    itemCompra.Compra.Hora,
+                    itemCompra.Compra.Situacao_Compra,
+                    itemCompra.Compra.Id_Fornecedor
+                });
+            }
+            dataGridViewCompra.DataSource = dt;
+        }
+
+        #endregion
 
     }
 }

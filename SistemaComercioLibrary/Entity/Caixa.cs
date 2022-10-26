@@ -20,6 +20,6 @@ namespace SistemaComercioLibrary.Classes
         public double Saldo { get; set; }
 
 
-        public List<MovimentoCaixa> MovimentoCaixa { get; set; }
+        public virtual List<MovimentoCaixa> MovimentoCaixa { get; set; }
     }
 }

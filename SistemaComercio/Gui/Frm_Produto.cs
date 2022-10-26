@@ -11,8 +11,8 @@ namespace SistemaComercio.Gui
     {
         private IProdutoPort service = new ProdutoService();
         private IFornecedorPort serviceForne = new FornecedorService();
-        DataTable dt = new DataTable();
-        Produto prod = null;
+        private DataTable dt = new DataTable();
+        private Produto prod = null;
 
         public Frm_Produto()
         {

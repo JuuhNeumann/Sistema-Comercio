@@ -19,9 +19,9 @@ namespace SistemaComercioLibrary.Entity
         public double Valor_Unitario { get; set; }
         [MaxLength(255)]
         public double Total_Item { get; set; }
-        public Venda Venda { get; set; }
+        public virtual Venda Venda { get; set; }
         public int Id_Venda { get; set; }
-        public Produto Produto { get; set; }
+        public virtual Produto Produto { get; set; }
         public int Id_Produto { get; set; }
     }
 }

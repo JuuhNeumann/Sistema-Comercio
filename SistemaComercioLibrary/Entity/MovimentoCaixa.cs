@@ -28,7 +28,7 @@ namespace SistemaComercioLibrary.Classes
         [MaxLength(255)]
         public double Valor { get; set; }
         [Required]
-        public Caixa Caixa { get; set; }
+        public virtual Caixa Caixa { get; set; }
 
         public int Id_Caixa { get; set; }
 

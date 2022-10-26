@@ -55,8 +55,8 @@
             this.rdbPeriodo = new System.Windows.Forms.RadioButton();
             this.lblConsulta = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.cmbConsulta = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSelecioneCompra = new System.Windows.Forms.TextBox();
             this.tbcCompra = new System.Windows.Forms.TabControl();
             this.tbpLancarCompra = new System.Windows.Forms.TabPage();
             this.tbpCancelarCompra = new System.Windows.Forms.TabPage();
@@ -287,9 +287,6 @@
             // 
             this.cmbSelecioneProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSelecioneProduto.FormattingEnabled = true;
-            this.cmbSelecioneProduto.Items.AddRange(new object[] {
-            "Finalizado",
-            "Cancelado"});
             this.cmbSelecioneProduto.Location = new System.Drawing.Point(10, 30);
             this.cmbSelecioneProduto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbSelecioneProduto.Name = "cmbSelecioneProduto";
@@ -366,29 +363,28 @@
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
             // 
-            // cmbConsulta
-            // 
-            this.cmbConsulta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbConsulta.FormattingEnabled = true;
-            this.cmbConsulta.Location = new System.Drawing.Point(154, 202);
-            this.cmbConsulta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cmbConsulta.Name = "cmbConsulta";
-            this.cmbConsulta.Size = new System.Drawing.Size(272, 21);
-            this.cmbConsulta.TabIndex = 13;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Cornsilk;
+            this.panel1.Controls.Add(this.txtSelecioneCompra);
             this.panel1.Controls.Add(this.tbcCompra);
             this.panel1.Controls.Add(this.dataGridViewCompra);
             this.panel1.Controls.Add(this.btnConsultar);
             this.panel1.Controls.Add(this.lblConsulta);
             this.panel1.Controls.Add(this.gpbConsulta);
-            this.panel1.Controls.Add(this.cmbConsulta);
             this.panel1.Location = new System.Drawing.Point(-3, -5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(526, 543);
             this.panel1.TabIndex = 15;
+            // 
+            // txtSelecioneCompra
+            // 
+            this.txtSelecioneCompra.Enabled = false;
+            this.txtSelecioneCompra.Location = new System.Drawing.Point(155, 202);
+            this.txtSelecioneCompra.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtSelecioneCompra.Name = "txtSelecioneCompra";
+            this.txtSelecioneCompra.Size = new System.Drawing.Size(271, 21);
+            this.txtSelecioneCompra.TabIndex = 14;
             // 
             // tbcCompra
             // 
@@ -570,7 +566,6 @@
         private System.Windows.Forms.RadioButton rdbPeriodo;
         private System.Windows.Forms.Label lblConsulta;
         private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.ComboBox cmbConsulta;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cmbSelecioneProduto;
         private System.Windows.Forms.TabControl tbcCompra;
@@ -585,5 +580,6 @@
         private System.Windows.Forms.Label lblExemploCancel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblRespostaSituacao;
+        private System.Windows.Forms.TextBox txtSelecioneCompra;
     }
 }

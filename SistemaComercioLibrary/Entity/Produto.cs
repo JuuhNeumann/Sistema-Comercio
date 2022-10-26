@@ -26,10 +26,10 @@ namespace SistemaComercioBiblioteca.Classes
         [MaxLength(255)]
         public string Unidade { get; set; }
 
-        public Fornecedor Fornecedor { get; set; }
+        public virtual Fornecedor Fornecedor { get; set; }
         public int Id_Fornecedor { get; set; }
-        public List<ItemVenda> ItemVenda { get; set; }
-        public List<ItemCompra> ItemCompra { get; set; }
+        public virtual List<ItemVenda> ItemVenda { get; set; }
+        public virtual List<ItemCompra> ItemCompra { get; set; }
 
     }
 }

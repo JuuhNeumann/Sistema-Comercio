@@ -39,19 +39,19 @@
             this.cmbNomeForne = new System.Windows.Forms.ComboBox();
             this.lblNomeForne = new System.Windows.Forms.Label();
             this.cmbUnidade = new System.Windows.Forms.ComboBox();
-            this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.lblPesquisar = new System.Windows.Forms.Label();
-            this.dataGridViewProd = new System.Windows.Forms.DataGridView();
-            this.pnlMeio = new System.Windows.Forms.Panel();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.lblPesquisar = new System.Windows.Forms.Label();
+            this.dataGridViewProd = new System.Windows.Forms.DataGridView();
             this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pnlMeio = new System.Windows.Forms.Panel();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlFundo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProd)).BeginInit();
             this.SuspendLayout();
@@ -175,67 +175,11 @@
             this.cmbUnidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUnidade.FormattingEnabled = true;
             this.cmbUnidade.Items.AddRange(new object[] {
-            "Nenhum",
             "N"});
             this.cmbUnidade.Location = new System.Drawing.Point(302, 98);
             this.cmbUnidade.Name = "cmbUnidade";
             this.cmbUnidade.Size = new System.Drawing.Size(156, 21);
             this.cmbUnidade.TabIndex = 16;
-            // 
-            // txtPesquisar
-            // 
-            this.txtPesquisar.Location = new System.Drawing.Point(113, 158);
-            this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(251, 20);
-            this.txtPesquisar.TabIndex = 9;
-            // 
-            // lblPesquisar
-            // 
-            this.lblPesquisar.AutoSize = true;
-            this.lblPesquisar.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.lblPesquisar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPesquisar.Location = new System.Drawing.Point(12, 162);
-            this.lblPesquisar.Name = "lblPesquisar";
-            this.lblPesquisar.Size = new System.Drawing.Size(104, 13);
-            this.lblPesquisar.TabIndex = 9;
-            this.lblPesquisar.Text = "Pesquisar por nome:";
-            // 
-            // dataGridViewProd
-            // 
-            this.dataGridViewProd.AllowUserToAddRows = false;
-            this.dataGridViewProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Excluir,
-            this.Editar});
-            this.dataGridViewProd.Location = new System.Drawing.Point(15, 184);
-            this.dataGridViewProd.Name = "dataGridViewProd";
-            this.dataGridViewProd.RowHeadersVisible = false;
-            this.dataGridViewProd.Size = new System.Drawing.Size(443, 171);
-            this.dataGridViewProd.TabIndex = 1;
-            this.dataGridViewProd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FormattingCollunms);
-            this.dataGridViewProd.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.FormatttingMensageRows);
-            this.dataGridViewProd.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.FormattingRows);
-            // 
-            // pnlMeio
-            // 
-            this.pnlMeio.BackColor = System.Drawing.Color.DarkGreen;
-            this.pnlMeio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlMeio.Location = new System.Drawing.Point(3, 135);
-            this.pnlMeio.Name = "pnlMeio";
-            this.pnlMeio.Size = new System.Drawing.Size(472, 10);
-            this.pnlMeio.TabIndex = 0;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::SistemaComercio.Properties.Resources.atualizar;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::SistemaComercio.Properties.Resources.lixo;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             // 
             // btnSair
             // 
@@ -303,6 +247,40 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.CLickPesquisar);
             // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.Location = new System.Drawing.Point(113, 158);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(251, 20);
+            this.txtPesquisar.TabIndex = 9;
+            // 
+            // lblPesquisar
+            // 
+            this.lblPesquisar.AutoSize = true;
+            this.lblPesquisar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.lblPesquisar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesquisar.Location = new System.Drawing.Point(12, 162);
+            this.lblPesquisar.Name = "lblPesquisar";
+            this.lblPesquisar.Size = new System.Drawing.Size(104, 13);
+            this.lblPesquisar.TabIndex = 9;
+            this.lblPesquisar.Text = "Pesquisar por nome:";
+            // 
+            // dataGridViewProd
+            // 
+            this.dataGridViewProd.AllowUserToAddRows = false;
+            this.dataGridViewProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Excluir,
+            this.Editar});
+            this.dataGridViewProd.Location = new System.Drawing.Point(15, 184);
+            this.dataGridViewProd.Name = "dataGridViewProd";
+            this.dataGridViewProd.RowHeadersVisible = false;
+            this.dataGridViewProd.Size = new System.Drawing.Size(443, 171);
+            this.dataGridViewProd.TabIndex = 1;
+            this.dataGridViewProd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FormattingCollunms);
+            this.dataGridViewProd.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.FormatttingMensageRows);
+            this.dataGridViewProd.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.FormattingRows);
+            // 
             // Excluir
             // 
             this.Excluir.HeaderText = "";
@@ -314,6 +292,27 @@
             this.Editar.HeaderText = "";
             this.Editar.Image = global::SistemaComercio.Properties.Resources.editar;
             this.Editar.Name = "Editar";
+            // 
+            // pnlMeio
+            // 
+            this.pnlMeio.BackColor = System.Drawing.Color.DarkGreen;
+            this.pnlMeio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlMeio.Location = new System.Drawing.Point(3, 135);
+            this.pnlMeio.Name = "pnlMeio";
+            this.pnlMeio.Size = new System.Drawing.Size(472, 10);
+            this.pnlMeio.TabIndex = 0;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::SistemaComercio.Properties.Resources.atualizar;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::SistemaComercio.Properties.Resources.lixo;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             // 
             // Frm_Produto
             // 

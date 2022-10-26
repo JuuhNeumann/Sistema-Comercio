@@ -48,7 +48,7 @@ namespace SistemaComercioLibrary.Classes
         [MaxLength(255)]
         public string Email { get; set; }
 
-        public List<ContaReceber> ContaReceber  { get; set; }
-        public List<Venda> Venda { get; set; }
+        public virtual List<ContaReceber> ContaReceber  { get; set; }
+        public virtual List<Venda> Venda { get; set; }
     }
 }
