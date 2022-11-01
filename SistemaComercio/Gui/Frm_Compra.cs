@@ -167,10 +167,8 @@ namespace SistemaComercio.Gui
 
         private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            //e -> PEGA TODA A LINHA 
-            dataGridViewCompra.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Produto";
-            dataGridViewCompra.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Produto";
-        } //CellFormatting
+
+        }
 
         #endregion
 
@@ -178,27 +176,36 @@ namespace SistemaComercio.Gui
 
         private void ClickLançarCompra(object sender, EventArgs e)
         {
-            var compra = new Compra()
+            //VALIDAR SE CAMPOS FORAM PREENCHIDAOS
+
+            if (cmbQuant.SelectedIndex == -1 & cmbSelecioneProduto.SelectedIndex == -1)
             {
-                Situacao_Compra = lblRespostaSituacao.Text,
-                Total_Compra = produto.Preco * Convert.ToInt32(cmbQuant.Text),
-                Data = DateTime.UtcNow.Date,
-                Hora = DateTime.Now.ToString("HH:mm:ss"),
-                Id_Fornecedor = produto.Id_Fornecedor,
-            };
-
-
-            var itemCompra = new ItemCompra()
+                MessageBox.Show("ERRO");
+            }
+            else
             {
-                Compra = compra,
-                Id_Produto = produto.Id,
-                Quantidade = Convert.ToInt32(cmbQuant.Text),
-                Total_Item = compra.Total_Compra,
-                Valor_Unitario = produto.Preco,
-            };
+                var compra = new Compra()
+                {
+                    Situacao_Compra = lblRespostaSituacao.Text,
+                    Total_Compra = produto.Preco * Convert.ToInt32(cmbQuant.Text),
+                    Data = DateTime.UtcNow.Date,
+                    Hora = DateTime.Now.ToString("HH:mm:ss"),
+                    Id_Fornecedor = produto.Id_Fornecedor,
+                };
 
-            serviceItemC.AddItemCompra(itemCompra);
-            SetDadosOperacionais(compra);
+
+                var itemCompra = new ItemCompra()
+                {
+                    Compra = compra,
+                    Id_Produto = produto.Id,
+                    Quantidade = Convert.ToInt32(cmbQuant.Text),
+                    Total_Item = compra.Total_Compra,
+                    Valor_Unitario = produto.Preco,
+                };
+
+                serviceItemC.AddItemCompra(itemCompra);
+                SetDadosOperacionais(compra);
+            }
         }
 
         private void ClickCancelarCompra(object sender, EventArgs e)
