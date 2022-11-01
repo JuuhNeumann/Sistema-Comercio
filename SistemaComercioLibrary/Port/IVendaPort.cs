@@ -19,5 +19,9 @@ namespace SistemaComercioLibrary.Port
         //emitir relatorio de vendas realizadas filtrar por periodo?????? e cliente
         void IssueReportVenda(List<Venda> situacaoVenda);
         Compra GetCompra();
+        List<Venda> GetAllVenda();
+        Venda GetByIdVenda(int id);
+        void UpdateVendaSituacao(int id, string situacao);
+
     }
 }

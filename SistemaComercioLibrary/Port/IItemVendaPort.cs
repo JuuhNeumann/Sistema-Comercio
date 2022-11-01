@@ -14,6 +14,7 @@ namespace SistemaComercioLibrary.Port
         void DelItemVenda(ItemCompra itemVenda);
         List<ItemVenda> GetAllItemVenda();
         ItemVenda GetByIdItemVenda(int id);
+        int Count();
     }
 }
 

@@ -55,5 +55,19 @@ namespace SistemaComercioLibrary.Service
         {
             throw new NotImplementedException();
         }
+        public void UpdateVendaSituacao(int id, string situacao)
+        {
+            var cli = _db.Venda.FirstOrDefault(x => x.Id == id); //pega o id
+            cli.Situacao_Venda = situacao;
+            _db.SaveChanges();
+        }
+        public List<Venda> GetAllVenda()
+        {
+            return _db.Venda.ToList();
+        }
+        public Venda GetByIdVenda(int id)
+        {
+            return _db.Venda.FirstOrDefault(x => x.Id.Equals(id)); //pega o id
+        }
     }
 }

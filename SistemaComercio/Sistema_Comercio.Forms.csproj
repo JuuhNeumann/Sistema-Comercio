@@ -247,6 +247,18 @@
     <Compile Include="Gui\Frm_ContaReceber.Designer.cs">
       <DependentUpon>Frm_ContaReceber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Frm_ListarVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Frm_ListarVenda.Designer.cs">
+      <DependentUpon>Frm_ListarVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Frm_Procurar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Frm_Procurar.Designer.cs">
+      <DependentUpon>Frm_Procurar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Frm_Produto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,6 +301,12 @@
     <Compile Include="Gui\Frm_Venda.Designer.cs">
       <DependentUpon>Frm_Venda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Frm_Venda2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Frm_Venda2.Designer.cs">
+      <DependentUpon>Frm_Venda2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SistemaComercioDataSet1.Designer.cs">
@@ -314,17 +332,26 @@
     <EmbeddedResource Include="Gui\Frm_Fornecedor.resx">
       <DependentUpon>Frm_Fornecedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Frm_ListarVenda.resx">
+      <DependentUpon>Frm_ListarVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_Principal.resx">
       <DependentUpon>Frm_Principal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Frm_Procurar.resx">
+      <DependentUpon>Frm_Procurar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_Produto.resx">
       <DependentUpon>Frm_Produto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_Venda.resx">
       <DependentUpon>Frm_Venda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Frm_Venda2.resx">
+      <DependentUpon>Frm_Venda2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -140,5 +140,9 @@ namespace SistemaComercio.Gui
 
         #endregion
 
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

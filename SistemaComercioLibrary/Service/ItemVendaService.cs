@@ -42,5 +42,9 @@ namespace SistemaComercioLibrary.Service
             itemV.Id_Venda = itemVenda.Id_Venda;
             _db.SaveChanges();
         }
+        public int Count()
+        {
+            return _db.ItemVenda.Count();
+        }
     }
 }
