@@ -1,4 +1,5 @@
-﻿using SistemaComercioLibrary.Classes;
+﻿using SistemaComercioBiblioteca.Classes;
+using SistemaComercioLibrary.Classes;
 using SistemaComercioLibrary.Persistence.Context;
 using SistemaComercioLibrary.Port;
 using System;
@@ -27,9 +28,10 @@ namespace SistemaComercioLibrary.Service
             throw new NotImplementedException();
         }
 
-        public void DelCompra(string id)
+        public void DelCompra(Compra compra)
         {
-            throw new NotImplementedException();
+            _db.Compra.Remove(compra);
+            _db.SaveChanges();
         }
 
         public Compra GetCompra()
@@ -47,7 +49,12 @@ namespace SistemaComercioLibrary.Service
             return _db.Compra.ToList();
         }
 
-        public void UpdateCompra(string id)
+        public void UpdateCompra(Compra compra)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Compra GetByIdCompra(int id)
         {
             throw new NotImplementedException();
         }

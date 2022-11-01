@@ -1,4 +1,5 @@
-﻿using SistemaComercioLibrary.Classes;
+﻿using SistemaComercioBiblioteca.Classes;
+using SistemaComercioLibrary.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +12,14 @@ namespace SistemaComercioLibrary.Port
     {
         int Count();
         void AddCompra(Compra compra);
-        void DelCompra(string id);
-        void UpdateCompra(string id);
+        void DelCompra(Compra compra);
+        void UpdateCompra(Compra compra);
         List<Compra> GetAllCompra();
         //consulta por fornecedor (e periodo???)
         void ConsultCompra(Fornecedor fornecedor);
         //emitir relatorio de compras lançadas
         void IssueReportCompra(List<Compra> situacaoCompra);
         Compra GetCompra();
+        Compra GetByIdCompra(int id);
     }
 }

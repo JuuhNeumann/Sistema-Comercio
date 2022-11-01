@@ -192,6 +192,7 @@
             this.btnSair.TabIndex = 2;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.ClickSair);
             // 
             // lblSelecionarProduto
             // 
@@ -221,6 +222,9 @@
             this.dataGridViewCompra.Name = "dataGridViewCompra";
             this.dataGridViewCompra.Size = new System.Drawing.Size(491, 156);
             this.dataGridViewCompra.TabIndex = 7;
+            this.dataGridViewCompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FormattingCollunms);
+            this.dataGridViewCompra.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.FormatttingMensageRows);
+            this.dataGridViewCompra.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.FormattingRows);
             // 
             // lblPreco
             // 
@@ -303,6 +307,7 @@
             this.btnLimpar.TabIndex = 12;
             this.btnLimpar.Text = "Limpar Campos";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.ClickLimparCamposLancar);
             // 
             // gpbConsulta
             // 
@@ -362,6 +367,7 @@
             this.btnConsultar.TabIndex = 14;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.ClickConsultar);
             // 
             // panel1
             // 
@@ -445,6 +451,7 @@
             this.btnLimparCancel.TabIndex = 18;
             this.btnLimparCancel.Text = "Limpar Campos";
             this.btnLimparCancel.UseVisualStyleBackColor = true;
+            this.btnLimparCancel.Click += new System.EventHandler(this.ClickLimparCamposDel);
             // 
             // cmbSelecioneCancel
             // 

@@ -21,6 +21,14 @@ namespace SistemaComercio.Gui
             UpdateProductsInDataGrid();
         }
 
+        //vai usar ainda?
+        private void Frm_Produto_Load(object sender, EventArgs e)
+        {
+            dataGridViewProd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewProd.DataSource = service.GetAllProduto();
+        }
+
+        #region ComboBox
         private void AddComboBoxFornecedor()
         {
             var fornecedores = serviceForne.GetAllFornecedor();
@@ -32,12 +40,9 @@ namespace SistemaComercio.Gui
             }
         }
 
-        private void Frm_Produto_Load(object sender, EventArgs e)
-        {
-            dataGridViewProd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewProd.DataSource = service.GetAllProduto();
-        }
+        #endregion
 
+        #region DataGridView
         private void UpdateProductsInDataGrid()
         {
             dt = new DataTable();
@@ -67,7 +72,6 @@ namespace SistemaComercio.Gui
             dataGridViewProd.DataSource = dt;
         }
 
-        //responsavel por fazer as formataçoes
         private void FormattingRows(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             //centraliza os dados da coluna
@@ -141,22 +145,6 @@ namespace SistemaComercio.Gui
             }
         } //CellContentClick
 
-        private void RemoveProduct(int id)
-        {
-            prod = service.GetByIdProduto(id);
-            try
-            {
-                service.DelProduto(prod);
-                UpdateProductsInDataGrid();
-                MessageBox.Show("Produto excluido!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch
-            {
-                MessageBox.Show("Erro ao excluir produto!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
         private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e)
         {
             //e -> PEGA TODA A LINHA 
@@ -165,16 +153,9 @@ namespace SistemaComercio.Gui
 
         } //CellFormatting
 
-        private void LimparCampos()
-        {
-            txtNome.Clear();
-            txtEstoque.Clear();
-            txtPreco.Clear();
-            cmbUnidade.SelectedIndex = -1;
-            cmbNomeForne.SelectedIndex = -1;
-            btnSalvar.Enabled = false;
-            btnCadastrar.Enabled = true;
-        }
+        #endregion
+
+        #region Clicks Botões Form
 
         private void ClickLimpar(object sender, EventArgs e)
         {
@@ -258,6 +239,43 @@ namespace SistemaComercio.Gui
             }
         }
 
+        private void ClickSair(object sender, EventArgs e)
+        {
+            var principal = new Frm_Principal();
+            this.Hide();
+        }
+
+        #endregion
+
+        #region Funções
+
+        private void RemoveProduct(int id)
+        {
+            prod = service.GetByIdProduto(id);
+            try
+            {
+                service.DelProduto(prod);
+                UpdateProductsInDataGrid();
+                MessageBox.Show("Produto excluido!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao excluir produto!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void LimparCampos()
+        {
+            txtNome.Clear();
+            txtEstoque.Clear();
+            txtPreco.Clear();
+            cmbUnidade.SelectedIndex = -1;
+            cmbNomeForne.SelectedIndex = -1;
+            btnSalvar.Enabled = false;
+            btnCadastrar.Enabled = true;
+        }
+
         bool ValidarCampos()
         {
             if (String.IsNullOrEmpty(txtNome.Text) || String.IsNullOrEmpty(cmbUnidade.Text)
@@ -272,11 +290,7 @@ namespace SistemaComercio.Gui
 
         }
 
-        private void ClickSair(object sender, EventArgs e)
-        {
-            var principal = new Frm_Principal();
-            this.Hide();
-        }
+        #endregion
 
     }
 }
