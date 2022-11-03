@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gpbContaPagar = new System.Windows.Forms.GroupBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.cmbSelecioneCompra = new System.Windows.Forms.ComboBox();
             this.lblRespostaStatus = new System.Windows.Forms.Label();
             this.txtPago = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@
             this.btnEmitirRelatorio = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cmbSelecioneCompra = new System.Windows.Forms.ComboBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.gpbContaPagar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +86,25 @@
             this.gpbContaPagar.TabIndex = 0;
             this.gpbContaPagar.TabStop = false;
             this.gpbContaPagar.Text = "Geração de Conta a Pagar";
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(466, 26);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(100, 22);
+            this.btnPesquisar.TabIndex = 5;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            // 
+            // cmbSelecioneCompra
+            // 
+            this.cmbSelecioneCompra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSelecioneCompra.FormattingEnabled = true;
+            this.cmbSelecioneCompra.Location = new System.Drawing.Point(187, 26);
+            this.cmbSelecioneCompra.Name = "cmbSelecioneCompra";
+            this.cmbSelecioneCompra.Size = new System.Drawing.Size(272, 21);
+            this.cmbSelecioneCompra.TabIndex = 17;
             // 
             // lblRespostaStatus
             // 
@@ -288,25 +307,6 @@
             this.panel1.Size = new System.Drawing.Size(617, 248);
             this.panel1.TabIndex = 4;
             // 
-            // cmbSelecioneCompra
-            // 
-            this.cmbSelecioneCompra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSelecioneCompra.FormattingEnabled = true;
-            this.cmbSelecioneCompra.Location = new System.Drawing.Point(187, 26);
-            this.cmbSelecioneCompra.Name = "cmbSelecioneCompra";
-            this.cmbSelecioneCompra.Size = new System.Drawing.Size(272, 21);
-            this.cmbSelecioneCompra.TabIndex = 17;
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(466, 26);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(100, 22);
-            this.btnPesquisar.TabIndex = 5;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            // 
             // Frm_ContaPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -317,6 +317,7 @@
             this.Controls.Add(this.gpbContaPagar);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Frm_ContaPagar";

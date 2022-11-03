@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSelecioneVenda = new System.Windows.Forms.TextBox();
             this.tbcVenda = new System.Windows.Forms.TabControl();
             this.tbpLancarVenda = new System.Windows.Forms.TabPage();
             this.btnLimparCampos = new System.Windows.Forms.Button();
@@ -67,7 +68,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdbCliente = new System.Windows.Forms.RadioButton();
             this.rdbPeriodo = new System.Windows.Forms.RadioButton();
-            this.txtSelecioneVenda = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tbcVenda.SuspendLayout();
             this.tbpLancarVenda.SuspendLayout();
@@ -94,6 +94,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(531, 545);
             this.panel1.TabIndex = 0;
+            // 
+            // txtSelecioneVenda
+            // 
+            this.txtSelecioneVenda.Enabled = false;
+            this.txtSelecioneVenda.Location = new System.Drawing.Point(162, 204);
+            this.txtSelecioneVenda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtSelecioneVenda.Name = "txtSelecioneVenda";
+            this.txtSelecioneVenda.Size = new System.Drawing.Size(267, 21);
+            this.txtSelecioneVenda.TabIndex = 10;
             // 
             // tbcVenda
             // 
@@ -496,15 +505,6 @@
             this.rdbPeriodo.Text = "Período";
             this.rdbPeriodo.UseVisualStyleBackColor = true;
             // 
-            // txtSelecioneVenda
-            // 
-            this.txtSelecioneVenda.Enabled = false;
-            this.txtSelecioneVenda.Location = new System.Drawing.Point(162, 204);
-            this.txtSelecioneVenda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtSelecioneVenda.Name = "txtSelecioneVenda";
-            this.txtSelecioneVenda.Size = new System.Drawing.Size(267, 21);
-            this.txtSelecioneVenda.TabIndex = 10;
-            // 
             // Frm_Venda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -512,6 +512,7 @@
             this.ClientSize = new System.Drawing.Size(519, 534);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Frm_Venda";

@@ -444,6 +444,7 @@
             this.Controls.Add(this.lblBairro);
             this.Controls.Add(this.pnlFundo);
             this.Controls.Add(this.btnSair);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_Cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";

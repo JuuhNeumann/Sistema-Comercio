@@ -62,7 +62,7 @@
             this.tbpCancelarCompra = new System.Windows.Forms.TabPage();
             this.btnLimparCancel = new System.Windows.Forms.Button();
             this.cmbSelecioneCancel = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPrecoCancel = new System.Windows.Forms.TextBox();
             this.lblPrecoCancel = new System.Windows.Forms.Label();
             this.cmbQUantidadeCancel = new System.Windows.Forms.ComboBox();
             this.lblQuantidadeCancel = new System.Windows.Forms.Label();
@@ -216,14 +216,16 @@
             // 
             // dataGridViewCompra
             // 
+            this.dataGridViewCompra.AllowUserToAddRows = false;
+            this.dataGridViewCompra.AllowUserToDeleteRows = false;
             this.dataGridViewCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCompra.Location = new System.Drawing.Point(16, 243);
             this.dataGridViewCompra.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridViewCompra.Name = "dataGridViewCompra";
+            this.dataGridViewCompra.ReadOnly = true;
             this.dataGridViewCompra.Size = new System.Drawing.Size(491, 156);
             this.dataGridViewCompra.TabIndex = 7;
             this.dataGridViewCompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FormattingCollunms);
-            this.dataGridViewCompra.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.FormatttingMensageRows);
             this.dataGridViewCompra.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.FormattingRows);
             // 
             // lblPreco
@@ -334,6 +336,7 @@
             this.rdbForne.TabStop = true;
             this.rdbForne.Text = "Fornecedor";
             this.rdbForne.UseVisualStyleBackColor = true;
+            this.rdbForne.CheckedChanged += new System.EventHandler(this.RadioButtonFornecedorCheckChanged);
             // 
             // rdbPeriodo
             // 
@@ -346,6 +349,7 @@
             this.rdbPeriodo.TabStop = true;
             this.rdbPeriodo.Text = "Período";
             this.rdbPeriodo.UseVisualStyleBackColor = true;
+            this.rdbPeriodo.CheckedChanged += new System.EventHandler(this.RadioButtonPeriodoCheckChanged);
             // 
             // lblConsulta
             // 
@@ -428,7 +432,7 @@
             this.tbpCancelarCompra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tbpCancelarCompra.Controls.Add(this.btnLimparCancel);
             this.tbpCancelarCompra.Controls.Add(this.cmbSelecioneCancel);
-            this.tbpCancelarCompra.Controls.Add(this.textBox1);
+            this.tbpCancelarCompra.Controls.Add(this.txtPrecoCancel);
             this.tbpCancelarCompra.Controls.Add(this.lblPrecoCancel);
             this.tbpCancelarCompra.Controls.Add(this.cmbQUantidadeCancel);
             this.tbpCancelarCompra.Controls.Add(this.lblQuantidadeCancel);
@@ -461,15 +465,16 @@
             this.cmbSelecioneCancel.Name = "cmbSelecioneCancel";
             this.cmbSelecioneCancel.Size = new System.Drawing.Size(395, 21);
             this.cmbSelecioneCancel.TabIndex = 12;
+            this.cmbSelecioneCancel.SelectedIndexChanged += new System.EventHandler(this.cmbSelecioneCancel_SelectedIndexChanged);
             // 
-            // textBox1
+            // txtPrecoCancel
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(298, 56);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(182, 21);
-            this.textBox1.TabIndex = 7;
+            this.txtPrecoCancel.Enabled = false;
+            this.txtPrecoCancel.Location = new System.Drawing.Point(298, 56);
+            this.txtPrecoCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtPrecoCancel.Name = "txtPrecoCancel";
+            this.txtPrecoCancel.Size = new System.Drawing.Size(182, 21);
+            this.txtPrecoCancel.TabIndex = 7;
             // 
             // lblPrecoCancel
             // 
@@ -512,9 +517,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(7, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 13);
+            this.label1.Size = new System.Drawing.Size(221, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Selecione o produto que deseja cancelar a compra:";
+            this.label1.Text = "Selecione o id da compra que deseja cancelar:";
             // 
             // Frm_Compra
             // 
@@ -526,9 +531,11 @@
             this.Controls.Add(this.gpbDadosOperacionais);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Frm_Compra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compra";
             this.gpbDadosOperacionais.ResumeLayout(false);
             this.gpbDadosOperacionais.PerformLayout();
@@ -580,7 +587,7 @@
         private System.Windows.Forms.TabPage tbpCancelarCompra;
         private System.Windows.Forms.Button btnLimparCancel;
         private System.Windows.Forms.ComboBox cmbSelecioneCancel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPrecoCancel;
         private System.Windows.Forms.Label lblPrecoCancel;
         private System.Windows.Forms.ComboBox cmbQUantidadeCancel;
         private System.Windows.Forms.Label lblQuantidadeCancel;

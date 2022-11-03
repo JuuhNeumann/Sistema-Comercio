@@ -136,6 +136,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Frm_Cadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

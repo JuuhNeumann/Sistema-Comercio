@@ -496,6 +496,7 @@
             this.Controls.Add(this.ImgCliCentro);
             this.Controls.Add(this.PnlBarraTarefas);
             this.Controls.Add(this.ImgPrin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Frm_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

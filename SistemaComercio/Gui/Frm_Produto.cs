@@ -52,6 +52,7 @@ namespace SistemaComercio.Gui
             dt.Columns.Add("Preço", typeof(string));
             dt.Columns.Add("Unidade", typeof(string));
             dt.Columns.Add("Id_Fornecedor", typeof(string));
+            dt.Columns.Add("Fornecedor", typeof(string));
 
             var produtos = service.GetAllProduto();
 
@@ -65,6 +66,7 @@ namespace SistemaComercio.Gui
                     produto.Preco,
                     produto.Unidade,
                     produto.Id_Fornecedor,
+                    produto.Fornecedor.Nome
                 });
 
             }
@@ -79,6 +81,8 @@ namespace SistemaComercio.Gui
             dataGridViewProd.Columns["Qtd Estoque"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewProd.Columns["Preço"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewProd.Columns["Unidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewProd.Columns["Id_Fornecedor"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewProd.Columns["Fornecedor"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             foreach (DataGridViewColumn coluna in dataGridViewProd.Columns)
             {
@@ -108,6 +112,9 @@ namespace SistemaComercio.Gui
                         coluna.Width = 50;
                         break;
                     case "Id_Fornecedor":
+                        coluna.Width = 60;
+                        break;
+                    case "Fornecedor":
                         coluna.Width = 115;
                         break;
                 }

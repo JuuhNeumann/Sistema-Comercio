@@ -24,7 +24,7 @@ namespace SistemaComercioLibrary.Service
 
         public List<ItemCompra> GetAllItemCompra()
         {
-            return _db.ItemCompra.ToList();
+            return _db.ItemCompra.OrderBy(itemCompra => itemCompra).ToList();
         }
 
         public ItemCompra GetByIdItemCompra(int id)

@@ -152,8 +152,6 @@
             // 
             this.cmbNomeForne.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNomeForne.FormattingEnabled = true;
-            this.cmbNomeForne.Items.AddRange(new object[] {
-            "Nenhum"});
             this.cmbNomeForne.Location = new System.Drawing.Point(126, 9);
             this.cmbNomeForne.Name = "cmbNomeForne";
             this.cmbNomeForne.Size = new System.Drawing.Size(332, 21);
@@ -320,6 +318,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 391);
             this.Controls.Add(this.pnlFundo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Frm_Produto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -20,6 +20,9 @@ namespace SistemaComercio.Gui
         private Produto produto;
         private DataTable dt = new DataTable();
         private Compra cmp = null;
+        private string columnFilter;
+        private List<ItemCompra> itemCompras;
+        private ItemCompra itemCompra;
 
         public Frm_Compra()
         {
@@ -27,10 +30,10 @@ namespace SistemaComercio.Gui
             service = new CompraService();
             serviceItemC = new ItemCompraService();
             InitializeComponent();
+            UpdateCompraInDataGrid();
             produtos = serviceProd.GetAllProduto();
             AddComboBoxCompra();
-            UpdateCompraInDataGrid();
-
+            AddComboBoxCancelarCompra();
         }
 
         #region ComboBox
@@ -45,20 +48,16 @@ namespace SistemaComercio.Gui
             }
         }
 
-        private void cmbSelecioneProduto_SelectedIndexChanged(object sender, EventArgs e)
+        private void AddComboBoxCancelarCompra()
         {
-            cmbQuant.Items.Clear();
-
-            produto = produtos.FirstOrDefault(produtos => produtos.Nome.Equals(cmbSelecioneProduto.Text));
-            txtPreco.Text = "R$ " + produto.Preco.ToString();
-
-            for (int i = 1; i <= produto.Quantidade_Estoque; i++)
+            foreach (var compra in itemCompras)
             {
-                this.cmbQuant.Items.AddRange(new object[] {
-                i.ToString()
+                this.cmbSelecioneCancel.Items.AddRange(new object[] {
+                compra.Id.ToString()
                 });
             }
         }
+
 
         #endregion
 
@@ -72,13 +71,15 @@ namespace SistemaComercio.Gui
             dt.Columns.Add("Valor Unitario", typeof(string));
             dt.Columns.Add("Total", typeof(string));
             dt.Columns.Add("Id Produto", typeof(string));
+            dt.Columns.Add("Produto", typeof(string));
             dt.Columns.Add("Id Compra", typeof(string));
             dt.Columns.Add("Data", typeof(string));
             dt.Columns.Add("Hora", typeof(string));
             dt.Columns.Add("Situacao", typeof(string));
             dt.Columns.Add("Id Fornecedor", typeof(string));
+            dt.Columns.Add("Fornecedor", typeof(string));
 
-            var itemCompras = serviceItemC.GetAllItemCompra();
+            itemCompras = serviceItemC.GetAllItemCompra();
 
             foreach (var itemCompra in itemCompras)
             {
@@ -89,11 +90,14 @@ namespace SistemaComercio.Gui
                     itemCompra.Valor_Unitario,
                     itemCompra.Total_Item,
                     itemCompra.Id_Produto,
+                    itemCompra.Produto.Nome,
                     itemCompra.Id_Compra,
                     itemCompra.Compra.Data,
                     itemCompra.Compra.Hora,
                     itemCompra.Compra.Situacao_Compra,
-                    itemCompra.Compra.Id_Fornecedor
+                    itemCompra.Compra.Id_Fornecedor,
+                    itemCompra.Compra.Fornecedor.Nome
+
                 });
             }
             dataGridViewCompra.DataSource = dt;
@@ -107,23 +111,18 @@ namespace SistemaComercio.Gui
             dataGridViewCompra.Columns["Valor Unitario"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCompra.Columns["Total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCompra.Columns["Id Produto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCompra.Columns["Produto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCompra.Columns["Id Compra"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCompra.Columns["Data"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCompra.Columns["Hora"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCompra.Columns["Situacao"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCompra.Columns["Id Fornecedor"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCompra.Columns["Fornecedor"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             foreach (DataGridViewColumn coluna in dataGridViewCompra.Columns)
             {
                 switch (coluna.Name)
                 {
-                    case "Excluir":
-                        //coluna.DisplayIndex = 1; se quiser mudar a posição 
-                        coluna.Width = 30;
-                        break;
-                    case "Editar":
-                        coluna.Width = 30;
-                        break;
                     case "Id":
                         coluna.Width = 30;
                         break;
@@ -141,6 +140,9 @@ namespace SistemaComercio.Gui
                     case "Id Produto":
                         coluna.Width = 45;
                         break;
+                    case "Produto":
+                        coluna.Width = 115;
+                        break;
                     case "Id Compra":
                         coluna.Width = 45;
                         break;
@@ -156,6 +158,10 @@ namespace SistemaComercio.Gui
                     case "Id Fornecedor":
                         coluna.Width = 45;
                         break;
+                    case "Fornecedor":
+                        coluna.DisplayIndex = 1;
+                        coluna.Width = 60;
+                        break;
                 }
             }
         } //DataBindingComplete
@@ -165,10 +171,6 @@ namespace SistemaComercio.Gui
 
         } //CellContentClick
 
-        private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-
-        }
 
         #endregion
 
@@ -176,41 +178,53 @@ namespace SistemaComercio.Gui
 
         private void ClickLançarCompra(object sender, EventArgs e)
         {
-            //VALIDAR SE CAMPOS FORAM PREENCHIDAOS
-
-            if (cmbQuant.SelectedIndex == -1 & cmbSelecioneProduto.SelectedIndex == -1)
+            //VALIDAR SE CAMPOS FORAM PREENCHIDOS
+            try
             {
-                MessageBox.Show("ERRO");
+                //TEM Q VER ESSE Q N TA CAINDO AQUI
+                if (cmbQuant.SelectedIndex == -1 & cmbSelecioneProduto.SelectedIndex == -1)
+                {
+                    MessageBox.Show("É necessário preencher todos os campos!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    CreateCompra();
+                    LimparCampos();
+                    MessageBox.Show("Compra Lançada!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            catch
             {
-                var compra = new Compra()
-                {
-                    Situacao_Compra = lblRespostaSituacao.Text,
-                    Total_Compra = produto.Preco * Convert.ToInt32(cmbQuant.Text),
-                    Data = DateTime.UtcNow.Date,
-                    Hora = DateTime.Now.ToString("HH:mm:ss"),
-                    Id_Fornecedor = produto.Id_Fornecedor,
-                };
-
-
-                var itemCompra = new ItemCompra()
-                {
-                    Compra = compra,
-                    Id_Produto = produto.Id,
-                    Quantidade = Convert.ToInt32(cmbQuant.Text),
-                    Total_Item = compra.Total_Compra,
-                    Valor_Unitario = produto.Preco,
-                };
-
-                serviceItemC.AddItemCompra(itemCompra);
-                SetDadosOperacionais(compra);
+                MessageBox.Show("Erro ao lançar compra!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void ClickCancelarCompra(object sender, EventArgs e)
         {
-            lblRespostaSituacao.Text = "Cancelado";
+            try
+            {
+
+
+                lblRespostaSituacao.Text = "Cancelado";
+
+                if (cmbQUantidadeCancel.Text == itemCompra.Quantidade.ToString())
+                {
+                    itemCompra.Compra.Situacao_Compra = "Cancelado";
+                    serviceItemC.UpdateItemCompra(itemCompra);
+                    MessageBox.Show("Compra Cancelada!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    itemCompra.Quantidade -= Convert.ToInt32(cmbQUantidadeCancel.Text);
+                    serviceItemC.UpdateItemCompra(itemCompra);
+                    MessageBox.Show("Situação de compra alterada!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                UpdateCompraInDataGrid();
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao cancelar compra!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ClickSair(object sender, EventArgs e)
@@ -221,8 +235,7 @@ namespace SistemaComercio.Gui
 
         private void ClickConsultar(object sender, EventArgs e)
         {
-            dt.DefaultView.RowFilter = String.Format("[{0}] LIKE '%{1}%'", "Nome", txtSelecioneCompra.Text);
-            dataGridViewCompra.DataSource = dt;
+            PesquisaCompraFiltro();
         }
 
         private void ClickLimparCamposLancar(object sender, EventArgs e)
@@ -270,9 +283,104 @@ namespace SistemaComercio.Gui
             txtPreco.Clear();
             cmbQuant.SelectedIndex = -1;
             cmbSelecioneProduto.SelectedIndex = -1;
+            cmbQUantidadeCancel.SelectedIndex = -1;
+            cmbSelecioneCancel.SelectedIndex = -1;
+            txtPrecoCancel.Clear();
+        }
+
+        private void PesquisaCompraFiltro()
+        {
+            dt.DefaultView.RowFilter = String.Format("[{0}] LIKE '%{1}%'", columnFilter, txtSelecioneCompra.Text);
+            dataGridViewCompra.DataSource = dt;
+        }
+
+        private void CreateCompra()
+        {
+            var compra = new Compra()
+            {
+                Situacao_Compra = lblRespostaSituacao.Text,
+                Total_Compra = produto.Preco * Convert.ToInt32(cmbQuant.Text),
+                Data = DateTime.UtcNow.Date,
+                Hora = DateTime.Now.ToString("HH:mm:ss"),
+                Id_Fornecedor = produto.Id_Fornecedor,
+            };
+
+
+            var itemCompra = new ItemCompra()
+            {
+                Compra = compra,
+                Id_Produto = produto.Id,
+                Quantidade = Convert.ToInt32(cmbQuant.Text),
+                Total_Item = compra.Total_Compra,
+                Valor_Unitario = produto.Preco,
+            };
+
+            produto.Quantidade_Estoque -= itemCompra.Quantidade;
+            serviceProd.UpdateProduto(produto);
+
+            serviceItemC.AddItemCompra(itemCompra);
+            SetDadosOperacionais(compra);
+            UpdateCompraInDataGrid();
+        }
+
+        private void RadioButtonPeriodoCheckChanged(object sender, EventArgs e)
+        {
+            txtSelecioneCompra.Enabled = true;
+            columnFilter = "Data";
+        }
+
+        private void RadioButtonFornecedorCheckChanged(object sender, EventArgs e)
+        {
+            txtSelecioneCompra.Enabled = true;
+            columnFilter = "Fornecedor";
         }
 
         #endregion
 
+        #region Escutador
+
+        private void cmbSelecioneProduto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbQuant.Items.Clear();
+
+            produto = produtos.FirstOrDefault(produtos => produtos.Nome.Equals(cmbSelecioneProduto.Text));
+
+            if (produto != null)
+            {
+                txtPreco.Text = "R$ " + produto.Preco.ToString();
+
+                //para listar a quantidade
+                for (int i = 1; i <= produto.Quantidade_Estoque; i++)
+                {
+                    this.cmbQuant.Items.AddRange(new object[] {
+                        i.ToString()
+                    });
+                }
+            }
+        }
+
+        private void cmbSelecioneCancel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbQUantidadeCancel.Items.Clear();
+            if (cmbSelecioneCancel.SelectedIndex != -1)
+            {
+                itemCompra = itemCompras.FirstOrDefault(itemCompras => itemCompras.Id.Equals(Convert.ToInt32(cmbSelecioneCancel.Text)));
+            }
+
+            if (itemCompra != null)
+            {
+                txtPrecoCancel.Text = "R$ " + itemCompra.Valor_Unitario.ToString();
+
+                //para listar a quantidade
+                for (int i = 1; i <= itemCompra.Quantidade; i++)
+                {
+                    cmbQUantidadeCancel.Items.AddRange(new object[] {
+                        i.ToString()
+                    });
+                }
+            }
+        }
+
+        #endregion
     }
 }

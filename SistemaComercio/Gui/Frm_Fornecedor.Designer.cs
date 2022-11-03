@@ -485,6 +485,7 @@
             this.ClientSize = new System.Drawing.Size(784, 449);
             this.Controls.Add(this.pnlFundoForne);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Frm_Fornecedor";
