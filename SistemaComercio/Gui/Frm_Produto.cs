@@ -1,4 +1,5 @@
 ﻿using SistemaComercioBiblioteca.Classes;
+using SistemaComercioLibrary.Persistence.Context;
 using SistemaComercioLibrary.Port;
 using SistemaComercioLibrary.Service;
 using System;
@@ -9,16 +10,16 @@ namespace SistemaComercio.Gui
 {
     public partial class Frm_Produto : Form
     {
-        private IProdutoPort service = new ProdutoService();
-        private IFornecedorPort serviceForne = new FornecedorService();
+        private IProdutoPort service;
+        private IFornecedorPort serviceForne;
         private DataTable dt = new DataTable();
         private Produto prod = null;
 
         public Frm_Produto()
         {
             InitializeComponent();
-            AddComboBoxFornecedor();
             UpdateProductsInDataGrid();
+            AddComboBoxFornecedor();
         }
 
         //vai usar ainda?
@@ -45,6 +46,9 @@ namespace SistemaComercio.Gui
         #region DataGridView
         private void UpdateProductsInDataGrid()
         {
+            service = new ProdutoService();
+            serviceForne = new FornecedorService();
+
             dt = new DataTable();
             dt.Columns.Add("Id", typeof(string));
             dt.Columns.Add("Nome", typeof(string));

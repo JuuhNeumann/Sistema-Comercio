@@ -2,7 +2,7 @@
 
 namespace SistemaComercioLibrary.Migrations
 {
-    public partial class teste : Migration
+    public partial class reset3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

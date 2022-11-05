@@ -26,20 +26,16 @@ namespace SistemaComercio.Gui
 
         public Frm_Compra()
         {
-            serviceProd = new ProdutoService();
-            service = new CompraService();
-            serviceItemC = new ItemCompraService();
             InitializeComponent();
             UpdateCompraInDataGrid();
-            produtos = serviceProd.GetAllProduto();
-            AddComboBoxCompra();
-            AddComboBoxCancelarCompra();
         }
 
         #region ComboBox
 
         private void AddComboBoxCompra()
         {
+            this.cmbSelecioneProduto.Items.Clear();
+
             foreach (var produto in produtos)
             {
                 this.cmbSelecioneProduto.Items.AddRange(new object[] {
@@ -50,11 +46,17 @@ namespace SistemaComercio.Gui
 
         private void AddComboBoxCancelarCompra()
         {
-            foreach (var compra in itemCompras)
+            this.cmbSelecioneCancel.Items.Clear();
+
+            foreach (var itemCompra in itemCompras)
             {
-                this.cmbSelecioneCancel.Items.AddRange(new object[] {
-                compra.Id.ToString()
+                if (itemCompra.Compra.Situacao_Compra != "Cancelado")
+                {
+                    this.cmbSelecioneCancel.Items.AddRange(new object[] {
+                    itemCompra.Id.ToString()
                 });
+
+                }
             }
         }
 
@@ -65,6 +67,10 @@ namespace SistemaComercio.Gui
 
         private void UpdateCompraInDataGrid()
         {
+            serviceProd = new ProdutoService();
+            service = new CompraService();
+            serviceItemC = new ItemCompraService();
+
             dt = new DataTable();
             dt.Columns.Add("Id", typeof(string));
             dt.Columns.Add("Quantidade", typeof(string));
@@ -101,6 +107,16 @@ namespace SistemaComercio.Gui
                 });
             }
             dataGridViewCompra.DataSource = dt;
+
+            produtos = serviceProd.GetAllProduto();
+
+            UpdateComboBox();
+        }
+
+        public void UpdateComboBox()
+        {
+            AddComboBoxCompra();
+            AddComboBoxCancelarCompra();
         }
 
         private void FormattingRows(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -203,22 +219,26 @@ namespace SistemaComercio.Gui
         {
             try
             {
+                itemCompra = serviceItemC.GetByIdItemCompra(Convert.ToInt32(cmbSelecioneCancel.Text));
 
-
-                lblRespostaSituacao.Text = "Cancelado";
-
+                //verifica se escolheu o valor total d estoque do produto
                 if (cmbQUantidadeCancel.Text == itemCompra.Quantidade.ToString())
                 {
                     itemCompra.Compra.Situacao_Compra = "Cancelado";
+                    itemCompra.Produto.Quantidade_Estoque += Convert.ToInt32(cmbQUantidadeCancel.Text);
                     serviceItemC.UpdateItemCompra(itemCompra);
+                    lblRespostaSituacao.Text = "Cancelado";
                     MessageBox.Show("Compra Cancelada!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     itemCompra.Quantidade -= Convert.ToInt32(cmbQUantidadeCancel.Text);
+                    itemCompra.Produto.Quantidade_Estoque += Convert.ToInt32(cmbQUantidadeCancel.Text);
                     serviceItemC.UpdateItemCompra(itemCompra);
                     MessageBox.Show("Situação de compra alterada!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
+                LimparCampos();
                 UpdateCompraInDataGrid();
             }
             catch
@@ -288,7 +308,6 @@ namespace SistemaComercio.Gui
             cmbSelecioneCancel.SelectedIndex = -1;
             txtPrecoCancel.Clear();
             txtTotalCimaCancel.Clear();
-
         }
 
         private void PesquisaCompraFiltro()
@@ -301,7 +320,7 @@ namespace SistemaComercio.Gui
         {
             var compra = new Compra()
             {
-                Situacao_Compra = lblRespostaSituacao.Text,
+                Situacao_Compra = "Finalizado",
                 Total_Compra = produto.Preco * Convert.ToInt32(cmbQuant.Text),
                 Data = DateTime.UtcNow.Date,
                 Hora = DateTime.Now.ToString("HH:mm:ss"),
@@ -346,7 +365,9 @@ namespace SistemaComercio.Gui
         {
             cmbQuant.Items.Clear();
 
-            produto = produtos.FirstOrDefault(produtos => produtos.Nome.Equals(cmbSelecioneProduto.Text));
+            serviceProd = new ProdutoService(); 
+
+            produto = serviceProd.GetByName(cmbSelecioneProduto.Text);
 
             if (produto != null)
             {
@@ -365,9 +386,10 @@ namespace SistemaComercio.Gui
         private void cmbSelecioneCancel_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbQUantidadeCancel.Items.Clear();
+
             if (cmbSelecioneCancel.SelectedIndex != -1)
             {
-                itemCompra = itemCompras.FirstOrDefault(itemCompras => itemCompras.Id.Equals(Convert.ToInt32(cmbSelecioneCancel.Text)));
+                itemCompra = serviceItemC.GetByIdItemCompra(Convert.ToInt32(cmbSelecioneCancel.Text));
             }
 
             if (itemCompra != null)
@@ -384,6 +406,27 @@ namespace SistemaComercio.Gui
             }
         }
 
+        private void cmbQuant_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbQuant.SelectedIndex != -1)
+            {
+                var total = produto.Preco * Convert.ToInt32(cmbQuant.Text);
+                txtTotalCima.Text = "R$" + total.ToString();
+            }
+
+        }
+
+        private void cmbQUantidadeCancel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbSelecioneCancel.SelectedIndex != -1)
+            {
+                var itemC = itemCompras.FirstOrDefault(itemCompras => itemCompras.Id.Equals(Convert.ToInt32(cmbSelecioneCancel.Text)));
+                txtTotalCimaCancel.Text = "R$" + itemC.Total_Item.ToString();
+            }
+
+        }
+
         #endregion
+
     }
 }

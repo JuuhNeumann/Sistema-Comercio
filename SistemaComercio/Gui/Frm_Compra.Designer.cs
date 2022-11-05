@@ -59,7 +59,11 @@
             this.txtSelecioneCompra = new System.Windows.Forms.TextBox();
             this.tbcCompra = new System.Windows.Forms.TabControl();
             this.tbpLancarCompra = new System.Windows.Forms.TabPage();
+            this.txtTotalCima = new System.Windows.Forms.TextBox();
+            this.lblTotalCima = new System.Windows.Forms.Label();
             this.tbpCancelarCompra = new System.Windows.Forms.TabPage();
+            this.txtTotalCimaCancel = new System.Windows.Forms.TextBox();
+            this.lblTotalCimaCancel = new System.Windows.Forms.Label();
             this.btnLimparCancel = new System.Windows.Forms.Button();
             this.cmbSelecioneCancel = new System.Windows.Forms.ComboBox();
             this.txtPrecoCancel = new System.Windows.Forms.TextBox();
@@ -68,10 +72,6 @@
             this.lblQuantidadeCancel = new System.Windows.Forms.Label();
             this.lblExemploCancel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblTotalCima = new System.Windows.Forms.Label();
-            this.txtTotalCima = new System.Windows.Forms.TextBox();
-            this.lblTotalCimaCancel = new System.Windows.Forms.Label();
-            this.txtTotalCimaCancel = new System.Windows.Forms.TextBox();
             this.gpbDadosOperacionais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompra)).BeginInit();
             this.gpbConsulta.SuspendLayout();
@@ -261,6 +261,7 @@
             this.cmbQuant.Name = "cmbQuant";
             this.cmbQuant.Size = new System.Drawing.Size(152, 21);
             this.cmbQuant.TabIndex = 7;
+            this.cmbQuant.SelectedIndexChanged += new System.EventHandler(this.cmbQuant_SelectedIndexChanged);
             // 
             // txtPreco
             // 
@@ -432,6 +433,25 @@
             this.tbpLancarCompra.TabIndex = 0;
             this.tbpLancarCompra.Text = "Lançar Compra";
             // 
+            // txtTotalCima
+            // 
+            this.txtTotalCima.Enabled = false;
+            this.txtTotalCima.Location = new System.Drawing.Point(38, 88);
+            this.txtTotalCima.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTotalCima.Name = "txtTotalCima";
+            this.txtTotalCima.Size = new System.Drawing.Size(167, 21);
+            this.txtTotalCima.TabIndex = 15;
+            // 
+            // lblTotalCima
+            // 
+            this.lblTotalCima.AutoSize = true;
+            this.lblTotalCima.Location = new System.Drawing.Point(7, 91);
+            this.lblTotalCima.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalCima.Name = "lblTotalCima";
+            this.lblTotalCima.Size = new System.Drawing.Size(34, 13);
+            this.lblTotalCima.TabIndex = 14;
+            this.lblTotalCima.Text = "Total:";
+            // 
             // tbpCancelarCompra
             // 
             this.tbpCancelarCompra.BackColor = System.Drawing.Color.Cornsilk;
@@ -453,6 +473,23 @@
             this.tbpCancelarCompra.Size = new System.Drawing.Size(488, 124);
             this.tbpCancelarCompra.TabIndex = 1;
             this.tbpCancelarCompra.Text = "Cancelar Compra";
+            // 
+            // txtTotalCimaCancel
+            // 
+            this.txtTotalCimaCancel.Enabled = false;
+            this.txtTotalCimaCancel.Location = new System.Drawing.Point(38, 88);
+            this.txtTotalCimaCancel.Name = "txtTotalCimaCancel";
+            this.txtTotalCimaCancel.Size = new System.Drawing.Size(154, 21);
+            this.txtTotalCimaCancel.TabIndex = 20;
+            // 
+            // lblTotalCimaCancel
+            // 
+            this.lblTotalCimaCancel.AutoSize = true;
+            this.lblTotalCimaCancel.Location = new System.Drawing.Point(7, 91);
+            this.lblTotalCimaCancel.Name = "lblTotalCimaCancel";
+            this.lblTotalCimaCancel.Size = new System.Drawing.Size(34, 13);
+            this.lblTotalCimaCancel.TabIndex = 19;
+            this.lblTotalCimaCancel.Text = "Total:";
             // 
             // btnLimparCancel
             // 
@@ -501,6 +538,7 @@
             this.cmbQUantidadeCancel.Name = "cmbQUantidadeCancel";
             this.cmbQUantidadeCancel.Size = new System.Drawing.Size(136, 21);
             this.cmbQUantidadeCancel.TabIndex = 16;
+            this.cmbQUantidadeCancel.SelectedIndexChanged += new System.EventHandler(this.cmbQUantidadeCancel_SelectedIndexChanged);
             // 
             // lblQuantidadeCancel
             // 
@@ -528,41 +566,6 @@
             this.label1.Size = new System.Drawing.Size(221, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Selecione o id da compra que deseja cancelar:";
-            // 
-            // lblTotalCima
-            // 
-            this.lblTotalCima.AutoSize = true;
-            this.lblTotalCima.Location = new System.Drawing.Point(7, 91);
-            this.lblTotalCima.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTotalCima.Name = "lblTotalCima";
-            this.lblTotalCima.Size = new System.Drawing.Size(34, 13);
-            this.lblTotalCima.TabIndex = 14;
-            this.lblTotalCima.Text = "Total:";
-            // 
-            // txtTotalCima
-            // 
-            this.txtTotalCima.Enabled = false;
-            this.txtTotalCima.Location = new System.Drawing.Point(38, 88);
-            this.txtTotalCima.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtTotalCima.Name = "txtTotalCima";
-            this.txtTotalCima.Size = new System.Drawing.Size(167, 21);
-            this.txtTotalCima.TabIndex = 15;
-            // 
-            // lblTotalCimaCancel
-            // 
-            this.lblTotalCimaCancel.AutoSize = true;
-            this.lblTotalCimaCancel.Location = new System.Drawing.Point(7, 91);
-            this.lblTotalCimaCancel.Name = "lblTotalCimaCancel";
-            this.lblTotalCimaCancel.Size = new System.Drawing.Size(34, 13);
-            this.lblTotalCimaCancel.TabIndex = 19;
-            this.lblTotalCimaCancel.Text = "Total:";
-            // 
-            // txtTotalCimaCancel
-            // 
-            this.txtTotalCimaCancel.Location = new System.Drawing.Point(38, 88);
-            this.txtTotalCimaCancel.Name = "txtTotalCimaCancel";
-            this.txtTotalCimaCancel.Size = new System.Drawing.Size(154, 21);
-            this.txtTotalCimaCancel.TabIndex = 20;
             // 
             // Frm_Compra
             // 

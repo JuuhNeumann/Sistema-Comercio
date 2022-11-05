@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblCPF = new System.Windows.Forms.Label();
             this.lblTel = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.lblNum = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.pnlFundoForne = new System.Windows.Forms.Panel();
+            this.btnCadProd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -63,15 +63,8 @@
             this.txtLogra = new System.Windows.Forms.TextBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.fornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemaComercioDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemaComercioDataSet = new SistemaComercio.SistemaComercioDataSet();
-            this.fornecedorTableAdapter = new SistemaComercio.SistemaComercioDataSetTableAdapters.FornecedorTableAdapter();
             this.pnlFundoForne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForne)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaComercioDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaComercioDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNome
@@ -199,6 +192,7 @@
             // 
             this.pnlFundoForne.BackColor = System.Drawing.Color.Thistle;
             this.pnlFundoForne.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlFundoForne.Controls.Add(this.btnCadProd);
             this.pnlFundoForne.Controls.Add(this.panel1);
             this.pnlFundoForne.Controls.Add(this.btnSair);
             this.pnlFundoForne.Controls.Add(this.btnSalvar);
@@ -235,6 +229,16 @@
             this.pnlFundoForne.Name = "pnlFundoForne";
             this.pnlFundoForne.Size = new System.Drawing.Size(792, 452);
             this.pnlFundoForne.TabIndex = 12;
+            // 
+            // btnCadProd
+            // 
+            this.btnCadProd.Location = new System.Drawing.Point(339, 414);
+            this.btnCadProd.Name = "btnCadProd";
+            this.btnCadProd.Size = new System.Drawing.Size(75, 23);
+            this.btnCadProd.TabIndex = 33;
+            this.btnCadProd.Text = "button1";
+            this.btnCadProd.UseVisualStyleBackColor = true;
+            this.btnCadProd.Click += new System.EventHandler(this.btnCadProd_Click);
             // 
             // panel1
             // 
@@ -459,25 +463,6 @@
             this.txtNome.Size = new System.Drawing.Size(373, 21);
             this.txtNome.TabIndex = 11;
             // 
-            // fornecedorBindingSource
-            // 
-            this.fornecedorBindingSource.DataMember = "Fornecedor";
-            this.fornecedorBindingSource.DataSource = this.sistemaComercioDataSetBindingSource;
-            // 
-            // sistemaComercioDataSetBindingSource
-            // 
-            this.sistemaComercioDataSetBindingSource.DataSource = this.sistemaComercioDataSet;
-            this.sistemaComercioDataSetBindingSource.Position = 0;
-            // 
-            // sistemaComercioDataSet
-            // 
-            this.sistemaComercioDataSet.DataSetName = "SistemaComercioDataSet";
-            this.sistemaComercioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // fornecedorTableAdapter
-            // 
-            this.fornecedorTableAdapter.ClearBeforeFill = true;
-            // 
             // Frm_Fornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -495,9 +480,6 @@
             this.pnlFundoForne.ResumeLayout(false);
             this.pnlFundoForne.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForne)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaComercioDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaComercioDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -536,11 +518,8 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.BindingSource sistemaComercioDataSetBindingSource;
-        private SistemaComercioDataSet sistemaComercioDataSet;
-        private System.Windows.Forms.BindingSource fornecedorBindingSource;
-        private SistemaComercioDataSetTableAdapters.FornecedorTableAdapter fornecedorTableAdapter;
         private System.Windows.Forms.DataGridViewImageColumn Excluir;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.Button btnCadProd;
     }
 }

@@ -324,6 +324,10 @@ namespace SistemaComercio.Gui
             this.Hide();
         }
 
-        
+        private void btnCadProd_Click(object sender, EventArgs e)
+        {
+            Frm_Produto produto = new Frm_Produto();
+            produto.Show();
+        }
     }
 }

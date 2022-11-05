@@ -57,8 +57,7 @@ namespace SistemaComercio.Gui
 
         private void ClickProduto(object sender, EventArgs e)
         {
-            Frm_Produto produto = new Frm_Produto();
-            produto.Show();
+            
         }
 
         private void ClickCompra(object sender, EventArgs e)

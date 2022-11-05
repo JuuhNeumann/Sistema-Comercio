@@ -29,7 +29,11 @@ namespace SistemaComercioLibrary.Service
 
         public ItemCompra GetByIdItemCompra(int id)
         {
-            return _db.ItemCompra.FirstOrDefault(x => x.Id.Equals(id)); //pega o id
+            var result =  _db.ItemCompra.FirstOrDefault(x => x.Id.Equals(id)); //pega o id
+
+            result.Produto = _db.Produto.FirstOrDefault(x => x.Id.Equals(result.Id_Produto));
+                
+          return result;
         }
 
         public void UpdateItemCompra(ItemCompra itemCompra)

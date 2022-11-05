@@ -1,7 +1,6 @@
 ﻿using SistemaComercioBiblioteca.Classes;
 using SistemaComercioLibrary.Persistence.Context;
 using SistemaComercioLibrary.Port;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -50,7 +49,12 @@ namespace SistemaComercioLibrary.Service
             var produto = _db.Produto.FirstOrDefault(x => x.Id.Equals(id)); //pega o id
             var fornecedor = _db.Fornecedor.FirstOrDefault(x => x.Id.Equals(produto.Id_Fornecedor)); //pega o id
             produto.Fornecedor = fornecedor;
+            return produto;
+        }
 
+        public Produto GetByName(string name)
+        {
+            var produto = _db.Produto.FirstOrDefault(x => x.Nome.Equals(name)); //pega o id
             return produto;
         }
     }

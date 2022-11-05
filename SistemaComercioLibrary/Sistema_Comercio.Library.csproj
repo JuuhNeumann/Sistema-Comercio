@@ -258,77 +258,17 @@
     <Compile Include="Entity\MovimentoCaixa.cs" />
     <Compile Include="Entity\Produto.cs" />
     <Compile Include="Entity\Venda.cs" />
-    <Compile Include="Migrations\20220911162904_julinha.cs" />
-    <Compile Include="Migrations\20220911162904_julinha.designer.cs">
-      <DependentUpon>20220911162904_julinha.cs</DependentUpon>
+    <Compile Include="Migrations\20221105190313_reset.cs" />
+    <Compile Include="Migrations\20221105190313_reset.designer.cs">
+      <DependentUpon>20221105190313_reset.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20220911165004_adm.cs" />
-    <Compile Include="Migrations\20220911165004_adm.designer.cs">
-      <DependentUpon>20220911165004_adm.cs</DependentUpon>
+    <Compile Include="Migrations\20221105192620_reset2.cs" />
+    <Compile Include="Migrations\20221105192620_reset2.designer.cs">
+      <DependentUpon>20221105192620_reset2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20220911174805_x.cs" />
-    <Compile Include="Migrations\20220911174805_x.designer.cs">
-      <DependentUpon>20220911174805_x.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20220921215838_produto - fornecedor.cs" />
-    <Compile Include="Migrations\20220921215838_produto - fornecedor.designer.cs">
-      <DependentUpon>20220921215838_produto - fornecedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20220921225126_todas menos compra.cs" />
-    <Compile Include="Migrations\20220921225126_todas menos compra.designer.cs">
-      <DependentUpon>20220921225126_todas menos compra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20220921225911_item compra.cs" />
-    <Compile Include="Migrations\20220921225911_item compra.designer.cs">
-      <DependentUpon>20220921225911_item compra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20220921231054_item compra liga.cs" />
-    <Compile Include="Migrations\20220921231054_item compra liga.designer.cs">
-      <DependentUpon>20220921231054_item compra liga.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20220922000812_string unidade.cs" />
-    <Compile Include="Migrations\20220922000812_string unidade.designer.cs">
-      <DependentUpon>20220922000812_string unidade.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20221005005942_dskak.cs" />
-    <Compile Include="Migrations\20221005005942_dskak.designer.cs">
-      <DependentUpon>20221005005942_dskak.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20221005010556_dskak22.cs" />
-    <Compile Include="Migrations\20221005010556_dskak22.designer.cs">
-      <DependentUpon>20221005010556_dskak22.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20221005010621_dskak222.cs" />
-    <Compile Include="Migrations\20221005010621_dskak222.designer.cs">
-      <DependentUpon>20221005010621_dskak222.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20221005011039_dskak2222.cs" />
-    <Compile Include="Migrations\20221005011039_dskak2222.designer.cs">
-      <DependentUpon>20221005011039_dskak2222.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20221005011520_dskak22222.cs" />
-    <Compile Include="Migrations\20221005011520_dskak22222.designer.cs">
-      <DependentUpon>20221005011520_dskak22222.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20221006231941_novo banco.cs" />
-    <Compile Include="Migrations\20221006231941_novo banco.designer.cs">
-      <DependentUpon>20221006231941_novo banco.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20221006232510_banco reset.cs" />
-    <Compile Include="Migrations\20221006232510_banco reset.designer.cs">
-      <DependentUpon>20221006232510_banco reset.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20221006233958_banco reset 2.cs" />
-    <Compile Include="Migrations\20221006233958_banco reset 2.designer.cs">
-      <DependentUpon>20221006233958_banco reset 2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20221024220512_add.cs" />
-    <Compile Include="Migrations\20221024220512_add.designer.cs">
-      <DependentUpon>20221024220512_add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20221024221839_novo add.cs" />
-    <Compile Include="Migrations\20221024221839_novo add.designer.cs">
-      <DependentUpon>20221024221839_novo add.cs</DependentUpon>
+    <Compile Include="Migrations\20221105195105_reset3.cs" />
+    <Compile Include="Migrations\20221105195105_reset3.designer.cs">
+      <DependentUpon>20221105195105_reset3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DataBaseContextModelSnapshot.cs" />
     <Compile Include="Persistence\Context\DataBaseContext.cs" />

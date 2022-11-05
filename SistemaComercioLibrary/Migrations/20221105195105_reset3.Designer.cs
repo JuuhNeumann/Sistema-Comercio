@@ -10,8 +10,8 @@ using SistemaComercioLibrary.Persistence.Context;
 namespace SistemaComercioLibrary.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20221005011039_dskak2222")]
-    partial class dskak2222
+    [Migration("20221105195105_reset3")]
+    partial class reset3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,17 +33,21 @@ namespace SistemaComercioLibrary.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<double>("Preco")
-                        .HasColumnType("double precision");
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
 
                     b.Property<int>("Quantidade_Estoque")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Unidade")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -61,10 +65,12 @@ namespace SistemaComercioLibrary.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<double>("Saldo")
-                        .HasColumnType("double precision");
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -80,46 +86,57 @@ namespace SistemaComercioLibrary.Migrations
 
                     b.Property<string>("Bairro")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Cep")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(9)")
+                        .HasMaxLength(9);
 
                     b.Property<string>("Cidade")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Complemento")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Cpf_Cnpj")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(18)")
+                        .HasMaxLength(18);
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Estado")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Logradouro")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<int>("Numero")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasMaxLength(4);
 
                     b.Property<string>("Telefone")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(13)")
+                        .HasMaxLength(13);
 
                     b.HasKey("Id");
 
@@ -134,20 +151,25 @@ namespace SistemaComercioLibrary.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<DateTime>("Data")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp without time zone")
+                        .HasMaxLength(255);
 
-                    b.Property<DateTime>("Hora")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<string>("Hora")
+                        .IsRequired()
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<int>("Id_Fornecedor")
                         .HasColumnType("integer");
 
                     b.Property<string>("Situacao_Compra")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<double>("Total_Compra")
-                        .HasColumnType("double precision");
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -164,29 +186,36 @@ namespace SistemaComercioLibrary.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<DateTime>("Data_Lancamento")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp without time zone")
+                        .HasMaxLength(10);
 
                     b.Property<DateTime>("Data_Pagamento")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp without time zone")
+                        .HasMaxLength(10);
 
                     b.Property<DateTime>("Data_Vencimento")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp without time zone")
+                        .HasMaxLength(10);
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<int>("Id_Fornecedor")
                         .HasColumnType("integer");
 
                     b.Property<double>("Pago")
-                        .HasColumnType("double precision");
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
 
                     b.Property<double>("Valor")
-                        .HasColumnType("double precision");
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
 
                     b.Property<double>("Valor_Pagamento")
-                        .HasColumnType("double precision");
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -203,29 +232,36 @@ namespace SistemaComercioLibrary.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<DateTime>("Data_Lancamento")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp without time zone")
+                        .HasMaxLength(10);
 
                     b.Property<DateTime>("Data_Recebimento")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp without time zone")
+                        .HasMaxLength(10);
 
                     b.Property<DateTime>("Data_Vencimento")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp without time zone")
+                        .HasMaxLength(10);
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<int>("Id_Cliente")
                         .HasColumnType("integer");
 
                     b.Property<double>("Recebido")
-                        .HasColumnType("double precision");
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
 
                     b.Property<double>("Valor")
-                        .HasColumnType("double precision");
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
 
                     b.Property<double>("Valor_Recebimento")
-                        .HasColumnType("double precision");
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -243,7 +279,8 @@ namespace SistemaComercioLibrary.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -259,46 +296,58 @@ namespace SistemaComercioLibrary.Migrations
 
                     b.Property<string>("Bairro")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Cep")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(9)")
+                        .HasMaxLength(9);
 
                     b.Property<string>("Cidade")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Complemento")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Cpf_Cnpj")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(18)")
+                        .HasMaxLength(18);
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Estado")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Logradouro")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
-                    b.Property<int>("Numero")
-                        .HasColumnType("integer");
+                    b.Property<string>("Numero")
+                        .IsRequired()
+                        .HasColumnType("character varying(4)")
+                        .HasMaxLength(4);
 
                     b.Property<string>("Telefone")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(13)")
+                        .HasMaxLength(13);
 
                     b.HasKey("Id");
 
@@ -313,24 +362,29 @@ namespace SistemaComercioLibrary.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<DateTime>("Data_Movimento")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp without time zone")
+                        .HasMaxLength(10);
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<DateTime>("Hora_Movimento")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp without time zone")
+                        .HasMaxLength(5);
 
                     b.Property<int>("Id_Caixa")
                         .HasColumnType("integer");
 
                     b.Property<string>("Tipo_Movimento")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<double>("Valor")
-                        .HasColumnType("double precision");
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -347,20 +401,24 @@ namespace SistemaComercioLibrary.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<DateTime>("Data")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp without time zone")
+                        .HasMaxLength(10);
 
                     b.Property<DateTime>("Hora")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp without time zone")
+                        .HasMaxLength(5);
 
                     b.Property<int>("Id_Cliente")
                         .HasColumnType("integer");
 
                     b.Property<string>("Situacao_Venda")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.Property<double>("Total_Venda")
-                        .HasColumnType("double precision");
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -378,11 +436,13 @@ namespace SistemaComercioLibrary.Migrations
 
                     b.Property<string>("Senha")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(10)")
+                        .HasMaxLength(10);
 
                     b.Property<string>("Usuario")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(20)")
+                        .HasMaxLength(20);
 
                     b.HasKey("Id");
 
@@ -401,6 +461,10 @@ namespace SistemaComercioLibrary.Migrations
 
                     b.Property<int>("Id_Venda")
                         .HasColumnType("integer");
+
+                    b.Property<double>("Valor")
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -424,6 +488,18 @@ namespace SistemaComercioLibrary.Migrations
                     b.Property<int>("Id_Produto")
                         .HasColumnType("integer");
 
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("integer")
+                        .HasMaxLength(255);
+
+                    b.Property<double>("Total_Item")
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
+
+                    b.Property<double>("Valor_Unitario")
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
+
                     b.HasKey("Id");
 
                     b.HasIndex("Id_Compra");
@@ -445,6 +521,18 @@ namespace SistemaComercioLibrary.Migrations
 
                     b.Property<int>("Id_Venda")
                         .HasColumnType("integer");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("integer")
+                        .HasMaxLength(255);
+
+                    b.Property<double>("Total_Item")
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
+
+                    b.Property<double>("Valor_Unitario")
+                        .HasColumnType("double precision")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 

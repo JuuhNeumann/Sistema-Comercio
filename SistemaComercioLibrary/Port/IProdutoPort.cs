@@ -16,5 +16,6 @@ namespace SistemaComercioLibrary.Port
         void DelProduto(Produto produto);
         List<Produto> GetAllProduto();
         Produto GetByIdProduto(int id);
+        Produto GetByName(string name);
     }
 }
