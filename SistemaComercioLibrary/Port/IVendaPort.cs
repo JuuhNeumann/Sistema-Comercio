@@ -11,13 +11,9 @@ namespace SistemaComercioLibrary.Port
     {
         int Count();
         void AddVenda(Venda venda);
-        void DelVenda(string id);
-        void UpdateVenda(string id);
-        void ReadVenda(List<Venda> venda);
-        //consulta por cliente (e periodo???)
-        void ConsultVenda(Cliente cliente);
-        //emitir relatorio de vendas realizadas filtrar por periodo?????? e cliente
-        void IssueReportVenda(List<Venda> situacaoVenda);
-        Compra GetCompra();
+        void DelVenda(Venda venda);
+        void UpdateVenda(Venda venda);
+        List<Venda> GetAllVenda();
+        Venda GetByIdVenda(int id);
     }
 }

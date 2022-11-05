@@ -29,11 +29,6 @@ namespace SistemaComercioLibrary.Service
             _db.SaveChanges();
         }
 
-        public void ReadProduto(List<Produto> produto)
-        {
-            throw new NotImplementedException();
-        }
-
         public void UpdateProduto(Produto produto)
         {
             var prod = _db.Produto.FirstOrDefault(x => x.Id == produto.Id); //pega o id

@@ -68,6 +68,10 @@
             this.lblQuantidadeCancel = new System.Windows.Forms.Label();
             this.lblExemploCancel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblTotalCima = new System.Windows.Forms.Label();
+            this.txtTotalCima = new System.Windows.Forms.TextBox();
+            this.lblTotalCimaCancel = new System.Windows.Forms.Label();
+            this.txtTotalCimaCancel = new System.Windows.Forms.TextBox();
             this.gpbDadosOperacionais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompra)).BeginInit();
             this.gpbConsulta.SuspendLayout();
@@ -269,7 +273,7 @@
             // 
             // btnComprar
             // 
-            this.btnComprar.Location = new System.Drawing.Point(100, 91);
+            this.btnComprar.Location = new System.Drawing.Point(220, 88);
             this.btnComprar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(118, 23);
@@ -280,7 +284,7 @@
             // 
             // btnCancelarCompra
             // 
-            this.btnCancelarCompra.Location = new System.Drawing.Point(95, 91);
+            this.btnCancelarCompra.Location = new System.Drawing.Point(214, 88);
             this.btnCancelarCompra.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelarCompra.Name = "btnCancelarCompra";
             this.btnCancelarCompra.Size = new System.Drawing.Size(118, 23);
@@ -302,7 +306,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(228, 91);
+            this.btnLimpar.Location = new System.Drawing.Point(346, 88);
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(118, 23);
@@ -410,6 +414,8 @@
             // 
             this.tbpLancarCompra.BackColor = System.Drawing.Color.Cornsilk;
             this.tbpLancarCompra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tbpLancarCompra.Controls.Add(this.txtTotalCima);
+            this.tbpLancarCompra.Controls.Add(this.lblTotalCima);
             this.tbpLancarCompra.Controls.Add(this.btnLimpar);
             this.tbpLancarCompra.Controls.Add(this.txtPreco);
             this.tbpLancarCompra.Controls.Add(this.cmbQuant);
@@ -430,6 +436,8 @@
             // 
             this.tbpCancelarCompra.BackColor = System.Drawing.Color.Cornsilk;
             this.tbpCancelarCompra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tbpCancelarCompra.Controls.Add(this.txtTotalCimaCancel);
+            this.tbpCancelarCompra.Controls.Add(this.lblTotalCimaCancel);
             this.tbpCancelarCompra.Controls.Add(this.btnLimparCancel);
             this.tbpCancelarCompra.Controls.Add(this.cmbSelecioneCancel);
             this.tbpCancelarCompra.Controls.Add(this.txtPrecoCancel);
@@ -448,7 +456,7 @@
             // 
             // btnLimparCancel
             // 
-            this.btnLimparCancel.Location = new System.Drawing.Point(222, 91);
+            this.btnLimparCancel.Location = new System.Drawing.Point(340, 88);
             this.btnLimparCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLimparCancel.Name = "btnLimparCancel";
             this.btnLimparCancel.Size = new System.Drawing.Size(118, 23);
@@ -520,6 +528,41 @@
             this.label1.Size = new System.Drawing.Size(221, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Selecione o id da compra que deseja cancelar:";
+            // 
+            // lblTotalCima
+            // 
+            this.lblTotalCima.AutoSize = true;
+            this.lblTotalCima.Location = new System.Drawing.Point(7, 91);
+            this.lblTotalCima.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalCima.Name = "lblTotalCima";
+            this.lblTotalCima.Size = new System.Drawing.Size(34, 13);
+            this.lblTotalCima.TabIndex = 14;
+            this.lblTotalCima.Text = "Total:";
+            // 
+            // txtTotalCima
+            // 
+            this.txtTotalCima.Enabled = false;
+            this.txtTotalCima.Location = new System.Drawing.Point(38, 88);
+            this.txtTotalCima.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTotalCima.Name = "txtTotalCima";
+            this.txtTotalCima.Size = new System.Drawing.Size(167, 21);
+            this.txtTotalCima.TabIndex = 15;
+            // 
+            // lblTotalCimaCancel
+            // 
+            this.lblTotalCimaCancel.AutoSize = true;
+            this.lblTotalCimaCancel.Location = new System.Drawing.Point(7, 91);
+            this.lblTotalCimaCancel.Name = "lblTotalCimaCancel";
+            this.lblTotalCimaCancel.Size = new System.Drawing.Size(34, 13);
+            this.lblTotalCimaCancel.TabIndex = 19;
+            this.lblTotalCimaCancel.Text = "Total:";
+            // 
+            // txtTotalCimaCancel
+            // 
+            this.txtTotalCimaCancel.Location = new System.Drawing.Point(38, 88);
+            this.txtTotalCimaCancel.Name = "txtTotalCimaCancel";
+            this.txtTotalCimaCancel.Size = new System.Drawing.Size(154, 21);
+            this.txtTotalCimaCancel.TabIndex = 20;
             // 
             // Frm_Compra
             // 
@@ -595,5 +638,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblRespostaSituacao;
         private System.Windows.Forms.TextBox txtSelecioneCompra;
+        private System.Windows.Forms.TextBox txtTotalCima;
+        private System.Windows.Forms.Label lblTotalCima;
+        private System.Windows.Forms.TextBox txtTotalCimaCancel;
+        private System.Windows.Forms.Label lblTotalCimaCancel;
     }
 }

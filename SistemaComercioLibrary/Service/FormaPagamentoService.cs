@@ -20,9 +20,26 @@ namespace SistemaComercioLibrary.Service
             _db.SaveChanges();
         }
 
-        public FormaPagamento GetFormaPagamento()
+        public void DelFormaPagamento(FormaPagamento formaPagamento)
         {
-            throw new NotImplementedException();
+            _db.FormaPagamento.Remove(formaPagamento);
+            _db.SaveChanges();
+        }
+
+        public List<FormaPagamento> GetAllFormaPagamento()
+        {
+            return _db.FormaPagamento.ToList();
+        }
+
+        public FormaPagamento GetByIdFormaPagamento(int id)
+        {
+            return _db.FormaPagamento.FirstOrDefault(x => x.Id.Equals(id)); //pega o id
+        }
+
+        public void UpdateFormaPagamento(FormaPagamento formaPagamento)
+        {
+            var fp = _db.FormaPagamento.FirstOrDefault(x => x.Id == formaPagamento.Id); //pega o id
+            fp.Nome = formaPagamento.Nome;
         }
     }
 }

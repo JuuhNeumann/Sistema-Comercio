@@ -11,7 +11,7 @@ namespace SistemaComercioLibrary.Port
     {
         void AddItemVenda(ItemVenda itemVenda);
         void UpdateItemVenda(ItemVenda itemVenda);
-        void DelItemVenda(ItemCompra itemVenda);
+        void DelItemVenda(ItemVenda itemVenda);
         List<ItemVenda> GetAllItemVenda();
         ItemVenda GetByIdItemVenda(int id);
     }

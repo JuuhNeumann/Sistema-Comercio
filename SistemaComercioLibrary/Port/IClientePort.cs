@@ -14,8 +14,6 @@ namespace SistemaComercioLibrary.Port
         void AddCliente(Cliente cliente);
         void UpdateCliente(Cliente cliente);
         void DelCliente(Cliente cliente);
-        //mostra uma LISTA de fornecedores
-        void ReadCliente(List<Cliente> ciente);
         List<Cliente> GetAllCliente();
         Cliente GetByNomeCliente(string nome);
         Cliente GetByIdCliente(int id);

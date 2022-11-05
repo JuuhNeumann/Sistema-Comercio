@@ -10,12 +10,9 @@ namespace SistemaComercioLibrary.Port
     public interface ICaixaPort
     {
         void AddCaixa(Caixa caixa);
-        //atualiza saldo em função da venda
-        void UpdateCaixaVenda(Venda venda);
-        //atualiza saldo em função do recebimento
-        void UpdateCaixaRecebimento(ContaReceber contaReceber);
-        //atualiza saldo em função do pagamento
-        void UpdateCaixaPagamento(ContaPagar contaPagar);
-        Caixa GetCaixa();
+        void DelCaixa(Caixa caixa);
+        void UpdateCaixa(Caixa caixa);
+        List<Caixa> GetAllCaixa();
+        Caixa GetByIdCaixa(int id);
     }
 }

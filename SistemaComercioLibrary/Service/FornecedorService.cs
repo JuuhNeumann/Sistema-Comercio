@@ -30,11 +30,6 @@ namespace SistemaComercioLibrary.Service
             return  _db.Fornecedor.ToList();
         }
 
-        public void ReadFornecedor(List<Fornecedor> fornecedor)
-        {
-            throw new NotImplementedException();
-        }
-
         public void UpdateFornecedor(Fornecedor fornecedor)
         {
             var forne = _db.Fornecedor.FirstOrDefault(x => x.Id == fornecedor.Id); //pega o id

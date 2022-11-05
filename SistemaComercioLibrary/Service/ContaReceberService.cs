@@ -20,19 +20,34 @@ namespace SistemaComercioLibrary.Service
             _db.SaveChanges();
         }
 
-        public void AddContaReceberVenda(Venda venda)
+        public void DelContaReceber(ContaReceber contaReceber)
         {
-            throw new NotImplementedException();
+            _db.ContaReceber.Remove(contaReceber);
+            _db.SaveChanges();
         }
 
-        public Caixa GetContaReceber()
+        public List<ContaReceber> GetAllContaReceber()
         {
-            throw new NotImplementedException();
+            return _db.ContaReceber.ToList();
         }
 
-        public void IssueReportContaReceber(ContaReceber dataRecebimento)
+        public ContaReceber GetByIdContaReceber(int id)
         {
-            throw new NotImplementedException();
+            return _db.ContaReceber.FirstOrDefault(x => x.Id.Equals(id)); //pega o id
+        }
+
+
+        public void UpdateContaReceber(ContaReceber contaReceber)
+        {
+            var contaR = _db.ContaReceber.FirstOrDefault(x => x.Id == contaReceber.Id); //pega o id
+            contaR.Descricao = contaReceber.Descricao;
+            contaR.Data_Lancamento = contaReceber.Data_Lancamento;
+            contaR.Data_Vencimento = contaReceber.Data_Vencimento;
+            contaR.Valor = contaReceber.Valor;
+            contaR.Recebido = contaReceber.Recebido;
+            contaR.Data_Recebimento = contaReceber.Data_Recebimento;
+            contaR.Valor_Recebimento = contaReceber.Valor_Recebimento;
+            contaR.Id_Cliente = contaReceber.Id_Cliente;
         }
     }
 }

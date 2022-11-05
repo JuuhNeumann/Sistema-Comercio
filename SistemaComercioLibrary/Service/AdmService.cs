@@ -20,11 +20,6 @@ namespace SistemaComercioLibrary.Service
             _db.SaveChanges();
         }
 
-        public Adm GetAdm()
-        {
-            throw new NotImplementedException();
-        }
-
         public bool Login(string username, string password)
         {
             var usuario = _db.Adm.FirstOrDefault(x => x.Usuario.Equals(username) );

@@ -58,8 +58,8 @@ namespace SistemaComercio.Gui
             }
         }
 
-
         #endregion
+
 
         #region DataGridView
 
@@ -281,11 +281,14 @@ namespace SistemaComercio.Gui
         private void LimparCampos()
         {
             txtPreco.Clear();
+            txtTotalCima.Clear();
             cmbQuant.SelectedIndex = -1;
             cmbSelecioneProduto.SelectedIndex = -1;
             cmbQUantidadeCancel.SelectedIndex = -1;
             cmbSelecioneCancel.SelectedIndex = -1;
             txtPrecoCancel.Clear();
+            txtTotalCimaCancel.Clear();
+
         }
 
         private void PesquisaCompraFiltro()

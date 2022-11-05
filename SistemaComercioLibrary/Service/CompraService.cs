@@ -17,31 +17,17 @@ namespace SistemaComercioLibrary.Service
         {
             return _db.Compra.Count();
         }
+
         public void AddCompra(Compra compra)
         {
             _db.Compra.Add(compra);
             _db.SaveChanges();
         }
 
-        public void ConsultCompra(Fornecedor fornecedor)
-        {
-            throw new NotImplementedException();
-        }
-
         public void DelCompra(Compra compra)
         {
             _db.Compra.Remove(compra);
             _db.SaveChanges();
-        }
-
-        public Compra GetCompra()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void IssueReportCompra(List<Compra> situacaoCompra)
-        {
-            throw new NotImplementedException();
         }
 
         public List<Compra> GetAllCompra()
@@ -51,12 +37,17 @@ namespace SistemaComercioLibrary.Service
 
         public void UpdateCompra(Compra compra)
         {
-            throw new NotImplementedException();
+            var cmp = _db.Compra.FirstOrDefault(x => x.Id == compra.Id); //pega o id
+            cmp.Data = compra.Data;
+            cmp.Hora = compra.Hora;
+            cmp.Total_Compra = compra.Total_Compra;
+            cmp.Situacao_Compra = compra.Situacao_Compra;
+            cmp.Id_Fornecedor = compra.Id_Fornecedor;
         }
 
         public Compra GetByIdCompra(int id)
         {
-            throw new NotImplementedException();
+            return _db.Compra.FirstOrDefault(x => x.Id.Equals(id)); //pega o id
         }
     }
 }

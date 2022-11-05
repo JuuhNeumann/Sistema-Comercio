@@ -20,24 +20,27 @@ namespace SistemaComercioLibrary.Service
             _db.SaveChanges();
         }
 
-        public Caixa GetCaixa()
+        public void DelCaixa(Caixa caixa)
         {
-            throw new NotImplementedException();
+            _db.Caixa.Remove(caixa);
+            _db.SaveChanges();
         }
 
-        public void UpdateCaixaPagamento(ContaPagar contaPagar)
+        public List<Caixa> GetAllCaixa()
         {
-            throw new NotImplementedException();
+            return _db.Caixa.ToList();
         }
 
-        public void UpdateCaixaRecebimento(ContaReceber contaReceber)
+        public Caixa GetByIdCaixa(int id)
         {
-            throw new NotImplementedException();
+            return _db.Caixa.FirstOrDefault(x => x.Id.Equals(id)); //pega o id
         }
 
-        public void UpdateCaixaVenda(Venda venda)
+        public void UpdateCaixa(Caixa caixa)
         {
-            throw new NotImplementedException();
+            var cx = _db.Caixa.FirstOrDefault(x => x.Id == caixa.Id); //pega o id
+            cx.Nome = caixa.Nome;
+            cx.Saldo = caixa.Saldo;
         }
     }
 }

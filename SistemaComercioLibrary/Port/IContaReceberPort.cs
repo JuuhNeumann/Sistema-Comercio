@@ -10,12 +10,9 @@ namespace SistemaComercioLibrary.Port
     public interface IContaReceberPort
     {
         void AddContaReceber(ContaReceber contaReceber);
-        //gera uma conta a partir de uma venda
-        void AddContaReceberVenda(Venda venda);
-        //emitir relatorio de contas a receber com opção: a receber, a vencer, em atraso e pagas.
-        void IssueReportContaReceber(ContaReceber dataRecebimento);
-        Caixa GetContaReceber();
-        //metodo para baixa uma conta a receber????
-        //gerar boleto??????
+        void DelContaReceber(ContaReceber contaReceber);
+        void UpdateContaReceber(ContaReceber contaReceber);
+        List<ContaReceber> GetAllContaReceber();
+        ContaReceber GetByIdContaReceber(int id);
     }
 }

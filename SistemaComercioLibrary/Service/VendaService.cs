@@ -26,34 +26,30 @@ namespace SistemaComercioLibrary.Service
             _db.SaveChanges();
         }
 
-        public void ConsultVenda(Cliente cliente)
+        public void DelVenda(Venda venda)
         {
-            throw new NotImplementedException();
+            _db.Venda.Remove(venda);
+            _db.SaveChanges();
         }
 
-        public void DelVenda(string id)
+        public List<Venda> GetAllVenda()
         {
-            throw new NotImplementedException();
+            return _db.Venda.ToList();
         }
 
-        public Compra GetCompra()
+        public void UpdateVenda(Venda venda)
         {
-            throw new NotImplementedException();
+            var vnd = _db.Venda.FirstOrDefault(x => x.Id == venda.Id); //pega o id
+            vnd.Data = venda.Data;
+            vnd.Hora = venda.Hora;
+            vnd.Total_Venda = venda.Total_Venda;
+            vnd.Situacao_Venda = venda.Situacao_Venda;
+            vnd.Id_Cliente = venda.Id_Cliente;
         }
 
-        public void IssueReportVenda(List<Venda> situacaoVenda)
+        public Venda GetByIdVenda(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public void ReadVenda(List<Venda> venda)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateVenda(string id)
-        {
-            throw new NotImplementedException();
+            return _db.Venda.FirstOrDefault(x => x.Id.Equals(id)); //pega o id
         }
     }
 }

@@ -11,8 +11,6 @@ namespace SistemaComercioLibrary.Port
     public interface IAdmPort
     {
         bool Login(string username, string password);
-
         void AddAdm(Adm adm);
-        Adm GetAdm();
     }
 }

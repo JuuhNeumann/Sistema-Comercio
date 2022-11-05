@@ -10,8 +10,10 @@ namespace SistemaComercioLibrary.Port
     public interface IMovimentoCaixaPort
     {
         void AddMovimentoCaixa(MovimentoCaixa movimentoCaixa);
-        void ReadMovimentoCaixa(List<MovimentoCaixa> movimentoCaixa);
-        MovimentoCaixa GetMovimentoCaixa();
+        void DelMovimentoCaixa(MovimentoCaixa movimentoCaixa);
+        void UpdateMovimentoCaixa(MovimentoCaixa movimentoCaixa);
+        List<MovimentoCaixa> GetAllMovimentoCaixa();
+        MovimentoCaixa GetByIdMovimentoCaixa(int id);
     }
 }
 

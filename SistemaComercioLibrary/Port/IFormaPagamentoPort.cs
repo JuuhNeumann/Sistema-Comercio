@@ -10,6 +10,9 @@ namespace SistemaComercioLibrary.Port
     public interface IFormaPagamentoPort
     {
         void AddFormaPagamento(FormaPagamento formaPagamento);
-        FormaPagamento GetFormaPagamento();
+        void DelFormaPagamento(FormaPagamento formaPagamento);
+        void UpdateFormaPagamento(FormaPagamento formaPagamento);
+        List<FormaPagamento> GetAllFormaPagamento();
+        FormaPagamento GetByIdFormaPagamento(int id);
     }
 }

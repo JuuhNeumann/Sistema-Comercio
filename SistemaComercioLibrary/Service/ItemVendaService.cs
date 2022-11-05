@@ -16,9 +16,9 @@ namespace SistemaComercioLibrary.Service
             _db.SaveChanges();
         }
 
-        public void DelItemVenda(ItemCompra itemVenda)
+        public void DelItemVenda(ItemVenda itemVenda)
         {
-            _db.ItemCompra.Remove(itemVenda);
+            _db.ItemVenda.Remove(itemVenda);
             _db.SaveChanges();
         }
 

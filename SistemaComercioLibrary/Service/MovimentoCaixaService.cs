@@ -20,14 +20,31 @@ namespace SistemaComercioLibrary.Service
             _db.SaveChanges();
         }
 
-        public MovimentoCaixa GetMovimentoCaixa()
+        public void DelMovimentoCaixa(MovimentoCaixa movimentoCaixa)
         {
-            throw new NotImplementedException();
+            _db.MovimentoCaixa.Remove(movimentoCaixa);
+            _db.SaveChanges();
         }
 
-        public void ReadMovimentoCaixa(List<MovimentoCaixa> movimentoCaixa)
+        public List<MovimentoCaixa> GetAllMovimentoCaixa()
         {
-            throw new NotImplementedException();
+            return _db.MovimentoCaixa.ToList();
+        }
+
+        public MovimentoCaixa GetByIdMovimentoCaixa(int id)
+        {
+            return _db.MovimentoCaixa.FirstOrDefault(x => x.Id.Equals(id)); //pega o id
+        }
+
+        public void UpdateMovimentoCaixa(MovimentoCaixa movimentoCaixa)
+        {
+            var mc = _db.MovimentoCaixa.FirstOrDefault(x => x.Id == movimentoCaixa.Id); //pega o id
+            mc.Data_Movimento = movimentoCaixa.Data_Movimento;
+            mc.Hora_Movimento = movimentoCaixa.Hora_Movimento;
+            mc.Descricao = movimentoCaixa.Descricao;
+            mc.Tipo_Movimento = movimentoCaixa.Tipo_Movimento;
+            mc.Valor = movimentoCaixa.Valor;
+            mc.Id_Caixa = movimentoCaixa.Id_Caixa;
         }
     }
 }

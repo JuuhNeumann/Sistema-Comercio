@@ -31,11 +31,6 @@ namespace SistemaComercioLibrary.Service
             _db.SaveChanges();
         }
 
-        public void ReadCliente(List<Cliente> ciente)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Cliente> GetAllCliente()
         {
             return _db.Cliente.ToList();

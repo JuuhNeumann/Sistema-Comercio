@@ -10,10 +10,9 @@ namespace SistemaComercioLibrary.Port
     public interface IContaPagarPort
     {
         void AddContaPagar(ContaPagar contaPagar);
-        //gera uma conta a partir de uma compra
-        void AddContaPagarCompra(Compra compra);
-        //emitir relatorio de contas a pagar com opção: nao vencidas, a vencer, em atraso e paga
-        void IssueReportContaPagar(ContaPagar dataPagamento);
-        Caixa GetContaPagar();
+        void DelContaPagar(ContaPagar contaPagar);
+        void UpdateContaPagar(ContaPagar contaPagar);
+        List<ContaPagar> GetAllContaPagar();
+        ContaPagar GetByIdContaPagar(int id);
     }
 }
