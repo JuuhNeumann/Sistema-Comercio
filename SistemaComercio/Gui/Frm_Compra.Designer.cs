@@ -186,6 +186,7 @@
             this.btnRelatorio.TabIndex = 1;
             this.btnRelatorio.Text = "Emitir Relatório";
             this.btnRelatorio.UseVisualStyleBackColor = true;
+            this.btnRelatorio.Click += new System.EventHandler(this.ClickEmitirRelatorio);
             // 
             // btnSair
             // 

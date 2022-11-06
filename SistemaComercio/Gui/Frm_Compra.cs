@@ -62,7 +62,6 @@ namespace SistemaComercio.Gui
 
         #endregion
 
-
         #region DataGridView
 
         private void UpdateCompraInDataGrid()
@@ -191,6 +190,11 @@ namespace SistemaComercio.Gui
         #endregion
 
         #region Click Botões Form
+        private void ClickEmitirRelatorio(object sender, EventArgs e)
+        {
+            Frm_RelatorioCompra relatorioC = new Frm_RelatorioCompra();
+            relatorioC.Show();
+        }
 
         private void ClickLançarCompra(object sender, EventArgs e)
         {
@@ -232,9 +236,11 @@ namespace SistemaComercio.Gui
                 }
                 else
                 {
+                    itemCompra.Compra.Situacao_Compra = "Alterado";
                     itemCompra.Quantidade -= Convert.ToInt32(cmbQUantidadeCancel.Text);
                     itemCompra.Produto.Quantidade_Estoque += Convert.ToInt32(cmbQUantidadeCancel.Text);
                     serviceItemC.UpdateItemCompra(itemCompra);
+                    lblRespostaSituacao.Text = "Alterado";
                     MessageBox.Show("Situação de compra alterada!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
