@@ -65,5 +65,11 @@ namespace SistemaComercio.Gui
             Frm_Compra compra = new Frm_Compra();
             compra.Show();
         }
+
+        private void ClickVenda(object sender, EventArgs e)
+        {
+            Frm_Venda venda = new Frm_Venda();
+            venda.Show();
+        }
     }
 }

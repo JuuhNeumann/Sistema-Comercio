@@ -307,6 +307,12 @@
     <Compile Include="Gui\Frm_RelatorioCompra.Designer.cs">
       <DependentUpon>Frm_RelatorioCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Frm_RelatorioVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Frm_RelatorioVenda.Designer.cs">
+      <DependentUpon>Frm_RelatorioVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Frm_Venda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,10 +357,13 @@
     <EmbeddedResource Include="Gui\Frm_RelatorioCompra.resx">
       <DependentUpon>Frm_RelatorioCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Frm_RelatorioVenda.resx">
+      <DependentUpon>Frm_RelatorioVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_Venda.resx">
       <DependentUpon>Frm_Venda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gui\re.rdlc" />
+    <EmbeddedResource Include="bin\Debug\RelatorioCompras.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -362,6 +371,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.ItemCompra.datasource" />
+    <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.ItemVenda.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -423,3 +423,4 @@ E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\ru\Micr
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_RelatorioCompra.resources
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_RelatorioVenda.resources

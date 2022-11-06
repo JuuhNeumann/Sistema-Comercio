@@ -32,18 +32,22 @@
             this.txtSelecioneVenda = new System.Windows.Forms.TextBox();
             this.tbcVenda = new System.Windows.Forms.TabControl();
             this.tbpLancarVenda = new System.Windows.Forms.TabPage();
+            this.txtTotalCima = new System.Windows.Forms.TextBox();
+            this.lblTotalCima = new System.Windows.Forms.Label();
             this.btnLimparCampos = new System.Windows.Forms.Button();
             this.cmbQuantidade = new System.Windows.Forms.ComboBox();
             this.btnLancarVenda = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtSelecioneProduto = new System.Windows.Forms.TextBox();
+            this.txtPreco = new System.Windows.Forms.TextBox();
             this.cmbSelecioneProduto = new System.Windows.Forms.ComboBox();
             this.lblExemplo = new System.Windows.Forms.Label();
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.lblPrecoUnitario = new System.Windows.Forms.Label();
             this.tbpCancelarVenda = new System.Windows.Forms.TabPage();
+            this.txtTotalCimaCancel = new System.Windows.Forms.TextBox();
+            this.lblTotalCimaCancel = new System.Windows.Forms.Label();
             this.btnLimparCancelar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPrecoCancel = new System.Windows.Forms.TextBox();
             this.lblPrecoCancelar = new System.Windows.Forms.Label();
             this.cmbQuantiCancelar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,7 +66,7 @@
             this.lblHora = new System.Windows.Forms.Label();
             this.txtData = new System.Windows.Forms.TextBox();
             this.lblData = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewVenda = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -73,7 +77,7 @@
             this.tbpLancarVenda.SuspendLayout();
             this.tbpCancelarVenda.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVenda)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +89,7 @@
             this.panel1.Controls.Add(this.btnSair);
             this.panel1.Controls.Add(this.btnEmitirRelatorio);
             this.panel1.Controls.Add(this.groupBox3);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dataGridViewVenda);
             this.panel1.Controls.Add(this.btnConsultar);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.groupBox2);
@@ -118,11 +122,13 @@
             // 
             this.tbpLancarVenda.BackColor = System.Drawing.Color.MistyRose;
             this.tbpLancarVenda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tbpLancarVenda.Controls.Add(this.txtTotalCima);
+            this.tbpLancarVenda.Controls.Add(this.lblTotalCima);
             this.tbpLancarVenda.Controls.Add(this.btnLimparCampos);
             this.tbpLancarVenda.Controls.Add(this.cmbQuantidade);
             this.tbpLancarVenda.Controls.Add(this.btnLancarVenda);
             this.tbpLancarVenda.Controls.Add(this.label1);
-            this.tbpLancarVenda.Controls.Add(this.txtSelecioneProduto);
+            this.tbpLancarVenda.Controls.Add(this.txtPreco);
             this.tbpLancarVenda.Controls.Add(this.cmbSelecioneProduto);
             this.tbpLancarVenda.Controls.Add(this.lblExemplo);
             this.tbpLancarVenda.Controls.Add(this.lblQuantidade);
@@ -134,15 +140,35 @@
             this.tbpLancarVenda.TabIndex = 0;
             this.tbpLancarVenda.Text = "Lançar Venda";
             // 
+            // txtTotalCima
+            // 
+            this.txtTotalCima.Enabled = false;
+            this.txtTotalCima.Location = new System.Drawing.Point(38, 87);
+            this.txtTotalCima.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTotalCima.Name = "txtTotalCima";
+            this.txtTotalCima.Size = new System.Drawing.Size(160, 21);
+            this.txtTotalCima.TabIndex = 11;
+            // 
+            // lblTotalCima
+            // 
+            this.lblTotalCima.AutoSize = true;
+            this.lblTotalCima.Location = new System.Drawing.Point(7, 90);
+            this.lblTotalCima.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalCima.Name = "lblTotalCima";
+            this.lblTotalCima.Size = new System.Drawing.Size(34, 13);
+            this.lblTotalCima.TabIndex = 10;
+            this.lblTotalCima.Text = "Total:";
+            // 
             // btnLimparCampos
             // 
-            this.btnLimparCampos.Location = new System.Drawing.Point(238, 90);
+            this.btnLimparCampos.Location = new System.Drawing.Point(356, 85);
             this.btnLimparCampos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLimparCampos.Name = "btnLimparCampos";
             this.btnLimparCampos.Size = new System.Drawing.Size(118, 23);
             this.btnLimparCampos.TabIndex = 9;
             this.btnLimparCampos.Text = "Limpar Campos";
             this.btnLimparCampos.UseVisualStyleBackColor = true;
+            this.btnLimparCampos.Click += new System.EventHandler(this.ClickLimparCamposLancar);
             // 
             // cmbQuantidade
             // 
@@ -156,7 +182,7 @@
             // 
             // btnLancarVenda
             // 
-            this.btnLancarVenda.Location = new System.Drawing.Point(104, 90);
+            this.btnLancarVenda.Location = new System.Drawing.Point(219, 85);
             this.btnLancarVenda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLancarVenda.Name = "btnLancarVenda";
             this.btnLancarVenda.Size = new System.Drawing.Size(118, 23);
@@ -174,14 +200,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Selecione o produto que deseja vender:";
             // 
-            // txtSelecioneProduto
+            // txtPreco
             // 
-            this.txtSelecioneProduto.Enabled = false;
-            this.txtSelecioneProduto.Location = new System.Drawing.Point(302, 55);
-            this.txtSelecioneProduto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtSelecioneProduto.Name = "txtSelecioneProduto";
-            this.txtSelecioneProduto.Size = new System.Drawing.Size(172, 21);
-            this.txtSelecioneProduto.TabIndex = 1;
+            this.txtPreco.Enabled = false;
+            this.txtPreco.Location = new System.Drawing.Point(302, 55);
+            this.txtPreco.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(172, 21);
+            this.txtPreco.TabIndex = 1;
             // 
             // cmbSelecioneProduto
             // 
@@ -227,8 +253,10 @@
             // 
             this.tbpCancelarVenda.BackColor = System.Drawing.Color.MistyRose;
             this.tbpCancelarVenda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tbpCancelarVenda.Controls.Add(this.txtTotalCimaCancel);
+            this.tbpCancelarVenda.Controls.Add(this.lblTotalCimaCancel);
             this.tbpCancelarVenda.Controls.Add(this.btnLimparCancelar);
-            this.tbpCancelarVenda.Controls.Add(this.textBox1);
+            this.tbpCancelarVenda.Controls.Add(this.txtPrecoCancel);
             this.tbpCancelarVenda.Controls.Add(this.lblPrecoCancelar);
             this.tbpCancelarVenda.Controls.Add(this.cmbQuantiCancelar);
             this.tbpCancelarVenda.Controls.Add(this.label3);
@@ -243,24 +271,43 @@
             this.tbpCancelarVenda.TabIndex = 1;
             this.tbpCancelarVenda.Text = "Cancelar Venda";
             // 
+            // txtTotalCimaCancel
+            // 
+            this.txtTotalCimaCancel.Enabled = false;
+            this.txtTotalCimaCancel.Location = new System.Drawing.Point(38, 87);
+            this.txtTotalCimaCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTotalCimaCancel.Name = "txtTotalCimaCancel";
+            this.txtTotalCimaCancel.Size = new System.Drawing.Size(158, 21);
+            this.txtTotalCimaCancel.TabIndex = 19;
+            // 
+            // lblTotalCimaCancel
+            // 
+            this.lblTotalCimaCancel.AutoSize = true;
+            this.lblTotalCimaCancel.Location = new System.Drawing.Point(6, 90);
+            this.lblTotalCimaCancel.Name = "lblTotalCimaCancel";
+            this.lblTotalCimaCancel.Size = new System.Drawing.Size(34, 13);
+            this.lblTotalCimaCancel.TabIndex = 18;
+            this.lblTotalCimaCancel.Text = "Total:";
+            // 
             // btnLimparCancelar
             // 
-            this.btnLimparCancelar.Location = new System.Drawing.Point(228, 90);
+            this.btnLimparCancelar.Location = new System.Drawing.Point(356, 87);
             this.btnLimparCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLimparCancelar.Name = "btnLimparCancelar";
             this.btnLimparCancelar.Size = new System.Drawing.Size(118, 23);
             this.btnLimparCancelar.TabIndex = 17;
             this.btnLimparCancelar.Text = "Limpar Campos";
             this.btnLimparCancelar.UseVisualStyleBackColor = true;
+            this.btnLimparCancelar.Click += new System.EventHandler(this.ClickLimparCamposCancel);
             // 
-            // textBox1
+            // txtPrecoCancel
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(305, 58);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 21);
-            this.textBox1.TabIndex = 16;
+            this.txtPrecoCancel.Enabled = false;
+            this.txtPrecoCancel.Location = new System.Drawing.Point(305, 58);
+            this.txtPrecoCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtPrecoCancel.Name = "txtPrecoCancel";
+            this.txtPrecoCancel.Size = new System.Drawing.Size(169, 21);
+            this.txtPrecoCancel.TabIndex = 16;
             // 
             // lblPrecoCancelar
             // 
@@ -318,7 +365,7 @@
             // 
             // btnCancelarVenda
             // 
-            this.btnCancelarVenda.Location = new System.Drawing.Point(101, 90);
+            this.btnCancelarVenda.Location = new System.Drawing.Point(219, 87);
             this.btnCancelarVenda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelarVenda.Name = "btnCancelarVenda";
             this.btnCancelarVenda.Size = new System.Drawing.Size(118, 23);
@@ -335,6 +382,7 @@
             this.btnSair.TabIndex = 13;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.ClickSair);
             // 
             // btnEmitirRelatorio
             // 
@@ -345,6 +393,7 @@
             this.btnEmitirRelatorio.TabIndex = 10;
             this.btnEmitirRelatorio.Text = "Emitir Relatório";
             this.btnEmitirRelatorio.UseVisualStyleBackColor = true;
+            this.btnEmitirRelatorio.Click += new System.EventHandler(this.ClickEmitirRelatorio);
             // 
             // groupBox3
             // 
@@ -439,14 +488,16 @@
             this.lblData.TabIndex = 10;
             this.lblData.Text = "Data:";
             // 
-            // dataGridView1
+            // dataGridViewVenda
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 249);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(491, 157);
-            this.dataGridView1.TabIndex = 11;
+            this.dataGridViewVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewVenda.Location = new System.Drawing.Point(21, 249);
+            this.dataGridViewVenda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dataGridViewVenda.Name = "dataGridViewVenda";
+            this.dataGridViewVenda.RowHeadersVisible = false;
+            this.dataGridViewVenda.Size = new System.Drawing.Size(491, 157);
+            this.dataGridViewVenda.TabIndex = 11;
+            this.dataGridViewVenda.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.FormattingRows);
             // 
             // btnConsultar
             // 
@@ -457,6 +508,7 @@
             this.btnConsultar.TabIndex = 10;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.ClickConsultar);
             // 
             // label2
             // 
@@ -516,6 +568,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Frm_Venda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venda";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -526,7 +579,7 @@
             this.tbpCancelarVenda.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVenda)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -537,7 +590,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtSelecioneProduto;
+        private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.Label lblExemplo;
         private System.Windows.Forms.ComboBox cmbSelecioneProduto;
         private System.Windows.Forms.Label lblQuantidade;
@@ -551,7 +604,7 @@
         private System.Windows.Forms.RadioButton rdbPeriodo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewVenda;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtData;
         private System.Windows.Forms.Label lblData;
@@ -566,7 +619,7 @@
         private System.Windows.Forms.TabPage tbpLancarVenda;
         private System.Windows.Forms.TabPage tbpCancelarVenda;
         private System.Windows.Forms.Button btnLimparCancelar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPrecoCancel;
         private System.Windows.Forms.Label lblPrecoCancelar;
         private System.Windows.Forms.ComboBox cmbQuantiCancelar;
         private System.Windows.Forms.Label label3;
@@ -575,5 +628,9 @@
         private System.Windows.Forms.Label lblSlecioneCancelamento;
         private System.Windows.Forms.Label lblRespostaSituacao;
         private System.Windows.Forms.TextBox txtSelecioneVenda;
+        private System.Windows.Forms.TextBox txtTotalCima;
+        private System.Windows.Forms.Label lblTotalCima;
+        private System.Windows.Forms.TextBox txtTotalCimaCancel;
+        private System.Windows.Forms.Label lblTotalCimaCancel;
     }
 }

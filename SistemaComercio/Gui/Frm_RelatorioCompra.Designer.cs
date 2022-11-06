@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTitleCompra = new System.Windows.Forms.Label();
-            this.lblData = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.txtData = new System.Windows.Forms.TextBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.txtData = new System.Windows.Forms.TextBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lblTitleCompra = new System.Windows.Forms.Label();
             this.rvRelatorioCompra = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSair = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,29 +56,24 @@
             this.panel1.Size = new System.Drawing.Size(861, 61);
             this.panel1.TabIndex = 0;
             // 
-            // lblTitleCompra
+            // cmbStatus
             // 
-            this.lblTitleCompra.AutoSize = true;
-            this.lblTitleCompra.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleCompra.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTitleCompra.Location = new System.Drawing.Point(23, 18);
-            this.lblTitleCompra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTitleCompra.Name = "lblTitleCompra";
-            this.lblTitleCompra.Size = new System.Drawing.Size(215, 23);
-            this.lblTitleCompra.TabIndex = 1;
-            this.lblTitleCompra.Text = "Relatório de Compras";
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(658, 25);
+            this.cmbStatus.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(184, 21);
+            this.cmbStatus.TabIndex = 1;
             // 
-            // lblData
+            // txtData
             // 
-            this.lblData.AutoSize = true;
-            this.lblData.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblData.Location = new System.Drawing.Point(395, 28);
-            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(37, 13);
-            this.lblData.TabIndex = 1;
-            this.lblData.Text = "Data:";
+            this.txtData.Enabled = false;
+            this.txtData.Location = new System.Drawing.Point(431, 25);
+            this.txtData.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(159, 21);
+            this.txtData.TabIndex = 1;
             // 
             // lblStatus
             // 
@@ -89,38 +87,66 @@
             this.lblStatus.TabIndex = 3;
             this.lblStatus.Text = "Status:";
             // 
-            // txtData
+            // lblData
             // 
-            this.txtData.Enabled = false;
-            this.txtData.Location = new System.Drawing.Point(431, 25);
-            this.txtData.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(159, 21);
-            this.txtData.TabIndex = 1;
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblData.Location = new System.Drawing.Point(395, 28);
+            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(37, 13);
+            this.lblData.TabIndex = 1;
+            this.lblData.Text = "Data:";
             // 
-            // cmbStatus
+            // lblTitleCompra
             // 
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(658, 25);
-            this.cmbStatus.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(184, 21);
-            this.cmbStatus.TabIndex = 1;
+            this.lblTitleCompra.AutoSize = true;
+            this.lblTitleCompra.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleCompra.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTitleCompra.Location = new System.Drawing.Point(23, 18);
+            this.lblTitleCompra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitleCompra.Name = "lblTitleCompra";
+            this.lblTitleCompra.Size = new System.Drawing.Size(215, 23);
+            this.lblTitleCompra.TabIndex = 1;
+            this.lblTitleCompra.Text = "Relatório de Compras";
             // 
             // rvRelatorioCompra
             // 
+            this.rvRelatorioCompra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.rvRelatorioCompra.Location = new System.Drawing.Point(-2, 55);
             this.rvRelatorioCompra.Name = "rvRelatorioCompra";
             this.rvRelatorioCompra.ServerReport.BearerToken = null;
             this.rvRelatorioCompra.Size = new System.Drawing.Size(857, 362);
             this.rvRelatorioCompra.TabIndex = 1;
+            this.rvRelatorioCompra.Load += new System.EventHandler(this.rvRelatorioCompra_Load);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Teal;
+            this.panel2.Controls.Add(this.btnSair);
+            this.panel2.Location = new System.Drawing.Point(-2, 413);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(861, 54);
+            this.panel2.TabIndex = 2;
+            // 
+            // btnSair
+            // 
+            this.btnSair.Location = new System.Drawing.Point(731, 14);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(113, 23);
+            this.btnSair.TabIndex = 1;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
             // 
             // Frm_RelatorioCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 415);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(854, 462);
             this.Controls.Add(this.rvRelatorioCompra);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -131,6 +157,7 @@
             this.Load += new System.EventHandler(this.Frm_RelatorioCompra_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -144,5 +171,7 @@
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblTitleCompra;
         private Microsoft.Reporting.WinForms.ReportViewer rvRelatorioCompra;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnSair;
     }
 }

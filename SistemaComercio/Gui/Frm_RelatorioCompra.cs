@@ -31,14 +31,18 @@ namespace SistemaComercio.Gui
 
         public void UpdateReportViewer()
         {
-
             serviceItemC = new ItemCompraService();
             serviceC = new CompraService();
 
+            CreateDataTable();
+            CreateReportViewer();
+        }
 
+        public void CreateDataTable()
+        {
             dt = new DataTable();
             dt.Columns.Add("Id", typeof(string));
-            dt.Columns.Add("Nome", typeof(string));
+            dt.Columns.Add("Produto", typeof(string));
             dt.Columns.Add("Quantidade", typeof(string));
 
             itemCompras = serviceItemC.GetAllItemCompra();
@@ -53,12 +57,20 @@ namespace SistemaComercio.Gui
                 });
             }
 
-            ReportDataSource reportDataSource = new ReportDataSource("Dataset1", dt);
+        }
+
+        public void CreateReportViewer()
+        {
             rvRelatorioCompra.LocalReport.DataSources.Clear();
-            rvRelatorioCompra.LocalReport.ReportPath = "E:\\microsoft visual code\\repos\\SistemaComercio\\SistemaComercio\\Gui\\re.rdlc";
-            this.rvRelatorioCompra.LocalReport.DataSources.Clear();
-            this.rvRelatorioCompra.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("Dataset1", dt));
+            ReportDataSource reportDataSource = new ReportDataSource("ItemCompras", dt);
+
+            rvRelatorioCompra.LocalReport.ReportPath = "RelatorioCompras.rdlc";
+            rvRelatorioCompra.LocalReport.DataSources.Add(reportDataSource);
             rvRelatorioCompra.LocalReport.Refresh();
+        }
+
+        private void rvRelatorioCompra_Load(object sender, EventArgs e)
+        {
 
         }
     }

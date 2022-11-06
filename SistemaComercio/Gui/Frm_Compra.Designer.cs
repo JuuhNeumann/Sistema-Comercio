@@ -228,9 +228,9 @@
             this.dataGridViewCompra.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridViewCompra.Name = "dataGridViewCompra";
             this.dataGridViewCompra.ReadOnly = true;
+            this.dataGridViewCompra.RowHeadersVisible = false;
             this.dataGridViewCompra.Size = new System.Drawing.Size(491, 156);
             this.dataGridViewCompra.TabIndex = 7;
-            this.dataGridViewCompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FormattingCollunms);
             this.dataGridViewCompra.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.FormattingRows);
             // 
             // lblPreco

@@ -181,15 +181,11 @@ namespace SistemaComercio.Gui
             }
         } //DataBindingComplete
 
-        private void FormattingCollunms(object sender, DataGridViewCellEventArgs e)
-        {
-
-        } //CellContentClick
-
 
         #endregion
 
         #region Click Botões Form
+
         private void ClickEmitirRelatorio(object sender, EventArgs e)
         {
             Frm_RelatorioCompra relatorioC = new Frm_RelatorioCompra();
