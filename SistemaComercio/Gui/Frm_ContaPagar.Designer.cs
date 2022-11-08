@@ -52,8 +52,20 @@
             this.btnEmitirRelatorio = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gpbFormaPagamento = new System.Windows.Forms.GroupBox();
+            this.lblSlecionePagamento = new System.Windows.Forms.Label();
+            this.rdbPix = new System.Windows.Forms.RadioButton();
+            this.rdbDinheiro = new System.Windows.Forms.RadioButton();
+            this.rdbCartaoDebito = new System.Windows.Forms.RadioButton();
+            this.rdbCartaoCredito = new System.Windows.Forms.RadioButton();
+            this.cmbParcelamento = new System.Windows.Forms.ComboBox();
+            this.lblParcelamento = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.btnPagar = new System.Windows.Forms.Button();
             this.gpbContaPagar.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.gpbFormaPagamento.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpbContaPagar
@@ -269,30 +281,30 @@
             // 
             // btnBaixarConta
             // 
-            this.btnBaixarConta.Location = new System.Drawing.Point(14, 205);
+            this.btnBaixarConta.Location = new System.Drawing.Point(21, 319);
             this.btnBaixarConta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBaixarConta.Name = "btnBaixarConta";
-            this.btnBaixarConta.Size = new System.Drawing.Size(136, 22);
+            this.btnBaixarConta.Size = new System.Drawing.Size(114, 22);
             this.btnBaixarConta.TabIndex = 1;
             this.btnBaixarConta.Text = "Baixar Conta";
             this.btnBaixarConta.UseVisualStyleBackColor = true;
             // 
             // btnEmitirRelatorio
             // 
-            this.btnEmitirRelatorio.Location = new System.Drawing.Point(158, 205);
+            this.btnEmitirRelatorio.Location = new System.Drawing.Point(143, 319);
             this.btnEmitirRelatorio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEmitirRelatorio.Name = "btnEmitirRelatorio";
-            this.btnEmitirRelatorio.Size = new System.Drawing.Size(136, 22);
+            this.btnEmitirRelatorio.Size = new System.Drawing.Size(114, 22);
             this.btnEmitirRelatorio.TabIndex = 2;
-            this.btnEmitirRelatorio.Text = "Emitir Relatorio";
+            this.btnEmitirRelatorio.Text = "Emitir Relatório";
             this.btnEmitirRelatorio.UseVisualStyleBackColor = true;
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(502, 214);
+            this.btnSair.Location = new System.Drawing.Point(483, 319);
             this.btnSair.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(98, 22);
+            this.btnSair.Size = new System.Drawing.Size(114, 22);
             this.btnSair.TabIndex = 3;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -300,20 +312,143 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Tan;
+            this.panel1.Controls.Add(this.gpbFormaPagamento);
+            this.panel1.Controls.Add(this.btnEmitirRelatorio);
+            this.panel1.Controls.Add(this.btnBaixarConta);
             this.panel1.Controls.Add(this.btnSair);
             this.panel1.Location = new System.Drawing.Point(-7, -6);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(617, 248);
+            this.panel1.Size = new System.Drawing.Size(617, 354);
             this.panel1.TabIndex = 4;
+            // 
+            // gpbFormaPagamento
+            // 
+            this.gpbFormaPagamento.Controls.Add(this.btnPagar);
+            this.gpbFormaPagamento.Controls.Add(this.txtTotal);
+            this.gpbFormaPagamento.Controls.Add(this.lblTotal);
+            this.gpbFormaPagamento.Controls.Add(this.lblParcelamento);
+            this.gpbFormaPagamento.Controls.Add(this.cmbParcelamento);
+            this.gpbFormaPagamento.Controls.Add(this.rdbCartaoCredito);
+            this.gpbFormaPagamento.Controls.Add(this.rdbCartaoDebito);
+            this.gpbFormaPagamento.Controls.Add(this.rdbDinheiro);
+            this.gpbFormaPagamento.Controls.Add(this.rdbPix);
+            this.gpbFormaPagamento.Controls.Add(this.lblSlecionePagamento);
+            this.gpbFormaPagamento.Location = new System.Drawing.Point(21, 201);
+            this.gpbFormaPagamento.Name = "gpbFormaPagamento";
+            this.gpbFormaPagamento.Size = new System.Drawing.Size(576, 112);
+            this.gpbFormaPagamento.TabIndex = 4;
+            this.gpbFormaPagamento.TabStop = false;
+            this.gpbFormaPagamento.Text = "Forma de Pagamento";
+            // 
+            // lblSlecionePagamento
+            // 
+            this.lblSlecionePagamento.AutoSize = true;
+            this.lblSlecionePagamento.Location = new System.Drawing.Point(9, 27);
+            this.lblSlecionePagamento.Name = "lblSlecionePagamento";
+            this.lblSlecionePagamento.Size = new System.Drawing.Size(196, 13);
+            this.lblSlecionePagamento.TabIndex = 0;
+            this.lblSlecionePagamento.Text = "Selecione abaixo a forma de pagamento:";
+            // 
+            // rdbPix
+            // 
+            this.rdbPix.AutoSize = true;
+            this.rdbPix.Location = new System.Drawing.Point(10, 53);
+            this.rdbPix.Name = "rdbPix";
+            this.rdbPix.Size = new System.Drawing.Size(41, 17);
+            this.rdbPix.TabIndex = 1;
+            this.rdbPix.TabStop = true;
+            this.rdbPix.Text = "Pix";
+            this.rdbPix.UseVisualStyleBackColor = true;
+            // 
+            // rdbDinheiro
+            // 
+            this.rdbDinheiro.AutoSize = true;
+            this.rdbDinheiro.Location = new System.Drawing.Point(12, 76);
+            this.rdbDinheiro.Name = "rdbDinheiro";
+            this.rdbDinheiro.Size = new System.Drawing.Size(67, 17);
+            this.rdbDinheiro.TabIndex = 2;
+            this.rdbDinheiro.TabStop = true;
+            this.rdbDinheiro.Text = "Dinheiro";
+            this.rdbDinheiro.UseVisualStyleBackColor = true;
+            // 
+            // rdbCartaoDebito
+            // 
+            this.rdbCartaoDebito.AutoSize = true;
+            this.rdbCartaoDebito.Location = new System.Drawing.Point(111, 53);
+            this.rdbCartaoDebito.Name = "rdbCartaoDebito";
+            this.rdbCartaoDebito.Size = new System.Drawing.Size(105, 17);
+            this.rdbCartaoDebito.TabIndex = 3;
+            this.rdbCartaoDebito.TabStop = true;
+            this.rdbCartaoDebito.Text = "Cartão de Débito";
+            this.rdbCartaoDebito.UseVisualStyleBackColor = true;
+            // 
+            // rdbCartaoCredito
+            // 
+            this.rdbCartaoCredito.AutoSize = true;
+            this.rdbCartaoCredito.Location = new System.Drawing.Point(111, 76);
+            this.rdbCartaoCredito.Name = "rdbCartaoCredito";
+            this.rdbCartaoCredito.Size = new System.Drawing.Size(108, 17);
+            this.rdbCartaoCredito.TabIndex = 4;
+            this.rdbCartaoCredito.TabStop = true;
+            this.rdbCartaoCredito.Text = "Cartão de Crédito";
+            this.rdbCartaoCredito.UseVisualStyleBackColor = true;
+            // 
+            // cmbParcelamento
+            // 
+            this.cmbParcelamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbParcelamento.FormattingEnabled = true;
+            this.cmbParcelamento.Items.AddRange(new object[] {
+            "1x sem juros",
+            "2x sem juros",
+            "3x sem juros",
+            "4x sem juros",
+            "5x sem juros"});
+            this.cmbParcelamento.Location = new System.Drawing.Point(252, 69);
+            this.cmbParcelamento.Name = "cmbParcelamento";
+            this.cmbParcelamento.Size = new System.Drawing.Size(147, 21);
+            this.cmbParcelamento.TabIndex = 5;
+            // 
+            // lblParcelamento
+            // 
+            this.lblParcelamento.AutoSize = true;
+            this.lblParcelamento.Location = new System.Drawing.Point(249, 53);
+            this.lblParcelamento.Name = "lblParcelamento";
+            this.lblParcelamento.Size = new System.Drawing.Size(73, 13);
+            this.lblParcelamento.TabIndex = 6;
+            this.lblParcelamento.Text = "Parcelamento:";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(394, 27);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(34, 13);
+            this.lblTotal.TabIndex = 7;
+            this.lblTotal.Text = "Total:";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(426, 24);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(140, 21);
+            this.txtTotal.TabIndex = 8;
+            // 
+            // btnPagar
+            // 
+            this.btnPagar.Location = new System.Drawing.Point(436, 67);
+            this.btnPagar.Name = "btnPagar";
+            this.btnPagar.Size = new System.Drawing.Size(120, 23);
+            this.btnPagar.TabIndex = 9;
+            this.btnPagar.Text = "Pagar";
+            this.btnPagar.UseVisualStyleBackColor = true;
             // 
             // Frm_ContaPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 239);
-            this.Controls.Add(this.btnBaixarConta);
-            this.Controls.Add(this.btnEmitirRelatorio);
+            this.ClientSize = new System.Drawing.Size(602, 344);
             this.Controls.Add(this.gpbContaPagar);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -325,6 +460,8 @@
             this.gpbContaPagar.ResumeLayout(false);
             this.gpbContaPagar.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.gpbFormaPagamento.ResumeLayout(false);
+            this.gpbFormaPagamento.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -355,5 +492,16 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.ComboBox cmbSelecioneCompra;
+        private System.Windows.Forms.GroupBox gpbFormaPagamento;
+        private System.Windows.Forms.Button btnPagar;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblParcelamento;
+        private System.Windows.Forms.ComboBox cmbParcelamento;
+        private System.Windows.Forms.RadioButton rdbCartaoCredito;
+        private System.Windows.Forms.RadioButton rdbCartaoDebito;
+        private System.Windows.Forms.RadioButton rdbDinheiro;
+        private System.Windows.Forms.RadioButton rdbPix;
+        private System.Windows.Forms.Label lblSlecionePagamento;
     }
 }

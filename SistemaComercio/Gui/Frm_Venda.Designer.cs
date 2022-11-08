@@ -40,7 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPreco = new System.Windows.Forms.TextBox();
             this.cmbSelecioneProduto = new System.Windows.Forms.ComboBox();
-            this.lblExemplo = new System.Windows.Forms.Label();
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.lblPrecoUnitario = new System.Windows.Forms.Label();
             this.tbpCancelarVenda = new System.Windows.Forms.TabPage();
@@ -72,6 +71,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdbCliente = new System.Windows.Forms.RadioButton();
             this.rdbPeriodo = new System.Windows.Forms.RadioButton();
+            this.lblSelecioneCli = new System.Windows.Forms.Label();
+            this.cmbSelecioneCli = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tbcVenda.SuspendLayout();
             this.tbpLancarVenda.SuspendLayout();
@@ -122,6 +123,8 @@
             // 
             this.tbpLancarVenda.BackColor = System.Drawing.Color.MistyRose;
             this.tbpLancarVenda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tbpLancarVenda.Controls.Add(this.cmbSelecioneCli);
+            this.tbpLancarVenda.Controls.Add(this.lblSelecioneCli);
             this.tbpLancarVenda.Controls.Add(this.txtTotalCima);
             this.tbpLancarVenda.Controls.Add(this.lblTotalCima);
             this.tbpLancarVenda.Controls.Add(this.btnLimparCampos);
@@ -130,7 +133,6 @@
             this.tbpLancarVenda.Controls.Add(this.label1);
             this.tbpLancarVenda.Controls.Add(this.txtPreco);
             this.tbpLancarVenda.Controls.Add(this.cmbSelecioneProduto);
-            this.tbpLancarVenda.Controls.Add(this.lblExemplo);
             this.tbpLancarVenda.Controls.Add(this.lblQuantidade);
             this.tbpLancarVenda.Controls.Add(this.lblPrecoUnitario);
             this.tbpLancarVenda.Location = new System.Drawing.Point(4, 22);
@@ -177,7 +179,7 @@
             this.cmbQuantidade.Location = new System.Drawing.Point(70, 55);
             this.cmbQuantidade.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbQuantidade.Name = "cmbQuantidade";
-            this.cmbQuantidade.Size = new System.Drawing.Size(152, 21);
+            this.cmbQuantidade.Size = new System.Drawing.Size(167, 21);
             this.cmbQuantidade.TabIndex = 5;
             // 
             // btnLancarVenda
@@ -204,10 +206,10 @@
             // txtPreco
             // 
             this.txtPreco.Enabled = false;
-            this.txtPreco.Location = new System.Drawing.Point(302, 55);
+            this.txtPreco.Location = new System.Drawing.Point(322, 55);
             this.txtPreco.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(172, 21);
+            this.txtPreco.Size = new System.Drawing.Size(152, 21);
             this.txtPreco.TabIndex = 1;
             // 
             // cmbSelecioneProduto
@@ -217,19 +219,9 @@
             this.cmbSelecioneProduto.Location = new System.Drawing.Point(10, 28);
             this.cmbSelecioneProduto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbSelecioneProduto.Name = "cmbSelecioneProduto";
-            this.cmbSelecioneProduto.Size = new System.Drawing.Size(382, 21);
+            this.cmbSelecioneProduto.Size = new System.Drawing.Size(227, 21);
             this.cmbSelecioneProduto.TabIndex = 3;
             this.cmbSelecioneProduto.SelectedIndexChanged += new System.EventHandler(this.cmbSelecioneProduto_SelectedIndexChanged);
-            // 
-            // lblExemplo
-            // 
-            this.lblExemplo.AutoSize = true;
-            this.lblExemplo.Location = new System.Drawing.Point(400, 31);
-            this.lblExemplo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblExemplo.Name = "lblExemplo";
-            this.lblExemplo.Size = new System.Drawing.Size(74, 13);
-            this.lblExemplo.TabIndex = 2;
-            this.lblExemplo.Text = "Ex: Xbox 360";
             // 
             // lblQuantidade
             // 
@@ -244,7 +236,7 @@
             // lblPrecoUnitario
             // 
             this.lblPrecoUnitario.AutoSize = true;
-            this.lblPrecoUnitario.Location = new System.Drawing.Point(225, 58);
+            this.lblPrecoUnitario.Location = new System.Drawing.Point(245, 58);
             this.lblPrecoUnitario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrecoUnitario.Name = "lblPrecoUnitario";
             this.lblPrecoUnitario.Size = new System.Drawing.Size(79, 13);
@@ -559,6 +551,26 @@
             this.rdbPeriodo.Text = "Período";
             this.rdbPeriodo.UseVisualStyleBackColor = true;
             // 
+            // lblSelecioneCli
+            // 
+            this.lblSelecioneCli.AutoSize = true;
+            this.lblSelecioneCli.Location = new System.Drawing.Point(259, 12);
+            this.lblSelecioneCli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSelecioneCli.Name = "lblSelecioneCli";
+            this.lblSelecioneCli.Size = new System.Drawing.Size(196, 13);
+            this.lblSelecioneCli.TabIndex = 12;
+            this.lblSelecioneCli.Text = "Selecione o cliente para realizar a venda:";
+            // 
+            // cmbSelecioneCli
+            // 
+            this.cmbSelecioneCli.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSelecioneCli.FormattingEnabled = true;
+            this.cmbSelecioneCli.Location = new System.Drawing.Point(262, 28);
+            this.cmbSelecioneCli.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cmbSelecioneCli.Name = "cmbSelecioneCli";
+            this.cmbSelecioneCli.Size = new System.Drawing.Size(212, 21);
+            this.cmbSelecioneCli.TabIndex = 13;
+            // 
             // Frm_Venda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -593,7 +605,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPreco;
-        private System.Windows.Forms.Label lblExemplo;
         private System.Windows.Forms.ComboBox cmbSelecioneProduto;
         private System.Windows.Forms.Label lblQuantidade;
         private System.Windows.Forms.ComboBox cmbQuantidade;
@@ -634,5 +645,7 @@
         private System.Windows.Forms.Label lblTotalCima;
         private System.Windows.Forms.TextBox txtTotalCimaCancel;
         private System.Windows.Forms.Label lblTotalCimaCancel;
+        private System.Windows.Forms.ComboBox cmbSelecioneCli;
+        private System.Windows.Forms.Label lblSelecioneCli;
     }
 }

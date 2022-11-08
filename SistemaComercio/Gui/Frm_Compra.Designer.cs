@@ -44,7 +44,6 @@
             this.dataGridViewCompra = new System.Windows.Forms.DataGridView();
             this.lblPreco = new System.Windows.Forms.Label();
             this.lblQuant = new System.Windows.Forms.Label();
-            this.cmbQuant = new System.Windows.Forms.ComboBox();
             this.txtPreco = new System.Windows.Forms.TextBox();
             this.btnComprar = new System.Windows.Forms.Button();
             this.btnCancelarCompra = new System.Windows.Forms.Button();
@@ -72,6 +71,7 @@
             this.lblQuantidadeCancel = new System.Windows.Forms.Label();
             this.lblExemploCancel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gpbDadosOperacionais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompra)).BeginInit();
             this.gpbConsulta.SuspendLayout();
@@ -236,7 +236,7 @@
             // lblPreco
             // 
             this.lblPreco.AutoSize = true;
-            this.lblPreco.Location = new System.Drawing.Point(225, 59);
+            this.lblPreco.Location = new System.Drawing.Point(217, 59);
             this.lblPreco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPreco.Name = "lblPreco";
             this.lblPreco.Size = new System.Drawing.Size(76, 13);
@@ -253,45 +253,13 @@
             this.lblQuant.TabIndex = 9;
             this.lblQuant.Text = "Quantidade:";
             // 
-            // cmbQuant
-            // 
-            this.cmbQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbQuant.FormattingEnabled = true;
-            this.cmbQuant.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20"});
-            this.cmbQuant.Location = new System.Drawing.Point(66, 56);
-            this.cmbQuant.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cmbQuant.Name = "cmbQuant";
-            this.cmbQuant.Size = new System.Drawing.Size(152, 21);
-            this.cmbQuant.TabIndex = 7;
-            this.cmbQuant.SelectedIndexChanged += new System.EventHandler(this.cmbQuant_SelectedIndexChanged);
-            // 
             // txtPreco
             // 
             this.txtPreco.Enabled = false;
-            this.txtPreco.Location = new System.Drawing.Point(300, 56);
+            this.txtPreco.Location = new System.Drawing.Point(291, 56);
             this.txtPreco.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(180, 21);
+            this.txtPreco.Size = new System.Drawing.Size(186, 21);
             this.txtPreco.TabIndex = 7;
             // 
             // btnComprar
@@ -437,11 +405,11 @@
             // 
             this.tbpLancarCompra.BackColor = System.Drawing.Color.Cornsilk;
             this.tbpLancarCompra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tbpLancarCompra.Controls.Add(this.textBox1);
             this.tbpLancarCompra.Controls.Add(this.txtTotalCima);
             this.tbpLancarCompra.Controls.Add(this.lblTotalCima);
             this.tbpLancarCompra.Controls.Add(this.btnLimpar);
             this.tbpLancarCompra.Controls.Add(this.txtPreco);
-            this.tbpLancarCompra.Controls.Add(this.cmbQuant);
             this.tbpLancarCompra.Controls.Add(this.btnComprar);
             this.tbpLancarCompra.Controls.Add(this.cmbSelecioneProduto);
             this.tbpLancarCompra.Controls.Add(this.lblSelecionarProduto);
@@ -589,6 +557,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Selecione o id da compra que deseja cancelar:";
             // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(67, 56);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(138, 21);
+            this.textBox1.TabIndex = 16;
+            // 
             // Frm_Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -638,7 +615,6 @@
         private System.Windows.Forms.DataGridView dataGridViewCompra;
         private System.Windows.Forms.Label lblPreco;
         private System.Windows.Forms.Label lblQuant;
-        private System.Windows.Forms.ComboBox cmbQuant;
         private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.Button btnComprar;
         private System.Windows.Forms.Button btnCancelarCompra;
@@ -667,5 +643,6 @@
         private System.Windows.Forms.Label lblTotalCima;
         private System.Windows.Forms.TextBox txtTotalCimaCancel;
         private System.Windows.Forms.Label lblTotalCimaCancel;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
