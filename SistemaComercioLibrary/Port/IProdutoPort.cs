@@ -17,5 +17,7 @@ namespace SistemaComercioLibrary.Port
         List<Produto> GetAllProduto();
         Produto GetByIdProduto(int id);
         Produto GetByName(string name);
+        List<Produto> GetAllVenda();
+
     }
 }

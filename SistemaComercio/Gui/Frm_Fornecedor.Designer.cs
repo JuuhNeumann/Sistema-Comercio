@@ -40,7 +40,6 @@
             this.lblNum = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.pnlFundoForne = new System.Windows.Forms.Panel();
-            this.btnCadProd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -192,7 +191,6 @@
             // 
             this.pnlFundoForne.BackColor = System.Drawing.Color.Thistle;
             this.pnlFundoForne.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlFundoForne.Controls.Add(this.btnCadProd);
             this.pnlFundoForne.Controls.Add(this.panel1);
             this.pnlFundoForne.Controls.Add(this.btnSair);
             this.pnlFundoForne.Controls.Add(this.btnSalvar);
@@ -229,16 +227,6 @@
             this.pnlFundoForne.Name = "pnlFundoForne";
             this.pnlFundoForne.Size = new System.Drawing.Size(792, 452);
             this.pnlFundoForne.TabIndex = 12;
-            // 
-            // btnCadProd
-            // 
-            this.btnCadProd.Location = new System.Drawing.Point(339, 414);
-            this.btnCadProd.Name = "btnCadProd";
-            this.btnCadProd.Size = new System.Drawing.Size(75, 23);
-            this.btnCadProd.TabIndex = 33;
-            this.btnCadProd.Text = "button1";
-            this.btnCadProd.UseVisualStyleBackColor = true;
-            this.btnCadProd.Click += new System.EventHandler(this.btnCadProd_Click);
             // 
             // panel1
             // 
@@ -520,6 +508,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewImageColumn Excluir;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.Button btnCadProd;
     }
 }

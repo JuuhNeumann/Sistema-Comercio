@@ -1,5 +1,4 @@
 ﻿using SistemaComercioBiblioteca.Classes;
-using SistemaComercioLibrary.Persistence.Context;
 using SistemaComercioLibrary.Port;
 using SistemaComercioLibrary.Service;
 using System;
@@ -225,7 +224,6 @@ namespace SistemaComercio.Gui
             {
                 Id_Fornecedor = umForne.Id,
                 Nome = txtNome.Text,
-                Quantidade_Estoque = Convert.ToInt32(txtEstoque.Text),
                 Preco = Convert.ToDouble(txtPreco.Text),
                 Unidade = cmbUnidade.Text,
             };
@@ -289,8 +287,7 @@ namespace SistemaComercio.Gui
 
         bool ValidarCampos()
         {
-            if (String.IsNullOrEmpty(txtNome.Text) || String.IsNullOrEmpty(cmbUnidade.Text)
-            || String.IsNullOrEmpty(txtEstoque.Text) || String.IsNullOrEmpty(txtPreco.Text))
+            if (String.IsNullOrEmpty(txtNome.Text) || String.IsNullOrEmpty(cmbUnidade.Text) || String.IsNullOrEmpty(txtPreco.Text))
             {
                 return false;
             }

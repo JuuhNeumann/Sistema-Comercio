@@ -1,4 +1,5 @@
-﻿using SistemaComercioLibrary.Classes;
+﻿using SistemaComercioBiblioteca.Classes;
+using SistemaComercioLibrary.Classes;
 using SistemaComercioLibrary.Entity;
 using SistemaComercioLibrary.Port;
 using SistemaComercioLibrary.Service;
@@ -14,9 +15,12 @@ namespace SistemaComercio.Gui
     {
         private List<ItemCompra> itemCompras;
         private List<ItemVenda> itemVendas;
+        private List<Produto> produtos;
+        private Produto produto;
         private IVendaPort service;
         private IItemCompraPort serviceItemC;
         private IItemVendaPort serviceItemV;
+        private IProdutoPort serviceProd;
         private DataTable dt = new DataTable();
         private string columnFilter;
         private Venda vnd = null;
@@ -32,16 +36,11 @@ namespace SistemaComercio.Gui
 
         private void AddComboBoxVenda()
         {
-            this.cmbSelecioneProduto.Items.Clear();
-
-            List<string> produtos = new List<string>();
-
-            itemCompras.ToList().ForEach(x => produtos.Add(x.Produto.Nome));
 
             foreach (var produto in produtos.Distinct())
             {
                 this.cmbSelecioneProduto.Items.AddRange(new object[] {
-                produto
+                produto.Nome
                 });
             }
         }
@@ -78,6 +77,7 @@ namespace SistemaComercio.Gui
             service = new VendaService();
             serviceItemC = new ItemCompraService();
             serviceItemV = new ItemVendaService();
+            serviceProd = new ProdutoService();
 
 
             dt = new DataTable();
@@ -95,6 +95,7 @@ namespace SistemaComercio.Gui
             dt.Columns.Add("Cliente", typeof(string));
 
             itemVendas = serviceItemV.GetAllItemVenda();
+            produtos = serviceProd.GetAllVenda();
 
             foreach (var itemVenda in itemVendas)
             {
@@ -263,5 +264,44 @@ namespace SistemaComercio.Gui
 
         #endregion
 
+        private void cmbSelecioneProduto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbQuantidade.Items.Clear();
+
+            serviceProd = new ProdutoService();
+
+            produto = serviceProd.GetByName(cmbSelecioneProduto.Text);
+
+            if (produto != null)
+            {
+                txtPreco.Text = "R$ " + produto.Preco.ToString();
+
+                for (int i = 1; i <= produto.Quantidade_Estoque; i++)
+                {
+                    cmbQuantidade.Items.AddRange(new object[] {
+                        i
+                    });
+                }
+            }
+
+        }
+
+        private void btnLancarVenda_Click(object sender, EventArgs e)
+        {
+            var venda = new Venda()
+            {
+                Id = 1,
+                //Total_Venda = txtTotal.Text
+            };
+
+            var itemVenda = new ItemVenda()
+            {
+                Id_Venda = venda.Id,
+
+            };
+
+            serviceItemV.AddItemVenda(itemVenda);
+            UpdateVendaInDataGrid();
+        }
     }
 }

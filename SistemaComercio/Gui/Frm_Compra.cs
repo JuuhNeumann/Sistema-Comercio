@@ -225,7 +225,7 @@ namespace SistemaComercio.Gui
                 if (cmbQUantidadeCancel.Text == itemCompra.Quantidade.ToString())
                 {
                     itemCompra.Compra.Situacao_Compra = "Cancelado";
-                    itemCompra.Produto.Quantidade_Estoque += Convert.ToInt32(cmbQUantidadeCancel.Text);
+                    itemCompra.Produto.Quantidade_Estoque -= Convert.ToInt32(cmbQUantidadeCancel.Text);
                     serviceItemC.UpdateItemCompra(itemCompra);
                     lblRespostaSituacao.Text = "Cancelado";
                     MessageBox.Show("Compra Cancelada!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -234,7 +234,7 @@ namespace SistemaComercio.Gui
                 {
                     itemCompra.Compra.Situacao_Compra = "Alterado";
                     itemCompra.Quantidade -= Convert.ToInt32(cmbQUantidadeCancel.Text);
-                    itemCompra.Produto.Quantidade_Estoque += Convert.ToInt32(cmbQUantidadeCancel.Text);
+                    itemCompra.Produto.Quantidade_Estoque -= Convert.ToInt32(cmbQUantidadeCancel.Text);
                     serviceItemC.UpdateItemCompra(itemCompra);
                     lblRespostaSituacao.Text = "Alterado";
                     MessageBox.Show("Situação de compra alterada!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -339,7 +339,7 @@ namespace SistemaComercio.Gui
                 Valor_Unitario = produto.Preco,
             };
 
-            produto.Quantidade_Estoque -= itemCompra.Quantidade;
+            produto.Quantidade_Estoque += itemCompra.Quantidade;
             serviceProd.UpdateProduto(produto);
 
             serviceItemC.AddItemCompra(itemCompra);
@@ -375,11 +375,10 @@ namespace SistemaComercio.Gui
             {
                 txtPreco.Text = "R$ " + produto.Preco.ToString();
 
-                //para listar a quantidade
-                for (int i = 1; i <= produto.Quantidade_Estoque; i++)
+                for (int i = 1; i <= 20; i++)
                 {
-                    this.cmbQuant.Items.AddRange(new object[] {
-                        i.ToString()
+                    cmbQuant.Items.AddRange(new object[] {
+                        i
                     });
                 }
             }

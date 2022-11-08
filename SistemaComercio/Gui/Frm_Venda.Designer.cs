@@ -189,6 +189,7 @@
             this.btnLancarVenda.TabIndex = 7;
             this.btnLancarVenda.Text = "Lançar Venda";
             this.btnLancarVenda.UseVisualStyleBackColor = true;
+            this.btnLancarVenda.Click += new System.EventHandler(this.btnLancarVenda_Click);
             // 
             // label1
             // 
@@ -218,6 +219,7 @@
             this.cmbSelecioneProduto.Name = "cmbSelecioneProduto";
             this.cmbSelecioneProduto.Size = new System.Drawing.Size(382, 21);
             this.cmbSelecioneProduto.TabIndex = 3;
+            this.cmbSelecioneProduto.SelectedIndexChanged += new System.EventHandler(this.cmbSelecioneProduto_SelectedIndexChanged);
             // 
             // lblExemplo
             // 

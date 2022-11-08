@@ -109,6 +109,7 @@
             // 
             // txtEstoque
             // 
+            this.txtEstoque.Enabled = false;
             this.txtEstoque.Location = new System.Drawing.Point(135, 68);
             this.txtEstoque.Name = "txtEstoque";
             this.txtEstoque.Size = new System.Drawing.Size(323, 20);

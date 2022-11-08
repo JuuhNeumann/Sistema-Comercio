@@ -57,5 +57,12 @@ namespace SistemaComercioLibrary.Service
             var produto = _db.Produto.FirstOrDefault(x => x.Nome.Equals(name)); //pega o id
             return produto;
         }
+
+        public List<Produto> GetAllVenda()
+        {
+            var produto = _db.Produto.Where(x => x.Quantidade_Estoque > 0).ToList();
+            return produto;
+        }
+
     }
 }

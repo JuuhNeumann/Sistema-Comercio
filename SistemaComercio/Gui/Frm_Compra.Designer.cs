@@ -257,6 +257,27 @@
             // 
             this.cmbQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbQuant.FormattingEnabled = true;
+            this.cmbQuant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
             this.cmbQuant.Location = new System.Drawing.Point(66, 56);
             this.cmbQuant.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbQuant.Name = "cmbQuant";
