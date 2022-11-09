@@ -179,15 +179,15 @@ namespace SistemaComercio.Gui
                         coluna.Width = 30;
                         break;
                     case "Quantidade":
-                        coluna.Width = 45;
+                        coluna.Width = 60;
                         break;
                     case "Valor Unitario":
                         coluna.DefaultCellStyle.Format = "C2";
-                        coluna.Width = 45;
+                        coluna.Width = 60;
                         break;
                     case "Total":
                         coluna.DefaultCellStyle.Format = "C2";
-                        coluna.Width = 45;
+                        coluna.Width = 55;
                         break;
                     /*case "Id Produto":
                         coluna.Width = 45;
@@ -199,10 +199,10 @@ namespace SistemaComercio.Gui
                         coluna.Width = 45;
                         break;
                     case "Data":
-                        coluna.Width = 60;
+                        coluna.Width = 100;
                         break;
                     case "Hora":
-                        coluna.Width = 60;
+                        coluna.Width = 100;
                         break;
                     case "Situacao":
                         coluna.Width = 60;

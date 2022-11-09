@@ -20,7 +20,14 @@ namespace SistemaComercio.Gui
             InitializeComponent();
             UpdateProviderInDataGrid();
         }
+        private void Frm_Fornecedor_Load(object sender, EventArgs e)
+        {
+          dataGridViewForne.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+          dataGridViewForne.DataSource = service.GetAllFornecedor();
+        }
 
+
+        #region DataGridView
         private void UpdateProviderInDataGrid()
         {
             dt = new DataTable();
@@ -62,7 +69,44 @@ namespace SistemaComercio.Gui
             dataGridViewForne.DataSource = dt;
         }
 
-        private void FormattingRows(object sender, DataGridViewBindingCompleteEventArgs e) 
+        private void FormattingCollumns(object sender, DataGridViewCellEventArgs e)
+        {
+            //quando clica em editar pega ele
+            if (dataGridViewForne.Columns[e.ColumnIndex] == dataGridViewForne.Columns["Editar"])
+            {
+                //preciso pegar o id dele pra saber qm é
+                var id = dataGridViewForne.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+                forne = service.GetByIdFornecedor(Convert.ToInt32(id));
+
+                txtNome.Text = forne.Nome;
+                txtCPF.Text = forne.Cpf_Cnpj;
+                txtLogra.Text = forne.Logradouro;
+                txtNum.Text = forne.Numero;
+                txtComple.Text = forne.Complemento;
+                txtBairro.Text = forne.Bairro;
+                txtCidade.Text = forne.Cidade;
+                txtEstado.Text = forne.Estado;
+                txtCEP.Text = forne.Cep;
+                txtTel.Text = forne.Telefone;
+                txtEmail.Text = forne.Email;
+
+                btnSalvar.Enabled = true;
+                btnCad.Enabled = false;
+            }
+
+            //quando clica em excluir pega ele
+            if (dataGridViewForne.Columns[e.ColumnIndex] == dataGridViewForne.Columns["Excluir"])
+            {
+                if (MessageBox.Show("Deseja mesmo remover este produto?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //preciso pegar o id dele pra saber qm é
+                    var id = Convert.ToInt32(dataGridViewForne.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                    RemoveProvider(id);
+                }
+            }
+        } //CellContentClick
+
+        private void FormattingRows(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             //centraliza os dados da coluna
             dataGridViewForne.Columns["Id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -102,109 +146,43 @@ namespace SistemaComercio.Gui
                         coluna.Width = 115;
                         break;
                     case "Numero":
-                        coluna.Width = 40;
+                        coluna.Width = 55;
                         break;
                     case "Complemento":
                         coluna.Width = 115;
                         break;
                     case "Bairro":
-                        coluna.Width = 60;
+                        coluna.Width = 115;
                         break;
                     case "Cidade":
-                        coluna.Width = 60;
+                        coluna.Width = 115;
                         break;
                     case "Estado":
-                        coluna.Width = 60;
+                        coluna.Width = 115;
                         break;
                     case "CEP":
-                        coluna.Width = 60;
+                        coluna.Width = 115;
                         break;
                     case "Telefone":
-                        coluna.Width = 60;
+                        coluna.Width = 115;
                         break;
                     case "Email":
                         coluna.Width = 115;
                         break;
                 }
             }
-        } //DataBindingComplete
+        } //DataBindingComplete*/
 
-        private void FormattingCollumns(object sender, DataGridViewCellEventArgs e)
-        {
-            //quando clica em editar pega ele
-            if (dataGridViewForne.Columns[e.ColumnIndex] == dataGridViewForne.Columns["Editar"])
-            {
-                //preciso pegar o id dele pra saber qm é
-                var id = dataGridViewForne.Rows[e.RowIndex].Cells["Id"].Value.ToString();
-                forne = service.GetByIdFornecedor(Convert.ToInt32(id));
-
-                txtNome.Text = forne.Nome;
-                txtCPF.Text = forne.Cpf_Cnpj;
-                txtLogra.Text = forne.Logradouro;
-                txtNum.Text = forne.Numero;
-                txtComple.Text = forne.Complemento;
-                txtBairro.Text = forne.Bairro;
-                txtCidade.Text = forne.Cidade;
-                txtEstado.Text = forne.Estado;
-                txtCEP.Text = forne.Cep;
-                txtTel.Text = forne.Telefone;
-                txtEmail.Text = forne.Email;
-
-                btnSalvar.Enabled = true;
-                btnCad.Enabled = false;
-            }
-
-            //quando clica em excluir pega ele
-            if (dataGridViewForne.Columns[e.ColumnIndex] == dataGridViewForne.Columns["Excluir"])
-            {
-                if (MessageBox.Show("Deseja mesmo remover este produto?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    //preciso pegar o id dele pra saber qm é
-                    var id = Convert.ToInt32(dataGridViewForne.Rows[e.RowIndex].Cells["Id"].Value.ToString());
-                    RemoveProvider(id);
-                }
-            }
-        } //CellContentClick
-
-        private void RemoveProvider(int id)
-        {
-            forne = service.GetByIdFornecedor(id);
-            try
-            {
-                service.DelFornecedor(forne);
-                UpdateProviderInDataGrid();
-                MessageBox.Show("Fornecedor excluido!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch
-            {
-                MessageBox.Show("Erro ao excluir fornecedor!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e) 
+        private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e)
         {
             //e -> PEGA TODA A LINHA 
             dataGridViewForne.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Produto";
             dataGridViewForne.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Produto";
         } //CellFormatting
 
-        private void LimparCampos()
-        {
-            txtNome.Clear();
-            txtTel.Clear();
-            txtCidade.Clear();
-            txtEmail.Clear();
-            txtLogra.Clear();
-            txtCPF.Clear();
-            txtCEP.Clear();
-            txtComple.Clear();
-            txtEstado.Clear();
-            txtNum.Clear();
-            txtBairro.Clear();
-            btnCad.Enabled = true;
-            btnSalvar.Enabled = false;
-        }
+        #endregion
+
+        #region Clicks Botões Form
 
         private void ClickLimpar(object sender, EventArgs e)
         {
@@ -216,12 +194,6 @@ namespace SistemaComercio.Gui
         {
             dt.DefaultView.RowFilter = String.Format("[{0}] LIKE '%{1}%'", "Nome", txtProcurar.Text);
             dataGridViewForne.DataSource = dt;
-        }
-
-        private void Frm_Fornecedor_Load(object sender, EventArgs e)
-        {
-          dataGridViewForne.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-          dataGridViewForne.DataSource = service.GetAllFornecedor();
         }
 
         private void ClickSalvar(object sender, EventArgs e)
@@ -300,6 +272,51 @@ namespace SistemaComercio.Gui
             }
         }
 
+        private void ClickSair(object sender, EventArgs e)
+        {
+            var principal = new Frm_Principal();
+            this.Hide();
+        }
+
+        #endregion
+
+
+        #region Funções
+
+
+        private void RemoveProvider(int id)
+        {
+            forne = service.GetByIdFornecedor(id);
+            try
+            {
+                service.DelFornecedor(forne);
+                UpdateProviderInDataGrid();
+                MessageBox.Show("Fornecedor excluido!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao excluir fornecedor!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void LimparCampos()
+        {
+            txtNome.Clear();
+            txtTel.Clear();
+            txtCidade.Clear();
+            txtEmail.Clear();
+            txtLogra.Clear();
+            txtCPF.Clear();
+            txtCEP.Clear();
+            txtComple.Clear();
+            txtEstado.Clear();
+            txtNum.Clear();
+            txtBairro.Clear();
+            btnCad.Enabled = true;
+            btnSalvar.Enabled = false;
+        }
+
         bool ValidarCampos()
         {
             //FAZER COM TODOS OS CAMPOS
@@ -318,16 +335,7 @@ namespace SistemaComercio.Gui
 
         }
 
-        private void ClickSair(object sender, EventArgs e)
-        {
-            var principal = new Frm_Principal();
-            this.Hide();
-        }
+        #endregion
 
-        private void btnCadProd_Click(object sender, EventArgs e)
-        {
-            Frm_Produto produto = new Frm_Produto();
-            produto.Show();
-        }
     }
 }

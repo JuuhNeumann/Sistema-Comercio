@@ -28,6 +28,7 @@ namespace SistemaComercio.Gui
             telaPrincipal = frm_Principal;
         }
 
+
         private void UpdateClientInDataGrid()
         {
             dt = new DataTable();
@@ -109,28 +110,28 @@ namespace SistemaComercio.Gui
                         coluna.Width = 115;
                         break;
                     case "Numero":
-                        coluna.Width = 40;
+                        coluna.Width = 55;
                         break;
                     case "Complemento":
                         coluna.Width = 115;
                         break;
                     case "Bairro":
-                        coluna.Width = 60;
+                        coluna.Width = 115;
                         break;
                     case "Cidade":
-                        coluna.Width = 60;
+                        coluna.Width = 115;
                         break;
                     case "Estado":
-                        coluna.Width = 60;
+                        coluna.Width = 115;
                         break;
                     case "CEP":
-                        coluna.Width = 60;
+                        coluna.Width = 115;
                         break;
                     case "Telefone":
-                        coluna.Width = 60;
+                        coluna.Width = 115;
                         break;
                     case "Email":
-                        coluna.Width = 115;
+                        coluna.Width = 150;
                         break;
                 }
             }

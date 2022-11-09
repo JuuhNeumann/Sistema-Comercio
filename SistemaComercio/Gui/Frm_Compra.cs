@@ -142,30 +142,30 @@ namespace SistemaComercio.Gui
                         coluna.Width = 30;
                         break;
                     case "Quantidade":
-                        coluna.Width = 45;
+                        coluna.Width = 60;
                         break;
                     case "Valor Unitario":
                         coluna.DefaultCellStyle.Format = "C2";
-                        coluna.Width = 45;
+                        coluna.Width = 55;
                         break;
                     case "Total":
                         coluna.DefaultCellStyle.Format = "C2";
                         coluna.Width = 45;
                         break;
                     case "Id Produto":
-                        coluna.Width = 45;
+                        coluna.Width = 55;
                         break;
                     case "Produto":
                         coluna.Width = 115;
                         break;
                     case "Id Compra":
-                        coluna.Width = 45;
+                        coluna.Width = 55;
                         break;
                     case "Data":
-                        coluna.Width = 60;
+                        coluna.Width = 100;
                         break;
                     case "Hora":
-                        coluna.Width = 60;
+                        coluna.Width = 100;
                         break;
                     case "Situacao":
                         coluna.Width = 60;
@@ -175,7 +175,7 @@ namespace SistemaComercio.Gui
                         break;
                     case "Fornecedor":
                         coluna.DisplayIndex = 1;
-                        coluna.Width = 60;
+                        coluna.Width = 135;
                         break;
                 }
             }

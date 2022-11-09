@@ -425,7 +425,6 @@
             // 
             // txtQuant
             // 
-            this.txtQuant.Enabled = false;
             this.txtQuant.Location = new System.Drawing.Point(67, 56);
             this.txtQuant.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtQuant.Name = "txtQuant";

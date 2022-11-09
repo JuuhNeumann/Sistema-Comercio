@@ -115,7 +115,7 @@ namespace SistemaComercio.Gui
                         coluna.Width = 50;
                         break;
                     case "Id_Fornecedor":
-                        coluna.Width = 60;
+                        coluna.Width = 100;
                         break;
                     case "Fornecedor":
                         coluna.Width = 115;

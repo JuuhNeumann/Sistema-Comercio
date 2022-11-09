@@ -40,15 +40,13 @@
             this.lblNum = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.pnlFundoForne = new System.Windows.Forms.Panel();
+            this.dataGridViewForne = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnProcurar = new System.Windows.Forms.Button();
             this.txtProcurar = new System.Windows.Forms.TextBox();
             this.lblProcurarNome = new System.Windows.Forms.Label();
-            this.dataGridViewForne = new System.Windows.Forms.DataGridView();
-            this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCad = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -62,6 +60,8 @@
             this.txtLogra = new System.Windows.Forms.TextBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
+            this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlFundoForne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForne)).BeginInit();
             this.SuspendLayout();
@@ -191,13 +191,13 @@
             // 
             this.pnlFundoForne.BackColor = System.Drawing.Color.Thistle;
             this.pnlFundoForne.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlFundoForne.Controls.Add(this.dataGridViewForne);
             this.pnlFundoForne.Controls.Add(this.panel1);
             this.pnlFundoForne.Controls.Add(this.btnSair);
             this.pnlFundoForne.Controls.Add(this.btnSalvar);
             this.pnlFundoForne.Controls.Add(this.btnProcurar);
             this.pnlFundoForne.Controls.Add(this.txtProcurar);
             this.pnlFundoForne.Controls.Add(this.lblProcurarNome);
-            this.pnlFundoForne.Controls.Add(this.dataGridViewForne);
             this.pnlFundoForne.Controls.Add(this.btnLimpar);
             this.pnlFundoForne.Controls.Add(this.btnCad);
             this.pnlFundoForne.Controls.Add(this.txtEmail);
@@ -227,6 +227,22 @@
             this.pnlFundoForne.Name = "pnlFundoForne";
             this.pnlFundoForne.Size = new System.Drawing.Size(792, 452);
             this.pnlFundoForne.TabIndex = 12;
+            // 
+            // dataGridViewForne
+            // 
+            this.dataGridViewForne.AllowUserToAddRows = false;
+            this.dataGridViewForne.AllowUserToDeleteRows = false;
+            this.dataGridViewForne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewForne.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Excluir,
+            this.Editar});
+            this.dataGridViewForne.Location = new System.Drawing.Point(18, 199);
+            this.dataGridViewForne.Name = "dataGridViewForne";
+            this.dataGridViewForne.ReadOnly = true;
+            this.dataGridViewForne.Size = new System.Drawing.Size(752, 206);
+            this.dataGridViewForne.TabIndex = 33;
+            this.dataGridViewForne.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.FormatttingMensageRows);
+            this.dataGridViewForne.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.FormattingRows);
             // 
             // panel1
             // 
@@ -299,39 +315,6 @@
             this.lblProcurarNome.Size = new System.Drawing.Size(99, 13);
             this.lblProcurarNome.TabIndex = 26;
             this.lblProcurarNome.Text = "Procurar por nome:";
-            // 
-            // dataGridViewForne
-            // 
-            this.dataGridViewForne.AllowUserToAddRows = false;
-            this.dataGridViewForne.AllowUserToDeleteRows = false;
-            this.dataGridViewForne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewForne.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Excluir,
-            this.Editar});
-            this.dataGridViewForne.Location = new System.Drawing.Point(19, 201);
-            this.dataGridViewForne.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dataGridViewForne.Name = "dataGridViewForne";
-            this.dataGridViewForne.ReadOnly = true;
-            this.dataGridViewForne.RowHeadersVisible = false;
-            this.dataGridViewForne.Size = new System.Drawing.Size(747, 198);
-            this.dataGridViewForne.TabIndex = 25;
-            this.dataGridViewForne.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FormattingCollumns);
-            this.dataGridViewForne.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.FormatttingMensageRows);
-            this.dataGridViewForne.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.FormattingRows);
-            // 
-            // Excluir
-            // 
-            this.Excluir.HeaderText = "";
-            this.Excluir.Image = global::SistemaComercio.Properties.Resources.lixo;
-            this.Excluir.Name = "Excluir";
-            this.Excluir.ReadOnly = true;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.Image = global::SistemaComercio.Properties.Resources.editar;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
             // 
             // btnLimpar
             // 
@@ -451,6 +434,20 @@
             this.txtNome.Size = new System.Drawing.Size(373, 21);
             this.txtNome.TabIndex = 11;
             // 
+            // Excluir
+            // 
+            this.Excluir.HeaderText = "";
+            this.Excluir.Image = global::SistemaComercio.Properties.Resources.lixo;
+            this.Excluir.Name = "Excluir";
+            this.Excluir.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::SistemaComercio.Properties.Resources.editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
             // Frm_Fornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -491,7 +488,6 @@
         private System.Windows.Forms.TextBox txtLogra;
         private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.DataGridView dataGridViewForne;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnCad;
         private System.Windows.Forms.TextBox txtEmail;
@@ -506,6 +502,7 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridViewForne;
         private System.Windows.Forms.DataGridViewImageColumn Excluir;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
     }
