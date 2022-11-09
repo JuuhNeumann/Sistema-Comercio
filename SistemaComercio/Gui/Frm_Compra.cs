@@ -198,7 +198,7 @@ namespace SistemaComercio.Gui
             try
             {
                 //TEM Q VER ESSE Q N TA CAINDO AQUI
-                if (cmbQuant.SelectedIndex == -1 & cmbSelecioneProduto.SelectedIndex == -1)
+                if (txtQuant.Text == null || cmbSelecioneProduto.SelectedIndex == -1)
                 {
                     MessageBox.Show("É necessário preencher todos os campos!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -304,7 +304,7 @@ namespace SistemaComercio.Gui
         {
             txtPreco.Clear();
             txtTotalCima.Clear();
-            cmbQuant.SelectedIndex = -1;
+            txtQuant.Clear();
             cmbSelecioneProduto.SelectedIndex = -1;
             cmbQUantidadeCancel.SelectedIndex = -1;
             cmbSelecioneCancel.SelectedIndex = -1;
@@ -323,7 +323,7 @@ namespace SistemaComercio.Gui
             var compra = new Compra()
             {
                 Situacao_Compra = "Finalizado",
-                Total_Compra = produto.Preco * Convert.ToInt32(cmbQuant.Text),
+                Total_Compra = produto.Preco * Convert.ToInt32(txtQuant.Text),
                 Data = DateTime.UtcNow.Date,
                 Hora = DateTime.Now.ToString("HH:mm:ss"),
                 Id_Fornecedor = produto.Id_Fornecedor,
@@ -334,7 +334,7 @@ namespace SistemaComercio.Gui
             {
                 Compra = compra,
                 Id_Produto = produto.Id,
-                Quantidade = Convert.ToInt32(cmbQuant.Text),
+                Quantidade = Convert.ToInt32(txtQuant.Text),
                 Total_Item = compra.Total_Compra,
                 Valor_Unitario = produto.Preco,
             };
@@ -365,22 +365,15 @@ namespace SistemaComercio.Gui
 
         private void cmbSelecioneProduto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbQuant.Items.Clear();
+            txtQuant.Clear();
 
-            serviceProd = new ProdutoService(); 
+            serviceProd = new ProdutoService();
 
             produto = serviceProd.GetByName(cmbSelecioneProduto.Text);
 
             if (produto != null)
             {
                 txtPreco.Text = "R$ " + produto.Preco.ToString();
-
-                for (int i = 1; i <= 20; i++)
-                {
-                    cmbQuant.Items.AddRange(new object[] {
-                        i
-                    });
-                }
             }
         }
 
@@ -405,16 +398,6 @@ namespace SistemaComercio.Gui
                     });
                 }
             }
-        }
-
-        private void cmbQuant_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbQuant.SelectedIndex != -1)
-            {
-                var total = produto.Preco * Convert.ToInt32(cmbQuant.Text);
-                txtTotalCima.Text = "R$" + total.ToString();
-            }
-
         }
 
         private void cmbQUantidadeCancel_SelectedIndexChanged(object sender, EventArgs e)

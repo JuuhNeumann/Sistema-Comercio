@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemaComercio.Gui
 {
@@ -15,15 +16,19 @@ namespace SistemaComercio.Gui
     {
         private List<ItemCompra> itemCompras;
         private List<ItemVenda> itemVendas;
+        private List<Cliente> clientes;
         private List<Produto> produtos;
         private Produto produto;
+        private ItemVenda itemVenda;
         private IVendaPort service;
         private IItemCompraPort serviceItemC;
         private IItemVendaPort serviceItemV;
         private IProdutoPort serviceProd;
+        private IClientePort serviceCliente;
         private DataTable dt = new DataTable();
         private string columnFilter;
         private Venda vnd = null;
+        private double totalVenda;
 
         public Frm_Venda()
         {
@@ -34,8 +39,16 @@ namespace SistemaComercio.Gui
 
         #region ComboBox
 
+        public void UpdateAllComboBox()
+        {
+            AddComboBoxVenda();
+            AddComboBoxCancelarVenda();
+            AddComboBoxCliente();
+        }
+
         private void AddComboBoxVenda()
         {
+            this.cmbSelecioneProduto.Items.Clear();
 
             foreach (var produto in produtos.Distinct())
             {
@@ -61,16 +74,34 @@ namespace SistemaComercio.Gui
             }
         }
 
+        private void AddComboBoxCliente()
+        {
+            cmbSelecioneCli.Items.Clear();
+
+            foreach (var cliente in clientes)
+            {
+                cmbSelecioneCli.Items.AddRange(new object[] {
+                    cliente.Nome.ToString()
+
+                });
+            }
+        }
+
+        private void AddComboBoxQuantiCancel()
+        {
+            for (int i = 1; i <= itemVenda.Quantidade; i++)
+            {
+                cmbQuantiCancelar.Items.AddRange(new object[] {
+                        i.ToString()
+                    });
+            }
+        }
+
         #endregion
 
 
         #region DataGridView
 
-        public void UpdateComboBox()
-        {
-            AddComboBoxVenda();
-            AddComboBoxCancelarVenda();
-        }
 
         private void UpdateVendaInDataGrid()
         {
@@ -78,7 +109,7 @@ namespace SistemaComercio.Gui
             serviceItemC = new ItemCompraService();
             serviceItemV = new ItemVendaService();
             serviceProd = new ProdutoService();
-
+            serviceCliente = new ClienteService();
 
             dt = new DataTable();
             dt.Columns.Add("Id", typeof(string));
@@ -96,6 +127,7 @@ namespace SistemaComercio.Gui
 
             itemVendas = serviceItemV.GetAllItemVenda();
             produtos = serviceProd.GetAllVenda();
+            clientes = serviceCliente.GetAllCliente();
 
             foreach (var itemVenda in itemVendas)
             {
@@ -120,7 +152,7 @@ namespace SistemaComercio.Gui
             dataGridViewVenda.DataSource = dt;
             itemCompras = serviceItemC.GetAllItemCompra();
 
-            UpdateComboBox();
+            UpdateAllComboBox();
         }
 
         private void FormattingRows(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -222,6 +254,56 @@ namespace SistemaComercio.Gui
 
         }
 
+        private void ClickLancarVenda(object sender, EventArgs e)
+        {
+            try
+            {
+                //TEM Q VER ESSE Q N TA CAINDO AQUI
+                if (cmbQuantidade.SelectedIndex == -1 || cmbSelecioneProduto.SelectedIndex == -1 || cmbSelecioneCli.SelectedIndex == -1)
+                {
+                    MessageBox.Show("É necessário preencher todos os campos!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                CreateVenda();
+                UpdateVendaInDataGrid();
+                LimparCampos();
+                MessageBox.Show("Venda Lançada!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao lançar venda!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ClickCancelarVenda(object sender, EventArgs e)
+        {
+            try
+            {
+                itemVenda = serviceItemV.GetByIdItemVenda(Convert.ToInt32(cmbSelecioneCancelamento.Text));
+
+                if (cmbQuantiCancelar.Text == itemVenda.Quantidade.ToString())
+                {
+                    CancelItemVenda(itemVenda, "Cancelado");
+                    MessageBox.Show("Venda Cancelada!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    itemVenda.Quantidade -= Convert.ToInt32(cmbQuantiCancelar.Text);
+                    CancelItemVenda(itemVenda, "Alterado");
+                    MessageBox.Show("Situação de venda alterada!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                LimparCampos();
+                UpdateVendaInDataGrid();
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao cancelar venda!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         #endregion
 
@@ -238,12 +320,14 @@ namespace SistemaComercio.Gui
         {
             txtPreco.Clear();
             txtTotalCima.Clear();
-            cmbQuantidade.SelectedIndex = -1;
+            cmbSelecioneCli.SelectedIndex = -1;
             cmbSelecioneProduto.SelectedIndex = -1;
-            cmbQuantiCancelar.SelectedIndex = -1;
             cmbSelecioneCancelamento.SelectedIndex = -1;
+            cmbQuantidade.SelectedIndex = -1;
+            cmbQuantiCancelar.SelectedIndex = -1;
             txtPrecoCancel.Clear();
             txtTotalCimaCancel.Clear();
+            cmbQuantidade.Items.Clear();
         }
 
         private void RemoveVenda(int id)
@@ -253,16 +337,69 @@ namespace SistemaComercio.Gui
             {
                 service.DelVenda(vnd);
                 UpdateVendaInDataGrid();
-                MessageBox.Show("Produto excluido!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Venda excluida!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
             {
-                MessageBox.Show("Erro ao excluir produto!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao excluir venda!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
+        public void CreateVenda()
+        {
+            var cliente = serviceCliente.GetByNomeCliente(cmbSelecioneCli.Text);
+
+            string hora = DateTime.Now.ToString("HH:mm:ss");
+            string data = DateTime.Now.ToString("dd/MM/yyyy");
+
+            var venda = new Venda()
+            {
+                Total_Venda = totalVenda,
+                Data = Convert.ToDateTime(data),
+                Hora = Convert.ToDateTime(hora),
+                Situacao_Venda = "Finalizado",
+                Id_Cliente = cliente.Id
+            };
+
+            var itemVenda = new ItemVenda()
+            {
+                Venda = venda,
+                Id_Produto = produto.Id,
+                Quantidade = Convert.ToInt32(cmbQuantidade.Text),
+                Total_Item = totalVenda,
+                Valor_Unitario = produto.Preco,
+            };
+
+            produto.Quantidade_Estoque -= itemVenda.Quantidade;
+
+            serviceItemV.AddItemVenda(itemVenda);
+            serviceProd.UpdateProduto(produto);
+
+            SetDadosOperacionais(itemVenda);
+        }
+
+        public void CancelItemVenda(ItemVenda itemVenda, string status)
+        {
+            itemVenda.Venda.Situacao_Venda = status;
+            itemVenda.Produto.Quantidade_Estoque += Convert.ToInt32(cmbQuantiCancelar.Text);
+            serviceItemV.UpdateItemVenda(itemVenda);
+            lblRespostaSituacao.Text = status;
+            lblRespostaSituacao.Text = status;
+        }
+
+        void SetDadosOperacionais(ItemVenda itemVenda)
+        {
+            txtData.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            txtHora.Text = DateTime.Now.ToString("HH:mm:ss");
+            txtTotal.Text = "R$" + itemVenda.Venda.Total_Venda;
+            lblRespostaSituacao.Text = itemVenda.Venda.Situacao_Venda;
+        }
+
         #endregion
+
+
+        #region Escutadores
 
         private void cmbSelecioneProduto_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -270,38 +407,67 @@ namespace SistemaComercio.Gui
 
             serviceProd = new ProdutoService();
 
-            produto = serviceProd.GetByName(cmbSelecioneProduto.Text);
-
-            if (produto != null)
+            if (cmbSelecioneProduto.SelectedIndex != -1)
             {
-                txtPreco.Text = "R$ " + produto.Preco.ToString();
+                produto = serviceProd.GetByName(cmbSelecioneProduto.Text);
 
-                for (int i = 1; i <= produto.Quantidade_Estoque; i++)
+                if (produto != null)
                 {
-                    cmbQuantidade.Items.AddRange(new object[] {
+                    txtPreco.Text = "R$ " + produto.Preco.ToString();
+
+                    for (int i = 1; i <= produto.Quantidade_Estoque; i++)
+                    {
+                        cmbQuantidade.Items.AddRange(new object[] {
                         i
                     });
+                    }
                 }
+            }
+        }
+
+        private void cmbQuantidade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbQuantidade.SelectedIndex != -1)
+            {
+                totalVenda = Convert.ToInt32(produto.Preco) * Convert.ToInt32(cmbQuantidade.Text);
+                txtTotalCima.Text = "R$ " + totalVenda;
             }
 
         }
 
-        private void btnLancarVenda_Click(object sender, EventArgs e)
+        private void cmbSelecioneCancelamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var venda = new Venda()
+            cmbQuantiCancelar.Items.Clear();
+
+            if (cmbSelecioneCancelamento.SelectedIndex != -1)
             {
-                Id = 1,
-                //Total_Venda = txtTotal.Text
-            };
+                itemVenda = serviceItemV.GetByIdItemVenda(Convert.ToInt32(cmbSelecioneCancelamento.Text));
 
-            var itemVenda = new ItemVenda()
-            {
-                Id_Venda = venda.Id,
+                if (itemVenda != null)
+                {
+                    txtPrecoCancel.Text = "R$ " + itemVenda.Valor_Unitario.ToString();
+                    AddComboBoxQuantiCancel();
+                }
+            }
 
-            };
 
-            serviceItemV.AddItemVenda(itemVenda);
-            UpdateVendaInDataGrid();
         }
+
+        private void cmbQuantiCancelar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbQuantiCancelar.SelectedIndex != -1)
+            {
+                var total = Convert.ToInt32(itemVenda.Venda.Total_Venda) * Convert.ToInt32(cmbQuantiCancelar.Text);
+                txtTotalCimaCancel.Text = "R$" + total;
+            }
+        }
+
+        #endregion
+
+
+
+
+
+
     }
 }

@@ -191,7 +191,7 @@
             this.btnLancarVenda.TabIndex = 7;
             this.btnLancarVenda.Text = "Lançar Venda";
             this.btnLancarVenda.UseVisualStyleBackColor = true;
-            this.btnLancarVenda.Click += new System.EventHandler(this.btnLancarVenda_Click);
+            this.btnLancarVenda.Click += new System.EventHandler(this.ClickLancarVenda);
             // 
             // label1
             // 

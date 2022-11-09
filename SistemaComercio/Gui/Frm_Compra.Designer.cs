@@ -58,6 +58,7 @@
             this.txtSelecioneCompra = new System.Windows.Forms.TextBox();
             this.tbcCompra = new System.Windows.Forms.TabControl();
             this.tbpLancarCompra = new System.Windows.Forms.TabPage();
+            this.txtQuant = new System.Windows.Forms.TextBox();
             this.txtTotalCima = new System.Windows.Forms.TextBox();
             this.lblTotalCima = new System.Windows.Forms.Label();
             this.tbpCancelarCompra = new System.Windows.Forms.TabPage();
@@ -71,7 +72,6 @@
             this.lblQuantidadeCancel = new System.Windows.Forms.Label();
             this.lblExemploCancel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gpbDadosOperacionais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompra)).BeginInit();
             this.gpbConsulta.SuspendLayout();
@@ -405,7 +405,7 @@
             // 
             this.tbpLancarCompra.BackColor = System.Drawing.Color.Cornsilk;
             this.tbpLancarCompra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tbpLancarCompra.Controls.Add(this.textBox1);
+            this.tbpLancarCompra.Controls.Add(this.txtQuant);
             this.tbpLancarCompra.Controls.Add(this.txtTotalCima);
             this.tbpLancarCompra.Controls.Add(this.lblTotalCima);
             this.tbpLancarCompra.Controls.Add(this.btnLimpar);
@@ -422,6 +422,15 @@
             this.tbpLancarCompra.Size = new System.Drawing.Size(488, 124);
             this.tbpLancarCompra.TabIndex = 0;
             this.tbpLancarCompra.Text = "Lançar Compra";
+            // 
+            // txtQuant
+            // 
+            this.txtQuant.Enabled = false;
+            this.txtQuant.Location = new System.Drawing.Point(67, 56);
+            this.txtQuant.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtQuant.Name = "txtQuant";
+            this.txtQuant.Size = new System.Drawing.Size(138, 21);
+            this.txtQuant.TabIndex = 16;
             // 
             // txtTotalCima
             // 
@@ -557,15 +566,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Selecione o id da compra que deseja cancelar:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(67, 56);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 21);
-            this.textBox1.TabIndex = 16;
-            // 
             // Frm_Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -643,6 +643,6 @@
         private System.Windows.Forms.Label lblTotalCima;
         private System.Windows.Forms.TextBox txtTotalCimaCancel;
         private System.Windows.Forms.Label lblTotalCimaCancel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtQuant;
     }
 }
