@@ -53,16 +53,16 @@
             this.btnSair = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gpbFormaPagamento = new System.Windows.Forms.GroupBox();
-            this.lblSlecionePagamento = new System.Windows.Forms.Label();
-            this.rdbPix = new System.Windows.Forms.RadioButton();
-            this.rdbDinheiro = new System.Windows.Forms.RadioButton();
-            this.rdbCartaoDebito = new System.Windows.Forms.RadioButton();
-            this.rdbCartaoCredito = new System.Windows.Forms.RadioButton();
-            this.cmbParcelamento = new System.Windows.Forms.ComboBox();
-            this.lblParcelamento = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
             this.btnPagar = new System.Windows.Forms.Button();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblParcelamento = new System.Windows.Forms.Label();
+            this.cmbParcelamento = new System.Windows.Forms.ComboBox();
+            this.rdbCartaoCredito = new System.Windows.Forms.RadioButton();
+            this.rdbCartaoDebito = new System.Windows.Forms.RadioButton();
+            this.rdbDinheiro = new System.Windows.Forms.RadioButton();
+            this.rdbPix = new System.Windows.Forms.RadioButton();
+            this.lblSlecionePagamento = new System.Windows.Forms.Label();
             this.gpbContaPagar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gpbFormaPagamento.SuspendLayout();
@@ -130,6 +130,7 @@
             // 
             // txtPago
             // 
+            this.txtPago.Enabled = false;
             this.txtPago.Location = new System.Drawing.Point(239, 146);
             this.txtPago.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPago.Name = "txtPago";
@@ -341,58 +342,40 @@
             this.gpbFormaPagamento.TabStop = false;
             this.gpbFormaPagamento.Text = "Forma de Pagamento";
             // 
-            // lblSlecionePagamento
+            // btnPagar
             // 
-            this.lblSlecionePagamento.AutoSize = true;
-            this.lblSlecionePagamento.Location = new System.Drawing.Point(9, 27);
-            this.lblSlecionePagamento.Name = "lblSlecionePagamento";
-            this.lblSlecionePagamento.Size = new System.Drawing.Size(196, 13);
-            this.lblSlecionePagamento.TabIndex = 0;
-            this.lblSlecionePagamento.Text = "Selecione abaixo a forma de pagamento:";
+            this.btnPagar.Location = new System.Drawing.Point(436, 67);
+            this.btnPagar.Name = "btnPagar";
+            this.btnPagar.Size = new System.Drawing.Size(120, 23);
+            this.btnPagar.TabIndex = 9;
+            this.btnPagar.Text = "Pagar";
+            this.btnPagar.UseVisualStyleBackColor = true;
             // 
-            // rdbPix
+            // txtTotal
             // 
-            this.rdbPix.AutoSize = true;
-            this.rdbPix.Location = new System.Drawing.Point(10, 53);
-            this.rdbPix.Name = "rdbPix";
-            this.rdbPix.Size = new System.Drawing.Size(41, 17);
-            this.rdbPix.TabIndex = 1;
-            this.rdbPix.TabStop = true;
-            this.rdbPix.Text = "Pix";
-            this.rdbPix.UseVisualStyleBackColor = true;
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(426, 24);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(140, 21);
+            this.txtTotal.TabIndex = 8;
             // 
-            // rdbDinheiro
+            // lblTotal
             // 
-            this.rdbDinheiro.AutoSize = true;
-            this.rdbDinheiro.Location = new System.Drawing.Point(12, 76);
-            this.rdbDinheiro.Name = "rdbDinheiro";
-            this.rdbDinheiro.Size = new System.Drawing.Size(67, 17);
-            this.rdbDinheiro.TabIndex = 2;
-            this.rdbDinheiro.TabStop = true;
-            this.rdbDinheiro.Text = "Dinheiro";
-            this.rdbDinheiro.UseVisualStyleBackColor = true;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(394, 27);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(34, 13);
+            this.lblTotal.TabIndex = 7;
+            this.lblTotal.Text = "Total:";
             // 
-            // rdbCartaoDebito
+            // lblParcelamento
             // 
-            this.rdbCartaoDebito.AutoSize = true;
-            this.rdbCartaoDebito.Location = new System.Drawing.Point(111, 53);
-            this.rdbCartaoDebito.Name = "rdbCartaoDebito";
-            this.rdbCartaoDebito.Size = new System.Drawing.Size(105, 17);
-            this.rdbCartaoDebito.TabIndex = 3;
-            this.rdbCartaoDebito.TabStop = true;
-            this.rdbCartaoDebito.Text = "Cartão de Débito";
-            this.rdbCartaoDebito.UseVisualStyleBackColor = true;
-            // 
-            // rdbCartaoCredito
-            // 
-            this.rdbCartaoCredito.AutoSize = true;
-            this.rdbCartaoCredito.Location = new System.Drawing.Point(111, 76);
-            this.rdbCartaoCredito.Name = "rdbCartaoCredito";
-            this.rdbCartaoCredito.Size = new System.Drawing.Size(108, 17);
-            this.rdbCartaoCredito.TabIndex = 4;
-            this.rdbCartaoCredito.TabStop = true;
-            this.rdbCartaoCredito.Text = "Cartão de Crédito";
-            this.rdbCartaoCredito.UseVisualStyleBackColor = true;
+            this.lblParcelamento.AutoSize = true;
+            this.lblParcelamento.Location = new System.Drawing.Point(249, 53);
+            this.lblParcelamento.Name = "lblParcelamento";
+            this.lblParcelamento.Size = new System.Drawing.Size(73, 13);
+            this.lblParcelamento.TabIndex = 6;
+            this.lblParcelamento.Text = "Parcelamento:";
             // 
             // cmbParcelamento
             // 
@@ -409,40 +392,58 @@
             this.cmbParcelamento.Size = new System.Drawing.Size(147, 21);
             this.cmbParcelamento.TabIndex = 5;
             // 
-            // lblParcelamento
+            // rdbCartaoCredito
             // 
-            this.lblParcelamento.AutoSize = true;
-            this.lblParcelamento.Location = new System.Drawing.Point(249, 53);
-            this.lblParcelamento.Name = "lblParcelamento";
-            this.lblParcelamento.Size = new System.Drawing.Size(73, 13);
-            this.lblParcelamento.TabIndex = 6;
-            this.lblParcelamento.Text = "Parcelamento:";
+            this.rdbCartaoCredito.AutoSize = true;
+            this.rdbCartaoCredito.Location = new System.Drawing.Point(111, 76);
+            this.rdbCartaoCredito.Name = "rdbCartaoCredito";
+            this.rdbCartaoCredito.Size = new System.Drawing.Size(108, 17);
+            this.rdbCartaoCredito.TabIndex = 4;
+            this.rdbCartaoCredito.TabStop = true;
+            this.rdbCartaoCredito.Text = "Cartão de Crédito";
+            this.rdbCartaoCredito.UseVisualStyleBackColor = true;
             // 
-            // lblTotal
+            // rdbCartaoDebito
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(394, 27);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(34, 13);
-            this.lblTotal.TabIndex = 7;
-            this.lblTotal.Text = "Total:";
+            this.rdbCartaoDebito.AutoSize = true;
+            this.rdbCartaoDebito.Location = new System.Drawing.Point(111, 53);
+            this.rdbCartaoDebito.Name = "rdbCartaoDebito";
+            this.rdbCartaoDebito.Size = new System.Drawing.Size(105, 17);
+            this.rdbCartaoDebito.TabIndex = 3;
+            this.rdbCartaoDebito.TabStop = true;
+            this.rdbCartaoDebito.Text = "Cartão de Débito";
+            this.rdbCartaoDebito.UseVisualStyleBackColor = true;
             // 
-            // txtTotal
+            // rdbDinheiro
             // 
-            this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(426, 24);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(140, 21);
-            this.txtTotal.TabIndex = 8;
+            this.rdbDinheiro.AutoSize = true;
+            this.rdbDinheiro.Location = new System.Drawing.Point(12, 76);
+            this.rdbDinheiro.Name = "rdbDinheiro";
+            this.rdbDinheiro.Size = new System.Drawing.Size(67, 17);
+            this.rdbDinheiro.TabIndex = 2;
+            this.rdbDinheiro.TabStop = true;
+            this.rdbDinheiro.Text = "Dinheiro";
+            this.rdbDinheiro.UseVisualStyleBackColor = true;
             // 
-            // btnPagar
+            // rdbPix
             // 
-            this.btnPagar.Location = new System.Drawing.Point(436, 67);
-            this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(120, 23);
-            this.btnPagar.TabIndex = 9;
-            this.btnPagar.Text = "Pagar";
-            this.btnPagar.UseVisualStyleBackColor = true;
+            this.rdbPix.AutoSize = true;
+            this.rdbPix.Location = new System.Drawing.Point(10, 53);
+            this.rdbPix.Name = "rdbPix";
+            this.rdbPix.Size = new System.Drawing.Size(41, 17);
+            this.rdbPix.TabIndex = 1;
+            this.rdbPix.TabStop = true;
+            this.rdbPix.Text = "Pix";
+            this.rdbPix.UseVisualStyleBackColor = true;
+            // 
+            // lblSlecionePagamento
+            // 
+            this.lblSlecionePagamento.AutoSize = true;
+            this.lblSlecionePagamento.Location = new System.Drawing.Point(9, 27);
+            this.lblSlecionePagamento.Name = "lblSlecionePagamento";
+            this.lblSlecionePagamento.Size = new System.Drawing.Size(196, 13);
+            this.lblSlecionePagamento.TabIndex = 0;
+            this.lblSlecionePagamento.Text = "Selecione abaixo a forma de pagamento:";
             // 
             // Frm_ContaPagar
             // 

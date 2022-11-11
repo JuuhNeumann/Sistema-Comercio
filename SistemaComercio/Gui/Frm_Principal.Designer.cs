@@ -32,7 +32,7 @@
             this.LblNomeAdm = new System.Windows.Forms.Label();
             this.LblAdmBaixo = new System.Windows.Forms.Label();
             this.ImgAdmin = new System.Windows.Forms.PictureBox();
-            this.BtnEstoque = new System.Windows.Forms.Button();
+            this.BtnContaPagar = new System.Windows.Forms.Button();
             this.BtnProduto = new System.Windows.Forms.Button();
             this.BtnVenda = new System.Windows.Forms.Button();
             this.BtnCompra = new System.Windows.Forms.Button();
@@ -85,7 +85,7 @@
             this.PnlBarraTarefas.Controls.Add(this.LblNomeAdm);
             this.PnlBarraTarefas.Controls.Add(this.LblAdmBaixo);
             this.PnlBarraTarefas.Controls.Add(this.ImgAdmin);
-            this.PnlBarraTarefas.Controls.Add(this.BtnEstoque);
+            this.PnlBarraTarefas.Controls.Add(this.BtnContaPagar);
             this.PnlBarraTarefas.Controls.Add(this.BtnProduto);
             this.PnlBarraTarefas.Controls.Add(this.BtnVenda);
             this.PnlBarraTarefas.Controls.Add(this.BtnCompra);
@@ -121,24 +121,25 @@
             // ImgAdmin
             // 
             this.ImgAdmin.Image = global::SistemaComercio.Properties.Resources.ImgAdmin;
-            this.ImgAdmin.Location = new System.Drawing.Point(3, 354);
+            this.ImgAdmin.Location = new System.Drawing.Point(3, 361);
             this.ImgAdmin.Name = "ImgAdmin";
-            this.ImgAdmin.Size = new System.Drawing.Size(66, 66);
+            this.ImgAdmin.Size = new System.Drawing.Size(66, 59);
             this.ImgAdmin.TabIndex = 12;
             this.ImgAdmin.TabStop = false;
             // 
-            // BtnEstoque
+            // BtnContaPagar
             // 
-            this.BtnEstoque.BackColor = System.Drawing.Color.Thistle;
-            this.BtnEstoque.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEstoque.Image = global::SistemaComercio.Properties.Resources.ImgEstoque;
-            this.BtnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEstoque.Location = new System.Drawing.Point(-2, 264);
-            this.BtnEstoque.Name = "BtnEstoque";
-            this.BtnEstoque.Size = new System.Drawing.Size(170, 40);
-            this.BtnEstoque.TabIndex = 10;
-            this.BtnEstoque.Text = "Estoque";
-            this.BtnEstoque.UseVisualStyleBackColor = false;
+            this.BtnContaPagar.BackColor = System.Drawing.Color.Thistle;
+            this.BtnContaPagar.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnContaPagar.Image = global::SistemaComercio.Properties.Resources.ImgEstoque;
+            this.BtnContaPagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnContaPagar.Location = new System.Drawing.Point(-2, 264);
+            this.BtnContaPagar.Name = "BtnContaPagar";
+            this.BtnContaPagar.Size = new System.Drawing.Size(170, 40);
+            this.BtnContaPagar.TabIndex = 10;
+            this.BtnContaPagar.Text = "Conta a Pagar";
+            this.BtnContaPagar.UseVisualStyleBackColor = false;
+            this.BtnContaPagar.Click += new System.EventHandler(this.ClickContaPagar);
             // 
             // BtnProduto
             // 
@@ -532,7 +533,7 @@
         private System.Windows.Forms.Label LblSub;
         private System.Windows.Forms.Button BtnVenda;
         private System.Windows.Forms.Button BtnProduto;
-        private System.Windows.Forms.Button BtnEstoque;
+        private System.Windows.Forms.Button BtnContaPagar;
         private System.Windows.Forms.Button BtnCompra;
         private System.Windows.Forms.Button BtnCadFor;
         private System.Windows.Forms.Button BtnCadCli;

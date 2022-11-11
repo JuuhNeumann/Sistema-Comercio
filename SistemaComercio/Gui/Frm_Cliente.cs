@@ -193,8 +193,8 @@ namespace SistemaComercio.Gui
         private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e)
         {
             //e -> PEGA TODA A LINHA 
-            dataGridViewCli.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Produto";
-            dataGridViewCli.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Produto";
+            dataGridViewCli.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Cliente";
+            dataGridViewCli.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Cliente";
         } //CellFormatting
 
         private void LimparCampos()
@@ -234,8 +234,11 @@ namespace SistemaComercio.Gui
 
         private void ClickSalvar(object sender, EventArgs e)
         {
+            //service.GetByNomeCliente(txtNome.Text);
+
             var cliente = new Cliente()
             {
+                Id = cli.Id,
                 Nome = txtNome.Text,
                 Cpf_Cnpj = txtCPF.Text,
                 Telefone = txtTel.Text,

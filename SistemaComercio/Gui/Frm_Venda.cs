@@ -116,8 +116,8 @@ namespace SistemaComercio.Gui
             dt.Columns.Add("Quantidade", typeof(string));
             dt.Columns.Add("Valor Unitario", typeof(string));
             dt.Columns.Add("Total", typeof(string));
-            //dt.Columns.Add("Id Produto", typeof(string)); //referente ao itemCompra
-            //dt.Columns.Add("Produto", typeof(string));  //referente ao itemCompra
+            dt.Columns.Add("Id Produto", typeof(string));
+            dt.Columns.Add("Produto", typeof(string)); 
             dt.Columns.Add("Id Venda", typeof(string));
             dt.Columns.Add("Data", typeof(string));
             dt.Columns.Add("Hora", typeof(string));
@@ -137,8 +137,8 @@ namespace SistemaComercio.Gui
                     itemVenda.Quantidade,
                     itemVenda.Valor_Unitario,
                     itemVenda.Total_Item,
-                    //itemVenda.Id_Produto, //id de produto ou id de itemcompra?
-                    //itemVenda.Produto.Nome, //nome de produto ou nome de itemcompra?
+                    itemVenda.Id_Produto, 
+                    itemVenda.Produto.Nome, 
                     itemVenda.Id_Venda,
                     itemVenda.Venda.Data,
                     itemVenda.Venda.Hora,
@@ -162,8 +162,8 @@ namespace SistemaComercio.Gui
             dataGridViewVenda.Columns["Quantidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewVenda.Columns["Valor Unitario"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewVenda.Columns["Total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewVenda.Columns["Id Produto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewVenda.Columns["Produto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewVenda.Columns["Id Produto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewVenda.Columns["Produto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewVenda.Columns["Id Venda"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewVenda.Columns["Data"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewVenda.Columns["Hora"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -189,12 +189,12 @@ namespace SistemaComercio.Gui
                         coluna.DefaultCellStyle.Format = "C2";
                         coluna.Width = 55;
                         break;
-                    /*case "Id Produto":
+                    case "Id Produto":
                         coluna.Width = 45;
                         break;
                     case "Produto":
                         coluna.Width = 115;
-                        break;*/
+                        break;
                     case "Id Venda":
                         coluna.Width = 45;
                         break;

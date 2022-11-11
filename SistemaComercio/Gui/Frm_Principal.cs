@@ -72,5 +72,11 @@ namespace SistemaComercio.Gui
             Frm_Venda venda = new Frm_Venda();
             venda.Show();
         }
+
+        private void ClickContaPagar(object sender, EventArgs e)
+        {
+            Frm_ContaPagar contaP = new Frm_ContaPagar();
+            contaP.Show();
+        }
     }
 }

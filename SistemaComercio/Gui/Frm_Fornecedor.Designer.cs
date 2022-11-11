@@ -41,6 +41,8 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.pnlFundoForne = new System.Windows.Forms.Panel();
             this.dataGridViewForne = new System.Windows.Forms.DataGridView();
+            this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -60,8 +62,6 @@
             this.txtLogra = new System.Windows.Forms.TextBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlFundoForne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForne)).BeginInit();
             this.SuspendLayout();
@@ -241,8 +241,23 @@
             this.dataGridViewForne.ReadOnly = true;
             this.dataGridViewForne.Size = new System.Drawing.Size(752, 206);
             this.dataGridViewForne.TabIndex = 33;
+            this.dataGridViewForne.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FormattingCollumns);
             this.dataGridViewForne.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.FormatttingMensageRows);
             this.dataGridViewForne.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.FormattingRows);
+            // 
+            // Excluir
+            // 
+            this.Excluir.HeaderText = "";
+            this.Excluir.Image = global::SistemaComercio.Properties.Resources.lixo;
+            this.Excluir.Name = "Excluir";
+            this.Excluir.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::SistemaComercio.Properties.Resources.editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // panel1
             // 
@@ -433,20 +448,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(373, 21);
             this.txtNome.TabIndex = 11;
-            // 
-            // Excluir
-            // 
-            this.Excluir.HeaderText = "";
-            this.Excluir.Image = global::SistemaComercio.Properties.Resources.lixo;
-            this.Excluir.Name = "Excluir";
-            this.Excluir.ReadOnly = true;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.Image = global::SistemaComercio.Properties.Resources.editar;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
             // 
             // Frm_Fornecedor
             // 

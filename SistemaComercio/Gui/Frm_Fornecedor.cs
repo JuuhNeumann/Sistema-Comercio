@@ -171,13 +171,13 @@ namespace SistemaComercio.Gui
                         break;
                 }
             }
-        } //DataBindingComplete*/
+        } //DataBindingComplete
 
         private void FormatttingMensageRows(object sender, DataGridViewCellFormattingEventArgs e)
         {
             //e -> PEGA TODA A LINHA 
-            dataGridViewForne.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Produto";
-            dataGridViewForne.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Produto";
+            dataGridViewForne.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Editar Fornecedor";
+            dataGridViewForne.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Excluir Fornecedor";
         } //CellFormatting
 
         #endregion

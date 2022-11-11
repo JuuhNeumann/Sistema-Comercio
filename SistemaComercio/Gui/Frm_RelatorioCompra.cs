@@ -41,7 +41,7 @@ namespace SistemaComercio.Gui
         public void CreateDataTable()
         {
             dt = new DataTable();
-            dt.Columns.Add("Id", typeof(string));
+            dt.Columns.Add("Id", typeof(int));
             dt.Columns.Add("Produto", typeof(string));
             dt.Columns.Add("Quantidade", typeof(string));
 
@@ -51,10 +51,10 @@ namespace SistemaComercio.Gui
             {
                 dt.Rows.Add(new object[]
                 {
-                    itemCompra.Id,
-                    itemCompra.Produto.Nome,
-                    itemCompra.Quantidade,
-                });
+                   itemCompra.Id_Compra,
+                    itemCompra.Total_Item,
+
+                }) ;
             }
 
         }
