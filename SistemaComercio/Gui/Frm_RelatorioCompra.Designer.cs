@@ -60,11 +60,16 @@
             // 
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Finalizado",
+            "Alterado",
+            "Cancelado"});
             this.cmbStatus.Location = new System.Drawing.Point(658, 25);
             this.cmbStatus.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(184, 21);
             this.cmbStatus.TabIndex = 1;
+            this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
             // txtData
             // 

@@ -370,6 +370,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.FormRelatorioCompra.datasource" />
     <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.ItemCompra.datasource" />
     <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.ItemVenda.datasource" />
     <None Include="Properties\Settings.settings">

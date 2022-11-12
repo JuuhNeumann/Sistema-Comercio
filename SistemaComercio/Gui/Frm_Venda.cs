@@ -350,14 +350,13 @@ namespace SistemaComercio.Gui
         {
             var cliente = serviceCliente.GetByNomeCliente(cmbSelecioneCli.Text);
 
-            string hora = DateTime.Now.ToString("HH:mm:ss");
-            string data = DateTime.Now.ToString("dd/MM/yyyy");
+          
 
             var venda = new Venda()
             {
                 Total_Venda = totalVenda,
-                Data = Convert.ToDateTime(data),
-                Hora = Convert.ToDateTime(hora),
+                Data = DateTime.Now.ToString("dd-MM-yyyy"),
+                Hora = DateTime.Now.ToString("HH:mm:ss"),
                 Situacao_Venda = "Finalizado",
                 Id_Cliente = cliente.Id
             };

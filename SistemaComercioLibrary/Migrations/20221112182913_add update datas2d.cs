@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace SistemaComercioLibrary.Migrations
 {
-    public partial class reset : Migration
+    public partial class addupdatedatas2d : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -151,8 +151,8 @@ namespace SistemaComercioLibrary.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Data = table.Column<DateTime>(maxLength: 10, nullable: false),
-                    Hora = table.Column<DateTime>(maxLength: 5, nullable: false),
+                    Data = table.Column<string>(nullable: false),
+                    Hora = table.Column<string>(nullable: false),
                     Total_Venda = table.Column<double>(maxLength: 255, nullable: false),
                     Situacao_Venda = table.Column<string>(maxLength: 255, nullable: false),
                     Id_Cliente = table.Column<int>(nullable: false)
@@ -174,7 +174,7 @@ namespace SistemaComercioLibrary.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Data = table.Column<DateTime>(maxLength: 255, nullable: false),
+                    Data = table.Column<string>(maxLength: 255, nullable: false),
                     Hora = table.Column<string>(maxLength: 255, nullable: false),
                     Total_Compra = table.Column<double>(maxLength: 255, nullable: false),
                     Situacao_Compra = table.Column<string>(maxLength: 255, nullable: false),

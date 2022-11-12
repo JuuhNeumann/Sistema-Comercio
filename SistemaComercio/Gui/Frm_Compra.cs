@@ -310,6 +310,10 @@ namespace SistemaComercio.Gui
             cmbSelecioneCancel.SelectedIndex = -1;
             txtPrecoCancel.Clear();
             txtTotalCimaCancel.Clear();
+            txtQuant.Enabled = false;
+            txtTotalCimaCancel.Clear();
+
+
         }
 
         private void PesquisaCompraFiltro()
@@ -324,7 +328,7 @@ namespace SistemaComercio.Gui
             {
                 Situacao_Compra = "Finalizado",
                 Total_Compra = produto.Preco * Convert.ToInt32(txtQuant.Text),
-                Data = DateTime.UtcNow.Date,
+                Data = DateTime.Now.ToString("dd-MM-yyyy"),
                 Hora = DateTime.Now.ToString("HH:mm:ss"),
                 Id_Fornecedor = produto.Id_Fornecedor,
             };
@@ -365,6 +369,7 @@ namespace SistemaComercio.Gui
 
         private void cmbSelecioneProduto_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtQuant.Enabled = true;
             txtQuant.Clear();
 
             serviceProd = new ProdutoService();
@@ -380,6 +385,7 @@ namespace SistemaComercio.Gui
         private void cmbSelecioneCancel_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbQUantidadeCancel.Items.Clear();
+            txtTotalCimaCancel.Clear();
 
             if (cmbSelecioneCancel.SelectedIndex != -1)
             {
@@ -402,15 +408,33 @@ namespace SistemaComercio.Gui
 
         private void cmbQUantidadeCancel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbSelecioneCancel.SelectedIndex != -1)
+            if (cmbSelecioneCancel.SelectedIndex != -1 && cmbQUantidadeCancel.SelectedIndex != -1)
             {
                 var itemC = itemCompras.FirstOrDefault(itemCompras => itemCompras.Id.Equals(Convert.ToInt32(cmbSelecioneCancel.Text)));
-                txtTotalCimaCancel.Text = "R$" + itemC.Total_Item.ToString();
+                var total = Convert.ToDouble(cmbQUantidadeCancel.Text) * itemC.Valor_Unitario;
+                txtTotalCimaCancel.Text = "R$" + total.ToString();
             }
 
         }
 
         #endregion
 
+        private void txtQuant_TextChanged(object sender, EventArgs e)
+        {
+            if (txtQuant.Text.Equals(""))
+            {
+                txtTotalCima.Clear();
+
+            }
+            else
+            {
+                if (produto != null)
+                {
+                    var total = Convert.ToDouble(txtQuant.Text) * produto.Preco;
+                    txtTotalCima.Text = total.ToString();
+                }
+            }
+
+        }
     }
 }

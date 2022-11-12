@@ -270,23 +270,16 @@
     <Compile Include="Entity\ContaReceber.cs" />
     <Compile Include="Entity\FormaPagamento.cs" />
     <Compile Include="Entity\FormaPagamentoVenda.cs" />
+    <Compile Include="Entity\FormRelatorioCompra.cs" />
     <Compile Include="Entity\Fornecedor.cs" />
     <Compile Include="Entity\ItemCompra.cs" />
     <Compile Include="Entity\ItemVenda.cs" />
     <Compile Include="Entity\MovimentoCaixa.cs" />
     <Compile Include="Entity\Produto.cs" />
     <Compile Include="Entity\Venda.cs" />
-    <Compile Include="Migrations\20221105190313_reset.cs" />
-    <Compile Include="Migrations\20221105190313_reset.designer.cs">
-      <DependentUpon>20221105190313_reset.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20221105192620_reset2.cs" />
-    <Compile Include="Migrations\20221105192620_reset2.designer.cs">
-      <DependentUpon>20221105192620_reset2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20221105195105_reset3.cs" />
-    <Compile Include="Migrations\20221105195105_reset3.designer.cs">
-      <DependentUpon>20221105195105_reset3.cs</DependentUpon>
+    <Compile Include="Migrations\20221112182913_add update datas2d.cs" />
+    <Compile Include="Migrations\20221112182913_add update datas2d.designer.cs">
+      <DependentUpon>20221112182913_add update datas2d.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DataBaseContextModelSnapshot.cs" />
     <Compile Include="Persistence\Context\DataBaseContext.cs" />

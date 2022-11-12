@@ -15,7 +15,7 @@ namespace SistemaComercioLibrary.Classes
         public int Id { get; set; }
         [Required]
         [MaxLength(255)]
-        public DateTime Data { get; set; }
+        public string Data { get; set; }
         [Required]
         [MaxLength(255)]
         public string Hora { get; set; }

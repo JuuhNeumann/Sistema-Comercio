@@ -5,6 +5,7 @@ using SistemaComercioLibrary.Service;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SistemaComercio.Gui
@@ -44,17 +45,32 @@ namespace SistemaComercio.Gui
             dt.Columns.Add("Id", typeof(int));
             dt.Columns.Add("Produto", typeof(string));
             dt.Columns.Add("Quantidade", typeof(string));
+            dt.Columns.Add("ValorUnitario", typeof(string));
+            dt.Columns.Add("Total", typeof(string));
+            dt.Columns.Add("Situacao", typeof(string));
+            dt.Columns.Add("Data", typeof(string));
+            dt.Columns.Add("Hora", typeof(string));
+            dt.Columns.Add("Fornecedor", typeof(string));
 
-            itemCompras = serviceItemC.GetAllItemCompra();
+            if (itemCompras == null)
+                itemCompras = serviceItemC.GetAllItemCompra();
 
             foreach (var itemCompra in itemCompras)
             {
+                var FormRelatorioC = new FormRelatorioCompra(itemCompra);
+
                 dt.Rows.Add(new object[]
                 {
-                   itemCompra.Id_Compra,
-                    itemCompra.Total_Item,
-
-                }) ;
+                    FormRelatorioC.Id,
+                    FormRelatorioC.Produto,
+                    FormRelatorioC.Quantidade,
+                    FormRelatorioC.ValorUnitario,
+                    FormRelatorioC.Total,
+                    FormRelatorioC.Situacao,
+                    FormRelatorioC.Data,
+                    FormRelatorioC.Hora,
+                    FormRelatorioC.Fornecedor,
+                });
             }
 
         }
@@ -63,15 +79,47 @@ namespace SistemaComercio.Gui
         {
             rvRelatorioCompra.LocalReport.DataSources.Clear();
             ReportDataSource reportDataSource = new ReportDataSource("ItemCompras", dt);
-
             rvRelatorioCompra.LocalReport.ReportPath = "RelatorioCompras.rdlc";
             rvRelatorioCompra.LocalReport.DataSources.Add(reportDataSource);
+
+            AddParameter("TotalCompra", itemCompras.Count.ToString());
             rvRelatorioCompra.LocalReport.Refresh();
         }
+
+
+        public void AddParameter(string parameter, string value)
+        {
+            ReportParameter[] parameters = new ReportParameter[1];
+            parameters[0] = new ReportParameter(parameter, value);
+            rvRelatorioCompra.LocalReport.SetParameters(parameters);
+        }
+
 
         private void rvRelatorioCompra_Load(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var item = serviceItemC.GetAllItemCompra();
+            itemCompras = item.Where(x => x.Compra.Situacao_Compra.Equals(cmbStatus.Text)).ToList();
+            ClearReportViewer();
+            UpdateReportViewer();
+            rvRelatorioCompra.RefreshReport();
+        }
+
+        private void ClearReportViewer()
+        {
+            rvRelatorioCompra.ResetPageSettings();
+            rvRelatorioCompra.LocalReport.Refresh();
+            this.rvRelatorioCompra.LocalReport.DataSources.Clear();
+        }
+
+        private void rvRelatorioCompra_ReportRefresh(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            CreateReportViewer();
         }
     }
 }

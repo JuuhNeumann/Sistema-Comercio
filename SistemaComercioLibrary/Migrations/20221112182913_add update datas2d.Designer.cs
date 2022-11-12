@@ -10,8 +10,8 @@ using SistemaComercioLibrary.Persistence.Context;
 namespace SistemaComercioLibrary.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20221105190313_reset")]
-    partial class reset
+    [Migration("20221112182913_add update datas2d")]
+    partial class addupdatedatas2d
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -150,8 +150,9 @@ namespace SistemaComercioLibrary.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<DateTime>("Data")
-                        .HasColumnType("timestamp without time zone")
+                    b.Property<string>("Data")
+                        .IsRequired()
+                        .HasColumnType("character varying(255)")
                         .HasMaxLength(255);
 
                     b.Property<string>("Hora")
@@ -400,13 +401,13 @@ namespace SistemaComercioLibrary.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<DateTime>("Data")
-                        .HasColumnType("timestamp without time zone")
-                        .HasMaxLength(10);
+                    b.Property<string>("Data")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    b.Property<DateTime>("Hora")
-                        .HasColumnType("timestamp without time zone")
-                        .HasMaxLength(5);
+                    b.Property<string>("Hora")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("Id_Cliente")
                         .HasColumnType("integer");

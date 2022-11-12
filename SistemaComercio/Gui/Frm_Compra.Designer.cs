@@ -425,11 +425,13 @@
             // 
             // txtQuant
             // 
+            this.txtQuant.Enabled = false;
             this.txtQuant.Location = new System.Drawing.Point(67, 56);
             this.txtQuant.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtQuant.Name = "txtQuant";
             this.txtQuant.Size = new System.Drawing.Size(138, 21);
             this.txtQuant.TabIndex = 16;
+            this.txtQuant.TextChanged += new System.EventHandler(this.txtQuant_TextChanged);
             // 
             // txtTotalCima
             // 
