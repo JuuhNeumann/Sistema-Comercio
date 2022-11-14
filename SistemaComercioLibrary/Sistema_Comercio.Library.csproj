@@ -271,6 +271,9 @@
     <Compile Include="Entity\FormaPagamento.cs" />
     <Compile Include="Entity\FormaPagamentoVenda.cs" />
     <Compile Include="Entity\FormRelatorioCompra.cs" />
+    <Compile Include="Entity\FormRelatorioContaPagar.cs" />
+    <Compile Include="Entity\FormRelatorioContaReceber.cs" />
+    <Compile Include="Entity\FormRelatorioVenda.cs" />
     <Compile Include="Entity\Fornecedor.cs" />
     <Compile Include="Entity\ItemCompra.cs" />
     <Compile Include="Entity\ItemVenda.cs" />

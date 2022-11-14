@@ -85,12 +85,12 @@
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblStatus.Location = new System.Drawing.Point(611, 28);
+            this.lblStatus.Location = new System.Drawing.Point(598, 28);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(46, 13);
+            this.lblStatus.Size = new System.Drawing.Size(59, 13);
             this.lblStatus.TabIndex = 3;
-            this.lblStatus.Text = "Status:";
+            this.lblStatus.Text = "Situação:";
             // 
             // lblData
             // 
@@ -143,6 +143,7 @@
             this.btnSair.TabIndex = 1;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.ClickSair);
             // 
             // Frm_RelatorioCompra
             // 

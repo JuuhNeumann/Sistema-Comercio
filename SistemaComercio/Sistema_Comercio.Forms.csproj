@@ -327,6 +327,8 @@
       <DependentUpon>SistemaComercioDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="bin\Debug\FormRelatorioContaPagar.rdlc" />
+    <EmbeddedResource Include="bin\Debug\RelatorioVendas.rdlc" />
     <EmbeddedResource Include="Gui\Frm_Cliente.resx">
       <DependentUpon>Frm_Cliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,6 +373,8 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.FormRelatorioCompra.datasource" />
+    <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.FormRelatorioContaPagar.datasource" />
+    <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.FormRelatorioVenda.datasource" />
     <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.ItemCompra.datasource" />
     <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.ItemVenda.datasource" />
     <None Include="Properties\Settings.settings">

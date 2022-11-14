@@ -121,5 +121,11 @@ namespace SistemaComercio.Gui
         {
             CreateReportViewer();
         }
+
+        private void ClickSair(object sender, EventArgs e)
+        {
+            var compra = new Frm_Compra();
+            this.Hide();
+        }
     }
 }

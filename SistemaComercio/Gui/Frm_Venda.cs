@@ -117,7 +117,7 @@ namespace SistemaComercio.Gui
             dt.Columns.Add("Valor Unitario", typeof(string));
             dt.Columns.Add("Total", typeof(string));
             dt.Columns.Add("Id Produto", typeof(string));
-            dt.Columns.Add("Produto", typeof(string)); 
+            dt.Columns.Add("Produto", typeof(string));
             dt.Columns.Add("Id Venda", typeof(string));
             dt.Columns.Add("Data", typeof(string));
             dt.Columns.Add("Hora", typeof(string));
@@ -137,8 +137,8 @@ namespace SistemaComercio.Gui
                     itemVenda.Quantidade,
                     itemVenda.Valor_Unitario,
                     itemVenda.Total_Item,
-                    itemVenda.Id_Produto, 
-                    itemVenda.Produto.Nome, 
+                    itemVenda.Id_Produto,
+                    itemVenda.Produto.Nome,
                     itemVenda.Id_Venda,
                     itemVenda.Venda.Data,
                     itemVenda.Venda.Hora,
@@ -265,10 +265,10 @@ namespace SistemaComercio.Gui
                 }
                 else
                 {
-                CreateVenda();
-                UpdateVendaInDataGrid();
-                LimparCampos();
-                MessageBox.Show("Venda Lançada!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CreateVenda();
+                    UpdateVendaInDataGrid();
+                    LimparCampos();
+                    MessageBox.Show("Venda Lançada!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }
@@ -350,7 +350,7 @@ namespace SistemaComercio.Gui
         {
             var cliente = serviceCliente.GetByNomeCliente(cmbSelecioneCli.Text);
 
-          
+
 
             var venda = new Venda()
             {
@@ -434,6 +434,15 @@ namespace SistemaComercio.Gui
 
         }
 
+        private void cmbQuantiCancelar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbQuantiCancelar.SelectedIndex != -1)
+            {
+                var total = Convert.ToInt32(itemVenda.Venda.Total_Venda) * Convert.ToInt32(cmbQuantiCancelar.Text);
+                txtTotalCimaCancel.Text = "R$" + total;
+            }
+        }
+
         private void cmbSelecioneCancelamento_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbQuantiCancelar.Items.Clear();
@@ -448,25 +457,9 @@ namespace SistemaComercio.Gui
                     AddComboBoxQuantiCancel();
                 }
             }
-
-
-        }
-
-        private void cmbQuantiCancelar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbQuantiCancelar.SelectedIndex != -1)
-            {
-                var total = Convert.ToInt32(itemVenda.Venda.Total_Venda) * Convert.ToInt32(cmbQuantiCancelar.Text);
-                txtTotalCimaCancel.Text = "R$" + total;
-            }
         }
 
         #endregion
-
-
-
-
-
 
     }
 }

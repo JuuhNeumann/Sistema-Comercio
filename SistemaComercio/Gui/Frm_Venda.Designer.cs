@@ -32,6 +32,8 @@
             this.txtSelecioneVenda = new System.Windows.Forms.TextBox();
             this.tbcVenda = new System.Windows.Forms.TabControl();
             this.tbpLancarVenda = new System.Windows.Forms.TabPage();
+            this.cmbSelecioneCli = new System.Windows.Forms.ComboBox();
+            this.lblSelecioneCli = new System.Windows.Forms.Label();
             this.txtTotalCima = new System.Windows.Forms.TextBox();
             this.lblTotalCima = new System.Windows.Forms.Label();
             this.btnLimparCampos = new System.Windows.Forms.Button();
@@ -71,8 +73,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdbCliente = new System.Windows.Forms.RadioButton();
             this.rdbPeriodo = new System.Windows.Forms.RadioButton();
-            this.lblSelecioneCli = new System.Windows.Forms.Label();
-            this.cmbSelecioneCli = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tbcVenda.SuspendLayout();
             this.tbpLancarVenda.SuspendLayout();
@@ -141,6 +141,26 @@
             this.tbpLancarVenda.Size = new System.Drawing.Size(485, 123);
             this.tbpLancarVenda.TabIndex = 0;
             this.tbpLancarVenda.Text = "Lançar Venda";
+            // 
+            // cmbSelecioneCli
+            // 
+            this.cmbSelecioneCli.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSelecioneCli.FormattingEnabled = true;
+            this.cmbSelecioneCli.Location = new System.Drawing.Point(262, 28);
+            this.cmbSelecioneCli.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cmbSelecioneCli.Name = "cmbSelecioneCli";
+            this.cmbSelecioneCli.Size = new System.Drawing.Size(212, 21);
+            this.cmbSelecioneCli.TabIndex = 13;
+            // 
+            // lblSelecioneCli
+            // 
+            this.lblSelecioneCli.AutoSize = true;
+            this.lblSelecioneCli.Location = new System.Drawing.Point(259, 12);
+            this.lblSelecioneCli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSelecioneCli.Name = "lblSelecioneCli";
+            this.lblSelecioneCli.Size = new System.Drawing.Size(196, 13);
+            this.lblSelecioneCli.TabIndex = 12;
+            this.lblSelecioneCli.Text = "Selecione o cliente para realizar a venda:";
             // 
             // txtTotalCima
             // 
@@ -320,6 +340,7 @@
             this.cmbQuantiCancelar.Name = "cmbQuantiCancelar";
             this.cmbQuantiCancelar.Size = new System.Drawing.Size(153, 21);
             this.cmbQuantiCancelar.TabIndex = 14;
+            this.cmbQuantiCancelar.SelectedIndexChanged += new System.EventHandler(this.cmbQuantiCancelar_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -338,6 +359,7 @@
             this.cmbSelecioneCancelamento.Name = "cmbSelecioneCancelamento";
             this.cmbSelecioneCancelamento.Size = new System.Drawing.Size(385, 21);
             this.cmbSelecioneCancelamento.TabIndex = 10;
+            this.cmbSelecioneCancelamento.SelectedIndexChanged += new System.EventHandler(this.cmbSelecioneCancelamento_SelectedIndexChanged);
             // 
             // lblExemploCancelar
             // 
@@ -366,6 +388,7 @@
             this.btnCancelarVenda.TabIndex = 8;
             this.btnCancelarVenda.Text = "Cancelar Venda";
             this.btnCancelarVenda.UseVisualStyleBackColor = true;
+            this.btnCancelarVenda.Click += new System.EventHandler(this.ClickCancelarVenda);
             // 
             // btnSair
             // 
@@ -550,26 +573,6 @@
             this.rdbPeriodo.TabStop = true;
             this.rdbPeriodo.Text = "Período";
             this.rdbPeriodo.UseVisualStyleBackColor = true;
-            // 
-            // lblSelecioneCli
-            // 
-            this.lblSelecioneCli.AutoSize = true;
-            this.lblSelecioneCli.Location = new System.Drawing.Point(259, 12);
-            this.lblSelecioneCli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSelecioneCli.Name = "lblSelecioneCli";
-            this.lblSelecioneCli.Size = new System.Drawing.Size(196, 13);
-            this.lblSelecioneCli.TabIndex = 12;
-            this.lblSelecioneCli.Text = "Selecione o cliente para realizar a venda:";
-            // 
-            // cmbSelecioneCli
-            // 
-            this.cmbSelecioneCli.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSelecioneCli.FormattingEnabled = true;
-            this.cmbSelecioneCli.Location = new System.Drawing.Point(262, 28);
-            this.cmbSelecioneCli.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cmbSelecioneCli.Name = "cmbSelecioneCli";
-            this.cmbSelecioneCli.Size = new System.Drawing.Size(212, 21);
-            this.cmbSelecioneCli.TabIndex = 13;
             // 
             // Frm_Venda
             // 

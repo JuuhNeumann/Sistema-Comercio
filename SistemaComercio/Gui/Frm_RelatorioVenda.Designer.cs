@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTitleVenda = new System.Windows.Forms.Label();
-            this.lblData = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
+            this.cmbPeriodo = new System.Windows.Forms.ComboBox();
             this.txtData = new System.Windows.Forms.TextBox();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.lblFiltro = new System.Windows.Forms.Label();
-            this.cmbFiltro = new System.Windows.Forms.ComboBox();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.cmbSituacao = new System.Windows.Forms.ComboBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lblTitleVenda = new System.Windows.Forms.Label();
+            this.rvRelatorioVenda = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnBaixar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
+            this.btnBaixar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -48,10 +48,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.cmbFiltro);
+            this.panel1.Controls.Add(this.cmbPeriodo);
             this.panel1.Controls.Add(this.txtData);
             this.panel1.Controls.Add(this.lblFiltro);
-            this.panel1.Controls.Add(this.cmbStatus);
+            this.panel1.Controls.Add(this.cmbSituacao);
             this.panel1.Controls.Add(this.lblStatus);
             this.panel1.Controls.Add(this.lblData);
             this.panel1.Controls.Add(this.lblTitleVenda);
@@ -60,16 +60,59 @@
             this.panel1.Size = new System.Drawing.Size(863, 70);
             this.panel1.TabIndex = 0;
             // 
-            // lblTitleVenda
+            // cmbPeriodo
             // 
-            this.lblTitleVenda.AutoSize = true;
-            this.lblTitleVenda.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleVenda.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTitleVenda.Location = new System.Drawing.Point(15, 26);
-            this.lblTitleVenda.Name = "lblTitleVenda";
-            this.lblTitleVenda.Size = new System.Drawing.Size(201, 23);
-            this.lblTitleVenda.TabIndex = 0;
-            this.lblTitleVenda.Text = "Relatório de Vendas";
+            this.cmbPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPeriodo.FormattingEnabled = true;
+            this.cmbPeriodo.Location = new System.Drawing.Point(509, 26);
+            this.cmbPeriodo.Name = "cmbPeriodo";
+            this.cmbPeriodo.Size = new System.Drawing.Size(139, 21);
+            this.cmbPeriodo.TabIndex = 4;
+            this.cmbPeriodo.SelectedIndexChanged += new System.EventHandler(this.cmbPeriodo_SelectedIndexChanged);
+            // 
+            // txtData
+            // 
+            this.txtData.Enabled = false;
+            this.txtData.Location = new System.Drawing.Point(314, 26);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(135, 21);
+            this.txtData.TabIndex = 1;
+            // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFiltro.Location = new System.Drawing.Point(455, 29);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(55, 13);
+            this.lblFiltro.TabIndex = 3;
+            this.lblFiltro.Text = "Período:";
+            // 
+            // cmbSituacao
+            // 
+            this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSituacao.FormattingEnabled = true;
+            this.cmbSituacao.Items.AddRange(new object[] {
+            "Finalizado",
+            "Alterado",
+            "Cancelado"});
+            this.cmbSituacao.Location = new System.Drawing.Point(709, 26);
+            this.cmbSituacao.Name = "cmbSituacao";
+            this.cmbSituacao.Size = new System.Drawing.Size(136, 21);
+            this.cmbSituacao.TabIndex = 1;
+            this.cmbSituacao.SelectedIndexChanged += new System.EventHandler(this.cmbSituacao_SelectedIndexChanged);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblStatus.Location = new System.Drawing.Point(654, 29);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(59, 13);
+            this.lblStatus.TabIndex = 2;
+            this.lblStatus.Text = "Situação:";
             // 
             // lblData
             // 
@@ -82,62 +125,26 @@
             this.lblData.TabIndex = 1;
             this.lblData.Text = "Data:";
             // 
-            // lblStatus
+            // lblTitleVenda
             // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblStatus.Location = new System.Drawing.Point(666, 31);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(46, 13);
-            this.lblStatus.TabIndex = 2;
-            this.lblStatus.Text = "Status:";
+            this.lblTitleVenda.AutoSize = true;
+            this.lblTitleVenda.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleVenda.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTitleVenda.Location = new System.Drawing.Point(15, 26);
+            this.lblTitleVenda.Name = "lblTitleVenda";
+            this.lblTitleVenda.Size = new System.Drawing.Size(201, 23);
+            this.lblTitleVenda.TabIndex = 0;
+            this.lblTitleVenda.Text = "Relatório de Vendas";
             // 
-            // txtData
+            // rvRelatorioVenda
             // 
-            this.txtData.Enabled = false;
-            this.txtData.Location = new System.Drawing.Point(314, 26);
-            this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(135, 21);
-            this.txtData.TabIndex = 1;
-            // 
-            // cmbStatus
-            // 
-            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(709, 26);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(136, 21);
-            this.cmbStatus.TabIndex = 1;
-            // 
-            // lblFiltro
-            // 
-            this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFiltro.Location = new System.Drawing.Point(472, 29);
-            this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(43, 13);
-            this.lblFiltro.TabIndex = 3;
-            this.lblFiltro.Text = "Filtro:";
-            // 
-            // cmbFiltro
-            // 
-            this.cmbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Location = new System.Drawing.Point(512, 26);
-            this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(136, 21);
-            this.cmbFiltro.TabIndex = 4;
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.reportViewer1.Location = new System.Drawing.Point(0, 65);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(855, 352);
-            this.reportViewer1.TabIndex = 1;
+            this.rvRelatorioVenda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.rvRelatorioVenda.Location = new System.Drawing.Point(0, 65);
+            this.rvRelatorioVenda.Name = "rvRelatorioVenda";
+            this.rvRelatorioVenda.ServerReport.BearerToken = null;
+            this.rvRelatorioVenda.Size = new System.Drawing.Size(855, 352);
+            this.rvRelatorioVenda.TabIndex = 1;
+            this.rvRelatorioVenda.ReportRefresh += new System.ComponentModel.CancelEventHandler(this.rvRelatorioVenda_ReportRefresh);
             // 
             // panel2
             // 
@@ -149,6 +156,16 @@
             this.panel2.Size = new System.Drawing.Size(855, 51);
             this.panel2.TabIndex = 2;
             // 
+            // btnSair
+            // 
+            this.btnSair.Location = new System.Drawing.Point(730, 17);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(113, 23);
+            this.btnSair.TabIndex = 1;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.ClickSair);
+            // 
             // btnBaixar
             // 
             this.btnBaixar.Location = new System.Drawing.Point(12, 17);
@@ -158,22 +175,13 @@
             this.btnBaixar.Text = "Baixar Relatório";
             this.btnBaixar.UseVisualStyleBackColor = true;
             // 
-            // btnSair
-            // 
-            this.btnSair.Location = new System.Drawing.Point(730, 17);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(113, 23);
-            this.btnSair.TabIndex = 1;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            // 
             // Frm_RelatorioVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(854, 464);
-            this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.rvRelatorioVenda);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -193,14 +201,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cmbFiltro;
+        private System.Windows.Forms.ComboBox cmbPeriodo;
         private System.Windows.Forms.TextBox txtData;
         private System.Windows.Forms.Label lblFiltro;
-        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.ComboBox cmbSituacao;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblTitleVenda;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer rvRelatorioVenda;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnBaixar;
