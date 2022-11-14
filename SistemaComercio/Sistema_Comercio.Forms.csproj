@@ -307,6 +307,12 @@
     <Compile Include="Gui\Frm_RelatorioCompra.Designer.cs">
       <DependentUpon>Frm_RelatorioCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Frm_RelatorioContaPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Frm_RelatorioContaPagar.Designer.cs">
+      <DependentUpon>Frm_RelatorioContaPagar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Frm_RelatorioVenda.cs">
       <SubType>Form</SubType>
     </Compile>
