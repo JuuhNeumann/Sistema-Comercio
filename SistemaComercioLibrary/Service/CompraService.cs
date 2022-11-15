@@ -43,6 +43,8 @@ namespace SistemaComercioLibrary.Service
             cmp.Total_Compra = compra.Total_Compra;
             cmp.Situacao_Compra = compra.Situacao_Compra;
             cmp.Id_Fornecedor = compra.Id_Fornecedor;
+            _db.SaveChanges();
+
         }
 
         public Compra GetByIdCompra(int id)

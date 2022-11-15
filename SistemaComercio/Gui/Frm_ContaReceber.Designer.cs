@@ -30,6 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.gpbFormaPagamento = new System.Windows.Forms.GroupBox();
+            this.btnPagar = new System.Windows.Forms.Button();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.cmbParcelamento = new System.Windows.Forms.ComboBox();
+            this.lblParcelamento = new System.Windows.Forms.Label();
+            this.rbbCartaoCredito = new System.Windows.Forms.RadioButton();
             this.rdbCartaoDebito = new System.Windows.Forms.RadioButton();
             this.rdbDinehiro = new System.Windows.Forms.RadioButton();
             this.rdbPix = new System.Windows.Forms.RadioButton();
@@ -57,20 +63,19 @@
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.cmbSelecioneContaReceber = new System.Windows.Forms.ComboBox();
             this.lblSelecioneContaReceber = new System.Windows.Forms.Label();
-            this.rbbCartaoCredito = new System.Windows.Forms.RadioButton();
-            this.lblParcelamento = new System.Windows.Forms.Label();
-            this.cmbParcelamento = new System.Windows.Forms.ComboBox();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.btnPagar = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.lblCliente = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gpbFormaPagamento.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SlateGray;
+            this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.gpbFormaPagamento);
             this.panel1.Controls.Add(this.btnSair);
             this.panel1.Controls.Add(this.btnEmitirRela);
@@ -78,7 +83,7 @@
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(-5, -6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(612, 356);
+            this.panel1.Size = new System.Drawing.Size(612, 393);
             this.panel1.TabIndex = 0;
             // 
             // gpbFormaPagamento
@@ -94,12 +99,74 @@
             this.gpbFormaPagamento.Controls.Add(this.rdbPix);
             this.gpbFormaPagamento.Controls.Add(this.lblSelecionePagamento);
             this.gpbFormaPagamento.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gpbFormaPagamento.Location = new System.Drawing.Point(17, 206);
+            this.gpbFormaPagamento.Location = new System.Drawing.Point(17, 145);
             this.gpbFormaPagamento.Name = "gpbFormaPagamento";
             this.gpbFormaPagamento.Size = new System.Drawing.Size(576, 110);
             this.gpbFormaPagamento.TabIndex = 5;
             this.gpbFormaPagamento.TabStop = false;
             this.gpbFormaPagamento.Text = "Forma de Pagamento";
+            // 
+            // btnPagar
+            // 
+            this.btnPagar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPagar.Location = new System.Drawing.Point(434, 67);
+            this.btnPagar.Name = "btnPagar";
+            this.btnPagar.Size = new System.Drawing.Size(124, 23);
+            this.btnPagar.TabIndex = 6;
+            this.btnPagar.Text = "Pagar";
+            this.btnPagar.UseVisualStyleBackColor = true;
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(423, 24);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(147, 21);
+            this.txtTotal.TabIndex = 19;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(392, 27);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(34, 13);
+            this.lblTotal.TabIndex = 7;
+            this.lblTotal.Text = "Total:";
+            // 
+            // cmbParcelamento
+            // 
+            this.cmbParcelamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbParcelamento.FormattingEnabled = true;
+            this.cmbParcelamento.Items.AddRange(new object[] {
+            "1x sem juros",
+            "2x sem juros",
+            "3x sem juros",
+            "4x sem juros",
+            "5x sem juros"});
+            this.cmbParcelamento.Location = new System.Drawing.Point(231, 69);
+            this.cmbParcelamento.Name = "cmbParcelamento";
+            this.cmbParcelamento.Size = new System.Drawing.Size(162, 21);
+            this.cmbParcelamento.TabIndex = 6;
+            // 
+            // lblParcelamento
+            // 
+            this.lblParcelamento.AutoSize = true;
+            this.lblParcelamento.Location = new System.Drawing.Point(228, 53);
+            this.lblParcelamento.Name = "lblParcelamento";
+            this.lblParcelamento.Size = new System.Drawing.Size(73, 13);
+            this.lblParcelamento.TabIndex = 5;
+            this.lblParcelamento.Text = "Parcelamento:";
+            // 
+            // rbbCartaoCredito
+            // 
+            this.rbbCartaoCredito.AutoSize = true;
+            this.rbbCartaoCredito.Location = new System.Drawing.Point(97, 76);
+            this.rbbCartaoCredito.Name = "rbbCartaoCredito";
+            this.rbbCartaoCredito.Size = new System.Drawing.Size(108, 17);
+            this.rbbCartaoCredito.TabIndex = 4;
+            this.rbbCartaoCredito.TabStop = true;
+            this.rbbCartaoCredito.Text = "Cartão de Crédito";
+            this.rbbCartaoCredito.UseVisualStyleBackColor = true;
             // 
             // rdbCartaoDebito
             // 
@@ -145,7 +212,7 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(504, 322);
+            this.btnSair.Location = new System.Drawing.Point(506, 359);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(89, 23);
             this.btnSair.TabIndex = 4;
@@ -154,7 +221,7 @@
             // 
             // btnEmitirRela
             // 
-            this.btnEmitirRela.Location = new System.Drawing.Point(136, 322);
+            this.btnEmitirRela.Location = new System.Drawing.Point(134, 359);
             this.btnEmitirRela.Name = "btnEmitirRela";
             this.btnEmitirRela.Size = new System.Drawing.Size(113, 23);
             this.btnEmitirRela.TabIndex = 3;
@@ -163,7 +230,7 @@
             // 
             // btnBaixarConta
             // 
-            this.btnBaixarConta.Location = new System.Drawing.Point(17, 322);
+            this.btnBaixarConta.Location = new System.Drawing.Point(17, 359);
             this.btnBaixarConta.Name = "btnBaixarConta";
             this.btnBaixarConta.Size = new System.Drawing.Size(113, 23);
             this.btnBaixarConta.TabIndex = 2;
@@ -172,16 +239,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblExemploStatus);
-            this.groupBox1.Controls.Add(this.lblStatus);
-            this.groupBox1.Controls.Add(this.txtPago);
-            this.groupBox1.Controls.Add(this.lblPago);
-            this.groupBox1.Controls.Add(this.txtValor);
-            this.groupBox1.Controls.Add(this.lblValor);
-            this.groupBox1.Controls.Add(this.txtValorRecebi);
-            this.groupBox1.Controls.Add(this.lblValorRecebi);
-            this.groupBox1.Controls.Add(this.txtDataRecebi);
-            this.groupBox1.Controls.Add(this.lblDataRecebi);
+            this.groupBox1.Controls.Add(this.lblCliente);
+            this.groupBox1.Controls.Add(this.txtCliente);
             this.groupBox1.Controls.Add(this.txtDataVenci);
             this.groupBox1.Controls.Add(this.lblDataVenci);
             this.groupBox1.Controls.Add(this.txtDataLanca);
@@ -194,7 +253,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Location = new System.Drawing.Point(17, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(576, 177);
+            this.groupBox1.Size = new System.Drawing.Size(576, 121);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Geração de Conta a Receber";
@@ -202,16 +261,16 @@
             // lblExemploStatus
             // 
             this.lblExemploStatus.AutoSize = true;
-            this.lblExemploStatus.Location = new System.Drawing.Point(442, 152);
+            this.lblExemploStatus.Location = new System.Drawing.Point(508, 45);
             this.lblExemploStatus.Name = "lblExemploStatus";
-            this.lblExemploStatus.Size = new System.Drawing.Size(116, 13);
+            this.lblExemploStatus.Size = new System.Drawing.Size(50, 13);
             this.lblExemploStatus.TabIndex = 18;
-            this.lblExemploStatus.Text = "Conta ainda por vencer";
+            this.lblExemploStatus.Text = "A vencer";
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(397, 152);
+            this.lblStatus.Location = new System.Drawing.Point(468, 45);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(39, 13);
             this.lblStatus.TabIndex = 17;
@@ -219,15 +278,15 @@
             // 
             // txtPago
             // 
-            this.txtPago.Location = new System.Drawing.Point(241, 149);
+            this.txtPago.Location = new System.Drawing.Point(327, 56);
             this.txtPago.Name = "txtPago";
-            this.txtPago.Size = new System.Drawing.Size(140, 21);
+            this.txtPago.Size = new System.Drawing.Size(123, 21);
             this.txtPago.TabIndex = 16;
             // 
             // lblPago
             // 
             this.lblPago.AutoSize = true;
-            this.lblPago.Location = new System.Drawing.Point(189, 152);
+            this.lblPago.Location = new System.Drawing.Point(273, 59);
             this.lblPago.Name = "lblPago";
             this.lblPago.Size = new System.Drawing.Size(54, 13);
             this.lblPago.TabIndex = 15;
@@ -236,15 +295,15 @@
             // txtValor
             // 
             this.txtValor.Enabled = false;
-            this.txtValor.Location = new System.Drawing.Point(39, 149);
+            this.txtValor.Location = new System.Drawing.Point(327, 27);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(138, 21);
+            this.txtValor.Size = new System.Drawing.Size(123, 21);
             this.txtValor.TabIndex = 14;
             // 
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(6, 152);
+            this.lblValor.Location = new System.Drawing.Point(284, 30);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(37, 13);
             this.lblValor.TabIndex = 13;
@@ -253,15 +312,15 @@
             // txtValorRecebi
             // 
             this.txtValorRecebi.Enabled = false;
-            this.txtValorRecebi.Location = new System.Drawing.Point(412, 112);
+            this.txtValorRecebi.Location = new System.Drawing.Point(119, 56);
             this.txtValorRecebi.Name = "txtValorRecebi";
-            this.txtValorRecebi.Size = new System.Drawing.Size(158, 21);
+            this.txtValorRecebi.Size = new System.Drawing.Size(144, 21);
             this.txtValorRecebi.TabIndex = 12;
             // 
             // lblValorRecebi
             // 
             this.lblValorRecebi.AutoSize = true;
-            this.lblValorRecebi.Location = new System.Drawing.Point(290, 115);
+            this.lblValorRecebi.Location = new System.Drawing.Point(6, 59);
             this.lblValorRecebi.Name = "lblValorRecebi";
             this.lblValorRecebi.Size = new System.Drawing.Size(116, 13);
             this.lblValorRecebi.TabIndex = 11;
@@ -270,15 +329,15 @@
             // txtDataRecebi
             // 
             this.txtDataRecebi.Enabled = false;
-            this.txtDataRecebi.Location = new System.Drawing.Point(412, 86);
+            this.txtDataRecebi.Location = new System.Drawing.Point(117, 27);
             this.txtDataRecebi.Name = "txtDataRecebi";
-            this.txtDataRecebi.Size = new System.Drawing.Size(158, 21);
+            this.txtDataRecebi.Size = new System.Drawing.Size(146, 21);
             this.txtDataRecebi.TabIndex = 10;
             // 
             // lblDataRecebi
             // 
             this.lblDataRecebi.AutoSize = true;
-            this.lblDataRecebi.Location = new System.Drawing.Point(295, 89);
+            this.lblDataRecebi.Location = new System.Drawing.Point(11, 30);
             this.lblDataRecebi.Name = "lblDataRecebi";
             this.lblDataRecebi.Size = new System.Drawing.Size(111, 13);
             this.lblDataRecebi.TabIndex = 9;
@@ -287,15 +346,15 @@
             // txtDataVenci
             // 
             this.txtDataVenci.Enabled = false;
-            this.txtDataVenci.Location = new System.Drawing.Point(110, 117);
+            this.txtDataVenci.Location = new System.Drawing.Point(404, 89);
             this.txtDataVenci.Name = "txtDataVenci";
-            this.txtDataVenci.Size = new System.Drawing.Size(174, 21);
+            this.txtDataVenci.Size = new System.Drawing.Size(166, 21);
             this.txtDataVenci.TabIndex = 8;
             // 
             // lblDataVenci
             // 
             this.lblDataVenci.AutoSize = true;
-            this.lblDataVenci.Location = new System.Drawing.Point(6, 120);
+            this.lblDataVenci.Location = new System.Drawing.Point(301, 92);
             this.lblDataVenci.Name = "lblDataVenci";
             this.lblDataVenci.Size = new System.Drawing.Size(107, 13);
             this.lblDataVenci.TabIndex = 7;
@@ -304,15 +363,15 @@
             // txtDataLanca
             // 
             this.txtDataLanca.Enabled = false;
-            this.txtDataLanca.Location = new System.Drawing.Point(110, 86);
+            this.txtDataLanca.Location = new System.Drawing.Point(404, 61);
             this.txtDataLanca.Name = "txtDataLanca";
-            this.txtDataLanca.Size = new System.Drawing.Size(174, 21);
+            this.txtDataLanca.Size = new System.Drawing.Size(166, 21);
             this.txtDataLanca.TabIndex = 6;
             // 
             // lblDataLanca
             // 
             this.lblDataLanca.AutoSize = true;
-            this.lblDataLanca.Location = new System.Drawing.Point(6, 89);
+            this.lblDataLanca.Location = new System.Drawing.Point(301, 64);
             this.lblDataLanca.Name = "lblDataLanca";
             this.lblDataLanca.Size = new System.Drawing.Size(107, 13);
             this.lblDataLanca.TabIndex = 5;
@@ -320,9 +379,10 @@
             // 
             // txtDescricao
             // 
+            this.txtDescricao.Enabled = false;
             this.txtDescricao.Location = new System.Drawing.Point(60, 59);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(510, 21);
+            this.txtDescricao.Size = new System.Drawing.Size(224, 21);
             this.txtDescricao.TabIndex = 4;
             // 
             // lblDescricao
@@ -361,73 +421,47 @@
             this.lblSelecioneContaReceber.TabIndex = 0;
             this.lblSelecioneContaReceber.Text = "Selecione a venda que deseja receber:";
             // 
-            // rbbCartaoCredito
+            // groupBox2
             // 
-            this.rbbCartaoCredito.AutoSize = true;
-            this.rbbCartaoCredito.Location = new System.Drawing.Point(97, 76);
-            this.rbbCartaoCredito.Name = "rbbCartaoCredito";
-            this.rbbCartaoCredito.Size = new System.Drawing.Size(108, 17);
-            this.rbbCartaoCredito.TabIndex = 4;
-            this.rbbCartaoCredito.TabStop = true;
-            this.rbbCartaoCredito.Text = "Cartão de Crédito";
-            this.rbbCartaoCredito.UseVisualStyleBackColor = true;
+            this.groupBox2.Controls.Add(this.txtValorRecebi);
+            this.groupBox2.Controls.Add(this.lblExemploStatus);
+            this.groupBox2.Controls.Add(this.lblValorRecebi);
+            this.groupBox2.Controls.Add(this.lblValor);
+            this.groupBox2.Controls.Add(this.txtDataRecebi);
+            this.groupBox2.Controls.Add(this.lblStatus);
+            this.groupBox2.Controls.Add(this.lblDataRecebi);
+            this.groupBox2.Controls.Add(this.txtValor);
+            this.groupBox2.Controls.Add(this.txtPago);
+            this.groupBox2.Controls.Add(this.lblPago);
+            this.groupBox2.Location = new System.Drawing.Point(17, 261);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(576, 92);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
             // 
-            // lblParcelamento
+            // txtCliente
             // 
-            this.lblParcelamento.AutoSize = true;
-            this.lblParcelamento.Location = new System.Drawing.Point(228, 53);
-            this.lblParcelamento.Name = "lblParcelamento";
-            this.lblParcelamento.Size = new System.Drawing.Size(73, 13);
-            this.lblParcelamento.TabIndex = 5;
-            this.lblParcelamento.Text = "Parcelamento:";
+            this.txtCliente.Enabled = false;
+            this.txtCliente.Location = new System.Drawing.Point(60, 87);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(224, 21);
+            this.txtCliente.TabIndex = 9;
             // 
-            // cmbParcelamento
+            // lblCliente
             // 
-            this.cmbParcelamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbParcelamento.FormattingEnabled = true;
-            this.cmbParcelamento.Items.AddRange(new object[] {
-            "1x sem juros",
-            "2x sem juros",
-            "3x sem juros",
-            "4x sem juros",
-            "5x sem juros"});
-            this.cmbParcelamento.Location = new System.Drawing.Point(231, 69);
-            this.cmbParcelamento.Name = "cmbParcelamento";
-            this.cmbParcelamento.Size = new System.Drawing.Size(162, 21);
-            this.cmbParcelamento.TabIndex = 6;
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(392, 27);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(34, 13);
-            this.lblTotal.TabIndex = 7;
-            this.lblTotal.Text = "Total:";
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(423, 24);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(147, 21);
-            this.txtTotal.TabIndex = 19;
-            // 
-            // btnPagar
-            // 
-            this.btnPagar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPagar.Location = new System.Drawing.Point(434, 67);
-            this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(124, 23);
-            this.btnPagar.TabIndex = 6;
-            this.btnPagar.Text = "Pagar";
-            this.btnPagar.UseVisualStyleBackColor = true;
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Location = new System.Drawing.Point(11, 90);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(43, 13);
+            this.lblCliente.TabIndex = 10;
+            this.lblCliente.Text = "Cliente:";
             // 
             // Frm_ContaReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 346);
+            this.ClientSize = new System.Drawing.Size(602, 383);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -440,6 +474,8 @@
             this.gpbFormaPagamento.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -481,5 +517,8 @@
         private System.Windows.Forms.ComboBox cmbParcelamento;
         private System.Windows.Forms.Label lblParcelamento;
         private System.Windows.Forms.RadioButton rbbCartaoCredito;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblCliente;
+        private System.Windows.Forms.TextBox txtCliente;
     }
 }
