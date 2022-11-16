@@ -63,6 +63,7 @@
             this.ImgForCentro = new System.Windows.Forms.PictureBox();
             this.ImgCliCentro = new System.Windows.Forms.PictureBox();
             this.ImgPrin = new System.Windows.Forms.PictureBox();
+            this.lblSalario = new System.Windows.Forms.Label();
             this.PnlBarraTarefas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImgAdmin)).BeginInit();
             this.PnlCli.SuspendLayout();
@@ -82,6 +83,7 @@
             // 
             this.PnlBarraTarefas.BackColor = System.Drawing.Color.Thistle;
             this.PnlBarraTarefas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PnlBarraTarefas.Controls.Add(this.lblSalario);
             this.PnlBarraTarefas.Controls.Add(this.LblNomeAdm);
             this.PnlBarraTarefas.Controls.Add(this.LblAdmBaixo);
             this.PnlBarraTarefas.Controls.Add(this.ImgAdmin);
@@ -102,7 +104,7 @@
             // 
             this.LblNomeAdm.AutoSize = true;
             this.LblNomeAdm.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNomeAdm.Location = new System.Drawing.Point(70, 400);
+            this.LblNomeAdm.Location = new System.Drawing.Point(110, 387);
             this.LblNomeAdm.Name = "LblNomeAdm";
             this.LblNomeAdm.Size = new System.Drawing.Size(68, 13);
             this.LblNomeAdm.TabIndex = 14;
@@ -474,6 +476,15 @@
             this.ImgPrin.TabIndex = 16;
             this.ImgPrin.TabStop = false;
             // 
+            // lblSalario
+            // 
+            this.lblSalario.AutoSize = true;
+            this.lblSalario.Location = new System.Drawing.Point(75, 400);
+            this.lblSalario.Name = "lblSalario";
+            this.lblSalario.Size = new System.Drawing.Size(35, 13);
+            this.lblSalario.TabIndex = 15;
+            this.lblSalario.Text = "label1";
+            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -563,5 +574,6 @@
         private System.Windows.Forms.Label LblCmpr;
         private System.Windows.Forms.Label LblSumario;
         private System.Windows.Forms.PictureBox ImgPrin;
+        private System.Windows.Forms.Label lblSalario;
     }
 }

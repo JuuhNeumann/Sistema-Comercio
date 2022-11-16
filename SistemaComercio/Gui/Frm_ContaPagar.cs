@@ -22,12 +22,13 @@ namespace SistemaComercio.Gui
         private ItemCompra itemCompra;
         private List<Compra> compras;
         private Compra compra;
+        private Frm_Principal formPrincipal;
+        private string metodoPagamento = "pix";
 
-        private string metodoPagamento;
-
-        public Frm_ContaPagar()
+        public Frm_ContaPagar(Frm_Principal frm_Principal)
         {
             InitializeComponent();
+            formPrincipal = frm_Principal;
             UpdateCompra();
         }
 
@@ -49,7 +50,7 @@ namespace SistemaComercio.Gui
 
             foreach (var compra in compras)
             {
-                if (compra.Situacao_Compra != "Pago")
+                if (compra.Situacao_Compra != "Pago" && compra.Situacao_Compra != "Cancelado")
                 {
                     this.cmbSelecioneCompra.Items.AddRange(new object[] {
                 compra.Id.ToString()
@@ -87,10 +88,10 @@ namespace SistemaComercio.Gui
 
         #region Funções
 
-        void SetDadosOperacionais(Compra compra)
+        void SetDadosOperacionais()
         {
             txtDataPaga.Text = DateTime.Now.ToString();
-
+            lblRespostaStatus.Text = compra.Situacao_Compra;
         }
 
         private void LimparCampos()
@@ -119,6 +120,7 @@ namespace SistemaComercio.Gui
                 var idCompra = Convert.ToInt32(cmbSelecioneCompra.Text);
                 compra = serviceC.GetByIdCompra(idCompra);
                 SetGeracaoContaPagar();
+                SetDadosOperacionais();
                 gpbFormaPagamento.Enabled = true;
             }
 
@@ -138,29 +140,36 @@ namespace SistemaComercio.Gui
         {
             metodoPagamento = "Pix";
             cmbParcelamento.Enabled = false;
+            cmbParcelamento.SelectedIndex = -1;
         }
 
         private void rdbCartaoDebito_CheckedChanged(object sender, EventArgs e)
         {
             metodoPagamento = "debito";
             cmbParcelamento.Enabled = false;
+            cmbParcelamento.SelectedIndex = -1;
         }
 
         private void rdbCartaoCredito_CheckedChanged(object sender, EventArgs e)
         {
             metodoPagamento = "credito";
+            cmbParcelamento.SelectedIndex = -1;
 
-            if (cmbSelecioneCompra.SelectedIndex != -1)
+
+            if (cmbSelecioneCompra.SelectedIndex != -1 && rdbCartaoCredito.Checked)
             {
                 cmbParcelamento.Enabled = true;
+                cmbParcelamento.SelectedIndex = -1;
 
                 for (int i = 1; i < 10; i++)
                 {
+                    var result = compra.Total_Compra / i;
                     this.cmbParcelamento.Items.AddRange(new object[] {
-                     $"{i}x de {compra.Total_Compra / i} sem juros."
+                     $"{i}x de {result.ToString("C")} sem juros."
                 });
                 }
 
+                cmbParcelamento.SelectedIndex = 0;
             }
         }
 
@@ -168,23 +177,39 @@ namespace SistemaComercio.Gui
         {
             metodoPagamento = "dinheiro";
             cmbParcelamento.Enabled = false;
+            cmbParcelamento.SelectedIndex = -1;
         }
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (compra.Total_Compra == Convert.ToDouble(txtValorPaga.Text) && cmbSelecioneCompra.SelectedIndex != -1)
+                var valorPago = Convert.ToDouble(txtValorPaga.Text);
+
+                //Valida se o usuario possui o dinheiro
+                if (valorPago <= formPrincipal.user.Salario)
                 {
-                    CreateContaPagar();
-                    LimparCampos();
-                    UpdateCompra();
-                    MessageBox.Show("Venda Lançada!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //Valida se foi informado o valor total do produto
+
+                    if (compra.Total_Compra == valorPago)
+                    {
+                        CreateContaPagar();
+                        LimparCampos();
+                        UpdateCompra();
+                        formPrincipal.UpdateSalarioUser(formPrincipal.user.Salario -= valorPago);
+                        MessageBox.Show("Venda Lançada!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Informe o valor total! valor da compra: {txtValor}, valor informado: {txtValorPaga}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show("Informe o valor total!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Saldo insuficiente", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+
             }
             catch
             {
@@ -211,6 +236,7 @@ namespace SistemaComercio.Gui
                 Data_Pagamento = DateTime.Now,
                 Valor_Pagamento = Convert.ToDouble(txtValorPaga.Text),
                 Id_Fornecedor = compra.Id_Fornecedor,
+                Parcela = parcela,
             };
 
             compra.Situacao_Compra = "Pago";

@@ -12,5 +12,8 @@ namespace SistemaComercioLibrary.Port
     {
         bool Login(string username, string password);
         void AddAdm(Adm adm);
+
+        Adm GetByUser(string user);
+        void Update(Adm user);
     }
 }

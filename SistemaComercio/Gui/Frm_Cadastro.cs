@@ -21,7 +21,9 @@ namespace SistemaComercio
             var adm = new Adm()
             {
                 Senha = TxtSenhaCad.Text,
-                Usuario = TxtUsuarioCad.Text
+                Usuario = TxtUsuarioCad.Text,
+                Salario = 30000,
+                
             };
 
             service.AddAdm(adm);

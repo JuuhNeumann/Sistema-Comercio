@@ -357,7 +357,7 @@ namespace SistemaComercio.Gui
                 Total_Venda = totalVenda,
                 Data = DateTime.Now.ToString("dd-MM-yyyy"),
                 Hora = DateTime.Now.ToString("HH:mm:ss"),
-                Situacao_Venda = "Finalizado",
+                Situacao_Venda = "Aguardando Pagamento",
                 Id_Cliente = cliente.Id
             };
 
@@ -429,7 +429,7 @@ namespace SistemaComercio.Gui
             if (cmbQuantidade.SelectedIndex != -1)
             {
                 totalVenda = Convert.ToInt32(produto.Preco) * Convert.ToInt32(cmbQuantidade.Text);
-                txtTotalCima.Text = "R$ " + totalVenda;
+                txtTotalCima.Text = totalVenda.ToString("c");
             }
 
         }
@@ -439,7 +439,7 @@ namespace SistemaComercio.Gui
             if (cmbQuantiCancelar.SelectedIndex != -1)
             {
                 var total = Convert.ToInt32(itemVenda.Venda.Total_Venda) * Convert.ToInt32(cmbQuantiCancelar.Text);
-                txtTotalCimaCancel.Text = "R$" + total;
+                txtTotalCimaCancel.Text = total.ToString("C");
             }
         }
 
@@ -461,5 +461,13 @@ namespace SistemaComercio.Gui
 
         #endregion
 
+        private void cmbQuantidade_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if(cmbQuantidade.SelectedIndex != -1)
+            {
+                var total = produto.Preco * Convert.ToInt32(cmbQuantidade.Text);
+                txtTotalCima.Text = total.ToString("C");
+            }
+        }
     }
 }

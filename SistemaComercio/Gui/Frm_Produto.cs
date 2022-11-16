@@ -13,10 +13,12 @@ namespace SistemaComercio.Gui
         private IFornecedorPort serviceForne;
         private DataTable dt = new DataTable();
         private Produto prod = null;
+        private Frm_Principal formprincipal;
 
-        public Frm_Produto()
+        public Frm_Produto(Frm_Principal frm_Principal)
         {
             InitializeComponent();
+            formprincipal = frm_Principal;
             UpdateProductsInDataGrid();
             AddComboBoxFornecedor();
         }
@@ -74,6 +76,7 @@ namespace SistemaComercio.Gui
 
             }
 
+            formprincipal.GetCount();
             dataGridViewProd.DataSource = dt;
         }
 

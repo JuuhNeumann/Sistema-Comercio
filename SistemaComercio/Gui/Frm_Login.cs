@@ -35,8 +35,10 @@ namespace SistemaComercio
 
             if(auth)
             {
+                var user = service.GetByUser(usuario);
+
                 MessageBox.Show("Bem vindo " + TxtUsuario.Text + "!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                var principal = new Frm_Principal(TxtUsuario.Text);
+                var principal = new Frm_Principal(user);
                 this.Hide();
                 principal.ShowDialog();
 

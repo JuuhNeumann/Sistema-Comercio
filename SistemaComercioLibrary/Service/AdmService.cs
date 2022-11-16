@@ -30,5 +30,17 @@ namespace SistemaComercioLibrary.Service
 
             return false;
         }
+
+        public Adm GetByUser(string user)
+        {
+            return _db.Adm.FirstOrDefault(x => x.Usuario.Equals(user)); 
+        }
+
+        public void Update(Adm user)
+        {
+            var adm = _db.Adm.FirstOrDefault(x => x.Usuario.Equals(user.Usuario));
+            adm.Salario = user.Salario;
+            _db.SaveChanges();
+        }
     }
 }

@@ -14,10 +14,12 @@ namespace SistemaComercio.Gui
         private IFornecedorPort service = new FornecedorService();
         DataTable dt = new DataTable();
         Fornecedor forne = null;
+        private Frm_Principal formPrincipal;
 
-        public Frm_Fornecedor()
+        public Frm_Fornecedor(Frm_Principal frm_Principal)
         {
             InitializeComponent();
+            Form principal = frm_Principal;
             UpdateProviderInDataGrid();
         }
         private void Frm_Fornecedor_Load(object sender, EventArgs e)
@@ -67,6 +69,7 @@ namespace SistemaComercio.Gui
             }
 
             dataGridViewForne.DataSource = dt;
+            formPrincipal.GetCount();
         }
 
         private void FormattingCollumns(object sender, DataGridViewCellEventArgs e)

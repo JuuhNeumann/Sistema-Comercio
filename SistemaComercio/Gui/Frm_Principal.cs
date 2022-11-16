@@ -1,4 +1,5 @@
-﻿using SistemaComercioLibrary.Port;
+﻿using SistemaComercioLibrary.Entity;
+using SistemaComercioLibrary.Port;
 using SistemaComercioLibrary.Service;
 using System;
 using System.Collections.Generic;
@@ -19,11 +20,15 @@ namespace SistemaComercio.Gui
         IVendaPort serviceVenda = new VendaService();
         ICompraPort serviceCompra = new CompraService();
         IProdutoPort serviceProduto = new ProdutoService();
+        IAdmPort serviceAdm = new AdmService();
+        public Adm user;
 
-        public Frm_Principal(string usuario)
+        public Frm_Principal(Adm usuario)
         {
             InitializeComponent();
-            LblNomeAdm.Text = usuario;
+            user = usuario;
+            LblNomeAdm.Text = usuario.Usuario;
+            lblSalario.Text = usuario.Salario.ToString("C");
             GetCount();
 
         }
@@ -41,6 +46,13 @@ namespace SistemaComercio.Gui
             LblQuantProd.Text = serviceProduto.Count().ToString();
         }
 
+        public void UpdateSalarioUser(double valor)
+        {
+            user.Salario = valor;
+            serviceAdm.Update(user);
+            lblSalario.Text = user.Salario.ToString();
+        }
+
         private void ClickCliente(object sender, EventArgs e)
         {
             Frm_Cliente cliente = new Frm_Cliente(this);
@@ -50,14 +62,14 @@ namespace SistemaComercio.Gui
 
         private void ClickFornecedor(object sender, EventArgs e)
         {
-            Frm_Fornecedor fornecedor = new Frm_Fornecedor();
+            Frm_Fornecedor fornecedor = new Frm_Fornecedor(this);
             fornecedor.Show();
         }
   
 
         private void ClickProduto(object sender, EventArgs e)
         {
-            Frm_Produto produto = new Frm_Produto();
+            Frm_Produto produto = new Frm_Produto(this);
             produto.Show();
         }
 
@@ -75,7 +87,7 @@ namespace SistemaComercio.Gui
 
         private void ClickContaPagar(object sender, EventArgs e)
         {
-            Frm_ContaPagar contaP = new Frm_ContaPagar();
+            Frm_ContaPagar contaP = new Frm_ContaPagar(this);
             contaP.Show();
         }
     }

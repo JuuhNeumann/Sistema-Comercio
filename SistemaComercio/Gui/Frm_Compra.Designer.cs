@@ -106,9 +106,8 @@
             this.lblRespostaSituacao.AutoSize = true;
             this.lblRespostaSituacao.Location = new System.Drawing.Point(64, 56);
             this.lblRespostaSituacao.Name = "lblRespostaSituacao";
-            this.lblRespostaSituacao.Size = new System.Drawing.Size(56, 13);
+            this.lblRespostaSituacao.Size = new System.Drawing.Size(0, 13);
             this.lblRespostaSituacao.TabIndex = 19;
-            this.lblRespostaSituacao.Text = "Finalizado";
             // 
             // txtTotal
             // 

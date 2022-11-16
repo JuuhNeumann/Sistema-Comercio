@@ -413,7 +413,6 @@
             this.rdbCartaoCredito.Name = "rdbCartaoCredito";
             this.rdbCartaoCredito.Size = new System.Drawing.Size(108, 17);
             this.rdbCartaoCredito.TabIndex = 4;
-            this.rdbCartaoCredito.TabStop = true;
             this.rdbCartaoCredito.Text = "Cartão de Crédito";
             this.rdbCartaoCredito.UseVisualStyleBackColor = true;
             this.rdbCartaoCredito.CheckedChanged += new System.EventHandler(this.rdbCartaoCredito_CheckedChanged);
@@ -425,7 +424,6 @@
             this.rdbCartaoDebito.Name = "rdbCartaoDebito";
             this.rdbCartaoDebito.Size = new System.Drawing.Size(105, 17);
             this.rdbCartaoDebito.TabIndex = 3;
-            this.rdbCartaoDebito.TabStop = true;
             this.rdbCartaoDebito.Text = "Cartão de Débito";
             this.rdbCartaoDebito.UseVisualStyleBackColor = true;
             this.rdbCartaoDebito.CheckedChanged += new System.EventHandler(this.rdbCartaoDebito_CheckedChanged);
@@ -437,7 +435,6 @@
             this.rdbDinheiro.Name = "rdbDinheiro";
             this.rdbDinheiro.Size = new System.Drawing.Size(67, 17);
             this.rdbDinheiro.TabIndex = 2;
-            this.rdbDinheiro.TabStop = true;
             this.rdbDinheiro.Text = "Dinheiro";
             this.rdbDinheiro.UseVisualStyleBackColor = true;
             this.rdbDinheiro.CheckedChanged += new System.EventHandler(this.rdbDinheiro_CheckedChanged);
@@ -445,6 +442,7 @@
             // rdbPix
             // 
             this.rdbPix.AutoSize = true;
+            this.rdbPix.Checked = true;
             this.rdbPix.Location = new System.Drawing.Point(10, 53);
             this.rdbPix.Name = "rdbPix";
             this.rdbPix.Size = new System.Drawing.Size(41, 17);

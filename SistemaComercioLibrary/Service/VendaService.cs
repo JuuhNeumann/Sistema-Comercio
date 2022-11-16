@@ -45,6 +45,7 @@ namespace SistemaComercioLibrary.Service
             vnd.Total_Venda = venda.Total_Venda;
             vnd.Situacao_Venda = venda.Situacao_Venda;
             vnd.Id_Cliente = venda.Id_Cliente;
+            
         }
 
         public Venda GetByIdVenda(int id)

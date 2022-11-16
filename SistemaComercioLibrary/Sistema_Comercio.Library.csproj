@@ -284,6 +284,14 @@
     <Compile Include="Migrations\20221112182913_add update datas2d.designer.cs">
       <DependentUpon>20221112182913_add update datas2d.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20221115190552_k.cs" />
+    <Compile Include="Migrations\20221115190552_k.designer.cs">
+      <DependentUpon>20221115190552_k.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20221115204832_kk.cs" />
+    <Compile Include="Migrations\20221115204832_kk.designer.cs">
+      <DependentUpon>20221115204832_kk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\DataBaseContextModelSnapshot.cs" />
     <Compile Include="Persistence\Context\DataBaseContext.cs" />
     <Compile Include="Port\IAdmPort.cs" />

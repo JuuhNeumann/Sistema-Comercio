@@ -19,5 +19,7 @@ namespace SistemaComercioLibrary.Entity
         [Required]
         [MaxLength(10, ErrorMessage = "A senha não pode ultrapassar 10 caracteres!")]
         public string Senha { get; set; }
+       
+        public double Salario { get; set; }
     }
 }

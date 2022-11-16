@@ -297,7 +297,7 @@ namespace SistemaComercio.Gui
             txtData.Text = compra.Data.ToString();
             txtHora.Text = compra.Hora.ToString();
             txtTotal.Text = "R$" + compra.Total_Compra.ToString();
-            lblRespostaSituacao.Text = "Finalizado";
+            lblRespostaSituacao.Text = "Aguardando Pagamento";
         }
 
         private void LimparCampos()
@@ -326,7 +326,7 @@ namespace SistemaComercio.Gui
         {
             var compra = new Compra()
             {
-                Situacao_Compra = "Finalizado",
+                Situacao_Compra = "Aguardando Pagamento",
                 Total_Compra = produto.Preco * Convert.ToInt32(txtQuant.Text),
                 Data = DateTime.Now.ToString("dd-MM-yyyy"),
                 Hora = DateTime.Now.ToString("HH:mm:ss"),
