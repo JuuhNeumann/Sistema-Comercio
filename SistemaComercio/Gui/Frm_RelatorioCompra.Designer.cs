@@ -110,7 +110,7 @@
             this.lblTitleCompra.AutoSize = true;
             this.lblTitleCompra.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleCompra.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTitleCompra.Location = new System.Drawing.Point(23, 18);
+            this.lblTitleCompra.Location = new System.Drawing.Point(14, 18);
             this.lblTitleCompra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitleCompra.Name = "lblTitleCompra";
             this.lblTitleCompra.Size = new System.Drawing.Size(215, 23);

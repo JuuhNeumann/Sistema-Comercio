@@ -23,10 +23,12 @@ namespace SistemaComercio.Gui
         private string columnFilter;
         private List<ItemCompra> itemCompras;
         private ItemCompra itemCompra;
+        private Frm_Principal formprincipal;
 
-        public Frm_Compra()
+        public Frm_Compra(Frm_Principal frm_Principal)
         {
             InitializeComponent();
+            formprincipal = frm_Principal;
             UpdateCompraInDataGrid();
         }
 
@@ -105,6 +107,7 @@ namespace SistemaComercio.Gui
 
                 });
             }
+            formprincipal.GetCount();
             dataGridViewCompra.DataSource = dt;
 
             produtos = serviceProd.GetAllProduto();
@@ -188,7 +191,7 @@ namespace SistemaComercio.Gui
 
         private void ClickEmitirRelatorio(object sender, EventArgs e)
         {
-            Frm_RelatorioCompra relatorioC = new Frm_RelatorioCompra();
+            Frm_RelatorioCompra relatorioC = new Frm_RelatorioCompra(formprincipal);
             relatorioC.Show();
         }
 
@@ -263,6 +266,10 @@ namespace SistemaComercio.Gui
         private void ClickLimparCamposLancar(object sender, EventArgs e)
         {
             LimparCampos();
+            txtData.Clear();
+            txtHora.Clear();
+            txtTotal.Clear();
+            lblRespostaSituacao.Text = "";
             MessageBox.Show("Campos resetados!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -417,8 +424,6 @@ namespace SistemaComercio.Gui
 
         }
 
-        #endregion
-
         private void txtQuant_TextChanged(object sender, EventArgs e)
         {
             if (txtQuant.Text.Equals(""))
@@ -436,5 +441,8 @@ namespace SistemaComercio.Gui
             }
 
         }
+
+        #endregion
+
     }
 }

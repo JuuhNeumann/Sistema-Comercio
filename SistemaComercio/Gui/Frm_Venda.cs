@@ -29,10 +29,12 @@ namespace SistemaComercio.Gui
         private string columnFilter;
         private Venda vnd = null;
         private double totalVenda;
+        private Frm_Principal formprincipal;
 
-        public Frm_Venda()
+        public Frm_Venda(Frm_Principal frm_Principal)
         {
             InitializeComponent();
+            formprincipal = frm_Principal;
             UpdateVendaInDataGrid();
         }
 
@@ -148,7 +150,7 @@ namespace SistemaComercio.Gui
 
                 });
             }
-
+            formprincipal.GetCount();
             dataGridViewVenda.DataSource = dt;
             itemCompras = serviceItemC.GetAllItemCompra();
 
@@ -226,7 +228,7 @@ namespace SistemaComercio.Gui
 
         private void ClickEmitirRelatorio(object sender, EventArgs e)
         {
-            Frm_RelatorioVenda relatorioV = new Frm_RelatorioVenda();
+            Frm_RelatorioVenda relatorioV = new Frm_RelatorioVenda(formprincipal);
             relatorioV.Show();
         }
 

@@ -22,11 +22,13 @@ namespace SistemaComercio.Gui
         private List<ItemVenda> itemVendas;
         private ItemVenda itemVenda;
         private DataTable dt = new DataTable();
+        private Frm_Principal frmprincipal;
 
 
-        public Frm_RelatorioVenda()
+        public Frm_RelatorioVenda(Frm_Principal formprincipal)
         {
             InitializeComponent();
+            frmprincipal = formprincipal;
             UpdateReportViewer();
         }
 
@@ -125,7 +127,7 @@ namespace SistemaComercio.Gui
 
         private void ClickSair(object sender, EventArgs e)
         {
-            var venda = new Frm_Venda();
+            var venda = new Frm_Venda(frmprincipal);
             this.Hide();
         }
     }

@@ -292,6 +292,10 @@
     <Compile Include="Migrations\20221115204832_kk.designer.cs">
       <DependentUpon>20221115204832_kk.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20221116144726_x.cs" />
+    <Compile Include="Migrations\20221116144726_x.designer.cs">
+      <DependentUpon>20221116144726_x.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\DataBaseContextModelSnapshot.cs" />
     <Compile Include="Persistence\Context\DataBaseContext.cs" />
     <Compile Include="Port\IAdmPort.cs" />

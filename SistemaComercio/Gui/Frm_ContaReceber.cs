@@ -12,9 +12,13 @@ namespace SistemaComercio.Gui
 {
     public partial class Frm_ContaReceber : Form
     {
-        public Frm_ContaReceber()
+        private Frm_Principal formprincipal;
+
+        public Frm_ContaReceber(Frm_Principal frm_Principal)
         {
             InitializeComponent();
+            formprincipal = frm_Principal;
+
         }
     }
 }

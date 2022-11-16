@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.PnlBarraTarefas = new System.Windows.Forms.Panel();
+            this.btnCaixa = new System.Windows.Forms.Button();
+            this.btnContaReceber = new System.Windows.Forms.Button();
+            this.lblSalario = new System.Windows.Forms.Label();
             this.LblNomeAdm = new System.Windows.Forms.Label();
             this.LblAdmBaixo = new System.Windows.Forms.Label();
             this.ImgAdmin = new System.Windows.Forms.PictureBox();
@@ -63,7 +66,6 @@
             this.ImgForCentro = new System.Windows.Forms.PictureBox();
             this.ImgCliCentro = new System.Windows.Forms.PictureBox();
             this.ImgPrin = new System.Windows.Forms.PictureBox();
-            this.lblSalario = new System.Windows.Forms.Label();
             this.PnlBarraTarefas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImgAdmin)).BeginInit();
             this.PnlCli.SuspendLayout();
@@ -83,6 +85,8 @@
             // 
             this.PnlBarraTarefas.BackColor = System.Drawing.Color.Thistle;
             this.PnlBarraTarefas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PnlBarraTarefas.Controls.Add(this.btnCaixa);
+            this.PnlBarraTarefas.Controls.Add(this.btnContaReceber);
             this.PnlBarraTarefas.Controls.Add(this.lblSalario);
             this.PnlBarraTarefas.Controls.Add(this.LblNomeAdm);
             this.PnlBarraTarefas.Controls.Add(this.LblAdmBaixo);
@@ -100,15 +104,52 @@
             this.PnlBarraTarefas.Size = new System.Drawing.Size(170, 427);
             this.PnlBarraTarefas.TabIndex = 1;
             // 
+            // btnCaixa
+            // 
+            this.btnCaixa.BackColor = System.Drawing.Color.Thistle;
+            this.btnCaixa.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaixa.Image = global::SistemaComercio.Properties.Resources.ImgEstoque;
+            this.btnCaixa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCaixa.Location = new System.Drawing.Point(-2, 315);
+            this.btnCaixa.Name = "btnCaixa";
+            this.btnCaixa.Size = new System.Drawing.Size(170, 40);
+            this.btnCaixa.TabIndex = 17;
+            this.btnCaixa.Text = "Caixa";
+            this.btnCaixa.UseVisualStyleBackColor = false;
+            // 
+            // btnContaReceber
+            // 
+            this.btnContaReceber.BackColor = System.Drawing.Color.Thistle;
+            this.btnContaReceber.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContaReceber.Image = global::SistemaComercio.Properties.Resources.ImgEstoque;
+            this.btnContaReceber.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnContaReceber.Location = new System.Drawing.Point(-2, 278);
+            this.btnContaReceber.Name = "btnContaReceber";
+            this.btnContaReceber.Size = new System.Drawing.Size(170, 40);
+            this.btnContaReceber.TabIndex = 16;
+            this.btnContaReceber.Text = "Conta a Receber";
+            this.btnContaReceber.UseVisualStyleBackColor = false;
+            this.btnContaReceber.Click += new System.EventHandler(this.ClickContaReceber);
+            // 
+            // lblSalario
+            // 
+            this.lblSalario.AutoSize = true;
+            this.lblSalario.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalario.Location = new System.Drawing.Point(70, 400);
+            this.lblSalario.Name = "lblSalario";
+            this.lblSalario.Size = new System.Drawing.Size(35, 13);
+            this.lblSalario.TabIndex = 15;
+            this.lblSalario.Text = "label1";
+            // 
             // LblNomeAdm
             // 
             this.LblNomeAdm.AutoSize = true;
             this.LblNomeAdm.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblNomeAdm.Location = new System.Drawing.Point(110, 387);
             this.LblNomeAdm.Name = "LblNomeAdm";
-            this.LblNomeAdm.Size = new System.Drawing.Size(68, 13);
+            this.LblNomeAdm.Size = new System.Drawing.Size(43, 13);
             this.LblNomeAdm.TabIndex = 14;
-            this.LblNomeAdm.Text = "Fulano de tal";
+            this.LblNomeAdm.Text = "Fulano ";
             // 
             // LblAdmBaixo
             // 
@@ -135,7 +176,7 @@
             this.BtnContaPagar.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnContaPagar.Image = global::SistemaComercio.Properties.Resources.ImgEstoque;
             this.BtnContaPagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnContaPagar.Location = new System.Drawing.Point(-2, 264);
+            this.BtnContaPagar.Location = new System.Drawing.Point(-2, 241);
             this.BtnContaPagar.Name = "BtnContaPagar";
             this.BtnContaPagar.Size = new System.Drawing.Size(170, 40);
             this.BtnContaPagar.TabIndex = 10;
@@ -149,7 +190,7 @@
             this.BtnProduto.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProduto.Image = global::SistemaComercio.Properties.Resources.games;
             this.BtnProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnProduto.Location = new System.Drawing.Point(-2, 153);
+            this.BtnProduto.Location = new System.Drawing.Point(-2, 130);
             this.BtnProduto.Name = "BtnProduto";
             this.BtnProduto.Size = new System.Drawing.Size(170, 40);
             this.BtnProduto.TabIndex = 7;
@@ -163,7 +204,7 @@
             this.BtnVenda.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnVenda.Image = global::SistemaComercio.Properties.Resources.ImgCarrinho;
             this.BtnVenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnVenda.Location = new System.Drawing.Point(-2, 227);
+            this.BtnVenda.Location = new System.Drawing.Point(-2, 204);
             this.BtnVenda.Name = "BtnVenda";
             this.BtnVenda.Size = new System.Drawing.Size(170, 40);
             this.BtnVenda.TabIndex = 9;
@@ -177,7 +218,7 @@
             this.BtnCompra.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCompra.Image = global::SistemaComercio.Properties.Resources.ImgCash;
             this.BtnCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCompra.Location = new System.Drawing.Point(-2, 190);
+            this.BtnCompra.Location = new System.Drawing.Point(-2, 167);
             this.BtnCompra.Name = "BtnCompra";
             this.BtnCompra.Size = new System.Drawing.Size(170, 40);
             this.BtnCompra.TabIndex = 8;
@@ -191,7 +232,7 @@
             this.BtnCadFor.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCadFor.Image = global::SistemaComercio.Properties.Resources.ImgForne;
             this.BtnCadFor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCadFor.Location = new System.Drawing.Point(-2, 113);
+            this.BtnCadFor.Location = new System.Drawing.Point(-2, 91);
             this.BtnCadFor.Name = "BtnCadFor";
             this.BtnCadFor.Size = new System.Drawing.Size(170, 42);
             this.BtnCadFor.TabIndex = 7;
@@ -204,7 +245,7 @@
             this.LblSub.AutoSize = true;
             this.LblSub.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblSub.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.LblSub.Location = new System.Drawing.Point(33, 39);
+            this.LblSub.Location = new System.Drawing.Point(33, 24);
             this.LblSub.Name = "LblSub";
             this.LblSub.Size = new System.Drawing.Size(105, 17);
             this.LblSub.TabIndex = 1;
@@ -216,7 +257,7 @@
             this.BtnCadCli.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCadCli.Image = global::SistemaComercio.Properties.Resources.ImgCli;
             this.BtnCadCli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCadCli.Location = new System.Drawing.Point(-2, 74);
+            this.BtnCadCli.Location = new System.Drawing.Point(-2, 53);
             this.BtnCadCli.Name = "BtnCadCli";
             this.BtnCadCli.Size = new System.Drawing.Size(170, 41);
             this.BtnCadCli.TabIndex = 6;
@@ -229,7 +270,7 @@
             this.LblPrin.AutoSize = true;
             this.LblPrin.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPrin.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.LblPrin.Location = new System.Drawing.Point(12, 24);
+            this.LblPrin.Location = new System.Drawing.Point(12, 9);
             this.LblPrin.Name = "LblPrin";
             this.LblPrin.Size = new System.Drawing.Size(145, 15);
             this.LblPrin.TabIndex = 0;
@@ -342,7 +383,7 @@
             // 
             // CldFixo
             // 
-            this.CldFixo.Location = new System.Drawing.Point(444, 210);
+            this.CldFixo.Location = new System.Drawing.Point(461, 204);
             this.CldFixo.Name = "CldFixo";
             this.CldFixo.TabIndex = 9;
             // 
@@ -476,15 +517,6 @@
             this.ImgPrin.TabIndex = 16;
             this.ImgPrin.TabStop = false;
             // 
-            // lblSalario
-            // 
-            this.lblSalario.AutoSize = true;
-            this.lblSalario.Location = new System.Drawing.Point(75, 400);
-            this.lblSalario.Name = "lblSalario";
-            this.lblSalario.Size = new System.Drawing.Size(35, 13);
-            this.lblSalario.TabIndex = 15;
-            this.lblSalario.Text = "label1";
-            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -575,5 +607,7 @@
         private System.Windows.Forms.Label LblSumario;
         private System.Windows.Forms.PictureBox ImgPrin;
         private System.Windows.Forms.Label lblSalario;
+        private System.Windows.Forms.Button btnCaixa;
+        private System.Windows.Forms.Button btnContaReceber;
     }
 }

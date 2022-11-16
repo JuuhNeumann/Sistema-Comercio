@@ -17,11 +17,13 @@ namespace SistemaComercio.Gui
         private List<ItemCompra> itemCompras;
         private ItemCompra itemCompra;
         private DataTable dt = new DataTable();
+        private Frm_Principal frmprincipal;
 
 
-        public Frm_RelatorioCompra()
+        public Frm_RelatorioCompra(Frm_Principal formprincipal)
         {
             InitializeComponent();
+            frmprincipal = formprincipal;
             UpdateReportViewer();
         }
 
@@ -78,11 +80,11 @@ namespace SistemaComercio.Gui
         public void CreateReportViewer()
         {
             rvRelatorioCompra.LocalReport.DataSources.Clear();
-            ReportDataSource reportDataSource = new ReportDataSource("ItemCompras", dt);
-            rvRelatorioCompra.LocalReport.ReportPath = "RelatorioCompras.rdlc";
+            ReportDataSource reportDataSource = new ReportDataSource("ContasPagar", dt);
+            rvRelatorioCompra.LocalReport.ReportPath = "RelatorioContaPagar.rdlc";
             rvRelatorioCompra.LocalReport.DataSources.Add(reportDataSource);
 
-            AddParameter("TotalCompra", itemCompras.Count.ToString());
+            AddParameter("TotalContaPagar", itemCompras.Count.ToString());
             rvRelatorioCompra.LocalReport.Refresh();
         }
 
@@ -124,7 +126,7 @@ namespace SistemaComercio.Gui
 
         private void ClickSair(object sender, EventArgs e)
         {
-            var compra = new Frm_Compra();
+            var compra = new Frm_Compra(frmprincipal);
             this.Hide();
         }
     }

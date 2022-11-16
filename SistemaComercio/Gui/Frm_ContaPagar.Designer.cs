@@ -41,19 +41,11 @@
             this.lblValor = new System.Windows.Forms.Label();
             this.lblDataLanca = new System.Windows.Forms.Label();
             this.lblDescricao = new System.Windows.Forms.Label();
-            this.lblRespostaStatus = new System.Windows.Forms.Label();
-            this.txtPago = new System.Windows.Forms.TextBox();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.txtValorPaga = new System.Windows.Forms.TextBox();
-            this.txtDataPaga = new System.Windows.Forms.TextBox();
             this.lblValorPaga = new System.Windows.Forms.Label();
-            this.lblDataPaga = new System.Windows.Forms.Label();
-            this.lblPago = new System.Windows.Forms.Label();
-            this.btnBaixarConta = new System.Windows.Forms.Button();
             this.btnEmitirRelatorio = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gpbDadosOperacionais = new System.Windows.Forms.GroupBox();
             this.btnLimparCampos = new System.Windows.Forms.Button();
             this.gpbFormaPagamento = new System.Windows.Forms.GroupBox();
             this.cmbParcelamento = new System.Windows.Forms.ComboBox();
@@ -66,7 +58,6 @@
             this.lblSlecionePagamento = new System.Windows.Forms.Label();
             this.gpbContaPagar.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.gpbDadosOperacionais.SuspendLayout();
             this.gpbFormaPagamento.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -208,35 +199,6 @@
             this.lblDescricao.TabIndex = 0;
             this.lblDescricao.Text = "Descrição:";
             // 
-            // lblRespostaStatus
-            // 
-            this.lblRespostaStatus.AutoSize = true;
-            this.lblRespostaStatus.Location = new System.Drawing.Point(480, 34);
-            this.lblRespostaStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblRespostaStatus.Name = "lblRespostaStatus";
-            this.lblRespostaStatus.Size = new System.Drawing.Size(77, 13);
-            this.lblRespostaStatus.TabIndex = 16;
-            this.lblRespostaStatus.Text = "Conta Vencida";
-            // 
-            // txtPago
-            // 
-            this.txtPago.Enabled = false;
-            this.txtPago.Location = new System.Drawing.Point(286, 31);
-            this.txtPago.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtPago.Name = "txtPago";
-            this.txtPago.Size = new System.Drawing.Size(125, 21);
-            this.txtPago.TabIndex = 13;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(433, 34);
-            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(39, 13);
-            this.lblStatus.TabIndex = 15;
-            this.lblStatus.Text = "Status:";
-            // 
             // txtValorPaga
             // 
             this.txtValorPaga.Location = new System.Drawing.Point(339, 51);
@@ -244,15 +206,6 @@
             this.txtValorPaga.Name = "txtValorPaga";
             this.txtValorPaga.Size = new System.Drawing.Size(122, 21);
             this.txtValorPaga.TabIndex = 11;
-            // 
-            // txtDataPaga
-            // 
-            this.txtDataPaga.Enabled = false;
-            this.txtDataPaga.Location = new System.Drawing.Point(111, 31);
-            this.txtDataPaga.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtDataPaga.Name = "txtDataPaga";
-            this.txtDataPaga.Size = new System.Drawing.Size(125, 21);
-            this.txtDataPaga.TabIndex = 10;
             // 
             // lblValorPaga
             // 
@@ -264,39 +217,9 @@
             this.lblValorPaga.TabIndex = 6;
             this.lblValorPaga.Text = "Valor do Pagamento:";
             // 
-            // lblDataPaga
-            // 
-            this.lblDataPaga.AutoSize = true;
-            this.lblDataPaga.Location = new System.Drawing.Point(7, 34);
-            this.lblDataPaga.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDataPaga.Name = "lblDataPaga";
-            this.lblDataPaga.Size = new System.Drawing.Size(102, 13);
-            this.lblDataPaga.TabIndex = 5;
-            this.lblDataPaga.Text = "Data do Pagamento:";
-            // 
-            // lblPago
-            // 
-            this.lblPago.AutoSize = true;
-            this.lblPago.Location = new System.Drawing.Point(253, 34);
-            this.lblPago.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPago.Name = "lblPago";
-            this.lblPago.Size = new System.Drawing.Size(34, 13);
-            this.lblPago.TabIndex = 4;
-            this.lblPago.Text = "Pago:";
-            // 
-            // btnBaixarConta
-            // 
-            this.btnBaixarConta.Location = new System.Drawing.Point(21, 333);
-            this.btnBaixarConta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnBaixarConta.Name = "btnBaixarConta";
-            this.btnBaixarConta.Size = new System.Drawing.Size(114, 22);
-            this.btnBaixarConta.TabIndex = 1;
-            this.btnBaixarConta.Text = "Baixar Conta";
-            this.btnBaixarConta.UseVisualStyleBackColor = true;
-            // 
             // btnEmitirRelatorio
             // 
-            this.btnEmitirRelatorio.Location = new System.Drawing.Point(143, 333);
+            this.btnEmitirRelatorio.Location = new System.Drawing.Point(20, 262);
             this.btnEmitirRelatorio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEmitirRelatorio.Name = "btnEmitirRelatorio";
             this.btnEmitirRelatorio.Size = new System.Drawing.Size(114, 22);
@@ -307,7 +230,7 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(483, 333);
+            this.btnSair.Location = new System.Drawing.Point(483, 262);
             this.btnSair.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(114, 22);
@@ -319,38 +242,21 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Tan;
-            this.panel1.Controls.Add(this.gpbDadosOperacionais);
             this.panel1.Controls.Add(this.btnLimparCampos);
             this.panel1.Controls.Add(this.gpbFormaPagamento);
             this.panel1.Controls.Add(this.btnEmitirRelatorio);
-            this.panel1.Controls.Add(this.btnBaixarConta);
             this.panel1.Controls.Add(this.btnSair);
             this.panel1.Location = new System.Drawing.Point(-7, -6);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(617, 369);
+            this.panel1.Size = new System.Drawing.Size(617, 296);
             this.panel1.TabIndex = 4;
-            // 
-            // gpbDadosOperacionais
-            // 
-            this.gpbDadosOperacionais.Controls.Add(this.lblDataPaga);
-            this.gpbDadosOperacionais.Controls.Add(this.lblRespostaStatus);
-            this.gpbDadosOperacionais.Controls.Add(this.txtDataPaga);
-            this.gpbDadosOperacionais.Controls.Add(this.lblStatus);
-            this.gpbDadosOperacionais.Controls.Add(this.txtPago);
-            this.gpbDadosOperacionais.Controls.Add(this.lblPago);
-            this.gpbDadosOperacionais.Location = new System.Drawing.Point(21, 262);
-            this.gpbDadosOperacionais.Name = "gpbDadosOperacionais";
-            this.gpbDadosOperacionais.Size = new System.Drawing.Size(576, 65);
-            this.gpbDadosOperacionais.TabIndex = 6;
-            this.gpbDadosOperacionais.TabStop = false;
-            this.gpbDadosOperacionais.Text = "Dados Operacionais";
             // 
             // btnLimparCampos
             // 
-            this.btnLimparCampos.Location = new System.Drawing.Point(264, 332);
+            this.btnLimparCampos.Location = new System.Drawing.Point(141, 262);
             this.btnLimparCampos.Name = "btnLimparCampos";
-            this.btnLimparCampos.Size = new System.Drawing.Size(114, 23);
+            this.btnLimparCampos.Size = new System.Drawing.Size(114, 22);
             this.btnLimparCampos.TabIndex = 5;
             this.btnLimparCampos.Text = "Limpar Campos";
             this.btnLimparCampos.UseVisualStyleBackColor = true;
@@ -395,7 +301,7 @@
             this.btnPagar.TabIndex = 9;
             this.btnPagar.Text = "Pagar";
             this.btnPagar.UseVisualStyleBackColor = true;
-            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
+            this.btnPagar.Click += new System.EventHandler(this.ClickPagar);
             // 
             // lblParcelamento
             // 
@@ -465,7 +371,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 357);
+            this.ClientSize = new System.Drawing.Size(602, 285);
             this.Controls.Add(this.gpbContaPagar);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -473,12 +379,11 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Frm_ContaPagar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contas a Pagar";
             this.gpbContaPagar.ResumeLayout(false);
             this.gpbContaPagar.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.gpbDadosOperacionais.ResumeLayout(false);
-            this.gpbDadosOperacionais.PerformLayout();
             this.gpbFormaPagamento.ResumeLayout(false);
             this.gpbFormaPagamento.PerformLayout();
             this.ResumeLayout(false);
@@ -491,21 +396,14 @@
         private System.Windows.Forms.Label lblDataLanca;
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.Label lblDataFecha;
-        private System.Windows.Forms.TextBox txtPago;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.TextBox txtValorPaga;
-        private System.Windows.Forms.TextBox txtDataPaga;
         private System.Windows.Forms.TextBox txtDataVenci;
         private System.Windows.Forms.TextBox txtDataLanca;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblValorPaga;
-        private System.Windows.Forms.Label lblDataPaga;
-        private System.Windows.Forms.Label lblPago;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label lblSelecioneCompra;
-        private System.Windows.Forms.Button btnBaixarConta;
-        private System.Windows.Forms.Label lblRespostaStatus;
-        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Button btnEmitirRelatorio;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel panel1;
@@ -521,7 +419,6 @@
         private System.Windows.Forms.Label lblSlecionePagamento;
         private System.Windows.Forms.Label lblSelecioneForne;
         private System.Windows.Forms.Button btnLimparCampos;
-        private System.Windows.Forms.GroupBox gpbDadosOperacionais;
         private System.Windows.Forms.TextBox txtFornecedor;
     }
 }

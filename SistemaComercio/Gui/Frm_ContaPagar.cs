@@ -32,16 +32,6 @@ namespace SistemaComercio.Gui
             UpdateCompra();
         }
 
-        private void UpdateCompra()
-        {
-            serviceC = new CompraService();
-            service = new ContaPagarService();
-
-            compras = serviceC.GetAllCompra();
-
-            AddComboBoxContaPagar();
-        }
-
         #region ComboBox
 
         private void AddComboBoxContaPagar()
@@ -82,16 +72,55 @@ namespace SistemaComercio.Gui
             MessageBox.Show("Campos resetados!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void ClickPagar(object sender, EventArgs e)
+        {
+            try
+            {
+                var valorPago = Convert.ToDouble(txtValorPaga.Text);
 
+                //Valida se o usuario possui o dinheiro
+                if (valorPago <= formPrincipal.user.Salario)
+                {
+                    //Valida se foi informado o valor total do produto
+
+                    if (compra.Total_Compra == valorPago)
+                    {
+                        CreateContaPagar();
+                        LimparCampos();
+                        UpdateCompra();
+                        formPrincipal.UpdateSalarioUser(formPrincipal.user.Salario -= valorPago);
+                        MessageBox.Show("Compra Paga!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Informe o valor total!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Saldo insuficiente", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao pagar compra!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         #endregion
 
         #region Funções
 
-        void SetDadosOperacionais()
+        private void UpdateCompra()
         {
-            txtDataPaga.Text = DateTime.Now.ToString();
-            lblRespostaStatus.Text = compra.Situacao_Compra;
+            serviceC = new CompraService();
+            service = new ContaPagarService();
+
+            compras = serviceC.GetAllCompra();
+
+            AddComboBoxContaPagar();
         }
 
         private void LimparCampos()
@@ -101,31 +130,13 @@ namespace SistemaComercio.Gui
             txtDescricao.Clear();
             txtDataLanca.Clear();
             txtDataVenci.Clear();
-            txtDataPaga.Clear();
             txtValorPaga.Clear();
             txtValor.Clear();
-            txtPago.Clear();
             cmbParcelamento.SelectedIndex = -1;
             cmbParcelamento.Enabled = false;
             gpbFormaPagamento.Enabled = false;
 
         }
-
-        #endregion
-
-        private void cmbSelecioneCompra_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbSelecioneCompra.SelectedIndex != -1)
-            {
-                var idCompra = Convert.ToInt32(cmbSelecioneCompra.Text);
-                compra = serviceC.GetByIdCompra(idCompra);
-                SetGeracaoContaPagar();
-                SetDadosOperacionais();
-                gpbFormaPagamento.Enabled = true;
-            }
-
-        }
-
 
         private void SetGeracaoContaPagar()
         {
@@ -134,6 +145,61 @@ namespace SistemaComercio.Gui
             txtDataLanca.Text = compra.Data;
             txtDataVenci.Text = Convert.ToDateTime(compra.Data).AddMonths(1).ToString("dd-MM-yyyy");
             txtValor.Text = compra.Total_Compra.ToString();
+        }
+
+        private void CreateContaPagar()
+        {
+            var dataLanca = Convert.ToDateTime(txtDataLanca.Text).ToString("dd-MM-yyyy");
+            var dataVenci = Convert.ToDateTime(txtDataVenci.Text).ToString("dd-MM-yyyy");
+            var parcela = 0;
+
+            if (metodoPagamento.Equals("credito"))
+                parcela = Convert.ToInt32(cmbParcelamento.Text.Substring(0, 1));
+
+            var contaPagar = new ContaPagar()
+            {
+                Descricao = txtDescricao.Text,
+                Data_Lancamento = Convert.ToDateTime(dataLanca),
+                Data_Vencimento = Convert.ToDateTime(dataVenci),
+                Valor = Convert.ToDouble(txtValor.Text),
+                Pago = Convert.ToDouble(txtValorPaga.Text),
+                Data_Pagamento = DateTime.Now,
+                Valor_Pagamento = Convert.ToDouble(txtValorPaga.Text),
+                Id_Fornecedor = compra.Id_Fornecedor,
+                Parcela = parcela,
+                FormaPagamento = metodoPagamento,
+            };
+
+            compra.Situacao_Compra = "Pago";
+
+            serviceC.UpdateCompra(compra);
+            service.AddContaPagar(contaPagar);
+
+        }
+
+        #endregion
+
+        #region Escutadores
+
+        private void cmbSelecioneCompra_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbSelecioneCompra.SelectedIndex != -1)
+            {
+                var idCompra = Convert.ToInt32(cmbSelecioneCompra.Text);
+                compra = serviceC.GetByIdCompra(idCompra);
+                SetGeracaoContaPagar();
+                gpbFormaPagamento.Enabled = true;
+            }
+
+        }
+
+        private void cmbParcelamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbParcelamento.SelectedIndex != -1)
+            {
+
+
+            }
         }
 
         private void rdbPix_CheckedChanged(object sender, EventArgs e)
@@ -180,80 +246,8 @@ namespace SistemaComercio.Gui
             cmbParcelamento.SelectedIndex = -1;
         }
 
-        private void btnPagar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var valorPago = Convert.ToDouble(txtValorPaga.Text);
+        #endregion
 
-                //Valida se o usuario possui o dinheiro
-                if (valorPago <= formPrincipal.user.Salario)
-                {
-                    //Valida se foi informado o valor total do produto
-
-                    if (compra.Total_Compra == valorPago)
-                    {
-                        CreateContaPagar();
-                        LimparCampos();
-                        UpdateCompra();
-                        formPrincipal.UpdateSalarioUser(formPrincipal.user.Salario -= valorPago);
-                        MessageBox.Show("Venda Lançada!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show($"Informe o valor total! valor da compra: {txtValor}, valor informado: {txtValorPaga}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-
-                }
-                else
-                {
-                    MessageBox.Show("Saldo insuficiente", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-
-            }
-            catch
-            {
-                MessageBox.Show("Erro ao lançar venda!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void CreateContaPagar()
-        {
-            var dataLanca = Convert.ToDateTime(txtDataLanca.Text).ToString("dd-MM-yyyy");
-            var dataVenci = Convert.ToDateTime(txtDataVenci.Text).ToString("dd-MM-yyyy");
-            var parcela = 0;
-
-            if (metodoPagamento.Equals("credito"))
-                parcela = Convert.ToInt32(cmbParcelamento.Text.Substring(0, 1));
-
-            var contaPagar = new ContaPagar()
-            {
-                Descricao = txtDescricao.Text,
-                Data_Lancamento = Convert.ToDateTime(dataLanca),
-                Data_Vencimento = Convert.ToDateTime(dataVenci),
-                Valor = Convert.ToDouble(txtValor.Text),
-                Pago = Convert.ToDouble(txtValorPaga.Text),
-                Data_Pagamento = DateTime.Now,
-                Valor_Pagamento = Convert.ToDouble(txtValorPaga.Text),
-                Id_Fornecedor = compra.Id_Fornecedor,
-                Parcela = parcela,
-            };
-
-            compra.Situacao_Compra = "Pago";
-
-            serviceC.UpdateCompra(compra);
-            service.AddContaPagar(contaPagar);
-
-        }
-
-        private void cmbParcelamento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbParcelamento.SelectedIndex != -1)
-            {
-
-
-            }
-        }
     }
 }
 

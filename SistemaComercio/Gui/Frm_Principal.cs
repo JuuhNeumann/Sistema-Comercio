@@ -75,13 +75,13 @@ namespace SistemaComercio.Gui
 
         private void ClickCompra(object sender, EventArgs e)
         {
-            Frm_Compra compra = new Frm_Compra();
+            Frm_Compra compra = new Frm_Compra(this);
             compra.Show();
         }
 
         private void ClickVenda(object sender, EventArgs e)
         {
-            Frm_Venda venda = new Frm_Venda();
+            Frm_Venda venda = new Frm_Venda(this);
             venda.Show();
         }
 
@@ -89,6 +89,12 @@ namespace SistemaComercio.Gui
         {
             Frm_ContaPagar contaP = new Frm_ContaPagar(this);
             contaP.Show();
+        }
+
+        private void ClickContaReceber(object sender, EventArgs e)
+        {
+            Frm_ContaReceber contaR = new Frm_ContaReceber(this);
+            contaR.Show();
         }
     }
 }
