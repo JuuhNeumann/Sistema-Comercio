@@ -11,38 +11,41 @@ namespace SistemaComercioLibrary.Entity
     {
 
         public string Id { get; set; }
-        public string Produto { get; set; }
+        public string IdVenda { get; set; }
+        public string Descricao { get; set; }
         public string DataLancamento { get; set; }
         public string DataVencimento { get; set; }
         public string Valor { get; set; }
         public string Recebido { get; set; }
         public string DataRecebimento { get; set; }
         public string ValorRecebimento { get; set; }
+        public string FormaPagamento { get; set; }
+        public string Parcelamento { get; set; }
         public string Cliente { get; set; }
 
 
-        public List<string> Produtos { get; set; }
-        public List<string> ItemVendas { get; set; }
+        public List<string> Vendas { get; set; }
 
         public FormRelatorioContaReceber(ContaReceber obj)
         {
             Id = obj.Id.ToString();
-            //Produto = obj.Fornecedor.Produto.Nome; //n tem .Nome
+            obj.Cliente.Venda.ForEach(c => Vendas.Add(c.Id.ToString())); //n sei se ta certo
+            Descricao = obj.Descricao;
             DataLancamento = obj.Data_Lancamento.ToString();
-            DataVencimento = DataVencimento.ToString();
+            DataVencimento = obj.Data_Vencimento.ToString();
             Valor = obj.Valor.ToString();
             Recebido = obj.Recebido.ToString();
             DataRecebimento = obj.Data_Recebimento.ToString();
             ValorRecebimento = obj.Valor_Recebimento.ToString();
+            FormaPagamento = obj.FormaPagamento.ToString();
+            Parcelamento = obj.Parcela.ToString();
             Cliente = obj.Cliente.Nome;
 
         }
 
         public FormRelatorioContaReceber()
         {
-            Produtos = new List<string>();
-            ItemVendas = new List<string>();
-
+            Vendas = new List<string>();
         }
     }
 }

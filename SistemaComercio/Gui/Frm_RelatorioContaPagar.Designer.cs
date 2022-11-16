@@ -43,6 +43,7 @@
             // 
             // rvRelatorioContaPagar
             // 
+            this.rvRelatorioContaPagar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.rvRelatorioContaPagar.Location = new System.Drawing.Point(-5, 61);
             this.rvRelatorioContaPagar.Name = "rvRelatorioContaPagar";
             this.rvRelatorioContaPagar.ServerReport.BearerToken = null;
@@ -52,25 +53,25 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.cmbSituacao);
             this.panel1.Controls.Add(this.lblSituacao);
             this.panel1.Controls.Add(this.txtData);
             this.panel1.Controls.Add(this.lblData);
             this.panel1.Controls.Add(this.lblTitle);
-            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Location = new System.Drawing.Point(-5, -8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(858, 64);
+            this.panel1.Size = new System.Drawing.Size(864, 78);
             this.panel1.TabIndex = 2;
             // 
             // cmbSituacao
             // 
             this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSituacao.FormattingEnabled = true;
-            this.cmbSituacao.Location = new System.Drawing.Point(675, 22);
+            this.cmbSituacao.Location = new System.Drawing.Point(675, 30);
             this.cmbSituacao.Name = "cmbSituacao";
-            this.cmbSituacao.Size = new System.Drawing.Size(165, 21);
+            this.cmbSituacao.Size = new System.Drawing.Size(171, 21);
             this.cmbSituacao.TabIndex = 4;
             this.cmbSituacao.SelectedIndexChanged += new System.EventHandler(this.cmbSituacao_SelectedIndexChanged);
             // 
@@ -78,7 +79,7 @@
             // 
             this.lblSituacao.AutoSize = true;
             this.lblSituacao.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSituacao.Location = new System.Drawing.Point(611, 26);
+            this.lblSituacao.Location = new System.Drawing.Point(611, 33);
             this.lblSituacao.Name = "lblSituacao";
             this.lblSituacao.Size = new System.Drawing.Size(67, 14);
             this.lblSituacao.TabIndex = 3;
@@ -87,7 +88,7 @@
             // txtData
             // 
             this.txtData.Enabled = false;
-            this.txtData.Location = new System.Drawing.Point(452, 22);
+            this.txtData.Location = new System.Drawing.Point(452, 30);
             this.txtData.Name = "txtData";
             this.txtData.Size = new System.Drawing.Size(144, 20);
             this.txtData.TabIndex = 2;
@@ -96,7 +97,7 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(415, 25);
+            this.lblData.Location = new System.Drawing.Point(415, 33);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(41, 14);
             this.lblData.TabIndex = 1;
@@ -107,7 +108,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTitle.Location = new System.Drawing.Point(10, 19);
+            this.lblTitle.Location = new System.Drawing.Point(16, 26);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(272, 23);
             this.lblTitle.TabIndex = 0;
@@ -115,7 +116,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btnSair);
             this.panel2.Location = new System.Drawing.Point(-8, 410);

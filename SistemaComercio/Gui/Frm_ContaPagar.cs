@@ -53,7 +53,6 @@ namespace SistemaComercio.Gui
 
         #region Click Botões Form
 
-
         private void ClickSair(object sender, EventArgs e)
         {
             var principal = new Frm_Principal();

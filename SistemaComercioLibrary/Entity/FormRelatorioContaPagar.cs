@@ -44,13 +44,11 @@ namespace SistemaComercioLibrary.Entity
         public FormRelatorioContaPagar(Compra obj)
         {
             IdCompra = obj.Id.ToString();
-
         }
 
         public FormRelatorioContaPagar()
         {
             Compras = new List<string>();
-
         }
     }
 }

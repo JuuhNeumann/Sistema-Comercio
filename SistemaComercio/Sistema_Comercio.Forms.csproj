@@ -313,6 +313,12 @@
     <Compile Include="Gui\Frm_RelatorioContaPagar.Designer.cs">
       <DependentUpon>Frm_RelatorioContaPagar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Frm_RelatorioContaReceber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Frm_RelatorioContaReceber.Designer.cs">
+      <DependentUpon>Frm_RelatorioContaReceber.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Frm_RelatorioVenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +340,7 @@
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="bin\Debug\RelatorioContaPagar.rdlc" />
+    <EmbeddedResource Include="bin\Debug\RelatorioContaReceber.rdlc" />
     <EmbeddedResource Include="bin\Debug\RelatorioVendas.rdlc" />
     <EmbeddedResource Include="Gui\Frm_Cliente.resx">
       <DependentUpon>Frm_Cliente.cs</DependentUpon>
@@ -368,6 +375,9 @@
     <EmbeddedResource Include="Gui\Frm_RelatorioContaPagar.resx">
       <DependentUpon>Frm_RelatorioContaPagar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Frm_RelatorioContaReceber.resx">
+      <DependentUpon>Frm_RelatorioContaReceber.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_RelatorioVenda.resx">
       <DependentUpon>Frm_RelatorioVenda.cs</DependentUpon>
     </EmbeddedResource>
@@ -383,6 +393,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.FormRelatorioCompra.datasource" />
     <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.FormRelatorioContaPagar.datasource" />
+    <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.FormRelatorioContaReceber.datasource" />
     <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.FormRelatorioVenda.datasource" />
     <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.ItemCompra.datasource" />
     <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.ItemVenda.datasource" />

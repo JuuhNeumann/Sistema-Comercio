@@ -33,8 +33,9 @@ namespace SistemaComercioLibrary.Classes
         [Required]
         [MaxLength(255)]
         public double Valor_Recebimento { get; set; }
-
-
+        public int Parcela { get; set; }
+        [Required]
+        public string FormaPagamento { get; set; }
         [Required]
         public virtual Cliente Cliente { get; set; }
         public int Id_Cliente { get; set; }
