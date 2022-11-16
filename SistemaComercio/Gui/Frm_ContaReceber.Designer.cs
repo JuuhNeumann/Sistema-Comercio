@@ -371,6 +371,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Frm_ContaReceber";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Conta a Receber";
             this.panel1.ResumeLayout(false);
             this.gpbFormaPagamento.ResumeLayout(false);

@@ -14,6 +14,7 @@ namespace SistemaComercio.Gui
 {
     public partial class Frm_RelatorioContaReceber : Form
     {
+        private Frm_Principal frmprincipal;
 
         public Frm_RelatorioContaReceber()
         {
@@ -24,6 +25,12 @@ namespace SistemaComercio.Gui
         {
 
             this.rvRelatorioContaReceber.RefreshReport();
+        }
+
+        private void ClickSair(object sender, EventArgs e)
+        {
+            var contaR = new Frm_ContaReceber(frmprincipal);
+            this.Hide();
         }
     }
 }

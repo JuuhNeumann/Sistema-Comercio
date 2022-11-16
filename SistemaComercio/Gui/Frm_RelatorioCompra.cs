@@ -80,11 +80,11 @@ namespace SistemaComercio.Gui
         public void CreateReportViewer()
         {
             rvRelatorioCompra.LocalReport.DataSources.Clear();
-            ReportDataSource reportDataSource = new ReportDataSource("ContasPagar", dt);
-            rvRelatorioCompra.LocalReport.ReportPath = "RelatorioContaPagar.rdlc";
+            ReportDataSource reportDataSource = new ReportDataSource("ItemCompras", dt);
+            rvRelatorioCompra.LocalReport.ReportPath = "RelatorioCompras.rdlc";
             rvRelatorioCompra.LocalReport.DataSources.Add(reportDataSource);
 
-            AddParameter("TotalContaPagar", itemCompras.Count.ToString());
+            AddParameter("TotalCompra", itemCompras.Count.ToString());
             rvRelatorioCompra.LocalReport.Refresh();
         }
 

@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.rvRelatorioContaReceber = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblData = new System.Windows.Forms.Label();
-            this.lblSituacao = new System.Windows.Forms.Label();
-            this.txtData = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtData = new System.Windows.Forms.TextBox();
+            this.lblSituacao = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
+            this.rvRelatorioContaReceber = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -54,43 +54,22 @@
             this.panel1.Size = new System.Drawing.Size(863, 77);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // comboBox1
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel2.Controls.Add(this.btnSair);
-            this.panel2.Location = new System.Drawing.Point(-4, 393);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(864, 74);
-            this.panel2.TabIndex = 1;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(683, 30);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(163, 21);
+            this.comboBox1.TabIndex = 4;
             // 
-            // rvRelatorioContaReceber
+            // txtData
             // 
-            this.rvRelatorioContaReceber.DocumentMapWidth = 65;
-            this.rvRelatorioContaReceber.Location = new System.Drawing.Point(-4, 72);
-            this.rvRelatorioContaReceber.Name = "rvRelatorioContaReceber";
-            this.rvRelatorioContaReceber.ServerReport.BearerToken = null;
-            this.rvRelatorioContaReceber.Size = new System.Drawing.Size(864, 333);
-            this.rvRelatorioContaReceber.TabIndex = 2;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(16, 24);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(294, 23);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Relatório de Contas a Receber";
-            // 
-            // lblData
-            // 
-            this.lblData.AutoSize = true;
-            this.lblData.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(436, 33);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(41, 14);
-            this.lblData.TabIndex = 1;
-            this.lblData.Text = "Data:";
+            this.txtData.Enabled = false;
+            this.txtData.Location = new System.Drawing.Point(474, 30);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(124, 20);
+            this.txtData.TabIndex = 3;
             // 
             // lblSituacao
             // 
@@ -102,22 +81,34 @@
             this.lblSituacao.TabIndex = 2;
             this.lblSituacao.Text = "Situação:";
             // 
-            // txtData
+            // lblData
             // 
-            this.txtData.Enabled = false;
-            this.txtData.Location = new System.Drawing.Point(474, 30);
-            this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(124, 20);
-            this.txtData.TabIndex = 3;
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.Location = new System.Drawing.Point(436, 33);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(41, 14);
+            this.lblData.TabIndex = 1;
+            this.lblData.Text = "Data:";
             // 
-            // comboBox1
+            // lblTitle
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(683, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(163, 21);
-            this.comboBox1.TabIndex = 4;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(16, 24);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(294, 23);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Relatório de Contas a Receber";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.btnSair);
+            this.panel2.Location = new System.Drawing.Point(-4, 393);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(864, 74);
+            this.panel2.TabIndex = 1;
             // 
             // btnSair
             // 
@@ -128,6 +119,16 @@
             this.btnSair.TabIndex = 0;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.ClickSair);
+            // 
+            // rvRelatorioContaReceber
+            // 
+            this.rvRelatorioContaReceber.DocumentMapWidth = 65;
+            this.rvRelatorioContaReceber.Location = new System.Drawing.Point(-4, 72);
+            this.rvRelatorioContaReceber.Name = "rvRelatorioContaReceber";
+            this.rvRelatorioContaReceber.ServerReport.BearerToken = null;
+            this.rvRelatorioContaReceber.Size = new System.Drawing.Size(864, 333);
+            this.rvRelatorioContaReceber.TabIndex = 2;
             // 
             // Frm_RelatorioContaReceber
             // 
