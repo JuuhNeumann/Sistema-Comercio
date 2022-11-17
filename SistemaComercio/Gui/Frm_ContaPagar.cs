@@ -139,7 +139,7 @@ namespace SistemaComercio.Gui
 
         private void SetGeracaoContaPagar()
         {
-            txtDescricao.Text = compra.Fornecedor.Produto.First().Nome;
+            txtDescricao.Text = compra.ItemCompra.First().Produto.Nome;
             txtFornecedor.Text = compra.Fornecedor.Nome;
             txtDataLanca.Text = compra.Data;
             txtDataVenci.Text = Convert.ToDateTime(compra.Data).AddMonths(1).ToString("dd-MM-yyyy");
@@ -148,8 +148,8 @@ namespace SistemaComercio.Gui
 
         private void CreateContaPagar()
         {
-            var dataLanca = Convert.ToDateTime(txtDataLanca.Text).ToString("dd-MM-yyyy");
-            var dataVenci = Convert.ToDateTime(txtDataVenci.Text).ToString("dd-MM-yyyy");
+            var dataLanca = Convert.ToDateTime(txtDataLanca.Text).ToString("dd-MM-yyyy HH:mm:ss");
+            var dataVenci = Convert.ToDateTime(txtDataVenci.Text).ToString("dd-MM-yyyy HH:mm:ss");
             var parcela = 0;
 
             if (metodoPagamento.Equals("credito"))

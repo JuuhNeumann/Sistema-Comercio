@@ -50,7 +50,7 @@ namespace SistemaComercio.Gui
         {
             user.Salario = valor;
             serviceAdm.Update(user);
-            lblSalario.Text = user.Salario.ToString();
+            lblSalario.Text = user.Salario.ToString("C");
         }
 
         private void ClickCliente(object sender, EventArgs e)

@@ -96,6 +96,7 @@
             this.gpbFormaPagamento.Controls.Add(this.rdbDinehiro);
             this.gpbFormaPagamento.Controls.Add(this.rdbPix);
             this.gpbFormaPagamento.Controls.Add(this.lblSelecionePagamento);
+            this.gpbFormaPagamento.Enabled = false;
             this.gpbFormaPagamento.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gpbFormaPagamento.Location = new System.Drawing.Point(17, 145);
             this.gpbFormaPagamento.Name = "gpbFormaPagamento";
@@ -106,7 +107,6 @@
             // 
             // txtValorPaga
             // 
-            this.txtValorPaga.Enabled = false;
             this.txtValorPaga.Location = new System.Drawing.Point(328, 48);
             this.txtValorPaga.Name = "txtValorPaga";
             this.txtValorPaga.Size = new System.Drawing.Size(137, 21);
@@ -136,12 +136,6 @@
             // 
             this.cmbParcelamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbParcelamento.FormattingEnabled = true;
-            this.cmbParcelamento.Items.AddRange(new object[] {
-            "1x sem juros",
-            "2x sem juros",
-            "3x sem juros",
-            "4x sem juros",
-            "5x sem juros"});
             this.cmbParcelamento.Location = new System.Drawing.Point(294, 75);
             this.cmbParcelamento.Name = "cmbParcelamento";
             this.cmbParcelamento.Size = new System.Drawing.Size(171, 21);
@@ -196,6 +190,7 @@
             // rdbPix
             // 
             this.rdbPix.AutoSize = true;
+            this.rdbPix.Checked = true;
             this.rdbPix.Location = new System.Drawing.Point(9, 53);
             this.rdbPix.Name = "rdbPix";
             this.rdbPix.Size = new System.Drawing.Size(41, 17);

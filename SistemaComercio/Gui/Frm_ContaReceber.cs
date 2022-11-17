@@ -5,6 +5,7 @@ using SistemaComercioLibrary.Service;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SistemaComercio.Gui
@@ -28,6 +29,7 @@ namespace SistemaComercio.Gui
         {
             InitializeComponent();
             formprincipal = frm_Principal;
+            UpdateVenda();
         }
 
         #region ComboBox
@@ -38,7 +40,7 @@ namespace SistemaComercio.Gui
 
             foreach (var venda in vendas)
             {
-                if (venda.Situacao_Venda != "Pago" && venda.Situacao_Venda != "Cancelado")
+                if (venda.Situacao_Venda != "Vendido" && venda.Situacao_Venda != "Cancelado")
                 {
                     this.cmbSelecioneContaReceber.Items.AddRange(new object[] {
                 venda.Id.ToString()
@@ -85,7 +87,7 @@ namespace SistemaComercio.Gui
                         CreateContaReceber();
                         LimparCampos();
                         UpdateVenda();
-                        formprincipal.UpdateSalarioUser(formprincipal.user.Salario -= valorRecebido);
+                        formprincipal.UpdateSalarioUser(formprincipal.user.Salario += valorRecebido);
                         MessageBox.Show("Venda Realizada!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -137,12 +139,12 @@ namespace SistemaComercio.Gui
 
         private void SetGeracaoContaReceber()
         {
-            //txtDescricao.Text = venda.Cliente.Produto.First().Nome;
+            txtDescricao.Text = venda.ItemVenda.First().Produto.Nome.ToString();
             txtCliente.Text = venda.Cliente.Nome;
             txtDataLanca.Text = venda.Data;
             txtDataVenci.Text = Convert.ToDateTime(venda.Data).AddMonths(1).ToString("dd-MM-yyyy");
             txtValor.Text = venda.Total_Venda.ToString();
-        } //problemaaaa
+        } 
 
         private void CreateContaReceber()
         {
@@ -167,7 +169,7 @@ namespace SistemaComercio.Gui
                 FormaPagamento = metodoPagamento,
             };
 
-            venda.Situacao_Venda = "Pago";
+            venda.Situacao_Venda = "Vendido";
 
             serviceV.UpdateVenda(venda);
             service.AddContaReceber(contaReceber);
@@ -187,6 +189,7 @@ namespace SistemaComercio.Gui
                 venda = serviceV.GetByIdVenda(idVenda);
                 SetGeracaoContaReceber();
                 gpbFormaPagamento.Enabled = true;
+
             }
         }
 

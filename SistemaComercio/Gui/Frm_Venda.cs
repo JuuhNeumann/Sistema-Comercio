@@ -352,7 +352,7 @@ namespace SistemaComercio.Gui
         {
             var cliente = serviceCliente.GetByNomeCliente(cmbSelecioneCli.Text);
 
-
+            totalVenda = Convert.ToInt32(produto.Preco) * Convert.ToInt32(cmbQuantidade.Text);
 
             var venda = new Venda()
             {
@@ -431,7 +431,7 @@ namespace SistemaComercio.Gui
             if (cmbQuantidade.SelectedIndex != -1)
             {
                 totalVenda = Convert.ToInt32(produto.Preco) * Convert.ToInt32(cmbQuantidade.Text);
-                txtTotalCima.Text = totalVenda.ToString("c");
+                txtTotalCima.Text = totalVenda.ToString("C");
             }
 
         }

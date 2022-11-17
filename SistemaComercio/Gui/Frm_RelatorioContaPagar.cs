@@ -7,10 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaComercio.Gui
@@ -18,15 +15,24 @@ namespace SistemaComercio.Gui
     public partial class Frm_RelatorioContaPagar : Form
     {
         private IContaPagarPort service;
+        private List<ItemCompra> itemCompras;
+        private IItemCompraPort serviceItemC;
         private ICompraPort serviceC;
         private List<Compra> compras;
+        private List<ContaPagar> contasPagar;
+        private ContaPagar contaPagar;
         private Compra compra;
         private DataTable dt = new DataTable();
         private Frm_Principal frmprincipal;
 
+        private string filter;
+
         public Frm_RelatorioContaPagar()
         {
             InitializeComponent();
+            cmbSituacao.Text = "Paga";
+            UpdateReportViewer();
+
         }
 
         private void Frm_RelatorioContaPagar_Load(object sender, EventArgs e)
@@ -38,16 +44,25 @@ namespace SistemaComercio.Gui
         {
             serviceC = new CompraService();
             service = new ContaPagarService();
+            serviceItemC = new ItemCompraService();
 
-            CreateDataTable();
+            if (cmbSituacao.Text.Equals("Paga"))
+            {
+                CreateContasPagarDataTable();
+            }
+            else
+            {
+                CreateItemCompraDataTable();
+            }
+
             CreateReportViewer();
         }
 
-        public void CreateDataTable()
+        public void CreateContasPagarDataTable()
         {
             dt = new DataTable();
             dt.Columns.Add("Id", typeof(int));
-            dt.Columns.Add("IdCompra", typeof(string));
+            dt.Columns.Add("Status", typeof(string));
             dt.Columns.Add("Descricao", typeof(string));
             dt.Columns.Add("DataLancamento", typeof(string));
             dt.Columns.Add("DataVencimento", typeof(string));
@@ -59,17 +74,17 @@ namespace SistemaComercio.Gui
             dt.Columns.Add("Parcelamento", typeof(string));
             dt.Columns.Add("Fornecedor", typeof(string));
 
-            if (compras == null)
-                compras = serviceC.GetAllCompra();
+            if (contasPagar == null)
+                contasPagar = service.GetAllContaPagar();
 
-            foreach (var compra in compras)
+            foreach (var contaPagar in contasPagar)
             {
-                var FormRelatorioCP = new FormRelatorioContaPagar(compra);
+                var FormRelatorioCP = new FormRelatorioContaPagar(contaPagar);
 
                 dt.Rows.Add(new object[]
                 {
                     FormRelatorioCP.Id,
-                    FormRelatorioCP.IdCompra,
+                    "Pago",
                     FormRelatorioCP.Descricao,
                     FormRelatorioCP.DataLancamento,
                     FormRelatorioCP.DataVencimento,
@@ -88,11 +103,11 @@ namespace SistemaComercio.Gui
         public void CreateReportViewer()
         {
             rvRelatorioContaPagar.LocalReport.DataSources.Clear();
-            ReportDataSource reportDataSource = new ReportDataSource("ItemCompras", dt);
-            rvRelatorioContaPagar.LocalReport.ReportPath = "RelatorioCompras.rdlc";
+            ReportDataSource reportDataSource = new ReportDataSource("ContasPagar", dt);
+            rvRelatorioContaPagar.LocalReport.ReportPath = "RelatorioContaPagar.rdlc";
             rvRelatorioContaPagar.LocalReport.DataSources.Add(reportDataSource);
 
-            AddParameter("TotalContaPagar", compras.Count.ToString());
+            AddParameter("TotalContaPagar", contasPagar.Count.ToString());
             rvRelatorioContaPagar.LocalReport.Refresh();
         }
 
@@ -105,8 +120,20 @@ namespace SistemaComercio.Gui
 
         private void cmbSituacao_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var item = serviceC.GetAllCompra();
-            compras = item.Where(x => x.Situacao_Compra.Equals(cmbSituacao.Text)).ToList();
+            serviceItemC = new ItemCompraService();
+            var item = serviceItemC.GetAllItemCompra();
+
+            switch (cmbSituacao.Text)
+            {
+                case "Não Vencida":
+                    itemCompras = item.Where(x => x.Compra.Situacao_Compra.Equals("Aguardando Pagamento")).ToList();
+                    break;
+                case "A Venver":
+                    break;
+                case "Em Atraso":
+                    break;
+            }
+
             ClearReportViewer();
             UpdateReportViewer();
             rvRelatorioContaPagar.RefreshReport();
@@ -128,6 +155,47 @@ namespace SistemaComercio.Gui
         {
             var contaC = new Frm_ContaPagar(frmprincipal);
             this.Hide();
+        }
+
+
+        public void CreateItemCompraDataTable()
+        {
+            dt = new DataTable();
+            dt.Columns.Add("Id", typeof(int));
+            dt.Columns.Add("Status", typeof(string));
+            dt.Columns.Add("Descricao", typeof(string));
+            dt.Columns.Add("DataLancamento", typeof(string));
+            dt.Columns.Add("DataVencimento", typeof(string));
+            dt.Columns.Add("Valor", typeof(string));
+            dt.Columns.Add("Pago", typeof(string));
+            dt.Columns.Add("DataPagamento", typeof(string));
+            dt.Columns.Add("ValorPagamento", typeof(string));
+            dt.Columns.Add("FormaPagamento", typeof(string));
+            dt.Columns.Add("Parcelamento", typeof(string));
+            dt.Columns.Add("Fornecedor", typeof(string));
+
+            foreach (var itemCompra in itemCompras)
+            {
+                //CRIAR OUTRO CONSTRUTOR
+                var FormRelatorioCP = new FormRelatorioContaPagar(itemCompra);
+
+                dt.Rows.Add(new object[]
+                {
+                   FormRelatorioCP.Id,
+                   FormRelatorioCP.Status,
+                    FormRelatorioCP.Descricao,
+                    FormRelatorioCP.DataLancamento,
+                    FormRelatorioCP.DataVencimento,
+                    FormRelatorioCP.Valor,
+                    FormRelatorioCP.Pago,
+                    FormRelatorioCP.DataPagamento,
+                    FormRelatorioCP.ValorPagamento,
+                    FormRelatorioCP.FormaPagamento,
+                    FormRelatorioCP.Parcelamento,
+                    FormRelatorioCP.Fornecedor,
+                });
+            }
+
         }
     }
 }

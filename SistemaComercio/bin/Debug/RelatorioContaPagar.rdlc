@@ -56,16 +56,16 @@
           <DataField>Id</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="IdCompra">
-          <DataField>IdCompra</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="Pago">
           <DataField>Pago</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Parcelamento">
           <DataField>Parcelamento</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Valor">
@@ -171,7 +171,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Id Compra</Value>
+                                  <Value>Status</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -529,21 +529,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="IdCompra">
+                        <Textbox Name="Status">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!IdCompra.Value</Value>
+                                  <Value>=Fields!Status.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>IdCompra</rd:DefaultName>
+                          <rd:DefaultName>Status</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>

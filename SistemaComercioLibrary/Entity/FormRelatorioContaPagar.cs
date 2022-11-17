@@ -2,15 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SistemaComercioLibrary.Entity
 {
     public class FormRelatorioContaPagar
     {
         public string Id { get; set; }
-        public string IdCompra { get; set; }
+        public string Status { get; set; }
         public string Descricao { get; set; }
         public string DataLancamento { get; set; }
         public string DataVencimento { get; set; }
@@ -28,7 +26,6 @@ namespace SistemaComercioLibrary.Entity
         public FormRelatorioContaPagar(ContaPagar obj)
         {
             Id = obj.Id.ToString();
-            obj.Fornecedor.Compra.ForEach(c => Compras.Add(c.Id.ToString())); //n sei se ta certo
             Descricao = obj.Descricao;
             DataLancamento = obj.Data_Lancamento.ToString();
             DataVencimento = obj.Data_Vencimento.ToString();
@@ -39,16 +36,30 @@ namespace SistemaComercioLibrary.Entity
             FormaPagamento = obj.FormaPagamento;
             Parcelamento = obj.Parcela.ToString();
             Fornecedor = obj.Fornecedor.Nome;
-        }
 
-        public FormRelatorioContaPagar(Compra obj)
-        {
-            IdCompra = obj.Id.ToString();
+            if (!Parcelamento.Equals("0"))
+                Parcelamento += "x";
         }
 
         public FormRelatorioContaPagar()
         {
             Compras = new List<string>();
+        }
+
+        public FormRelatorioContaPagar(ItemCompra itemCompra)
+        {
+            Id = itemCompra.Id.ToString();
+            Descricao = itemCompra.Compra.ItemCompra.First().Produto.Nome;
+            DataLancamento = itemCompra.Compra.Data;
+            DataVencimento = Convert.ToDateTime(DataLancamento).AddDays(2).ToString();
+            Valor = itemCompra.Total_Item.ToString();
+            Pago = "null";
+            DataPagamento = "null";
+            ValorPagamento = "null";
+            FormaPagamento = "null";
+            Parcelamento = "null";
+            Fornecedor = itemCompra.Compra.Fornecedor.Nome;
+            Status = itemCompra.Compra.Situacao_Compra;
         }
     }
 }

@@ -69,6 +69,11 @@
             // 
             this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSituacao.FormattingEnabled = true;
+            this.cmbSituacao.Items.AddRange(new object[] {
+            "Paga",
+            "Não Vencida",
+            "A Vencer",
+            "Em Atraso"});
             this.cmbSituacao.Location = new System.Drawing.Point(675, 30);
             this.cmbSituacao.Name = "cmbSituacao";
             this.cmbSituacao.Size = new System.Drawing.Size(171, 21);
