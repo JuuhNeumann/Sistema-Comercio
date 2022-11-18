@@ -19,7 +19,7 @@ namespace SistemaComercio.Gui
         public Frm_Fornecedor(Frm_Principal frm_Principal)
         {
             InitializeComponent();
-            Form principal = frm_Principal;
+            formPrincipal = frm_Principal;
             UpdateProviderInDataGrid();
         }
         private void Frm_Fornecedor_Load(object sender, EventArgs e)
@@ -195,6 +195,7 @@ namespace SistemaComercio.Gui
 
         private void ClickPesquisar(object sender, EventArgs e)
         {
+            UpdateProviderInDataGrid();
             dt.DefaultView.RowFilter = String.Format("[{0}] LIKE '%{1}%'", "Nome", txtProcurar.Text);
             dataGridViewForne.DataSource = dt;
         }

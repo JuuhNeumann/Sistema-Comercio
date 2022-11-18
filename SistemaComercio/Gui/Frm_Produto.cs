@@ -178,6 +178,7 @@ namespace SistemaComercio.Gui
 
         private void CLickPesquisar(object sender, EventArgs e)
         {
+            UpdateProductsInDataGrid();
             dt.DefaultView.RowFilter = String.Format("[{0}] LIKE '%{1}%'", "Nome", txtPesquisar.Text);
             dataGridViewProd.DataSource = dt;
         }

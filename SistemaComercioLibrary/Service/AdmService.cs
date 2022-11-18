@@ -22,7 +22,7 @@ namespace SistemaComercioLibrary.Service
 
         public bool Login(string username, string password)
         {
-            var usuario = _db.Adm.FirstOrDefault(x => x.Usuario.Equals(username) );
+            var usuario = _db.Adm.FirstOrDefault(x => x.Usuario.Equals(username));
             var senha = _db.Adm.FirstOrDefault(x => x.Senha.Equals(password));
 
             if(usuario != null & senha != null)

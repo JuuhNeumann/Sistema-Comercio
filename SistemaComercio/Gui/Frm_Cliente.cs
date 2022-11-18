@@ -222,6 +222,7 @@ namespace SistemaComercio.Gui
 
         private void ClickPesquisar(object sender, EventArgs e)
         {
+            UpdateClientInDataGrid();
             dt.DefaultView.RowFilter = String.Format("[{0}] LIKE '%{1}%'", "Nome", txtPesquisa.Text);
             dataGridViewCli.DataSource = dt;
         }
