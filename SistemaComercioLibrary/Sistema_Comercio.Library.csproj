@@ -304,6 +304,10 @@
     <Compile Include="Migrations\20221116201833_y.designer.cs">
       <DependentUpon>20221116201833_y.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20221117211654_ju.cs" />
+    <Compile Include="Migrations\20221117211654_ju.designer.cs">
+      <DependentUpon>20221117211654_ju.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\DataBaseContextModelSnapshot.cs" />
     <Compile Include="Persistence\Context\DataBaseContext.cs" />
     <Compile Include="Port\IAdmPort.cs" />

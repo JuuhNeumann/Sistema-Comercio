@@ -24,8 +24,8 @@ namespace SistemaComercio.Gui
         private Compra compra;
         private DataTable dt = new DataTable();
         private Frm_Principal frmprincipal;
+        private string totalContas;
 
-        private string filter;
 
         public Frm_RelatorioContaPagar()
         {
@@ -97,6 +97,7 @@ namespace SistemaComercio.Gui
                     FormRelatorioCP.Fornecedor,
                 });
             }
+            totalContas = contasPagar.Count.ToString();
 
         } //ta certo???
 
@@ -107,7 +108,7 @@ namespace SistemaComercio.Gui
             rvRelatorioContaPagar.LocalReport.ReportPath = "RelatorioContaPagar.rdlc";
             rvRelatorioContaPagar.LocalReport.DataSources.Add(reportDataSource);
 
-            AddParameter("TotalContaPagar", contasPagar.Count.ToString());
+            AddParameter("TotalContaPagar", totalContas);
             rvRelatorioContaPagar.LocalReport.Refresh();
         }
 
@@ -121,23 +122,58 @@ namespace SistemaComercio.Gui
         private void cmbSituacao_SelectedIndexChanged(object sender, EventArgs e)
         {
             serviceItemC = new ItemCompraService();
-            var item = serviceItemC.GetAllItemCompra();
-
-            switch (cmbSituacao.Text)
-            {
-                case "Não Vencida":
-                    itemCompras = item.Where(x => x.Compra.Situacao_Compra.Equals("Aguardando Pagamento")).ToList();
-                    break;
-                case "A Venver":
-                    break;
-                case "Em Atraso":
-                    break;
-            }
+            UpdateSituationReportViewer();
 
             ClearReportViewer();
             UpdateReportViewer();
             rvRelatorioContaPagar.RefreshReport();
         }
+
+        public void UpdateSituationReportViewer()
+        {
+            var item = serviceItemC.GetAllItemCompra();
+
+            if (cmbSituacao.Text.Equals("Não Vencida"))
+            {
+                itemCompras = item.Where(x => x.Compra.Situacao_Compra.Equals("Aguardando Pagamento")).ToList();
+            }
+
+            if (cmbSituacao.Text.Equals("Em Atraso"))
+            {
+                itemCompras = new List<ItemCompra>();
+                foreach (var itemCompra in item)
+                {
+                    var dataVencimento = Convert.ToDateTime(itemCompra.Compra.Data).AddDays(2);
+                    int result = DateTime.Compare(DateTime.Now.Date, dataVencimento);
+
+                    if (result > 0 && itemCompra.Compra.Situacao_Compra != "Pago")
+                    {
+                        itemCompra.Compra.Situacao_Compra = "Em Atraso";
+                        itemCompras.Add(itemCompra);
+                        serviceItemC.UpdateItemCompra(itemCompra);
+                    }
+                }
+            }
+
+            if (cmbSituacao.Text.Equals("A Vencer"))
+            {
+                itemCompras = new List<ItemCompra>();
+
+                foreach (var itemCompra in item)
+                {
+                    var dataVencimento = Convert.ToDateTime(itemCompra.Compra.Data).AddDays(2).ToString("dd-MM-yyyy");
+                    var date = DateTime.Now.ToString("dd-MM-yyyy");
+
+                    if (dataVencimento.Equals(date) && itemCompra.Compra.Situacao_Compra != "Pago")
+                    {
+                        itemCompra.Compra.Situacao_Compra = "A Vencer";
+                        itemCompras.Add(itemCompra);
+                        serviceItemC.UpdateItemCompra(itemCompra);
+                    }
+                }
+            }
+        }
+
 
         private void ClearReportViewer()
         {
@@ -195,6 +231,8 @@ namespace SistemaComercio.Gui
                     FormRelatorioCP.Fornecedor,
                 });
             }
+
+            totalContas = itemCompras.Count.ToString();
 
         }
     }

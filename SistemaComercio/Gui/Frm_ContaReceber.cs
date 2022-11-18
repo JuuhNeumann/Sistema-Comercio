@@ -142,7 +142,7 @@ namespace SistemaComercio.Gui
             txtDescricao.Text = venda.ItemVenda.First().Produto.Nome.ToString();
             txtCliente.Text = venda.Cliente.Nome;
             txtDataLanca.Text = venda.Data;
-            txtDataVenci.Text = Convert.ToDateTime(venda.Data).AddMonths(1).ToString("dd-MM-yyyy");
+            txtDataVenci.Text = Convert.ToDateTime(venda.Data).AddDays(2).ToString("dd-MM-yyyy");
             txtValor.Text = venda.Total_Venda.ToString();
         } 
 
@@ -185,6 +185,7 @@ namespace SistemaComercio.Gui
         {
             if (cmbSelecioneContaReceber.SelectedIndex != -1)
             {
+                rdbPix.Checked = true;
                 var idVenda = Convert.ToInt32(cmbSelecioneContaReceber.Text);
                 venda = serviceV.GetByIdVenda(idVenda);
                 SetGeracaoContaReceber();
@@ -226,8 +227,7 @@ namespace SistemaComercio.Gui
         private void rbbCartaoCredito_CheckedChanged(object sender, EventArgs e)
         {
             metodoPagamento = "credito";
-            cmbParcelamento.SelectedIndex = -1;
-
+            cmbParcelamento.Items.Clear();
 
             if (cmbSelecioneContaReceber.SelectedIndex != -1 && rdbCartaoCredito.Checked)
             {

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbSituacao = new System.Windows.Forms.ComboBox();
             this.txtData = new System.Windows.Forms.TextBox();
             this.lblSituacao = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cmbSituacao);
             this.panel1.Controls.Add(this.txtData);
             this.panel1.Controls.Add(this.lblSituacao);
             this.panel1.Controls.Add(this.lblData);
@@ -54,14 +54,20 @@
             this.panel1.Size = new System.Drawing.Size(863, 77);
             this.panel1.TabIndex = 0;
             // 
-            // comboBox1
+            // cmbSituacao
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(683, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(163, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSituacao.FormattingEnabled = true;
+            this.cmbSituacao.Items.AddRange(new object[] {
+            "Paga",
+            "A Receber",
+            "A Vencer",
+            "Em Atraso"});
+            this.cmbSituacao.Location = new System.Drawing.Point(683, 30);
+            this.cmbSituacao.Name = "cmbSituacao";
+            this.cmbSituacao.Size = new System.Drawing.Size(163, 21);
+            this.cmbSituacao.TabIndex = 4;
+            this.cmbSituacao.SelectedIndexChanged += new System.EventHandler(this.cmbSituacao_SelectedIndexChanged);
             // 
             // txtData
             // 
@@ -129,6 +135,7 @@
             this.rvRelatorioContaReceber.ServerReport.BearerToken = null;
             this.rvRelatorioContaReceber.Size = new System.Drawing.Size(864, 333);
             this.rvRelatorioContaReceber.TabIndex = 2;
+            this.rvRelatorioContaReceber.ReportRefresh += new System.ComponentModel.CancelEventHandler(this.rvRelatorioContaReceber_ReportRefresh);
             // 
             // Frm_RelatorioContaReceber
             // 
@@ -156,7 +163,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private Microsoft.Reporting.WinForms.ReportViewer rvRelatorioContaReceber;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbSituacao;
         private System.Windows.Forms.TextBox txtData;
         private System.Windows.Forms.Label lblSituacao;
         private System.Windows.Forms.Label lblData;

@@ -889,6 +889,7 @@
             </TablixRowHierarchy>
             <DataSetName>ContasPagar</DataSetName>
             <Top>0.63183cm</Top>
+            <Left>0.47625cm</Left>
             <Height>1.2cm</Height>
             <Width>30cm</Width>
             <Style>
@@ -901,7 +902,7 @@
         <Height>2in</Height>
         <Style />
       </Body>
-      <Width>11.81102in</Width>
+      <Width>11.99852in</Width>
       <Page>
         <PageHeader>
           <Height>2.54cm</Height>
@@ -915,7 +916,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Total de contas a pagar: </Value>
+                      <Value>Total de Contas Pagas: </Value>
                       <Style />
                     </TextRun>
                     <TextRun>
@@ -928,7 +929,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox29</rd:DefaultName>
               <Top>1.63986cm</Top>
-              <Left>19.23203cm</Left>
+              <Left>12.5cm</Left>
               <Height>0.6cm</Height>
               <Width>7.50062cm</Width>
               <Style>
@@ -959,7 +960,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
               <Top>0.79057cm</Top>
-              <Left>5.34141cm</Left>
+              <Left>1.61079cm</Left>
               <Height>1.01741cm</Height>
               <Width>10.62271cm</Width>
               <ZIndex>1</ZIndex>
