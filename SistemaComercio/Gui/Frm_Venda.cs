@@ -314,7 +314,7 @@ namespace SistemaComercio.Gui
 
         private void PesquisaVendaFiltro()
         {
-            dt.DefaultView.RowFilter = String.Format("[{0}] LIKE '%{1}%'", columnFilter, txtPreco.Text);
+            dt.DefaultView.RowFilter = String.Format("[{0}] LIKE '%{1}%'", columnFilter, txtSelecioneVenda.Text);
             dataGridViewVenda.DataSource = dt;
         }
 
@@ -470,6 +470,18 @@ namespace SistemaComercio.Gui
                 var total = produto.Preco * Convert.ToInt32(cmbQuantidade.Text);
                 txtTotalCima.Text = total.ToString("C");
             }
+        }
+
+        private void RadioButtonPeriodoCheckChanged(object sender, EventArgs e)
+        {
+            txtSelecioneVenda.Enabled = true;
+            columnFilter = "Data";
+        }
+
+        private void RadioButtonClienteCheckChanged(object sender, EventArgs e)
+        {
+            txtSelecioneVenda.Enabled = true;
+            columnFilter = "Cliente";
         }
     }
 }

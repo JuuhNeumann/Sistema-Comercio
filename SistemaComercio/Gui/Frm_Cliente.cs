@@ -26,6 +26,7 @@ namespace SistemaComercio.Gui
             InitializeComponent();
             UpdateClientInDataGrid();
             telaPrincipal = frm_Principal;
+            dataGridViewCli.ReadOnly = true;
         }
 
 

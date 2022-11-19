@@ -61,7 +61,6 @@
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
-            "Pago",
             "Aguardando Pagamento",
             "Alterado",
             "Cancelado"});

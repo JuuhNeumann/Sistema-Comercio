@@ -30,24 +30,22 @@
         {
             this.dataGridViewCaixa = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRelatorio = new System.Windows.Forms.Button();
+            this.btnEmitirRelatorio = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblTotalVenda = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblTotalCompra = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblSaldoAtual = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblAnterior = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblData = new System.Windows.Forms.Label();
-            this.txtData = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCaixa)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -57,39 +55,45 @@
             // 
             // dataGridViewCaixa
             // 
+            this.dataGridViewCaixa.AllowUserToAddRows = false;
+            this.dataGridViewCaixa.AllowUserToDeleteRows = false;
             this.dataGridViewCaixa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCaixa.Location = new System.Drawing.Point(0, 115);
+            this.dataGridViewCaixa.Location = new System.Drawing.Point(0, 63);
             this.dataGridViewCaixa.Name = "dataGridViewCaixa";
-            this.dataGridViewCaixa.Size = new System.Drawing.Size(878, 354);
+            this.dataGridViewCaixa.ReadOnly = true;
+            this.dataGridViewCaixa.RowHeadersVisible = false;
+            this.dataGridViewCaixa.Size = new System.Drawing.Size(664, 213);
             this.dataGridViewCaixa.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.btnRelatorio);
+            this.panel1.Controls.Add(this.btnEmitirRelatorio);
             this.panel1.Controls.Add(this.btnSair);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Location = new System.Drawing.Point(0, 470);
+            this.panel1.Location = new System.Drawing.Point(0, 272);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(878, 111);
+            this.panel1.Size = new System.Drawing.Size(667, 120);
             this.panel1.TabIndex = 1;
             // 
-            // btnRelatorio
+            // btnEmitirRelatorio
             // 
-            this.btnRelatorio.Location = new System.Drawing.Point(133, 61);
-            this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.Size = new System.Drawing.Size(102, 34);
-            this.btnRelatorio.TabIndex = 12;
-            this.btnRelatorio.Text = "Gerar Relatório";
-            this.btnRelatorio.UseVisualStyleBackColor = true;
-            this.btnRelatorio.Click += new System.EventHandler(this.ClickGerarRelatorio);
+            this.btnEmitirRelatorio.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmitirRelatorio.Location = new System.Drawing.Point(12, 76);
+            this.btnEmitirRelatorio.Name = "btnEmitirRelatorio";
+            this.btnEmitirRelatorio.Size = new System.Drawing.Size(102, 22);
+            this.btnEmitirRelatorio.TabIndex = 12;
+            this.btnEmitirRelatorio.Text = "Emitir Relatório";
+            this.btnEmitirRelatorio.UseVisualStyleBackColor = true;
+            this.btnEmitirRelatorio.Click += new System.EventHandler(this.ClickGerarRelatorio);
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(12, 61);
+            this.btnSair.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(120, 76);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(102, 34);
+            this.btnSair.Size = new System.Drawing.Size(102, 22);
             this.btnSair.TabIndex = 11;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -99,26 +103,26 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.label13);
+            this.panel5.Controls.Add(this.lblTotalVenda);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.lblTotalCompra);
             this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(682, 5);
+            this.panel5.Location = new System.Drawing.Point(455, 12);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(193, 98);
+            this.panel5.Size = new System.Drawing.Size(196, 98);
             this.panel5.TabIndex = 10;
             // 
-            // label13
+            // lblTotalVenda
             // 
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(99, 63);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(78, 23);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "00000";
+            this.lblTotalVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTotalVenda.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalVenda.ForeColor = System.Drawing.Color.White;
+            this.lblTotalVenda.Location = new System.Drawing.Point(99, 63);
+            this.lblTotalVenda.Name = "lblTotalVenda";
+            this.lblTotalVenda.Size = new System.Drawing.Size(78, 23);
+            this.lblTotalVenda.TabIndex = 12;
+            this.lblTotalVenda.Text = "00000";
             // 
             // label10
             // 
@@ -144,16 +148,16 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Compras";
             // 
-            // label9
+            // lblTotalCompra
             // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(15, 63);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 23);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "00000";
+            this.lblTotalCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTotalCompra.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCompra.ForeColor = System.Drawing.Color.White;
+            this.lblTotalCompra.Location = new System.Drawing.Point(15, 63);
+            this.lblTotalCompra.Name = "lblTotalCompra";
+            this.lblTotalCompra.Size = new System.Drawing.Size(84, 23);
+            this.lblTotalCompra.TabIndex = 10;
+            this.lblTotalCompra.Text = "00000";
             // 
             // label1
             // 
@@ -170,26 +174,26 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label20);
+            this.panel4.Controls.Add(this.lblSaldoAtual);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.label12);
-            this.panel4.Controls.Add(this.label18);
+            this.panel4.Controls.Add(this.lblAnterior);
             this.panel4.Controls.Add(this.label19);
-            this.panel4.Location = new System.Drawing.Point(489, 5);
+            this.panel4.Location = new System.Drawing.Point(272, 12);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(193, 98);
             this.panel4.TabIndex = 9;
             // 
-            // label20
+            // lblSaldoAtual
             // 
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(97, 63);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(79, 23);
-            this.label20.TabIndex = 9;
-            this.label20.Text = "00000";
+            this.lblSaldoAtual.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSaldoAtual.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoAtual.ForeColor = System.Drawing.Color.White;
+            this.lblSaldoAtual.Location = new System.Drawing.Point(97, 63);
+            this.lblSaldoAtual.Name = "lblSaldoAtual";
+            this.lblSaldoAtual.Size = new System.Drawing.Size(79, 23);
+            this.lblSaldoAtual.TabIndex = 9;
+            this.lblSaldoAtual.Text = "00000";
             // 
             // label11
             // 
@@ -213,16 +217,16 @@
             this.label12.TabIndex = 7;
             this.label12.Text = "Anterior";
             // 
-            // label18
+            // lblAnterior
             // 
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(14, 63);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(84, 23);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "00000";
+            this.lblAnterior.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAnterior.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnterior.ForeColor = System.Drawing.Color.White;
+            this.lblAnterior.Location = new System.Drawing.Point(14, 63);
+            this.lblAnterior.Name = "lblAnterior";
+            this.lblAnterior.Size = new System.Drawing.Size(84, 23);
+            this.lblAnterior.TabIndex = 1;
+            this.lblAnterior.Text = "00000";
             // 
             // label19
             // 
@@ -238,57 +242,37 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Teal;
-            this.panel3.Controls.Add(this.lblData);
-            this.panel3.Controls.Add(this.txtData);
-            this.panel3.Controls.Add(this.label8);
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.lblTitle);
             this.panel3.Location = new System.Drawing.Point(0, -2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(878, 117);
+            this.panel3.Size = new System.Drawing.Size(664, 66);
             this.panel3.TabIndex = 2;
             // 
-            // lblData
+            // lblTitle
             // 
-            this.lblData.AutoSize = true;
-            this.lblData.Font = new System.Drawing.Font("Mongolian Baiti", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblData.Location = new System.Drawing.Point(340, 47);
-            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(70, 25);
-            this.lblData.TabIndex = 3;
-            this.lblData.Text = "Data:";
-            // 
-            // txtData
-            // 
-            this.txtData.Enabled = false;
-            this.txtData.Location = new System.Drawing.Point(412, 47);
-            this.txtData.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtData.Multiline = true;
-            this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(179, 26);
-            this.txtData.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(48, 27);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(138, 50);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Caixa";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(11, 21);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(277, 23);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Financeiro e Fluxo de Caixa";
             // 
             // Frm_Caixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 582);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(663, 388);
+            this.Controls.Add(this.dataGridViewCaixa);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridViewCaixa);
+            this.MaximizeBox = false;
             this.Name = "Frm_Caixa";
-            this.Text = "Caixa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Financeiro e Fluxo de Caixa";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCaixa)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -304,22 +288,20 @@
         private System.Windows.Forms.DataGridView dataGridViewCaixa;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtData;
-        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblTotalVenda;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblTotalCompra;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblSaldoAtual;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblAnterior;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnRelatorio;
+        private System.Windows.Forms.Button btnEmitirRelatorio;
     }
 }

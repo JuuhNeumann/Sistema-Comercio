@@ -22,8 +22,10 @@ namespace SistemaComercio.Gui
         private ItemVenda itemVenda;
         private List<Venda> vendas;
         private Venda venda;
-        private string metodoPagamento = "pix";
+        private string metodoPagamento = "Pix";
         private Frm_Principal formprincipal;
+        private ICaixaPort serviceCaixa;
+        private Caixa caixa;
 
         public Frm_ContaReceber(Frm_Principal frm_Principal)
         {
@@ -76,12 +78,8 @@ namespace SistemaComercio.Gui
             try
             {
                 var valorRecebido = Convert.ToDouble(txtValorPaga.Text);
-
-                //Valida se o usuario possui o dinheiro
-                if (valorRecebido <= formprincipal.user.Salario)
-                {
+             
                     //Valida se foi informado o valor total do produto
-
                     if (venda.Total_Venda == valorRecebido)
                     {
                         CreateContaReceber();
@@ -94,12 +92,6 @@ namespace SistemaComercio.Gui
                     {
                         MessageBox.Show($"Informe o valor total!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-
-                }
-                else
-                {
-                    MessageBox.Show("Saldo insuficiente", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
 
             }
             catch
@@ -117,7 +109,9 @@ namespace SistemaComercio.Gui
         {
             serviceV = new VendaService();
             service = new ContaReceberService();
+            serviceCaixa = new CaixaService();
 
+            caixa = serviceCaixa.GetAllCaixa().First();
             vendas = serviceV.GetAllVenda();
 
             AddComboBoxContaReceber();
@@ -171,11 +165,33 @@ namespace SistemaComercio.Gui
 
             venda.Situacao_Venda = "Vendido";
 
+
             serviceV.UpdateVenda(venda);
             service.AddContaReceber(contaReceber);
-
+            UpdateCaixa(parcela);
         }
+        
+        public void UpdateCaixa(int parcela)
+        {
+            var movimento = new MovimentoCaixa()
+            {
+                Data_Movimento = DateTime.Now,
+                Hora_Movimento = DateTime.Now,
+                Descricao = venda.ItemVenda.First().Produto.Nome,
+                Id_Caixa = caixa.Id,
+                Quantidade = venda.ItemVenda.First().Quantidade,
+                Tipo_Movimento = "Venda",
+                Valor = Convert.ToDouble(txtValorPaga.Text),
+                FormaPagamento = metodoPagamento,
+                Parcelamento = parcela.ToString()
+            };
 
+            caixa.SaldoAnterior = caixa.Saldo;
+            caixa.Saldo += Convert.ToDouble(txtValorPaga.Text);
+            caixa.MovimentoCaixa.Add(movimento);
+
+            serviceCaixa.UpdateCaixa(caixa);
+        }
 
         #endregion
 
@@ -190,7 +206,6 @@ namespace SistemaComercio.Gui
                 venda = serviceV.GetByIdVenda(idVenda);
                 SetGeracaoContaReceber();
                 gpbFormaPagamento.Enabled = true;
-
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using SistemaComercio.Gui;
+using SistemaComercioLibrary.Classes;
 using SistemaComercioLibrary.Port;
 using SistemaComercioLibrary.Service;
 using System;
@@ -17,11 +18,12 @@ namespace SistemaComercio
     public partial class Frm_Login : Form
     {
         private IAdmPort service = new AdmService();
-
+        private ICaixaPort serviceCaixa = new CaixaService();
 
         public Frm_Login()
         {
             InitializeComponent();
+            CreateEntityCaixa();
         }
 
         private void ClickEntrar(object sender, EventArgs e)
@@ -58,6 +60,22 @@ namespace SistemaComercio
         {
             Frm_Cadastro cadastro = new Frm_Cadastro();
             cadastro.Show();
+        }
+
+        public void CreateEntityCaixa()
+        {
+            var count = serviceCaixa.GetAllCaixa().Count();
+
+            if (count <= 0)
+            {
+                var newCaixa = new Caixa()
+                {
+                    Nome = "caixa1",
+                    Saldo = 0,
+                };
+
+                serviceCaixa.AddCaixa(newCaixa);
+            }
         }
     }
 }

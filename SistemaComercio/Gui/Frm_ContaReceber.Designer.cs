@@ -135,6 +135,7 @@
             // cmbParcelamento
             // 
             this.cmbParcelamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbParcelamento.Enabled = false;
             this.cmbParcelamento.FormattingEnabled = true;
             this.cmbParcelamento.Location = new System.Drawing.Point(294, 75);
             this.cmbParcelamento.Name = "cmbParcelamento";

@@ -489,3 +489,5 @@ C:\Users\LucasEstevesdeAbreuR\Desktop\Sistema-Comercio-main\SistemaComercio\obj\
 C:\Users\LucasEstevesdeAbreuR\Desktop\Sistema-Comercio-main\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_Venda.resources
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_RelatorioContaPagar.resources
 E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_RelatorioContaReceber.resources
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_Caixa.resources
+E:\microsoft visual code\repos\SistemaComercio\SistemaComercio\obj\Debug\SistemaComercio.Gui.Frm_RelatorioCaixa.resources

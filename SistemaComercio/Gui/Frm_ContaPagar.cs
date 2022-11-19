@@ -23,7 +23,9 @@ namespace SistemaComercio.Gui
         private List<Compra> compras;
         private Compra compra;
         private Frm_Principal formPrincipal;
-        private string metodoPagamento = "pix";
+        private string metodoPagamento = "Pix";
+        private ICaixaPort serviceCaixa;
+        private Caixa caixa;
 
         public Frm_ContaPagar(Frm_Principal frm_Principal)
         {
@@ -78,7 +80,7 @@ namespace SistemaComercio.Gui
                 var valorPago = Convert.ToDouble(txtValorPaga.Text);
 
                 //Valida se o usuario possui o dinheiro
-                if (valorPago <= formPrincipal.user.Salario)
+                if (valorPago <= caixa.Saldo)
                 {
                     //Valida se foi informado o valor total do produto
 
@@ -108,6 +110,7 @@ namespace SistemaComercio.Gui
             }
         }
 
+
         #endregion
 
         #region Funções
@@ -117,6 +120,9 @@ namespace SistemaComercio.Gui
             serviceC = new CompraService();
             service = new ContaPagarService();
 
+            serviceCaixa = new CaixaService();
+
+            caixa = serviceCaixa.GetAllCaixa().First();
             compras = serviceC.GetAllCompra();
 
             AddComboBoxContaPagar();
@@ -173,8 +179,30 @@ namespace SistemaComercio.Gui
 
             serviceC.UpdateCompra(compra);
             service.AddContaPagar(contaPagar);
-
+            UpdateCaixa(parcela);
         }
+
+        public void UpdateCaixa(int parcela)
+        {
+            var movimento = new MovimentoCaixa()
+            {
+                Data_Movimento = DateTime.Now,
+                Hora_Movimento = DateTime.Now,
+                Descricao = compra.ItemCompra.First().Produto.Nome,
+                Id_Caixa = caixa.Id,
+                Quantidade = compra.ItemCompra.First().Quantidade,
+                Tipo_Movimento = "Compra",
+                Valor = Convert.ToDouble(txtValorPaga.Text),
+                FormaPagamento = metodoPagamento,
+                Parcelamento = parcela.ToString()
+            };
+
+            caixa.SaldoAnterior = caixa.Saldo;
+            caixa.Saldo -= Convert.ToDouble(txtValorPaga.Text);
+            caixa.MovimentoCaixa.Add(movimento);
+            serviceCaixa.UpdateCaixa(caixa);
+        }
+
 
         #endregion
 

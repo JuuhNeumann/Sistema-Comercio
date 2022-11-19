@@ -239,6 +239,7 @@
             this.dataGridViewForne.Location = new System.Drawing.Point(18, 199);
             this.dataGridViewForne.Name = "dataGridViewForne";
             this.dataGridViewForne.ReadOnly = true;
+            this.dataGridViewForne.RowHeadersVisible = false;
             this.dataGridViewForne.Size = new System.Drawing.Size(752, 206);
             this.dataGridViewForne.TabIndex = 33;
             this.dataGridViewForne.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FormattingCollumns);

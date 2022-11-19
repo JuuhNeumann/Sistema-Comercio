@@ -152,7 +152,7 @@
             this.MaximizeBox = false;
             this.Name = "Frm_RelatorioContaPagar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_RelatorioContaPagar";
+            this.Text = "Relatório de Contas a Pagar";
             this.Load += new System.EventHandler(this.Frm_RelatorioContaPagar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

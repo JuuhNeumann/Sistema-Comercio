@@ -32,6 +32,7 @@ namespace SistemaComercio.Gui
             InitializeComponent();
             cmbSituacao.Text = "Paga";
             UpdateReportViewer();
+            txtData.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
         }
 

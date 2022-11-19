@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SistemaComercioLibrary.Persistence.Context;
@@ -9,9 +10,10 @@ using SistemaComercioLibrary.Persistence.Context;
 namespace SistemaComercioLibrary.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    partial class DataBaseContextModelSnapshot : ModelSnapshot
+    [Migration("20221119180905_add")]
+    partial class add
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -340,17 +342,11 @@ namespace SistemaComercioLibrary.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("FormaPagamento")
-                        .HasColumnType("text");
-
                     b.Property<DateTime>("Hora_Movimento")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("Id_Caixa")
                         .HasColumnType("integer");
-
-                    b.Property<string>("Parcelamento")
-                        .HasColumnType("text");
 
                     b.Property<int>("Quantidade")
                         .HasColumnType("integer");

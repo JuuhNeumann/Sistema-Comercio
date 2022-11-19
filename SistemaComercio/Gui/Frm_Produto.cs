@@ -21,6 +21,7 @@ namespace SistemaComercio.Gui
             formprincipal = frm_Principal;
             UpdateProductsInDataGrid();
             AddComboBoxFornecedor();
+            dataGridViewProd.ReadOnly = true;
         }
 
         //vai usar ainda?

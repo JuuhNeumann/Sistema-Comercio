@@ -99,7 +99,7 @@ namespace SistemaComercio.Gui
 
         private void ClickCaixa(object sender, EventArgs e)
         {
-            Frm_Caixa caixa = new Frm_Caixa(this);
+            Frm_Caixa caixa = new Frm_Caixa();
             caixa.Show();
         }
     }

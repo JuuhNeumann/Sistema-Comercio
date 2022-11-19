@@ -41,6 +41,7 @@ namespace SistemaComercioLibrary.Service
             var cx = _db.Caixa.FirstOrDefault(x => x.Id == caixa.Id); //pega o id
             cx.Nome = caixa.Nome;
             cx.Saldo = caixa.Saldo;
+            _db.SaveChanges();
         }
     }
 }

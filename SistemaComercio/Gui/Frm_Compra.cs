@@ -30,6 +30,7 @@ namespace SistemaComercio.Gui
             InitializeComponent();
             formprincipal = frm_Principal;
             UpdateCompraInDataGrid();
+            dataGridViewCompra.ReadOnly = true;
         }
 
         #region ComboBox

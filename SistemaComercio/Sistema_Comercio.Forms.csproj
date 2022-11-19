@@ -307,6 +307,12 @@
     <Compile Include="Gui\Frm_Login.Designer.cs">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Frm_RelatorioCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Frm_RelatorioCaixa.Designer.cs">
+      <DependentUpon>Frm_RelatorioCaixa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Frm_RelatorioCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,9 +351,13 @@
       <DependentUpon>SistemaComercioDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="bin\Debug\RelatorioCaixa.rdlc" />
     <EmbeddedResource Include="bin\Debug\RelatorioContaPagar.rdlc" />
     <EmbeddedResource Include="bin\Debug\RelatorioContaReceber.rdlc" />
     <EmbeddedResource Include="bin\Debug\RelatorioVendas.rdlc" />
+    <EmbeddedResource Include="Gui\Frm_Caixa.resx">
+      <DependentUpon>Frm_Caixa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_Cliente.resx">
       <DependentUpon>Frm_Cliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,6 +385,9 @@
     <EmbeddedResource Include="Gui\Frm_Produto.resx">
       <DependentUpon>Frm_Produto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Frm_RelatorioCaixa.resx">
+      <DependentUpon>Frm_RelatorioCaixa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Frm_RelatorioCompra.resx">
       <DependentUpon>Frm_RelatorioCompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -397,6 +410,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SistemaComercioLibrary.Classes.MovimentoCaixa.datasource" />
+    <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.FormRelatorioCaixa.datasource" />
     <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.FormRelatorioCompra.datasource" />
     <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.FormRelatorioContaPagar.datasource" />
     <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.FormRelatorioContaReceber.datasource" />

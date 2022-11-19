@@ -29,82 +29,132 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.cmbFiltro = new System.Windows.Forms.ComboBox();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.txtData = new System.Windows.Forms.TextBox();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.rvRelatorioCaixa = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cmbFiltro);
+            this.panel1.Controls.Add(this.lblFiltro);
+            this.panel1.Controls.Add(this.txtData);
+            this.panel1.Controls.Add(this.lblData);
+            this.panel1.Controls.Add(this.lblTitle);
+            this.panel1.Location = new System.Drawing.Point(-5, -5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(962, 94);
+            this.panel1.Size = new System.Drawing.Size(864, 73);
             this.panel1.TabIndex = 0;
             // 
-            // label8
+            // cmbFiltro
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(152, 21);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(631, 50);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Relatório fechamento de caixa";
+            this.cmbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFiltro.FormattingEnabled = true;
+            this.cmbFiltro.Items.AddRange(new object[] {
+            "Pix",
+            "Dinheiro",
+            "Cartão de Débito",
+            "Cartão de Crédito"});
+            this.cmbFiltro.Location = new System.Drawing.Point(668, 27);
+            this.cmbFiltro.Name = "cmbFiltro";
+            this.cmbFiltro.Size = new System.Drawing.Size(178, 21);
+            this.cmbFiltro.TabIndex = 4;
+            this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
+            // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFiltro.Location = new System.Drawing.Point(623, 30);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(48, 14);
+            this.lblFiltro.TabIndex = 3;
+            this.lblFiltro.Text = "Filtro:";
+            this.lblFiltro.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // txtData
+            // 
+            this.txtData.Enabled = false;
+            this.txtData.Location = new System.Drawing.Point(457, 28);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(150, 20);
+            this.txtData.TabIndex = 2;
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblData.Location = new System.Drawing.Point(419, 31);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(41, 14);
+            this.lblData.TabIndex = 1;
+            this.lblData.Text = "Data:";
+            this.lblData.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTitle.Location = new System.Drawing.Point(16, 25);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(186, 23);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Relatório de Caixa";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Teal;
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(1, 460);
+            this.panel2.BackColor = System.Drawing.Color.Maroon;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnSair);
+            this.panel2.Location = new System.Drawing.Point(-5, 411);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(962, 101);
-            this.panel2.TabIndex = 3;
+            this.panel2.Size = new System.Drawing.Size(864, 52);
+            this.panel2.TabIndex = 1;
             // 
-            // button2
+            // btnSair
             // 
-            this.button2.Location = new System.Drawing.Point(820, 39);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 29);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Sair";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.ClickSair);
+            this.btnSair.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(737, 15);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(109, 23);
+            this.btnSair.TabIndex = 0;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.ClickSair);
             // 
-            // button1
+            // rvRelatorioCaixa
             // 
-            this.button1.Location = new System.Drawing.Point(11, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 29);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Baixar Relatorio";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Location = new System.Drawing.Point(1, 94);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(959, 367);
-            this.reportViewer1.TabIndex = 4;
+            this.rvRelatorioCaixa.Location = new System.Drawing.Point(-1, 62);
+            this.rvRelatorioCaixa.Name = "rvRelatorioCaixa";
+            this.rvRelatorioCaixa.ServerReport.BearerToken = null;
+            this.rvRelatorioCaixa.Size = new System.Drawing.Size(860, 353);
+            this.rvRelatorioCaixa.TabIndex = 2;
             // 
             // Frm_RelatorioCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(961, 560);
-            this.Controls.Add(this.reportViewer1);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(854, 462);
+            this.Controls.Add(this.rvRelatorioCaixa);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "Frm_RelatorioCaixa";
-            this.Text = "Relatorio Caixa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Relatório de Caixa";
             this.Load += new System.EventHandler(this.Frm_RelatorioCaixa_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -116,10 +166,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private Microsoft.Reporting.WinForms.ReportViewer rvRelatorioCaixa;
+        private System.Windows.Forms.ComboBox cmbFiltro;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.TextBox txtData;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnSair;
     }
 }

@@ -6,10 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaComercio.Gui
@@ -30,6 +27,8 @@ namespace SistemaComercio.Gui
             InitializeComponent();
             frmprincipal = formprincipal;
             UpdateReportViewer();
+            txtData.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            AddComboBoxPeriodo();
         }
 
         private void Frm_RelatorioVenda_Load(object sender, EventArgs e)
@@ -80,6 +79,25 @@ namespace SistemaComercio.Gui
                 });
             }
         }
+        private void AddComboBoxPeriodo()
+        {
+            var list = new List<string>();
+
+
+            foreach (var item in itemVendas)
+            {
+                var date = item.Venda.Data;
+                if (!list.Contains(date))
+                    list.Add(date);
+            }
+
+            foreach (var data in list)
+            {
+                this.cmbPeriodo.Items.AddRange(new object[] {
+                data
+                });
+            }
+        }
 
         public void CreateReportViewer()
         {
@@ -102,7 +120,17 @@ namespace SistemaComercio.Gui
         private void cmbSituacao_SelectedIndexChanged(object sender, EventArgs e)
         {
             var item = serviceItemV.GetAllItemVenda();
-            itemVendas = item.Where(x => x.Venda.Situacao_Venda.Equals(cmbSituacao.Text)).ToList();
+
+            if (cmbPeriodo.SelectedIndex != -1)
+            {
+                itemVendas = item.Where(x => x.Venda.Situacao_Venda.Equals(cmbSituacao.Text) &&
+                x.Venda.Data.Equals(cmbPeriodo.Text)).ToList();
+            }
+            else
+            {
+                itemVendas = item.Where(x => x.Venda.Situacao_Venda.Equals(cmbSituacao.Text)).ToList();
+            }
+
             ClearReportViewer();
             UpdateReportViewer();
             rvRelatorioVenda.RefreshReport();
@@ -122,7 +150,22 @@ namespace SistemaComercio.Gui
 
         private void cmbPeriodo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var item = serviceItemV.GetAllItemVenda();
 
+            //Utilizando o filtro de pesquisa por periodo e situação
+            if (cmbSituacao.SelectedIndex !=-1)
+            {
+                itemVendas = item.Where(x => x.Venda.Data.Equals(cmbPeriodo.Text) && 
+                x.Venda.Situacao_Venda.Equals(cmbSituacao.Text) ).ToList();
+            }
+            else
+            {
+                itemVendas = item.Where(x => x.Venda.Data.Equals(cmbPeriodo.Text)).ToList();
+            }
+
+            ClearReportViewer();
+            UpdateReportViewer();
+            rvRelatorioVenda.RefreshReport();
         }
 
         private void ClickSair(object sender, EventArgs e)

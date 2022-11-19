@@ -270,6 +270,7 @@
     <Compile Include="Entity\ContaReceber.cs" />
     <Compile Include="Entity\FormaPagamento.cs" />
     <Compile Include="Entity\FormaPagamentoVenda.cs" />
+    <Compile Include="Entity\FormRelatorioCaixa.cs" />
     <Compile Include="Entity\FormRelatorioCompra.cs" />
     <Compile Include="Entity\FormRelatorioContaPagar.cs" />
     <Compile Include="Entity\FormRelatorioContaReceber.cs" />
@@ -311,6 +312,14 @@
     <Compile Include="Migrations\20221118150657_reset banco.cs" />
     <Compile Include="Migrations\20221118150657_reset banco.designer.cs">
       <DependentUpon>20221118150657_reset banco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20221119180905_add.cs" />
+    <Compile Include="Migrations\20221119180905_add.designer.cs">
+      <DependentUpon>20221119180905_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20221119184044_add2.cs" />
+    <Compile Include="Migrations\20221119184044_add2.designer.cs">
+      <DependentUpon>20221119184044_add2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DataBaseContextModelSnapshot.cs" />
     <Compile Include="Persistence\Context\DataBaseContext.cs" />
@@ -366,6 +375,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SistemaComercioLibrary.Entity.FormRelatorioCaixa.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

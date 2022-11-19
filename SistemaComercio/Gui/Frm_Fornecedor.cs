@@ -21,10 +21,11 @@ namespace SistemaComercio.Gui
             InitializeComponent();
             formPrincipal = frm_Principal;
             UpdateProviderInDataGrid();
+            dataGridViewForne.ReadOnly = true;
         }
         private void Frm_Fornecedor_Load(object sender, EventArgs e)
         {
-          dataGridViewForne.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+          dataGridViewForne.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
           dataGridViewForne.DataSource = service.GetAllFornecedor();
         }
 
@@ -129,7 +130,7 @@ namespace SistemaComercio.Gui
             {
                 switch (coluna.Name)
                 {
-                    /*
+                    
                     case "Excluir":
                         //coluna.DisplayIndex = 1; se quiser mudar a posição 
                         coluna.Width = 30;
@@ -173,7 +174,7 @@ namespace SistemaComercio.Gui
                     case "Email":
                         coluna.Width = 115;
                         break;
-                */
+                
 
                     //A
                 }

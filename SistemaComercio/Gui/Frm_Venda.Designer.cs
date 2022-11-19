@@ -444,6 +444,7 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(309, 55);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTotal.Name = "txtTotal";
@@ -472,6 +473,7 @@
             // 
             // txtHora
             // 
+            this.txtHora.Enabled = false;
             this.txtHora.Location = new System.Drawing.Point(309, 26);
             this.txtHora.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtHora.Name = "txtHora";
@@ -490,6 +492,7 @@
             // 
             // txtData
             // 
+            this.txtData.Enabled = false;
             this.txtData.Location = new System.Drawing.Point(42, 26);
             this.txtData.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtData.Name = "txtData";
@@ -508,10 +511,13 @@
             // 
             // dataGridViewVenda
             // 
+            this.dataGridViewVenda.AllowUserToAddRows = false;
+            this.dataGridViewVenda.AllowUserToDeleteRows = false;
             this.dataGridViewVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewVenda.Location = new System.Drawing.Point(21, 249);
             this.dataGridViewVenda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridViewVenda.Name = "dataGridViewVenda";
+            this.dataGridViewVenda.ReadOnly = true;
             this.dataGridViewVenda.RowHeadersVisible = false;
             this.dataGridViewVenda.Size = new System.Drawing.Size(491, 157);
             this.dataGridViewVenda.TabIndex = 11;
@@ -561,6 +567,7 @@
             this.rdbCliente.TabIndex = 3;
             this.rdbCliente.Text = "Cliente";
             this.rdbCliente.UseVisualStyleBackColor = true;
+            this.rdbCliente.CheckedChanged += new System.EventHandler(this.RadioButtonClienteCheckChanged);
             // 
             // rdbPeriodo
             // 
@@ -574,6 +581,7 @@
             this.rdbPeriodo.TabStop = true;
             this.rdbPeriodo.Text = "Período";
             this.rdbPeriodo.UseVisualStyleBackColor = true;
+            this.rdbPeriodo.CheckedChanged += new System.EventHandler(this.RadioButtonPeriodoCheckChanged);
             // 
             // Frm_Venda
             // 

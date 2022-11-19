@@ -29,8 +29,9 @@ namespace SistemaComercio.Gui
         public Frm_RelatorioContaReceber()
         {
             InitializeComponent();
-            cmbSituacao.Text = "Paga";
+            cmbSituacao.Text = "Vendido";
             UpdateReportViewer();
+            txtData.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void Frm_RelatorioContaReceber_Load(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace SistemaComercio.Gui
             service = new ContaReceberService();
             serviceItemV = new ItemVendaService();
 
-            if (cmbSituacao.Text.Equals("Paga"))
+            if (cmbSituacao.Text.Equals("Vendido"))
             {
                 CreateContasReceberDataTable();
             }
@@ -89,7 +90,7 @@ namespace SistemaComercio.Gui
                 dt.Rows.Add(new object[]
                 {
                     FormRelatorioCR.Id,
-                    "Pago",
+                    "Vendido",
                     FormRelatorioCR.Descricao,
                     FormRelatorioCR.DataLancamento,
                     FormRelatorioCR.DataVencimento,

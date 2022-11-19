@@ -45,6 +45,8 @@ namespace SistemaComercioLibrary.Service
             mc.Tipo_Movimento = movimentoCaixa.Tipo_Movimento;
             mc.Valor = movimentoCaixa.Valor;
             mc.Id_Caixa = movimentoCaixa.Id_Caixa;
+            _db.SaveChanges();
+
         }
     }
 }

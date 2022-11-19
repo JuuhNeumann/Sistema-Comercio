@@ -59,7 +59,7 @@
             this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSituacao.FormattingEnabled = true;
             this.cmbSituacao.Items.AddRange(new object[] {
-            "Paga",
+            "Vendido",
             "A Receber",
             "A Vencer",
             "Em Atraso"});
@@ -149,7 +149,7 @@
             this.MaximizeBox = false;
             this.Name = "Frm_RelatorioContaReceber";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_RelatorioContaReceber";
+            this.Text = "Relatório de Contas a Receber";
             this.Load += new System.EventHandler(this.Frm_RelatorioContaReceber_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

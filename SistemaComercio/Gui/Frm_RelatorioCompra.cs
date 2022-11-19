@@ -25,6 +25,7 @@ namespace SistemaComercio.Gui
             InitializeComponent();
             frmprincipal = formprincipal;
             UpdateReportViewer();
+            txtData.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void Frm_RelatorioCompra_Load(object sender, EventArgs e)
