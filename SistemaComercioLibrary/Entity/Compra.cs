@@ -14,16 +14,12 @@ namespace SistemaComercioLibrary.Classes
         [Key]
         public int Id { get; set; }
         [Required]
-        [MaxLength(255)]
         public string Data { get; set; }
         [Required]
-        [MaxLength(255)]
         public string Hora { get; set; }
         [Required]
-        [MaxLength(255)]
         public double Total_Compra { get; set; }
         [Required]
-        [MaxLength(255)]
         public string Situacao_Compra { get; set; }
         [Required]
         public virtual Fornecedor Fornecedor { get; set; }

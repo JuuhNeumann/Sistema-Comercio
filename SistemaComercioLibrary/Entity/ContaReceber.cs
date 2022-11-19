@@ -13,25 +13,18 @@ namespace SistemaComercioLibrary.Classes
         [Key]
         public int Id { get; set; }
         [Required]
-        [MaxLength(255)]
         public string Descricao { get; set; }
         [Required]
-        [MaxLength(10)]
         public DateTime Data_Lancamento { get; set; }
         [Required]
-        [MaxLength(10)]
         public DateTime Data_Vencimento { get; set; }
         [Required]
-        [MaxLength(255)]
         public double Valor { get; set; }
         [Required]
-        [MaxLength(255)]
         public double Recebido { get; set; }
         [Required]
-        [MaxLength(10)]
         public DateTime Data_Recebimento { get; set; }
         [Required]
-        [MaxLength(255)]
         public double Valor_Recebimento { get; set; }
         public int Parcela { get; set; }
         [Required]

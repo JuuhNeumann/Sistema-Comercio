@@ -13,11 +13,8 @@ namespace SistemaComercioLibrary.Entity
     {
         [Key]
         public int Id { get; set; }
-        [MaxLength(255)]
         public int Quantidade { get; set; }
-        [MaxLength(255)]
         public double Valor_Unitario { get; set; }
-        [MaxLength(255)]
         public double Total_Item { get; set; }
         public virtual Venda Venda { get; set; }
         public int Id_Venda { get; set; }
