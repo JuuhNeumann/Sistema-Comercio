@@ -100,7 +100,7 @@ namespace SistemaComercio.Gui
             //quando clica em excluir pega ele
             if (dataGridViewForne.Columns[e.ColumnIndex] == dataGridViewForne.Columns["Excluir"])
             {
-                if (MessageBox.Show("Deseja mesmo remover este produto?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Deseja mesmo remover este fornecedor?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     //preciso pegar o id dele pra saber qm é
                     var id = Convert.ToInt32(dataGridViewForne.Rows[e.RowIndex].Cells["Id"].Value.ToString());

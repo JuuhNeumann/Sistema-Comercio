@@ -247,6 +247,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gui\Frm_Caixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Frm_Caixa.Designer.cs">
+      <DependentUpon>Frm_Caixa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Frm_Compra.cs">
       <SubType>Form</SubType>
     </Compile>

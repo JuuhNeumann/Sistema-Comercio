@@ -116,6 +116,7 @@
             this.btnCaixa.TabIndex = 17;
             this.btnCaixa.Text = "Caixa";
             this.btnCaixa.UseVisualStyleBackColor = false;
+            this.btnCaixa.Click += new System.EventHandler(this.ClickCaixa);
             // 
             // btnContaReceber
             // 

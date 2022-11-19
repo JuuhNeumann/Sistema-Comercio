@@ -96,5 +96,11 @@ namespace SistemaComercio.Gui
             Frm_ContaReceber contaR = new Frm_ContaReceber(this);
             contaR.Show();
         }
+
+        private void ClickCaixa(object sender, EventArgs e)
+        {
+            Frm_Caixa caixa = new Frm_Caixa(this);
+            caixa.Show();
+        }
     }
 }
