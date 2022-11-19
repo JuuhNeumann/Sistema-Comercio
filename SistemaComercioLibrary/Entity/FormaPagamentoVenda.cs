@@ -12,7 +12,6 @@ namespace SistemaComercioLibrary.Entity
     {
         [Key]
         public int Id { get; set; }
-        [MaxLength(255)]
         public double Valor { get; set; }
         public virtual Venda Venda { get; set; }
         public int Id_Venda { get; set; }

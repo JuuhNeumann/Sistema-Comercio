@@ -14,7 +14,6 @@ namespace SistemaComercioLibrary.Classes
         [Key]
         public int Id { get; set; }
         [Required]
-        [MaxLength(255)]
         public string Nome { get; set; }
         public string Parcela { get; set; }
         public virtual List<FormaPagamentoVenda> FormaPagamentoVenda { get; set; }

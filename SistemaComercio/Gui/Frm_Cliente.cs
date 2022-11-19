@@ -165,7 +165,7 @@ namespace SistemaComercio.Gui
             //quando clica em excluir pega ele
             if (dataGridViewCli.Columns[e.ColumnIndex] == dataGridViewCli.Columns["Excluir"])
             {
-                if (MessageBox.Show("Deseja mesmo remover este produto?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Deseja mesmo remover este cliente?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     //preciso pegar o id dele pra saber qm é
                     var id = Convert.ToInt32(dataGridViewCli.Rows[e.RowIndex].Cells["Id"].Value.ToString());

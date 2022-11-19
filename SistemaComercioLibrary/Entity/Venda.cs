@@ -18,10 +18,8 @@ namespace SistemaComercioLibrary.Classes
         [Required]
         public string Hora { get; set; }
         [Required]
-        [MaxLength(255)]
         public double Total_Venda { get; set; }
         [Required]
-        [MaxLength(255)]
         public string Situacao_Venda { get; set; }
         [Required]
         public virtual Cliente Cliente { get; set; }
