@@ -209,6 +209,7 @@ namespace SistemaComercio.Gui
         {
             var fornecedor = new Fornecedor()
             {
+                Id = forne.Id,
                 Nome = txtNome.Text,
                 Cpf_Cnpj = txtCPF.Text,
                 Telefone = txtTel.Text,
