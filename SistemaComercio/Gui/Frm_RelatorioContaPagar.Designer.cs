@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_RelatorioContaPagar));
             this.rvRelatorioContaPagar = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbSituacao = new System.Windows.Forms.ComboBox();
@@ -132,9 +133,11 @@
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(738, 14);
+            this.btnSair.Image = global::SistemaComercio.Properties.Resources.sair;
+            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSair.Location = new System.Drawing.Point(754, 14);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(111, 25);
+            this.btnSair.Size = new System.Drawing.Size(95, 25);
             this.btnSair.TabIndex = 0;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -149,6 +152,7 @@
             this.Controls.Add(this.rvRelatorioContaPagar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_RelatorioContaPagar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

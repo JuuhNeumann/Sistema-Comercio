@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cliente));
             this.lblCpff = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -54,14 +55,16 @@
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtCEP = new System.Windows.Forms.TextBox();
             this.pnlFundo = new System.Windows.Forms.Panel();
+            this.dataGridViewCli = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnSairr = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.dataGridViewCli = new System.Windows.Forms.DataGridView();
             this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.pnlFundo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCli)).BeginInit();
@@ -320,6 +323,47 @@
             this.pnlFundo.Size = new System.Drawing.Size(791, 456);
             this.pnlFundo.TabIndex = 35;
             // 
+            // dataGridViewCli
+            // 
+            this.dataGridViewCli.AllowUserToAddRows = false;
+            this.dataGridViewCli.AllowUserToDeleteRows = false;
+            this.dataGridViewCli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCli.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Excluir,
+            this.Editar});
+            this.dataGridViewCli.Location = new System.Drawing.Point(18, 196);
+            this.dataGridViewCli.Name = "dataGridViewCli";
+            this.dataGridViewCli.ReadOnly = true;
+            this.dataGridViewCli.RowHeadersVisible = false;
+            this.dataGridViewCli.Size = new System.Drawing.Size(757, 214);
+            this.dataGridViewCli.TabIndex = 33;
+            this.dataGridViewCli.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FormattingCollunms);
+            this.dataGridViewCli.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.FormatttingMensageRows);
+            this.dataGridViewCli.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.FormattingRows);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Navy;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Location = new System.Drawing.Point(3, 150);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(788, 10);
+            this.panel2.TabIndex = 0;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::SistemaComercio.Properties.Resources.lixo;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::SistemaComercio.Properties.Resources.editar;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            // 
             // btnSairr
             // 
             this.btnSairr.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -345,24 +389,6 @@
             this.btnLimpar.Text = "    Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.ClickLimpar);
-            // 
-            // dataGridViewCli
-            // 
-            this.dataGridViewCli.AllowUserToAddRows = false;
-            this.dataGridViewCli.AllowUserToDeleteRows = false;
-            this.dataGridViewCli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCli.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Excluir,
-            this.Editar});
-            this.dataGridViewCli.Location = new System.Drawing.Point(18, 196);
-            this.dataGridViewCli.Name = "dataGridViewCli";
-            this.dataGridViewCli.ReadOnly = true;
-            this.dataGridViewCli.RowHeadersVisible = false;
-            this.dataGridViewCli.Size = new System.Drawing.Size(757, 214);
-            this.dataGridViewCli.TabIndex = 33;
-            this.dataGridViewCli.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FormattingCollunms);
-            this.dataGridViewCli.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.FormatttingMensageRows);
-            this.dataGridViewCli.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.FormattingRows);
             // 
             // Excluir
             // 
@@ -405,15 +431,6 @@
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.ClickCadastrar);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Navy;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Location = new System.Drawing.Point(3, 150);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(788, 10);
-            this.panel2.TabIndex = 0;
-            // 
             // btnPesquisar
             // 
             this.btnPesquisar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -445,6 +462,7 @@
             this.Controls.Add(this.pnlFundo);
             this.Controls.Add(this.btnSair);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_Cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
@@ -492,5 +510,7 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.DataGridViewImageColumn Excluir;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }

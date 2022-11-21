@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ContaPagar));
             this.gpbContaPagar = new System.Windows.Forms.GroupBox();
             this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
@@ -219,21 +220,25 @@
             // 
             // btnEmitirRelatorio
             // 
+            this.btnEmitirRelatorio.Image = global::SistemaComercio.Properties.Resources.trade_report_reports_documents_2351;
+            this.btnEmitirRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmitirRelatorio.Location = new System.Drawing.Point(20, 262);
             this.btnEmitirRelatorio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEmitirRelatorio.Name = "btnEmitirRelatorio";
-            this.btnEmitirRelatorio.Size = new System.Drawing.Size(114, 22);
+            this.btnEmitirRelatorio.Size = new System.Drawing.Size(130, 22);
             this.btnEmitirRelatorio.TabIndex = 2;
-            this.btnEmitirRelatorio.Text = "Emitir Relatório";
+            this.btnEmitirRelatorio.Text = "        Emitir Relatório";
             this.btnEmitirRelatorio.UseVisualStyleBackColor = true;
             this.btnEmitirRelatorio.Click += new System.EventHandler(this.ClickEmitirRelatorio);
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(483, 262);
+            this.btnSair.Image = global::SistemaComercio.Properties.Resources.sair;
+            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSair.Location = new System.Drawing.Point(504, 262);
             this.btnSair.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(114, 22);
+            this.btnSair.Size = new System.Drawing.Size(93, 22);
             this.btnSair.TabIndex = 3;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -254,11 +259,13 @@
             // 
             // btnLimparCampos
             // 
-            this.btnLimparCampos.Location = new System.Drawing.Point(141, 262);
+            this.btnLimparCampos.Image = global::SistemaComercio.Properties.Resources.limpar;
+            this.btnLimparCampos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimparCampos.Location = new System.Drawing.Point(157, 262);
             this.btnLimparCampos.Name = "btnLimparCampos";
             this.btnLimparCampos.Size = new System.Drawing.Size(114, 22);
             this.btnLimparCampos.TabIndex = 5;
-            this.btnLimparCampos.Text = "Limpar Campos";
+            this.btnLimparCampos.Text = "     Limpar Campos";
             this.btnLimparCampos.UseVisualStyleBackColor = true;
             this.btnLimparCampos.Click += new System.EventHandler(this.ClickLimparCampos);
             // 
@@ -295,11 +302,13 @@
             // 
             // btnPagar
             // 
+            this.btnPagar.Image = global::SistemaComercio.Properties.Resources.ImgCash;
+            this.btnPagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPagar.Location = new System.Drawing.Point(483, 68);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(83, 23);
             this.btnPagar.TabIndex = 9;
-            this.btnPagar.Text = "Pagar";
+            this.btnPagar.Text = "      Pagar";
             this.btnPagar.UseVisualStyleBackColor = true;
             this.btnPagar.Click += new System.EventHandler(this.ClickPagar);
             // 
@@ -376,6 +385,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Frm_ContaPagar";

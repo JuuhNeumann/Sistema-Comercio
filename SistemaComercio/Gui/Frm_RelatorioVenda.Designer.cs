@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_RelatorioVenda));
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbPeriodo = new System.Windows.Forms.ComboBox();
             this.txtData = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@
             this.rvRelatorioVenda = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
-            this.btnBaixar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -150,7 +150,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel2.Controls.Add(this.btnSair);
-            this.panel2.Controls.Add(this.btnBaixar);
             this.panel2.Location = new System.Drawing.Point(0, 415);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(855, 51);
@@ -158,22 +157,15 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(730, 17);
+            this.btnSair.Image = global::SistemaComercio.Properties.Resources.sair;
+            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSair.Location = new System.Drawing.Point(752, 17);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(113, 23);
+            this.btnSair.Size = new System.Drawing.Size(91, 23);
             this.btnSair.TabIndex = 1;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.ClickSair);
-            // 
-            // btnBaixar
-            // 
-            this.btnBaixar.Location = new System.Drawing.Point(12, 17);
-            this.btnBaixar.Name = "btnBaixar";
-            this.btnBaixar.Size = new System.Drawing.Size(113, 23);
-            this.btnBaixar.TabIndex = 0;
-            this.btnBaixar.Text = "Baixar Relatório";
-            this.btnBaixar.UseVisualStyleBackColor = true;
             // 
             // Frm_RelatorioVenda
             // 
@@ -185,6 +177,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Frm_RelatorioVenda";
@@ -211,6 +204,5 @@
         private Microsoft.Reporting.WinForms.ReportViewer rvRelatorioVenda;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnBaixar;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Compra));
             this.gpbDadosOperacionais = new System.Windows.Forms.GroupBox();
             this.lblRespostaSituacao = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
@@ -37,23 +38,17 @@
             this.txtData = new System.Windows.Forms.TextBox();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
-            this.btnRelatorio = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
             this.lblSelecionarProduto = new System.Windows.Forms.Label();
             this.lblExemplo = new System.Windows.Forms.Label();
             this.dataGridViewCompra = new System.Windows.Forms.DataGridView();
             this.lblPreco = new System.Windows.Forms.Label();
             this.lblQuant = new System.Windows.Forms.Label();
             this.txtPreco = new System.Windows.Forms.TextBox();
-            this.btnComprar = new System.Windows.Forms.Button();
-            this.btnCancelarCompra = new System.Windows.Forms.Button();
             this.cmbSelecioneProduto = new System.Windows.Forms.ComboBox();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.gpbConsulta = new System.Windows.Forms.GroupBox();
             this.rdbForne = new System.Windows.Forms.RadioButton();
             this.rdbPeriodo = new System.Windows.Forms.RadioButton();
             this.lblConsulta = new System.Windows.Forms.Label();
-            this.btnConsultar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSelecioneCompra = new System.Windows.Forms.TextBox();
             this.tbcCompra = new System.Windows.Forms.TabControl();
@@ -64,7 +59,6 @@
             this.tbpCancelarCompra = new System.Windows.Forms.TabPage();
             this.txtTotalCimaCancel = new System.Windows.Forms.TextBox();
             this.lblTotalCimaCancel = new System.Windows.Forms.Label();
-            this.btnLimparCancel = new System.Windows.Forms.Button();
             this.cmbSelecioneCancel = new System.Windows.Forms.ComboBox();
             this.txtPrecoCancel = new System.Windows.Forms.TextBox();
             this.lblPrecoCancel = new System.Windows.Forms.Label();
@@ -72,6 +66,13 @@
             this.lblQuantidadeCancel = new System.Windows.Forms.Label();
             this.lblExemploCancel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnRelatorio = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnComprar = new System.Windows.Forms.Button();
+            this.btnLimparCancel = new System.Windows.Forms.Button();
+            this.btnCancelarCompra = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.gpbDadosOperacionais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompra)).BeginInit();
             this.gpbConsulta.SuspendLayout();
@@ -176,28 +177,6 @@
             this.lblData.TabIndex = 0;
             this.lblData.Text = "Data:";
             // 
-            // btnRelatorio
-            // 
-            this.btnRelatorio.Location = new System.Drawing.Point(14, 497);
-            this.btnRelatorio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.Size = new System.Drawing.Size(115, 23);
-            this.btnRelatorio.TabIndex = 1;
-            this.btnRelatorio.Text = "Emitir Relatório";
-            this.btnRelatorio.UseVisualStyleBackColor = true;
-            this.btnRelatorio.Click += new System.EventHandler(this.ClickEmitirRelatorio);
-            // 
-            // btnSair
-            // 
-            this.btnSair.Location = new System.Drawing.Point(420, 497);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(86, 23);
-            this.btnSair.TabIndex = 2;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.ClickSair);
-            // 
             // lblSelecionarProduto
             // 
             this.lblSelecionarProduto.AutoSize = true;
@@ -261,28 +240,6 @@
             this.txtPreco.Size = new System.Drawing.Size(186, 21);
             this.txtPreco.TabIndex = 7;
             // 
-            // btnComprar
-            // 
-            this.btnComprar.Location = new System.Drawing.Point(220, 88);
-            this.btnComprar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnComprar.Name = "btnComprar";
-            this.btnComprar.Size = new System.Drawing.Size(118, 23);
-            this.btnComprar.TabIndex = 10;
-            this.btnComprar.Text = "Lançar Compra";
-            this.btnComprar.UseVisualStyleBackColor = true;
-            this.btnComprar.Click += new System.EventHandler(this.ClickLançarCompra);
-            // 
-            // btnCancelarCompra
-            // 
-            this.btnCancelarCompra.Location = new System.Drawing.Point(214, 88);
-            this.btnCancelarCompra.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnCancelarCompra.Name = "btnCancelarCompra";
-            this.btnCancelarCompra.Size = new System.Drawing.Size(118, 23);
-            this.btnCancelarCompra.TabIndex = 11;
-            this.btnCancelarCompra.Text = "Cancelar Compra";
-            this.btnCancelarCompra.UseVisualStyleBackColor = true;
-            this.btnCancelarCompra.Click += new System.EventHandler(this.ClickCancelarCompra);
-            // 
             // cmbSelecioneProduto
             // 
             this.cmbSelecioneProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -293,17 +250,6 @@
             this.cmbSelecioneProduto.Size = new System.Drawing.Size(395, 21);
             this.cmbSelecioneProduto.TabIndex = 13;
             this.cmbSelecioneProduto.SelectedIndexChanged += new System.EventHandler(this.cmbSelecioneProduto_SelectedIndexChanged);
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Location = new System.Drawing.Point(346, 88);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(118, 23);
-            this.btnLimpar.TabIndex = 12;
-            this.btnLimpar.Text = "Limpar Campos";
-            this.btnLimpar.UseVisualStyleBackColor = true;
-            this.btnLimpar.Click += new System.EventHandler(this.ClickLimparCamposLancar);
             // 
             // gpbConsulta
             // 
@@ -357,16 +303,6 @@
             this.lblConsulta.TabIndex = 13;
             this.lblConsulta.Text = "Selecione a compra que deseja consultar após selecionar o tipo de consulta:";
             // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Location = new System.Drawing.Point(432, 202);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
-            this.btnConsultar.TabIndex = 14;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.ClickConsultar);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Cornsilk;
@@ -387,7 +323,7 @@
             this.txtSelecioneCompra.Location = new System.Drawing.Point(155, 202);
             this.txtSelecioneCompra.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtSelecioneCompra.Name = "txtSelecioneCompra";
-            this.txtSelecioneCompra.Size = new System.Drawing.Size(271, 21);
+            this.txtSelecioneCompra.Size = new System.Drawing.Size(247, 21);
             this.txtSelecioneCompra.TabIndex = 14;
             // 
             // tbcCompra
@@ -490,17 +426,6 @@
             this.lblTotalCimaCancel.TabIndex = 19;
             this.lblTotalCimaCancel.Text = "Total:";
             // 
-            // btnLimparCancel
-            // 
-            this.btnLimparCancel.Location = new System.Drawing.Point(340, 88);
-            this.btnLimparCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnLimparCancel.Name = "btnLimparCancel";
-            this.btnLimparCancel.Size = new System.Drawing.Size(118, 23);
-            this.btnLimparCancel.TabIndex = 18;
-            this.btnLimparCancel.Text = "Limpar Campos";
-            this.btnLimparCancel.UseVisualStyleBackColor = true;
-            this.btnLimparCancel.Click += new System.EventHandler(this.ClickLimparCamposDel);
-            // 
             // cmbSelecioneCancel
             // 
             this.cmbSelecioneCancel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -566,6 +491,96 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Selecione o id da compra que deseja cancelar:";
             // 
+            // btnSair
+            // 
+            this.btnSair.Image = global::SistemaComercio.Properties.Resources.sair;
+            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSair.Location = new System.Drawing.Point(420, 497);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(86, 23);
+            this.btnSair.TabIndex = 2;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.ClickSair);
+            // 
+            // btnRelatorio
+            // 
+            this.btnRelatorio.Image = global::SistemaComercio.Properties.Resources.trade_report_reports_documents_2351;
+            this.btnRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRelatorio.Location = new System.Drawing.Point(14, 497);
+            this.btnRelatorio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnRelatorio.Name = "btnRelatorio";
+            this.btnRelatorio.Size = new System.Drawing.Size(126, 23);
+            this.btnRelatorio.TabIndex = 1;
+            this.btnRelatorio.Text = "        Emitir Relatório";
+            this.btnRelatorio.UseVisualStyleBackColor = true;
+            this.btnRelatorio.Click += new System.EventHandler(this.ClickEmitirRelatorio);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Image = global::SistemaComercio.Properties.Resources.limpar;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpar.Location = new System.Drawing.Point(346, 88);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(118, 23);
+            this.btnLimpar.TabIndex = 12;
+            this.btnLimpar.Text = "    Limpar Campos";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.ClickLimparCamposLancar);
+            // 
+            // btnComprar
+            // 
+            this.btnComprar.Image = global::SistemaComercio.Properties.Resources.adicionar;
+            this.btnComprar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnComprar.Location = new System.Drawing.Point(220, 88);
+            this.btnComprar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnComprar.Name = "btnComprar";
+            this.btnComprar.Size = new System.Drawing.Size(118, 23);
+            this.btnComprar.TabIndex = 10;
+            this.btnComprar.Text = "    Lançar Compra";
+            this.btnComprar.UseVisualStyleBackColor = true;
+            this.btnComprar.Click += new System.EventHandler(this.ClickLançarCompra);
+            // 
+            // btnLimparCancel
+            // 
+            this.btnLimparCancel.Image = global::SistemaComercio.Properties.Resources.limpar;
+            this.btnLimparCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimparCancel.Location = new System.Drawing.Point(340, 88);
+            this.btnLimparCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnLimparCancel.Name = "btnLimparCancel";
+            this.btnLimparCancel.Size = new System.Drawing.Size(118, 23);
+            this.btnLimparCancel.TabIndex = 18;
+            this.btnLimparCancel.Text = "     Limpar Campos";
+            this.btnLimparCancel.UseVisualStyleBackColor = true;
+            this.btnLimparCancel.Click += new System.EventHandler(this.ClickLimparCamposDel);
+            // 
+            // btnCancelarCompra
+            // 
+            this.btnCancelarCompra.Image = global::SistemaComercio.Properties.Resources.lixo;
+            this.btnCancelarCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarCompra.Location = new System.Drawing.Point(214, 88);
+            this.btnCancelarCompra.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnCancelarCompra.Name = "btnCancelarCompra";
+            this.btnCancelarCompra.Size = new System.Drawing.Size(118, 23);
+            this.btnCancelarCompra.TabIndex = 11;
+            this.btnCancelarCompra.Text = "     Cancelar Compra";
+            this.btnCancelarCompra.UseVisualStyleBackColor = true;
+            this.btnCancelarCompra.Click += new System.EventHandler(this.ClickCancelarCompra);
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Image = global::SistemaComercio.Properties.Resources.lupa;
+            this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultar.Location = new System.Drawing.Point(409, 202);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(98, 23);
+            this.btnConsultar.TabIndex = 14;
+            this.btnConsultar.Text = "   Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.ClickConsultar);
+            // 
             // Frm_Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -577,6 +592,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Frm_Compra";

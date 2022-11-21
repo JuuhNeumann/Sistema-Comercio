@@ -83,6 +83,26 @@ namespace SistemaComercio.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancel_29373 {
+            get {
+                object obj = ResourceManager.GetObject("cancel_29373", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cancel_icon_icons_com_52401 {
+            get {
+                object obj = ResourceManager.GetObject("cancel_icon-icons.com_52401", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap carrinhoMaior {
             get {
                 object obj = ResourceManager.GetObject("carrinhoMaior", resourceCulture);
@@ -356,6 +376,16 @@ namespace SistemaComercio.Properties {
         internal static System.Drawing.Bitmap salve1 {
             get {
                 object obj = ResourceManager.GetObject("salve1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trade_report_reports_documents_2351 {
+            get {
+                object obj = ResourceManager.GetObject("trade_report_reports_documents_2351", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Venda));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSelecioneVenda = new System.Windows.Forms.TextBox();
             this.tbcVenda = new System.Windows.Forms.TabControl();
@@ -106,7 +107,7 @@
             this.txtSelecioneVenda.Location = new System.Drawing.Point(162, 204);
             this.txtSelecioneVenda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtSelecioneVenda.Name = "txtSelecioneVenda";
-            this.txtSelecioneVenda.Size = new System.Drawing.Size(267, 21);
+            this.txtSelecioneVenda.Size = new System.Drawing.Size(246, 21);
             this.txtSelecioneVenda.TabIndex = 10;
             // 
             // tbcVenda
@@ -183,12 +184,14 @@
             // 
             // btnLimparCampos
             // 
+            this.btnLimparCampos.Image = global::SistemaComercio.Properties.Resources.limpar;
+            this.btnLimparCampos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLimparCampos.Location = new System.Drawing.Point(356, 85);
             this.btnLimparCampos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLimparCampos.Name = "btnLimparCampos";
             this.btnLimparCampos.Size = new System.Drawing.Size(118, 23);
             this.btnLimparCampos.TabIndex = 9;
-            this.btnLimparCampos.Text = "Limpar Campos";
+            this.btnLimparCampos.Text = "     Limpar Campos";
             this.btnLimparCampos.UseVisualStyleBackColor = true;
             this.btnLimparCampos.Click += new System.EventHandler(this.ClickLimparCamposLancar);
             // 
@@ -205,6 +208,8 @@
             // 
             // btnLancarVenda
             // 
+            this.btnLancarVenda.Image = global::SistemaComercio.Properties.Resources.adicionar;
+            this.btnLancarVenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLancarVenda.Location = new System.Drawing.Point(219, 85);
             this.btnLancarVenda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLancarVenda.Name = "btnLancarVenda";
@@ -306,12 +311,14 @@
             // 
             // btnLimparCancelar
             // 
+            this.btnLimparCancelar.Image = global::SistemaComercio.Properties.Resources.limpar;
+            this.btnLimparCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLimparCancelar.Location = new System.Drawing.Point(356, 87);
             this.btnLimparCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLimparCancelar.Name = "btnLimparCancelar";
             this.btnLimparCancelar.Size = new System.Drawing.Size(118, 23);
             this.btnLimparCancelar.TabIndex = 17;
-            this.btnLimparCancelar.Text = "Limpar Campos";
+            this.btnLimparCancelar.Text = "     Limpar Campos";
             this.btnLimparCancelar.UseVisualStyleBackColor = true;
             this.btnLimparCancelar.Click += new System.EventHandler(this.ClickLimparCamposCancel);
             // 
@@ -382,17 +389,21 @@
             // 
             // btnCancelarVenda
             // 
+            this.btnCancelarVenda.Image = global::SistemaComercio.Properties.Resources.lixo;
+            this.btnCancelarVenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelarVenda.Location = new System.Drawing.Point(219, 87);
             this.btnCancelarVenda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelarVenda.Name = "btnCancelarVenda";
             this.btnCancelarVenda.Size = new System.Drawing.Size(118, 23);
             this.btnCancelarVenda.TabIndex = 8;
-            this.btnCancelarVenda.Text = "Cancelar Venda";
+            this.btnCancelarVenda.Text = "    Cancelar Venda";
             this.btnCancelarVenda.UseVisualStyleBackColor = true;
             this.btnCancelarVenda.Click += new System.EventHandler(this.ClickCancelarVenda);
             // 
             // btnSair
             // 
+            this.btnSair.Image = global::SistemaComercio.Properties.Resources.sair;
+            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSair.Location = new System.Drawing.Point(426, 509);
             this.btnSair.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSair.Name = "btnSair";
@@ -404,12 +415,14 @@
             // 
             // btnEmitirRelatorio
             // 
+            this.btnEmitirRelatorio.Image = global::SistemaComercio.Properties.Resources.trade_report_reports_documents_2351;
+            this.btnEmitirRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmitirRelatorio.Location = new System.Drawing.Point(21, 509);
             this.btnEmitirRelatorio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEmitirRelatorio.Name = "btnEmitirRelatorio";
-            this.btnEmitirRelatorio.Size = new System.Drawing.Size(115, 23);
+            this.btnEmitirRelatorio.Size = new System.Drawing.Size(126, 23);
             this.btnEmitirRelatorio.TabIndex = 10;
-            this.btnEmitirRelatorio.Text = "Emitir Relatório";
+            this.btnEmitirRelatorio.Text = "        Emitir Relatório";
             this.btnEmitirRelatorio.UseVisualStyleBackColor = true;
             this.btnEmitirRelatorio.Click += new System.EventHandler(this.ClickEmitirRelatorio);
             // 
@@ -524,12 +537,14 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(437, 204);
+            this.btnConsultar.Image = global::SistemaComercio.Properties.Resources.lupa;
+            this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultar.Location = new System.Drawing.Point(416, 204);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultar.Size = new System.Drawing.Size(96, 23);
             this.btnConsultar.TabIndex = 10;
-            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.Text = "   Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.ClickConsultar);
             // 
@@ -590,6 +605,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Frm_Venda";

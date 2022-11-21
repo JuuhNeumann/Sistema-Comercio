@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ContaReceber));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLimparCampos = new System.Windows.Forms.Button();
             this.gpbFormaPagamento = new System.Windows.Forms.GroupBox();
@@ -76,11 +77,13 @@
             // 
             // btnLimparCampos
             // 
-            this.btnLimparCampos.Location = new System.Drawing.Point(136, 261);
+            this.btnLimparCampos.Image = global::SistemaComercio.Properties.Resources.limpar;
+            this.btnLimparCampos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimparCampos.Location = new System.Drawing.Point(152, 261);
             this.btnLimparCampos.Name = "btnLimparCampos";
             this.btnLimparCampos.Size = new System.Drawing.Size(113, 23);
             this.btnLimparCampos.TabIndex = 6;
-            this.btnLimparCampos.Text = "Limpar Campos";
+            this.btnLimparCampos.Text = "     Limpar Campos";
             this.btnLimparCampos.UseVisualStyleBackColor = true;
             this.btnLimparCampos.Click += new System.EventHandler(this.ClickLimparCampos);
             // 
@@ -124,11 +127,13 @@
             // btnVender
             // 
             this.btnVender.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnVender.Image = global::SistemaComercio.Properties.Resources.ImgCash;
+            this.btnVender.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVender.Location = new System.Drawing.Point(487, 53);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(83, 23);
             this.btnVender.TabIndex = 6;
-            this.btnVender.Text = "Vender";
+            this.btnVender.Text = "      Vender";
             this.btnVender.UseVisualStyleBackColor = true;
             this.btnVender.Click += new System.EventHandler(this.ClickVender);
             // 
@@ -212,9 +217,11 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(488, 261);
+            this.btnSair.Image = global::SistemaComercio.Properties.Resources.sair;
+            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSair.Location = new System.Drawing.Point(504, 261);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(105, 23);
+            this.btnSair.Size = new System.Drawing.Size(89, 23);
             this.btnSair.TabIndex = 4;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -222,11 +229,13 @@
             // 
             // btnEmitirRela
             // 
+            this.btnEmitirRela.Image = global::SistemaComercio.Properties.Resources.trade_report_reports_documents_2351;
+            this.btnEmitirRela.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmitirRela.Location = new System.Drawing.Point(17, 261);
             this.btnEmitirRela.Name = "btnEmitirRela";
-            this.btnEmitirRela.Size = new System.Drawing.Size(113, 23);
+            this.btnEmitirRela.Size = new System.Drawing.Size(129, 23);
             this.btnEmitirRela.TabIndex = 3;
-            this.btnEmitirRela.Text = "Emitir Relatório";
+            this.btnEmitirRela.Text = "      Emitir Relatório";
             this.btnEmitirRela.UseVisualStyleBackColor = true;
             this.btnEmitirRela.Click += new System.EventHandler(this.ClickEmitirRelatorio);
             // 
@@ -364,6 +373,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "Frm_ContaReceber";

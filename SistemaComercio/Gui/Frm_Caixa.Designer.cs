@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Caixa));
             this.dataGridViewCaixa = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnEmitirRelatorio = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblTotalVenda = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -46,6 +45,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnEmitirRelatorio = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCaixa)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -69,35 +70,13 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.Controls.Add(this.btnEmitirRelatorio);
-            this.panel1.Controls.Add(this.btnSair);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.btnSair);
             this.panel1.Location = new System.Drawing.Point(0, 272);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(667, 120);
             this.panel1.TabIndex = 1;
-            // 
-            // btnEmitirRelatorio
-            // 
-            this.btnEmitirRelatorio.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmitirRelatorio.Location = new System.Drawing.Point(12, 76);
-            this.btnEmitirRelatorio.Name = "btnEmitirRelatorio";
-            this.btnEmitirRelatorio.Size = new System.Drawing.Size(102, 22);
-            this.btnEmitirRelatorio.TabIndex = 12;
-            this.btnEmitirRelatorio.Text = "Emitir Relatório";
-            this.btnEmitirRelatorio.UseVisualStyleBackColor = true;
-            this.btnEmitirRelatorio.Click += new System.EventHandler(this.ClickGerarRelatorio);
-            // 
-            // btnSair
-            // 
-            this.btnSair.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(120, 76);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(102, 22);
-            this.btnSair.TabIndex = 11;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.ClickSair);
             // 
             // panel5
             // 
@@ -108,7 +87,7 @@
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.lblTotalCompra);
             this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(455, 12);
+            this.panel5.Location = new System.Drawing.Point(210, 12);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(196, 98);
             this.panel5.TabIndex = 10;
@@ -179,7 +158,7 @@
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.lblAnterior);
             this.panel4.Controls.Add(this.label19);
-            this.panel4.Location = new System.Drawing.Point(272, 12);
+            this.panel4.Location = new System.Drawing.Point(12, 12);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(193, 98);
             this.panel4.TabIndex = 9;
@@ -260,6 +239,32 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Financeiro e Fluxo de Caixa";
             // 
+            // btnEmitirRelatorio
+            // 
+            this.btnEmitirRelatorio.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmitirRelatorio.Image = global::SistemaComercio.Properties.Resources.trade_report_reports_documents_2351;
+            this.btnEmitirRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmitirRelatorio.Location = new System.Drawing.Point(420, 76);
+            this.btnEmitirRelatorio.Name = "btnEmitirRelatorio";
+            this.btnEmitirRelatorio.Size = new System.Drawing.Size(123, 22);
+            this.btnEmitirRelatorio.TabIndex = 12;
+            this.btnEmitirRelatorio.Text = "       Emitir Relatório";
+            this.btnEmitirRelatorio.UseVisualStyleBackColor = true;
+            this.btnEmitirRelatorio.Click += new System.EventHandler(this.ClickGerarRelatorio);
+            // 
+            // btnSair
+            // 
+            this.btnSair.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Image = global::SistemaComercio.Properties.Resources.sair;
+            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSair.Location = new System.Drawing.Point(549, 76);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(102, 22);
+            this.btnSair.TabIndex = 11;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.ClickSair);
+            // 
             // Frm_Caixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,6 +274,7 @@
             this.Controls.Add(this.dataGridViewCaixa);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_Caixa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
