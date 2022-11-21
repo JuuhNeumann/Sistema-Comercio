@@ -146,7 +146,7 @@ namespace SistemaComercio.Gui
             var dataVenci = Convert.ToDateTime(txtDataVenci.Text).ToString("dd-MM-yyyy");
             var parcela = 0;
 
-            if (metodoPagamento.Equals("credito"))
+            if (metodoPagamento.Equals("Cartão de Crédito"))
                 parcela = Convert.ToInt32(cmbParcelamento.Text.Substring(0, 1));
 
             var contaReceber = new ContaReceber()
@@ -227,21 +227,21 @@ namespace SistemaComercio.Gui
 
         private void rdbDinehiro_CheckedChanged(object sender, EventArgs e)
         {
-            metodoPagamento = "dinheiro";
+            metodoPagamento = "Dinheiro";
             cmbParcelamento.Enabled = false;
             cmbParcelamento.SelectedIndex = -1;
         }
 
         private void rdbCartaoDebito_CheckedChanged(object sender, EventArgs e)
         {
-            metodoPagamento = "debito";
+            metodoPagamento = "Cartão de Débito";
             cmbParcelamento.Enabled = false;
             cmbParcelamento.SelectedIndex = -1;
         }
 
         private void rbbCartaoCredito_CheckedChanged(object sender, EventArgs e)
         {
-            metodoPagamento = "credito";
+            metodoPagamento = "Cartão de Crédito";
             cmbParcelamento.Items.Clear();
 
             if (cmbSelecioneContaReceber.SelectedIndex != -1 && rdbCartaoCredito.Checked)

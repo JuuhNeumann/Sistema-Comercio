@@ -28,7 +28,6 @@ namespace SistemaComercio.Gui
             InitializeComponent();
             user = usuario;
             LblNomeAdm.Text = usuario.Usuario;
-            lblSalario.Text = usuario.Salario.ToString("C");
             GetCount();
 
         }
@@ -48,9 +47,7 @@ namespace SistemaComercio.Gui
 
         public void UpdateSalarioUser(double valor)
         {
-            user.Salario = valor;
-            serviceAdm.Update(user);
-            lblSalario.Text = user.Salario.ToString("C");
+            
         }
 
         private void ClickCliente(object sender, EventArgs e)

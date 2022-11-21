@@ -321,6 +321,10 @@
     <Compile Include="Migrations\20221119184044_add2.designer.cs">
       <DependentUpon>20221119184044_add2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20221121011712_ultima.cs" />
+    <Compile Include="Migrations\20221121011712_ultima.designer.cs">
+      <DependentUpon>20221121011712_ultima.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\DataBaseContextModelSnapshot.cs" />
     <Compile Include="Persistence\Context\DataBaseContext.cs" />
     <Compile Include="Port\IAdmPort.cs" />

@@ -277,6 +277,10 @@ namespace SistemaComercio.Gui
         private void ClickLimparCamposDel(object sender, EventArgs e)
         {
             LimparCampos();
+            txtData.Text = "";
+            txtHora.Text = "";
+            txtTotal.Text = "";
+            lblRespostaSituacao.Text = "";
             MessageBox.Show("Campos resetados!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

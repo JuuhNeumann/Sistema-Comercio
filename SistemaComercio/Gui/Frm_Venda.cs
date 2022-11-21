@@ -246,12 +246,20 @@ namespace SistemaComercio.Gui
         private void ClickLimparCamposLancar(object sender, EventArgs e)
         {
             LimparCampos();
+            lblRespostaSituacao.Text = "";
+            txtData.Text = "";
+            txtHora.Text = "";
+            txtTotal.Text = "";
             MessageBox.Show("Campos resetados!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ClickLimparCamposCancel(object sender, EventArgs e)
         {
             LimparCampos();
+            txtData.Text = "";
+            txtHora.Text = "";
+            txtTotal.Text = "";
+            lblRespostaSituacao.Text = "";
             MessageBox.Show("Campos resetados!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
@@ -330,6 +338,7 @@ namespace SistemaComercio.Gui
             txtPrecoCancel.Clear();
             txtTotalCimaCancel.Clear();
             cmbQuantidade.Items.Clear();
+
         }
 
         private void RemoveVenda(int id)

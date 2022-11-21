@@ -438,9 +438,8 @@
             this.lblRespostaSituacao.Location = new System.Drawing.Point(65, 58);
             this.lblRespostaSituacao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRespostaSituacao.Name = "lblRespostaSituacao";
-            this.lblRespostaSituacao.Size = new System.Drawing.Size(121, 13);
+            this.lblRespostaSituacao.Size = new System.Drawing.Size(0, 13);
             this.lblRespostaSituacao.TabIndex = 10;
-            this.lblRespostaSituacao.Text = "Aguardando Pagamento";
             // 
             // txtTotal
             // 

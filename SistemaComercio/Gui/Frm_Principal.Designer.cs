@@ -31,7 +31,6 @@
             this.PnlBarraTarefas = new System.Windows.Forms.Panel();
             this.btnCaixa = new System.Windows.Forms.Button();
             this.btnContaReceber = new System.Windows.Forms.Button();
-            this.lblSalario = new System.Windows.Forms.Label();
             this.LblNomeAdm = new System.Windows.Forms.Label();
             this.LblAdmBaixo = new System.Windows.Forms.Label();
             this.ImgAdmin = new System.Windows.Forms.PictureBox();
@@ -87,7 +86,6 @@
             this.PnlBarraTarefas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PnlBarraTarefas.Controls.Add(this.btnCaixa);
             this.PnlBarraTarefas.Controls.Add(this.btnContaReceber);
-            this.PnlBarraTarefas.Controls.Add(this.lblSalario);
             this.PnlBarraTarefas.Controls.Add(this.LblNomeAdm);
             this.PnlBarraTarefas.Controls.Add(this.LblAdmBaixo);
             this.PnlBarraTarefas.Controls.Add(this.ImgAdmin);
@@ -131,16 +129,6 @@
             this.btnContaReceber.Text = "Conta a Receber";
             this.btnContaReceber.UseVisualStyleBackColor = false;
             this.btnContaReceber.Click += new System.EventHandler(this.ClickContaReceber);
-            // 
-            // lblSalario
-            // 
-            this.lblSalario.AutoSize = true;
-            this.lblSalario.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalario.Location = new System.Drawing.Point(70, 400);
-            this.lblSalario.Name = "lblSalario";
-            this.lblSalario.Size = new System.Drawing.Size(35, 13);
-            this.lblSalario.TabIndex = 15;
-            this.lblSalario.Text = "label1";
             // 
             // LblNomeAdm
             // 
@@ -607,7 +595,6 @@
         private System.Windows.Forms.Label LblCmpr;
         private System.Windows.Forms.Label LblSumario;
         private System.Windows.Forms.PictureBox ImgPrin;
-        private System.Windows.Forms.Label lblSalario;
         private System.Windows.Forms.Button btnCaixa;
         private System.Windows.Forms.Button btnContaReceber;
     }
