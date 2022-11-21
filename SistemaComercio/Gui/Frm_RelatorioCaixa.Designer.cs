@@ -53,7 +53,7 @@
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Location = new System.Drawing.Point(-5, -5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(864, 73);
+            this.panel1.Size = new System.Drawing.Size(705, 73);
             this.panel1.TabIndex = 0;
             // 
             // cmbFiltro
@@ -65,7 +65,7 @@
             "Dinheiro",
             "Cartão de Débito",
             "Cartão de Crédito"});
-            this.cmbFiltro.Location = new System.Drawing.Point(668, 27);
+            this.cmbFiltro.Location = new System.Drawing.Point(503, 28);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(178, 21);
             this.cmbFiltro.TabIndex = 4;
@@ -76,7 +76,7 @@
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFiltro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFiltro.Location = new System.Drawing.Point(623, 30);
+            this.lblFiltro.Location = new System.Drawing.Point(455, 32);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(48, 14);
             this.lblFiltro.TabIndex = 3;
@@ -86,7 +86,7 @@
             // txtData
             // 
             this.txtData.Enabled = false;
-            this.txtData.Location = new System.Drawing.Point(457, 28);
+            this.txtData.Location = new System.Drawing.Point(290, 28);
             this.txtData.Name = "txtData";
             this.txtData.Size = new System.Drawing.Size(150, 20);
             this.txtData.TabIndex = 2;
@@ -96,7 +96,7 @@
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblData.Location = new System.Drawing.Point(419, 31);
+            this.lblData.Location = new System.Drawing.Point(254, 31);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(41, 14);
             this.lblData.TabIndex = 1;
@@ -121,7 +121,7 @@
             this.panel2.Controls.Add(this.btnSair);
             this.panel2.Location = new System.Drawing.Point(-5, 411);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(864, 52);
+            this.panel2.Size = new System.Drawing.Size(705, 52);
             this.panel2.TabIndex = 1;
             // 
             // btnSair
@@ -129,7 +129,7 @@
             this.btnSair.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.Image = global::SistemaComercio.Properties.Resources.sair;
             this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSair.Location = new System.Drawing.Point(748, 15);
+            this.btnSair.Location = new System.Drawing.Point(583, 15);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(98, 23);
             this.btnSair.TabIndex = 0;
@@ -142,7 +142,7 @@
             this.rvRelatorioCaixa.Location = new System.Drawing.Point(-1, 62);
             this.rvRelatorioCaixa.Name = "rvRelatorioCaixa";
             this.rvRelatorioCaixa.ServerReport.BearerToken = null;
-            this.rvRelatorioCaixa.Size = new System.Drawing.Size(860, 353);
+            this.rvRelatorioCaixa.Size = new System.Drawing.Size(691, 353);
             this.rvRelatorioCaixa.TabIndex = 2;
             // 
             // Frm_RelatorioCaixa
@@ -150,7 +150,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(854, 462);
+            this.ClientSize = new System.Drawing.Size(689, 462);
             this.Controls.Add(this.rvRelatorioCaixa);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

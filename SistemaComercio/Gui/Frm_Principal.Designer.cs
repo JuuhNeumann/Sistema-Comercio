@@ -30,18 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Principal));
             this.PnlBarraTarefas = new System.Windows.Forms.Panel();
-            this.btnCaixa = new System.Windows.Forms.Button();
-            this.btnContaReceber = new System.Windows.Forms.Button();
             this.LblNomeAdm = new System.Windows.Forms.Label();
             this.LblAdmBaixo = new System.Windows.Forms.Label();
-            this.ImgAdmin = new System.Windows.Forms.PictureBox();
-            this.BtnContaPagar = new System.Windows.Forms.Button();
-            this.BtnProduto = new System.Windows.Forms.Button();
-            this.BtnVenda = new System.Windows.Forms.Button();
-            this.BtnCompra = new System.Windows.Forms.Button();
-            this.BtnCadFor = new System.Windows.Forms.Button();
             this.LblSub = new System.Windows.Forms.Label();
-            this.BtnCadCli = new System.Windows.Forms.Button();
             this.LblPrin = new System.Windows.Forms.Label();
             this.PnlCli = new System.Windows.Forms.Panel();
             this.LblCliente = new System.Windows.Forms.Label();
@@ -65,9 +56,17 @@
             this.ImgProCentro = new System.Windows.Forms.PictureBox();
             this.ImgForCentro = new System.Windows.Forms.PictureBox();
             this.ImgCliCentro = new System.Windows.Forms.PictureBox();
+            this.btnCaixa = new System.Windows.Forms.Button();
+            this.btnContaReceber = new System.Windows.Forms.Button();
+            this.ImgAdmin = new System.Windows.Forms.PictureBox();
+            this.BtnContaPagar = new System.Windows.Forms.Button();
+            this.BtnProduto = new System.Windows.Forms.Button();
+            this.BtnVenda = new System.Windows.Forms.Button();
+            this.BtnCompra = new System.Windows.Forms.Button();
+            this.BtnCadFor = new System.Windows.Forms.Button();
+            this.BtnCadCli = new System.Windows.Forms.Button();
             this.ImgPrin = new System.Windows.Forms.PictureBox();
             this.PnlBarraTarefas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ImgAdmin)).BeginInit();
             this.PnlCli.SuspendLayout();
             this.PnlFor.SuspendLayout();
             this.PnlPro.SuspendLayout();
@@ -78,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ImgProCentro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgForCentro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgCliCentro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgPrin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,34 +103,6 @@
             this.PnlBarraTarefas.Size = new System.Drawing.Size(170, 427);
             this.PnlBarraTarefas.TabIndex = 1;
             // 
-            // btnCaixa
-            // 
-            this.btnCaixa.BackColor = System.Drawing.Color.Thistle;
-            this.btnCaixa.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaixa.Image = global::SistemaComercio.Properties.Resources.ImgEstoque;
-            this.btnCaixa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCaixa.Location = new System.Drawing.Point(-2, 315);
-            this.btnCaixa.Name = "btnCaixa";
-            this.btnCaixa.Size = new System.Drawing.Size(170, 40);
-            this.btnCaixa.TabIndex = 17;
-            this.btnCaixa.Text = "Caixa";
-            this.btnCaixa.UseVisualStyleBackColor = false;
-            this.btnCaixa.Click += new System.EventHandler(this.ClickCaixa);
-            // 
-            // btnContaReceber
-            // 
-            this.btnContaReceber.BackColor = System.Drawing.Color.Thistle;
-            this.btnContaReceber.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContaReceber.Image = global::SistemaComercio.Properties.Resources.ImgEstoque;
-            this.btnContaReceber.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnContaReceber.Location = new System.Drawing.Point(-2, 278);
-            this.btnContaReceber.Name = "btnContaReceber";
-            this.btnContaReceber.Size = new System.Drawing.Size(170, 40);
-            this.btnContaReceber.TabIndex = 16;
-            this.btnContaReceber.Text = "Conta a Receber";
-            this.btnContaReceber.UseVisualStyleBackColor = false;
-            this.btnContaReceber.Click += new System.EventHandler(this.ClickContaReceber);
-            // 
             // LblNomeAdm
             // 
             this.LblNomeAdm.AutoSize = true;
@@ -151,85 +123,6 @@
             this.LblAdmBaixo.TabIndex = 13;
             this.LblAdmBaixo.Text = "ADM:";
             // 
-            // ImgAdmin
-            // 
-            this.ImgAdmin.Image = global::SistemaComercio.Properties.Resources.ImgAdmin;
-            this.ImgAdmin.Location = new System.Drawing.Point(3, 361);
-            this.ImgAdmin.Name = "ImgAdmin";
-            this.ImgAdmin.Size = new System.Drawing.Size(66, 59);
-            this.ImgAdmin.TabIndex = 12;
-            this.ImgAdmin.TabStop = false;
-            // 
-            // BtnContaPagar
-            // 
-            this.BtnContaPagar.BackColor = System.Drawing.Color.Thistle;
-            this.BtnContaPagar.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnContaPagar.Image = global::SistemaComercio.Properties.Resources.ImgEstoque;
-            this.BtnContaPagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnContaPagar.Location = new System.Drawing.Point(-2, 241);
-            this.BtnContaPagar.Name = "BtnContaPagar";
-            this.BtnContaPagar.Size = new System.Drawing.Size(170, 40);
-            this.BtnContaPagar.TabIndex = 10;
-            this.BtnContaPagar.Text = "Conta a Pagar";
-            this.BtnContaPagar.UseVisualStyleBackColor = false;
-            this.BtnContaPagar.Click += new System.EventHandler(this.ClickContaPagar);
-            // 
-            // BtnProduto
-            // 
-            this.BtnProduto.BackColor = System.Drawing.Color.Thistle;
-            this.BtnProduto.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnProduto.Image = global::SistemaComercio.Properties.Resources.games;
-            this.BtnProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnProduto.Location = new System.Drawing.Point(-2, 130);
-            this.BtnProduto.Name = "BtnProduto";
-            this.BtnProduto.Size = new System.Drawing.Size(170, 40);
-            this.BtnProduto.TabIndex = 7;
-            this.BtnProduto.Text = "Produtos";
-            this.BtnProduto.UseVisualStyleBackColor = false;
-            this.BtnProduto.Click += new System.EventHandler(this.ClickProduto);
-            // 
-            // BtnVenda
-            // 
-            this.BtnVenda.BackColor = System.Drawing.Color.Thistle;
-            this.BtnVenda.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnVenda.Image = global::SistemaComercio.Properties.Resources.ImgCarrinho;
-            this.BtnVenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnVenda.Location = new System.Drawing.Point(-2, 204);
-            this.BtnVenda.Name = "BtnVenda";
-            this.BtnVenda.Size = new System.Drawing.Size(170, 40);
-            this.BtnVenda.TabIndex = 9;
-            this.BtnVenda.Text = "Venda";
-            this.BtnVenda.UseVisualStyleBackColor = false;
-            this.BtnVenda.Click += new System.EventHandler(this.ClickVenda);
-            // 
-            // BtnCompra
-            // 
-            this.BtnCompra.BackColor = System.Drawing.Color.Thistle;
-            this.BtnCompra.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCompra.Image = global::SistemaComercio.Properties.Resources.ImgCash;
-            this.BtnCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCompra.Location = new System.Drawing.Point(-2, 167);
-            this.BtnCompra.Name = "BtnCompra";
-            this.BtnCompra.Size = new System.Drawing.Size(170, 40);
-            this.BtnCompra.TabIndex = 8;
-            this.BtnCompra.Text = "Compra";
-            this.BtnCompra.UseVisualStyleBackColor = false;
-            this.BtnCompra.Click += new System.EventHandler(this.ClickCompra);
-            // 
-            // BtnCadFor
-            // 
-            this.BtnCadFor.BackColor = System.Drawing.Color.Thistle;
-            this.BtnCadFor.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCadFor.Image = global::SistemaComercio.Properties.Resources.ImgForne;
-            this.BtnCadFor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCadFor.Location = new System.Drawing.Point(-2, 91);
-            this.BtnCadFor.Name = "BtnCadFor";
-            this.BtnCadFor.Size = new System.Drawing.Size(170, 42);
-            this.BtnCadFor.TabIndex = 7;
-            this.BtnCadFor.Text = "Fornecedor";
-            this.BtnCadFor.UseVisualStyleBackColor = false;
-            this.BtnCadFor.Click += new System.EventHandler(this.ClickFornecedor);
-            // 
             // LblSub
             // 
             this.LblSub.AutoSize = true;
@@ -240,20 +133,6 @@
             this.LblSub.Size = new System.Drawing.Size(105, 17);
             this.LblSub.TabIndex = 1;
             this.LblSub.Text = "de Videogames";
-            // 
-            // BtnCadCli
-            // 
-            this.BtnCadCli.BackColor = System.Drawing.Color.Thistle;
-            this.BtnCadCli.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCadCli.Image = global::SistemaComercio.Properties.Resources.ImgCli;
-            this.BtnCadCli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCadCli.Location = new System.Drawing.Point(-2, 53);
-            this.BtnCadCli.Name = "BtnCadCli";
-            this.BtnCadCli.Size = new System.Drawing.Size(170, 41);
-            this.BtnCadCli.TabIndex = 6;
-            this.BtnCadCli.Text = "Cliente";
-            this.BtnCadCli.UseVisualStyleBackColor = false;
-            this.BtnCadCli.Click += new System.EventHandler(this.ClickCliente);
             // 
             // LblPrin
             // 
@@ -498,6 +377,127 @@
             this.ImgCliCentro.TabIndex = 2;
             this.ImgCliCentro.TabStop = false;
             // 
+            // btnCaixa
+            // 
+            this.btnCaixa.BackColor = System.Drawing.Color.Thistle;
+            this.btnCaixa.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaixa.Image = global::SistemaComercio.Properties.Resources._3338902_business_tools_cashier_106842;
+            this.btnCaixa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCaixa.Location = new System.Drawing.Point(-2, 315);
+            this.btnCaixa.Name = "btnCaixa";
+            this.btnCaixa.Size = new System.Drawing.Size(170, 40);
+            this.btnCaixa.TabIndex = 17;
+            this.btnCaixa.Text = "Caixa";
+            this.btnCaixa.UseVisualStyleBackColor = false;
+            this.btnCaixa.Click += new System.EventHandler(this.ClickCaixa);
+            // 
+            // btnContaReceber
+            // 
+            this.btnContaReceber.BackColor = System.Drawing.Color.Thistle;
+            this.btnContaReceber.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContaReceber.Image = global::SistemaComercio.Properties.Resources.cash_receive_3048;
+            this.btnContaReceber.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnContaReceber.Location = new System.Drawing.Point(-2, 278);
+            this.btnContaReceber.Name = "btnContaReceber";
+            this.btnContaReceber.Size = new System.Drawing.Size(170, 43);
+            this.btnContaReceber.TabIndex = 16;
+            this.btnContaReceber.Text = "Conta a Receber";
+            this.btnContaReceber.UseVisualStyleBackColor = false;
+            this.btnContaReceber.Click += new System.EventHandler(this.ClickContaReceber);
+            // 
+            // ImgAdmin
+            // 
+            this.ImgAdmin.Image = global::SistemaComercio.Properties.Resources.ImgAdmin;
+            this.ImgAdmin.Location = new System.Drawing.Point(3, 361);
+            this.ImgAdmin.Name = "ImgAdmin";
+            this.ImgAdmin.Size = new System.Drawing.Size(66, 59);
+            this.ImgAdmin.TabIndex = 12;
+            this.ImgAdmin.TabStop = false;
+            // 
+            // BtnContaPagar
+            // 
+            this.BtnContaPagar.BackColor = System.Drawing.Color.Thistle;
+            this.BtnContaPagar.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnContaPagar.Image = global::SistemaComercio.Properties.Resources.pay_cash_bill_money_buy_icon_143287;
+            this.BtnContaPagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnContaPagar.Location = new System.Drawing.Point(-2, 241);
+            this.BtnContaPagar.Name = "BtnContaPagar";
+            this.BtnContaPagar.Size = new System.Drawing.Size(170, 40);
+            this.BtnContaPagar.TabIndex = 10;
+            this.BtnContaPagar.Text = "Conta a Pagar";
+            this.BtnContaPagar.UseVisualStyleBackColor = false;
+            this.BtnContaPagar.Click += new System.EventHandler(this.ClickContaPagar);
+            // 
+            // BtnProduto
+            // 
+            this.BtnProduto.BackColor = System.Drawing.Color.Thistle;
+            this.BtnProduto.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProduto.Image = global::SistemaComercio.Properties.Resources.games;
+            this.BtnProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnProduto.Location = new System.Drawing.Point(-2, 130);
+            this.BtnProduto.Name = "BtnProduto";
+            this.BtnProduto.Size = new System.Drawing.Size(170, 40);
+            this.BtnProduto.TabIndex = 7;
+            this.BtnProduto.Text = "Produtos";
+            this.BtnProduto.UseVisualStyleBackColor = false;
+            this.BtnProduto.Click += new System.EventHandler(this.ClickProduto);
+            // 
+            // BtnVenda
+            // 
+            this.BtnVenda.BackColor = System.Drawing.Color.Thistle;
+            this.BtnVenda.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVenda.Image = global::SistemaComercio.Properties.Resources.ImgCarrinho;
+            this.BtnVenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnVenda.Location = new System.Drawing.Point(-2, 204);
+            this.BtnVenda.Name = "BtnVenda";
+            this.BtnVenda.Size = new System.Drawing.Size(170, 40);
+            this.BtnVenda.TabIndex = 9;
+            this.BtnVenda.Text = "Venda";
+            this.BtnVenda.UseVisualStyleBackColor = false;
+            this.BtnVenda.Click += new System.EventHandler(this.ClickVenda);
+            // 
+            // BtnCompra
+            // 
+            this.BtnCompra.BackColor = System.Drawing.Color.Thistle;
+            this.BtnCompra.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCompra.Image = global::SistemaComercio.Properties.Resources.ImgCash;
+            this.BtnCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCompra.Location = new System.Drawing.Point(-2, 167);
+            this.BtnCompra.Name = "BtnCompra";
+            this.BtnCompra.Size = new System.Drawing.Size(170, 40);
+            this.BtnCompra.TabIndex = 8;
+            this.BtnCompra.Text = "Compra";
+            this.BtnCompra.UseVisualStyleBackColor = false;
+            this.BtnCompra.Click += new System.EventHandler(this.ClickCompra);
+            // 
+            // BtnCadFor
+            // 
+            this.BtnCadFor.BackColor = System.Drawing.Color.Thistle;
+            this.BtnCadFor.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCadFor.Image = global::SistemaComercio.Properties.Resources.ImgForne;
+            this.BtnCadFor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCadFor.Location = new System.Drawing.Point(-2, 91);
+            this.BtnCadFor.Name = "BtnCadFor";
+            this.BtnCadFor.Size = new System.Drawing.Size(170, 42);
+            this.BtnCadFor.TabIndex = 7;
+            this.BtnCadFor.Text = "Fornecedor";
+            this.BtnCadFor.UseVisualStyleBackColor = false;
+            this.BtnCadFor.Click += new System.EventHandler(this.ClickFornecedor);
+            // 
+            // BtnCadCli
+            // 
+            this.BtnCadCli.BackColor = System.Drawing.Color.Thistle;
+            this.BtnCadCli.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCadCli.Image = global::SistemaComercio.Properties.Resources.ImgCli;
+            this.BtnCadCli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCadCli.Location = new System.Drawing.Point(-2, 53);
+            this.BtnCadCli.Name = "BtnCadCli";
+            this.BtnCadCli.Size = new System.Drawing.Size(170, 41);
+            this.BtnCadCli.TabIndex = 6;
+            this.BtnCadCli.Text = "Cliente";
+            this.BtnCadCli.UseVisualStyleBackColor = false;
+            this.BtnCadCli.Click += new System.EventHandler(this.ClickCliente);
+            // 
             // ImgPrin
             // 
             this.ImgPrin.Image = global::SistemaComercio.Properties.Resources.ImgGame;
@@ -539,7 +539,6 @@
             this.Text = "Tela Principal";
             this.PnlBarraTarefas.ResumeLayout(false);
             this.PnlBarraTarefas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ImgAdmin)).EndInit();
             this.PnlCli.ResumeLayout(false);
             this.PnlCli.PerformLayout();
             this.PnlFor.ResumeLayout(false);
@@ -555,6 +554,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ImgProCentro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgForCentro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgCliCentro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgAdmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgPrin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

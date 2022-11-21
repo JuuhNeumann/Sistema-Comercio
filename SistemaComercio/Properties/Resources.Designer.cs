@@ -63,6 +63,16 @@ namespace SistemaComercio.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3338902_business_tools_cashier_106842 {
+            get {
+                object obj = ResourceManager.GetObject("3338902-business-tools-cashier_106842", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap adicionar {
             get {
                 object obj = ResourceManager.GetObject("adicionar", resourceCulture);
@@ -106,6 +116,16 @@ namespace SistemaComercio.Properties {
         internal static System.Drawing.Bitmap carrinhoMaior {
             get {
                 object obj = ResourceManager.GetObject("carrinhoMaior", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cash_receive_3048 {
+            get {
+                object obj = ResourceManager.GetObject("cash_receive_3048", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,6 +373,26 @@ namespace SistemaComercio.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pay_cash_bill_money_buy_icon_143287 {
+            get {
+                object obj = ResourceManager.GetObject("pay_cash_bill_money_buy_icon_143287", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap receivemoneycashserviceonlinesendpremium_95912 {
+            get {
+                object obj = ResourceManager.GetObject("receivemoneycashserviceonlinesendpremium_95912", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sair {
             get {
                 object obj = ResourceManager.GetObject("sair", resourceCulture);
@@ -376,6 +416,16 @@ namespace SistemaComercio.Properties {
         internal static System.Drawing.Bitmap salve1 {
             get {
                 object obj = ResourceManager.GetObject("salve1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sell_3319 {
+            get {
+                object obj = ResourceManager.GetObject("sell_3319", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

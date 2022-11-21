@@ -551,6 +551,11 @@
     <None Include="Resources\trade_report_reports_documents_2351.png" />
     <None Include="Resources\cancel_icon-icons.com_52401.png" />
     <None Include="Resources\cancel_29373.png" />
+    <None Include="Resources\pay_cash_bill_money_buy_icon_143287.png" />
+    <None Include="Resources\sell_3319.png" />
+    <None Include="Resources\receivemoneycashserviceonlinesendpremium_95912.png" />
+    <None Include="Resources\cash_receive_3048.png" />
+    <None Include="Resources\3338902-business-tools-cashier_106842.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

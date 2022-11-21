@@ -139,8 +139,11 @@
   <data name="cashMaior" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cashMaior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ImgPc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ImgPc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cancel_29373" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancel_29373.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="receivemoneycashserviceonlinesendpremium_95912" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\receivemoneycashserviceonlinesendpremium_95912.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,14 +151,14 @@
   <data name="lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lupa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ImgCamMaior" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ImgCamMaior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cancel_icon-icons.com_52401" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancel_icon-icons.com_52401.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImgFornecedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImgFornecedor2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cancel_icon-icons.com_52401" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancel_icon-icons.com_52401.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ImgCamMaior" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImgCamMaior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImgCarrinho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImgCarrinho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,14 +166,14 @@
   <data name="ImgGameMaior" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImgGameMaior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="adicionar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\adicionar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cash_receive_3048" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cash_receive_3048.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="limpar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\limpar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ImgFundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ImgFundo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="salve1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\salve1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImgAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImgAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,8 +181,8 @@
   <data name="ImgCash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImgCash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="manete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\manete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="adicionar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adicionar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="atualizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\atualizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,14 +193,20 @@
   <data name="ImgAdm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImgAdm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ImgGame" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ImgGame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ImgPc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImgPc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="carrinhoMaior" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\carrinhoMaior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="manete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="games" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\games.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sell_3319" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sell_3319.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImgCli" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImgCli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,10 +220,16 @@
   <data name="ImgCliMaior" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImgCliMaior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="salve1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\salve1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ImgGame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImgGame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cancel_29373" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancel_29373.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pay_cash_bill_money_buy_icon_143287" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pay_cash_bill_money_buy_icon_143287.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImgFundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImgFundo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3338902-business-tools-cashier_106842" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3338902-business-tools-cashier_106842.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
